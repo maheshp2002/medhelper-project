@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\fb5f6ceb44d8705d06bd2e631baa33fa\\core-1.6.0\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\fb5f6ceb44d8705d06bd2e631baa33fa\\core-1.6.0\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\fb5f6ceb44d8705d06bd2e631baa33fa\\core-1.6.0\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\fb5f6ceb44d8705d06bd2e631baa33fa\\core-1.6.0\\res\\drawable\\notification_tile_bg.xml"
+    }
+]

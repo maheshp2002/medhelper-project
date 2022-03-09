@@ -1,0 +1,19 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml:1:1-2:12
+INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml:1:1-2:12
+INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml:1:1-2:12
+	package
+		ADDED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml:1:11-54
+		INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml
+		INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml:1:1-2:12
+uses-sdk
+INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml
+INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml
+		ADDED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml
+		INJECTED from E:\Flutter\flutter\.pub-cache\hosted\pub.dartlang.org\webview_flutter_android-2.8.3\android\src\main\AndroidManifest.xml

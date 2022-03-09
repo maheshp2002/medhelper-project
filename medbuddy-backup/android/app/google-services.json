@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289184445857",
+    "project_id": "medhelper-500f0",
+    "storage_bucket": "medhelper-500f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289184445857:android:8601527fc702a8e69bc7e0",
+        "android_client_info": {
+          "package_name": "com.medhelper.medhelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289184445857-7jjhdm1nbt436ei1iqa12v4h37a5flhu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3mUbjapeIYd6JVLcYHDoEgCjhfHFPtfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289184445857-7jjhdm1nbt436ei1iqa12v4h37a5flhu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
