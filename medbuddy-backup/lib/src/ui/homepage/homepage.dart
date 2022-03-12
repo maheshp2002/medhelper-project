@@ -26,14 +26,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Color(0xFF3EB16F),
         elevation: 0.0,
-                actions: [
+                /*actions: [
           IconButton(icon: Icon(Icons.arrow_back),
               onPressed: ()  {
                 context.read<AuthenticationService>().signOut();
 
               }
           ),
-                ]
+                ]*/
         
       ),
       body: Container(

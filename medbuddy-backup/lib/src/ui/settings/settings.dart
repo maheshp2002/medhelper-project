@@ -2,6 +2,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
+import 'package:provider/provider.dart';
+
+import '../login page/auth_class.dart';
 
 class settings extends StatefulWidget {
   @override
@@ -31,7 +34,7 @@ class _settingsPageState extends State<settings>{
         child: Padding(
           padding: EdgeInsets.only(top: 20),
         
-        child: Row(
+        child: Column(
          
           children: <Widget>[  
 //use sized box to resize button                  
@@ -56,6 +59,31 @@ class _settingsPageState extends State<settings>{
                 },
               ),
               ),
+
+                Padding(padding: EdgeInsets.only(top: 20),
+                 child: SizedBox(              
+                 height: 50,
+                 width: 300,
+                child: FlatButton(                  
+                splashColor: Colors.lightGreenAccent,
+                color: Color(0xFF3EB16F),
+                child: Text("Sign Out", textAlign: TextAlign.left,
+                 style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                        ),
+                ),
+                
+/*MaterialPageRoute(builder: (context) => const SecondRoute()*/
+              onPressed: ()  {
+                //for signout
+                context.read<AuthenticationService>().signOut();
+
+              }
+              ),
+              ),
+                ),
               
         ],
         ),
