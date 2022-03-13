@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ class UserInformation extends StatefulWidget {
 }
 
 class _UserInformationState extends State<UserInformation> {
+
 @override
 Widget build(BuildContext context) {
 	return MaterialApp(
@@ -18,14 +20,27 @@ Widget build(BuildContext context) {
 }
 
 class AddData extends StatelessWidget {
+    CollectionReference collectionReference = FirebaseFirestore.instance.collection('medicine_name');
+  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 @override
 Widget build(BuildContext context) {
 	return Scaffold(
 	appBar: AppBar(
 		backgroundColor: Colors.green,
-		title: Text("geeksforgeeks"),
+		title: Text("data Retrival"),
 	),
-	body: StreamBuilder(
+	body: StreamBuilder(stream: collectionReference.snapshots(),
+   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+     if(snapshot.hasData){
+       return ListView(
+         children: snapshot.data.docs.map((e) => ListTile(title: Text(e['medicine_name']),)).toList(),
+       );
+     }
+     return Center(child: CircularProgressIndicator(),);
+     },)
+  
+  
+  /*StreamBuilder(
 		stream: FirebaseFirestore.instance.collection('medicine_name').snapshots(),
 		builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
 		if (!snapshot.hasData) {
@@ -47,7 +62,7 @@ Widget build(BuildContext context) {
 			}).toList(),
 		);
 		},
-	),
+	),*/
 	);
 }
 }

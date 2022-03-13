@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/common/convert_time.dart';
 import 'package:medbuddy/src/global_bloc.dart';
@@ -39,7 +38,7 @@ var myTimeOfDayObject=TimeOfDay.now();
 class _NewEntryState extends State<NewEntry> {
 //collection names
   CollectionReference users = FirebaseFirestore.instance.collection('users');
-  CollectionReference medicine_name = FirebaseFirestore.instance.collection('medicine_name');
+  CollectionReference collectionReference = FirebaseFirestore.instance.collection('medicine_name');
 
 //string for firebase
 String medname;
@@ -237,8 +236,11 @@ String dosage;
                       String medicineName;
                       int dosage;
                       
-                      await medicine_name.add({'medicine_name':medname, 'dosage':dosage, 
-                      'time':timeOfDayToFirebase(myTimeOfDayObject)});
+                      await collectionReference.add({
+                        'medicine_name':medname,
+                       'dosage':dosage, 
+                        'time':timeOfDayToFirebase(myTimeOfDayObject)
+                        });
 
                       //--------------------Error Checking------------------------
                       //Had to do error checking in UI
