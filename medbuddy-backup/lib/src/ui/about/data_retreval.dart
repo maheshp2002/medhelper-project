@@ -48,8 +48,8 @@ Widget build(BuildContext context) {
 	body: StreamBuilder(stream: collectionReference.snapshots(),
    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
      if(snapshot.hasData){
-       return Column(
-         mainAxisAlignment: MainAxisAlignment.center,
+       return ListView(
+         
          children: snapshot.data.docs.map((e) => ListTile(
            
            tileColor: Colors.blue,
