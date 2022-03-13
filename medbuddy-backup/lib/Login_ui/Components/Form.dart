@@ -19,6 +19,7 @@ class FormContainer extends StatelessWidget {
             children: <Widget>[
               new TextFormField(
                 controller: unameController,
+               
                 keyboardType: TextInputType.text,
                 style: TextStyle(
                   fontSize: 16,
@@ -35,6 +36,7 @@ class FormContainer extends StatelessWidget {
                child:
               new TextFormField(
                 controller: passController,
+                 obscureText: true,
                 keyboardType: TextInputType.text,
                 style: TextStyle(
                   fontSize: 16,

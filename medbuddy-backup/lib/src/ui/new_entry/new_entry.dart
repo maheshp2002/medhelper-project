@@ -132,8 +132,8 @@ String dosage;
               ),
               TextFormField(
                 //..........................
-                onChanged: ((value) {
-                  dosage = value;
+                onChanged: ((data) {
+                  dosage = data.toString();
                 }),
                 //............................
                 controller: dosageController,
