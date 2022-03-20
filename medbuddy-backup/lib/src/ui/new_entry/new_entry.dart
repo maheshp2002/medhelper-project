@@ -33,7 +33,7 @@ TimeOfDay firebaseToTimeOfDay(Map data){
 
 
 
-var myTimeOfDayObject=TimeOfDay.now();
+var myTimeOfDayObject= time;
 
 class _NewEntryState extends State<NewEntry> {
 //collection names
@@ -42,7 +42,10 @@ class _NewEntryState extends State<NewEntry> {
 
 //string for firebase
 String medname;
-String dosage;
+String dos;
+
+final String uid;
+_NewEntryState({this.uid});
 
 
 
@@ -132,8 +135,8 @@ String dosage;
               ),
               TextFormField(
                 //..........................
-                onChanged: ((data) {
-                  dosage = data.toString();
+                onChanged: ((value) {
+                  dos = value;
                 }),
                 //............................
                 controller: dosageController,
@@ -238,7 +241,7 @@ String dosage;
                       
                       await collectionReference.add({
                         'medicine_name':medname,
-                       'dosage':dosage, 
+                       'dosage':dos, 
                         'time':timeOfDayToFirebase(myTimeOfDayObject)
                         });
 

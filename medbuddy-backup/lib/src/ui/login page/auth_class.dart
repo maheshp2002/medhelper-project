@@ -2,6 +2,7 @@
 import 'dart:core';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
 
 class AuthenticationService{
   final FirebaseAuth _firebaseAuth;
@@ -17,6 +18,7 @@ class AuthenticationService{
   Future<String> signIn({String email, String password}) async{
     try{
       await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
+      //await ;
       return "Signed in";
     } on FirebaseAuthException catch (e){
       return e.message;
