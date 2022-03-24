@@ -44,7 +44,7 @@ class FormContainer extends StatelessWidget {
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
                   hintText: 'password',
-                  prefixIcon: Icon(Icons.keyboard),
+                  prefixIcon: Icon(Icons.lock),
                   border: UnderlineInputBorder(),
                 ),
               ),

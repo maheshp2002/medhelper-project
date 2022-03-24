@@ -16,7 +16,11 @@ class NewEntry extends StatefulWidget {
   @override
   _NewEntryState createState() => _NewEntryState();
 }
+
+
+TimeOfDay picked ;
 TimeOfDay time;
+
 Map timeOfDayToFirebase(TimeOfDay time){
     return {
         'hour':time.hour,
@@ -26,7 +30,7 @@ Map timeOfDayToFirebase(TimeOfDay time){
 
 
 TimeOfDay firebaseToTimeOfDay(Map data){
-        return TimeOfDay(
+        return new TimeOfDay(
             hour: data['hour'],
             minute: data['minute']);
 }
@@ -119,7 +123,7 @@ _NewEntryState({this.uid});
                 }),
               //.........................
 
-                maxLength: 12,
+                maxLength: 20,
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -244,6 +248,8 @@ _NewEntryState({this.uid});
                        'dosage':dos, 
                         'time':timeOfDayToFirebase(myTimeOfDayObject)
                         });
+                        //time=TimeOfDay(hour: 0, minute: 0);
+                        
 
                       //--------------------Error Checking------------------------
                       //Had to do error checking in UI
@@ -531,19 +537,20 @@ class _SelectTimeState extends State<SelectTime> {
 
   Future<TimeOfDay> _selectTime(BuildContext context) async {
     final NewEntryBloc _newEntryBloc = Provider.of<NewEntryBloc>(context, listen: false);
-    final TimeOfDay picked = await showTimePicker(
+    final picked = await showTimePicker(
       context: context,
       initialTime: _time,
     );
     if (picked != null && picked != _time) {
       setState(() {
         _time = picked;
+        time=picked;
         _clicked = true;
         _newEntryBloc.updateTime("${convertTime(_time.hour.toString())}" +
             "${convertTime(_time.minute.toString())}");
       });
     }
-    time = picked;
+    
     return picked;
   }
 

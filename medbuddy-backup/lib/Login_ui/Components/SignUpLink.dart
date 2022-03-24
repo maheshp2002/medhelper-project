@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/login%20page/register.dart';
 
 class SignUp extends StatelessWidget {
   SignUp();
   @override
   Widget build(BuildContext context) {
-    return (new Padding(
+    return new InkWell(
+          onTap: () {
+            Navigator.push(
+              context, MaterialPageRoute(
+                builder: (BuildContext context) =>  Register()
+                ));
+          },
+     child: new Padding(
       padding: const EdgeInsets.only(
         top: 160.0,
       ),
