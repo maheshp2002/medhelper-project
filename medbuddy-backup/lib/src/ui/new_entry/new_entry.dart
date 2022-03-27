@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/common/convert_time.dart';
 import 'package:medbuddy/src/global_bloc.dart';
@@ -20,6 +21,7 @@ class NewEntry extends StatefulWidget {
 
 TimeOfDay picked ;
 TimeOfDay time;
+final firebaseUser =  FirebaseAuth.instance.currentUser;
 
 Map timeOfDayToFirebase(TimeOfDay time){
     return {
@@ -40,9 +42,11 @@ TimeOfDay firebaseToTimeOfDay(Map data){
 var myTimeOfDayObject= time;
 
 class _NewEntryState extends State<NewEntry> {
+
 //collection names
   CollectionReference users = FirebaseFirestore.instance.collection('users');
-  CollectionReference collectionReference = FirebaseFirestore.instance.collection('medicine_name');
+  //CollectionReference
+   final collectionReference = FirebaseFirestore.instance.collection('medicine_name').doc(firebaseUser.uid);
 
 //string for firebase
 String medname;
@@ -53,9 +57,10 @@ _NewEntryState({this.uid});
 
 
 
-//texteditors
+//texteditors CONTROLLER USED TO READ INPUT
   TextEditingController nameController;
   TextEditingController dosageController;
+
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
   NewEntryBloc _newEntryBloc;
 
@@ -243,9 +248,9 @@ _NewEntryState({this.uid});
                       String medicineName;
                       int dosage;
                       
-                      await collectionReference.add({
+                      await collectionReference.set({
                         'medicine_name':medname,
-                       'dosage':dos, 
+                        'dosage':dos, 
                         'time':timeOfDayToFirebase(myTimeOfDayObject)
                         });
                         //time=TimeOfDay(hour: 0, minute: 0);

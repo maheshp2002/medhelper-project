@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/dbfull.dart';
 
@@ -6,6 +7,10 @@ class UserInformation extends StatefulWidget {
   @override
     _UserInformationState createState() => _UserInformationState();
 }
+
+final firebaseUser = FirebaseAuth.instance.currentUser;
+User loggedInUser;
+String medname;
 
 class _UserInformationState extends State<UserInformation> {
 
@@ -19,23 +24,43 @@ Widget build(BuildContext context) {
 }
 
 class AddData extends StatelessWidget {
-  CollectionReference collectionReference = FirebaseFirestore.instance.collection('medicine_name');
+  //CollectionReference  
+  final collectionReference = FirebaseFirestore.instance.collection('medicine_name').snapshots();
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+
+  /*FirebaseFirestore.instance.collection('users').document(userId).get()         
+  .then((DocumentSnapshot ds) { 
+          // use ds as a snapshot 
+          ds['name']     
+           });*/
+
+fetch() async{
+   await FirebaseAuth.instance.currentUser;
+  if(firebaseUser != null)
+  await FirebaseFirestore.instance
+  .collection('medicine_name')
+  .doc(firebaseUser.uid)
+  .get()
+  .then((data) async {
+   //var dataReceive 
+   medname = data['medicine_name'];
+   return medname;
+   });
+  //.then((ds){
+    //medname = ds.data('medicine_name'),}
+    
+  }
+
+
+
 @override
 Widget build(BuildContext context) {
-	return Scaffold(
+	return 
+  
+  Scaffold(
   appBar: AppBar(
         backgroundColor: Color(0xFF3EB16F),
-       /* actions: [
-        IconButton(icon: Icon(Icons.arrow_back),
-            onPressed: () {                      
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return about();
-                    }, ),);
-                  }, ),],*/
+
         title: Text(
           "Data Retrival",
           style: TextStyle(
@@ -45,7 +70,21 @@ Widget build(BuildContext context) {
         ),
         elevation: 0.0,
   ),
-	body: StreamBuilder(stream: collectionReference.snapshots(),
+	body: 
+ Center(child: FutureBuilder(
+    builder: (context, snapshot) {
+     //if (snapshot.connectionState != ConnectionState.done)
+        //return Text("Loading");
+      return Text("medicine_name : $medname");
+  
+    }
+    ),
+    )
+  
+
+
+  /* StreamBuilder(stream: collectionReference//.snapshots()
+  ,
    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
      if(snapshot.hasData){
        return ListView(
@@ -68,32 +107,10 @@ Widget build(BuildContext context) {
      }
      return Center(child: CircularProgressIndicator(),
      );
-     },),
+     },),*/
 
+  );
+	
   
-  /*StreamBuilder(
-		stream: FirebaseFirestore.instance.collection('medicine_name').snapshots(),
-		builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-		if (!snapshot.hasData) {
-			return Center(
-			child: CircularProgressIndicator(),
-			);
-		}
-
-		return ListView(
-			children: snapshot.data.docs.map((document) {
-			return Container(
-				child: Column(
-          children: [
-          Text(document['medicine_name']),
-          Text(document['dosage']),
-          Text(document['time'])
-        ],),
-			);
-			}).toList(),
-		);
-		},
-	),*/
-	);
 }
 }

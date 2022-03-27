@@ -214,8 +214,8 @@ class _RegisterState extends State<Register> {
                       //UserCredential userCredential = 
                       await FirebaseAuth.instance.createUserWithEmailAndPassword(
                         email: emailController.text.trim(),
-                        password: passController.text.trim(),
-                      );
+                        password: passController.text.trim(),   
+                      );                    
                       Fluttertoast.showToast(  
                       msg: 'Signed up',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -227,6 +227,7 @@ class _RegisterState extends State<Register> {
                       Navigator.push(context, 
                       MaterialPageRoute(builder: (BuildContext context) =>  login1()));
 
+                       
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'weak-password') {
                             Fluttertoast.showToast(  

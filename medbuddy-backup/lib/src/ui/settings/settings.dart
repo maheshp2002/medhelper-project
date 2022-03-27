@@ -1,5 +1,3 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
 import 'package:provider/provider.dart';
