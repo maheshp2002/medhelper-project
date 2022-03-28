@@ -18,7 +18,8 @@ class NewEntry extends StatefulWidget {
   _NewEntryState createState() => _NewEntryState();
 }
 
-
+//for firebase
+int intervalT;
 TimeOfDay picked ;
 TimeOfDay time;
 final firebaseUser =  FirebaseAuth.instance.currentUser;
@@ -251,8 +252,10 @@ _NewEntryState({this.uid});
                       await collectionReference.set({
                         'medicine_name':medname,
                         'dosage':dos, 
-                        'time':timeOfDayToFirebase(myTimeOfDayObject)
-                        });
+                        'time':timeOfDayToFirebase(myTimeOfDayObject),
+                        'interval': intervalT,
+                        },
+                        SetOptions(merge : true));
                         //time=TimeOfDay(hour: 0, minute: 0);
                         
 
@@ -512,6 +515,7 @@ class _IntervalSelectionState extends State<IntervalSelection> {
               onChanged: (newVal) {
                 setState(() {
                   _selected = newVal;
+                  intervalT = _selected;
                   _newEntryBloc.updateInterval(newVal);
                 });
               },

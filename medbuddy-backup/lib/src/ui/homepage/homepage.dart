@@ -1,12 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:intl/intl.dart';
 import 'package:medbuddy/src/global_bloc.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/ui/medicine_details/medicine_details.dart';
-//import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
 import 'package:provider/provider.dart';
 
-import '../login page/auth_class.dart';
+
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -25,15 +28,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF3EB16F),
+        title: Text("Medbuddy"),
         elevation: 0.0,
-                /*actions: [
-          IconButton(icon: Icon(Icons.arrow_back),
+                actions: [
+          IconButton(icon: Icon(Icons.person, size: 20),
               onPressed: ()  {
-                context.read<AuthenticationService>().signOut();
+                //context.read<AuthenticationService>().signOut();
 
               }
           ),
-                ]*/
+                ]
         
       ),
       body: Container(
@@ -59,32 +63,27 @@ class _HomePageState extends State<HomePage> {
       ),
 
       
-  
-      /*floatingActionButton: FloatingActionButton(
-        elevation: 4,
-        backgroundColor: Color(0xFF3EB16F),
-        child: Icon(
-          Icons.add,
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => NewEntry(),
-            ),
-          );
-        },
-      ),*/
     );
     
   }
 }
 
+//google fonts
+/*TextStyle get subHeadingStyle{
+  return GoogleFonts.lato(
+    textStyle: TextStyle(
+      fontSize: 24,
+      fontWeight: FontWeight.bold
+    )
+  );
+}*/
+
+
 class TopContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalBloc globalBloc = Provider.of<GlobalBloc>(context);
-    return Container(
+    return /*Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.elliptical(50, 27),
@@ -100,9 +99,10 @@ class TopContainer extends StatelessWidget {
         color: Color(0xFF3EB16F),
       ),
       width: double.infinity,
-      child: Column(
+      child: */
+      Column(
         children: <Widget>[
-          Flexible(child: 
+          /*Flexible(child: 
           Padding(
             padding: EdgeInsets.only(
               bottom: 10,
@@ -116,8 +116,42 @@ class TopContainer extends StatelessWidget {
               ),
             ),
           ),
+          ),*/
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+           alignment: Alignment.topLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              Text(DateFormat.yMMMMd().format(DateTime.now()),
+              style: TextStyle(
+                fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: "Ic"
+                ),
+              ),
+              Text("Today",
+               style: TextStyle(
+              fontSize: 15,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: "Ic"
+              ),
+              ),
+            ]),
           ),
-          Divider(
+        Container(
+        margin: const EdgeInsets.only(top: 20, left: 20),
+        child: DatePicker(
+          DateTime.now(),
+          height: 100,
+          width: 80,
+          initialSelectedDate: DateTime.now(),
+          selectionColor: Colors.green,
+          selectedTextColor: Colors.white,
+          dateTextStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            color: Colors.grey
+        ),
+      ),
+      ),
+         /* Divider(
             color: Color(0xFFB0F3CB),
           ),
           Padding(
@@ -176,9 +210,9 @@ class TopContainer extends StatelessWidget {
                 ),
               );
             },
-          ),
+          ),*/
         ],
-      ),
+      //),
     );
   }
 }
@@ -209,14 +243,20 @@ class BottomContainer extends StatelessWidget {
         } else {
           return Container(
             color: Color(0xFFF6F8FC),
-            child: GridView.builder(
+            child: //GridView
+            ListView.builder(
               padding: EdgeInsets.only(top: 12),
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              //gridDelegate:
+                  //SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemCount: snapshot.data.length,
               itemBuilder: (context, index) {
-                return MedicineCard(snapshot.data[index]);
+                return  AnimationConfiguration.staggeredList(
+                  position: index,
+  
+                child: MedicineCard(snapshot.data[index])
+                );
               },
+             
             ),
           );
         }
