@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -11,7 +12,8 @@ class Register extends StatefulWidget {
   @override
   _RegisterState createState() => _RegisterState();
 }
-
+final user =  FirebaseAuth.instance.currentUser;
+var cred;
 class _RegisterState extends State<Register> {
 
   TextEditingController emailController = TextEditingController();
@@ -107,91 +109,6 @@ class _RegisterState extends State<Register> {
         
       
              
-           /*   Padding(padding: EdgeInsets.only(top: 20),
-               child: RaisedButton(
-                 color: Colors.pinkAccent,
-                 child: Text("Sign In", style: TextStyle(color: Colors.white),),
-        onPressed: (){
-          context.read<AuthenticationService>().signIn(
-            email: EMAILController.text.trim(),
-            password: passController.text.trim(),
-          );*/
-
-
-                              /*Container(
-                                height: 3 * MyDimens.double_20,
-                                constraints: BoxConstraints(
-                                    maxWidth: MyDimens.double_600),
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: MyDimens.double_30,
-                                    vertical: MyDimens.double_20),
-                                child: CupertinoTextField(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: MyDimens.double_15),
-                                    decoration: BoxDecoration(
-                                        color: MyColors.inputFieldPink,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(
-                                                MyDimens.double_4))),
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .subtitle1
-                                        .copyWith(
-                                        color: MyColors.lightestPink,
-                                       // fontFamily: 'lexenddeca'
-                                       ),
-                                    controller: emailController,
-                                    clearButtonMode:
-                                    OverlayVisibilityMode.editing,
-                                    keyboardType: TextInputType.emailAddress,
-                                    maxLines: 1,
-                                    
-                                    placeholderStyle: Theme.of(context)
-                                        .textTheme
-                                        .headline6
-                                        .copyWith(fontSize: 18,
-                                        color: MyColors.inputFieldTextPink,
-                                        //fontFamily: 'lexenddeca'
-                                        )),
-                              ),
-
-                               Container(
-                                height: 3 * MyDimens.double_20,
-                                constraints: BoxConstraints(
-                                    maxWidth: MyDimens.double_600),
-                                margin: EdgeInsets.symmetric(
-                                    horizontal: MyDimens.double_30,
-                                    vertical: MyDimens.double_20),
-                                child: CupertinoTextField(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: MyDimens.double_15),
-                                    decoration: BoxDecoration(
-                                        color: MyColors.inputFieldPink,
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(
-                                                MyDimens.double_4))),
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .subtitle1
-                                        .copyWith(
-                                        color: MyColors.lightestPink,
-                                       // fontFamily: 'lexenddeca'
-                                       ),
-                                    controller: passController,
-                                    clearButtonMode:
-                                    OverlayVisibilityMode.editing,
-                                    keyboardType: TextInputType.text,
-                                   
-                                    maxLines: 1,
-                                    //placeholder: MyStrings.placeholderLoginAuth,
-                                    placeholderStyle: Theme.of(context)
-                                        .textTheme
-                                        .headline6
-                                        .copyWith(fontSize: 18,
-                                        color: MyColors.inputFieldTextPink,
-                                        //fontFamily: 'lexenddeca'
-                                        )),
-                              ),*/
 
                               Container(
                                 margin: EdgeInsets.symmetric(
@@ -205,17 +122,24 @@ class _RegisterState extends State<Register> {
                                       child: OutlineButton(
                                         onPressed: () async {
                                          if (emailController.text.isNotEmpty & passController.text.isNotEmpty) {
-//email signup                  
-          /*context.read<AuthenticationService>().signUp(
-            email: emailController.text.trim(),
-            password: passController.text.trim(),
-          );*/
+
                     try {
                       //UserCredential userCredential = 
                       await FirebaseAuth.instance.createUserWithEmailAndPassword(
                         email: emailController.text.trim(),
                         password: passController.text.trim(),   
-                      );                    
+                      ).then((cred) => {
+                        FirebaseFirestore.instance.collection("medicine_name").doc(cred.user.uid).set(
+                          {
+                        'medicine_name':null,
+                        'dosage':null, 
+                        'time':null,
+                        'interval': null,
+                          }
+                        )
+                      }
+                      
+                       );                    
                       Fluttertoast.showToast(  
                       msg: 'Signed up',  
                       toastLength: Toast.LENGTH_LONG,  

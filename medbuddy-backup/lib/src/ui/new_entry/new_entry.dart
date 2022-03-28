@@ -45,7 +45,7 @@ var myTimeOfDayObject= time;
 class _NewEntryState extends State<NewEntry> {
 
 //collection names
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
+  //CollectionReference users = FirebaseFirestore.instance.collection('users');
   //CollectionReference
    final collectionReference = FirebaseFirestore.instance.collection('medicine_name').doc(firebaseUser.uid);
 
@@ -249,15 +249,16 @@ _NewEntryState({this.uid});
                       String medicineName;
                       int dosage;
                       
-                      await collectionReference.set({
+                      await collectionReference.set(
+                        {
                         'medicine_name':medname,
                         'dosage':dos, 
                         'time':timeOfDayToFirebase(myTimeOfDayObject),
                         'interval': intervalT,
                         },
-                        SetOptions(merge : true));
+                        SetOptions(merge : true)
+                        );
                         //time=TimeOfDay(hour: 0, minute: 0);
-                        
 
                       //--------------------Error Checking------------------------
                       //Had to do error checking in UI

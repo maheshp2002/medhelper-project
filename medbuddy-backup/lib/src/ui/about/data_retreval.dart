@@ -8,9 +8,11 @@ class UserInformation extends StatefulWidget {
     _UserInformationState createState() => _UserInformationState();
 }
 
-final firebaseUser = FirebaseAuth.instance.currentUser;
 User loggedInUser;
 String medname;
+String dosage;
+String interval;
+String time;
 
 class _UserInformationState extends State<UserInformation> {
 
@@ -26,31 +28,6 @@ Widget build(BuildContext context) {
 class AddData extends StatelessWidget {
   //CollectionReference  
   final collectionReference = FirebaseFirestore.instance.collection('medicine_name').snapshots();
-  final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-
-  /*FirebaseFirestore.instance.collection('users').document(userId).get()         
-  .then((DocumentSnapshot ds) { 
-          // use ds as a snapshot 
-          ds['name']     
-           });*/
-
-fetch() async{
-   await FirebaseAuth.instance.currentUser;
-  if(firebaseUser != null)
-  await FirebaseFirestore.instance
-  .collection('medicine_name')
-  .doc(firebaseUser.uid)
-  .get()
-  .then((data) async {
-   //var dataReceive 
-   medname = data['medicine_name'];
-   return medname;
-   });
-  //.then((ds){
-    //medname = ds.data('medicine_name'),}
-    
-  }
-
 
 
 @override
@@ -72,11 +49,17 @@ Widget build(BuildContext context) {
   ),
 	body: 
  Center(child: FutureBuilder(
+   future: fetch(),
     builder: (context, snapshot) {
-     //if (snapshot.connectionState != ConnectionState.done)
-        //return Text("Loading");
-      return Text("medicine_name : $medname");
-  
+     if (snapshot.connectionState != ConnectionState.done)
+        return Text("Loading");
+      return Column(children: [
+        Text("medicine_name : $medname"),
+        Text("dosage : $dosage"),
+        Text("interval: $interval"),
+        Text("time: $time"),
+  ],
+      );
     }
     ),
     )
@@ -114,3 +97,28 @@ Widget build(BuildContext context) {
   
 }
 }
+fetch() async{
+  final firebaseUser = await FirebaseAuth.instance.currentUser;
+  if(firebaseUser != null){
+  await FirebaseFirestore.instance
+  .collection('medicine_name')
+  .doc(firebaseUser.uid)
+  .get()
+  //.then((data) async {
+   //var dataReceive 
+   //medname = data['medicine_name'];
+   //return medname;
+  // });
+  .then((ds){
+    medname = ds.data()["medicine_name"];
+    dosage = ds.data()["dosage"];
+    interval = ds.data()["interval"];
+    time = ds.data()["time"];
+    }
+  ).catchError((e){
+print(e);
+  }
+  );
+    }
+  }
+
