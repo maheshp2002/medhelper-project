@@ -76,10 +76,7 @@ class _settingsPageState extends State<settings>{
               onPressed: ()  {
                 //for signout
                 context.read<AuthenticationService>().signOut();
-                
-                //RestartWidget.restartApp(context);
-
-
+               
               }
               ),
               ),

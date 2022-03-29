@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/common/convert_time.dart';
 import 'package:medbuddy/src/global_bloc.dart';
@@ -18,12 +17,15 @@ class NewEntry extends StatefulWidget {
   @override
   _NewEntryState createState() => _NewEntryState();
 }
-
+  String _selectedTime;
 //for firebase
 int intervalT;
 TimeOfDay picked ;
-TimeOfDay time;
-final firebaseUser =  FirebaseAuth.instance.currentUser;
+//TimeOfDay time;
+//final firebaseUser =  FirebaseAuth.instance.currentUser;
+
+
+
 
 Map timeOfDayToFirebase(TimeOfDay time){
     return {
@@ -41,7 +43,7 @@ TimeOfDay firebaseToTimeOfDay(Map data){
 
 
 
-var myTimeOfDayObject= time;
+//var myTimeOfDayObject= time;
 
 class _NewEntryState extends State<NewEntry> {
 
@@ -90,6 +92,8 @@ _NewEntryState({this.uid});
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
+
+
 
     return Scaffold(
       key: _scaffoldKey,
@@ -255,7 +259,8 @@ _NewEntryState({this.uid});
                         {
                         'medicine_name':medname,
                         'dosage':dos, 
-                        'time':timeOfDayToFirebase(myTimeOfDayObject).toString(),
+                        'time':_selectedTime,
+                        //timeOfDayToFirebase(myTimeOfDayObject).toString(),
                         'interval': intervalT.toString(),
                         },
                         //SetOptions(merge : true)
@@ -556,7 +561,8 @@ class _SelectTimeState extends State<SelectTime> {
     if (picked != null && picked != _time) {
       setState(() {
         _time = picked;
-        time=picked;
+        _selectedTime = picked.format(context);
+        
         _clicked = true;
         _newEntryBloc.updateTime("${convertTime(_time.hour.toString())}" +
             "${convertTime(_time.minute.toString())}");
@@ -565,9 +571,20 @@ class _SelectTimeState extends State<SelectTime> {
     
     return picked;
   }
-
   @override
   Widget build(BuildContext context) {
+
+      //for firebase time picker
+    /*Future<void> timepc() async {
+    final TimeOfDay result =
+        await showTimePicker(context: context, initialTime: TimeOfDay.now());
+    if (result != null) {
+      setState(() {
+        _selectedTime = result.format(context);
+        return _selectedTime;
+      });
+    }
+  }*/
     return Container(
       height: 60,
       child: Padding(
@@ -576,10 +593,12 @@ class _SelectTimeState extends State<SelectTime> {
           color: Color(0xFF3EB16F),
           shape: StadiumBorder(),
           onPressed: () {
+            //timepc();
+            
             _selectTime(context);
           },
           child: Center(
-            child: Text(
+            child: Text(//"Pick Time"
               _clicked == false
                   ? "Pick Time"
                   : "${convertTime(_time.hour.toString())}:${convertTime(_time.minute.toString())}",
