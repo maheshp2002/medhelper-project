@@ -129,12 +129,12 @@ class _RegisterState extends State<Register> {
                         email: emailController.text.trim(),
                         password: passController.text.trim(),   
                       ).then((cred) => {
-                        FirebaseFirestore.instance.collection("medicine_name").doc(cred.user.uid).set(
+                        FirebaseFirestore.instance.collection(cred.user.uid).doc().set(
                           {
-                        'medicine_name':null,
-                        'dosage':null, 
-                        'time':null,
-                        'interval': null,
+                        'medicine_name':"0",
+                        'dosage':"0", 
+                        'time':"0",
+                        'interval': "0",
                           }
                         )
                       }

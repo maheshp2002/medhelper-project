@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
+import 'package:medbuddy/src/ui/settings/restartapp.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 import '../login page/auth_class.dart';
@@ -77,6 +79,9 @@ class _settingsPageState extends State<settings>{
               onPressed: ()  {
                 //for signout
                 context.read<AuthenticationService>().signOut();
+                _deleteCacheDir();
+                RestartWidget.restartApp(context);
+
 
               }
               ),
@@ -91,3 +96,11 @@ class _settingsPageState extends State<settings>{
   }
 
 }
+                /// this will delete cache
+        Future<void> _deleteCacheDir() async {
+        final cacheDir = await getTemporaryDirectory();
+
+         if (cacheDir.existsSync()) {
+      cacheDir.deleteSync(recursive: true);
+          }
+            }

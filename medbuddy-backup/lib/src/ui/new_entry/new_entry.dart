@@ -8,6 +8,7 @@ import 'package:medbuddy/src/models/errors.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/models/medicine_type.dart';
 import 'package:medbuddy/src/ui/homepage/homepage.dart';
+import 'package:medbuddy/src/ui/login%20page/register.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry_bloc.dart';
 import 'package:medbuddy/src/ui/success_screen/success_screen.dart';
 import 'package:provider/provider.dart';
@@ -47,7 +48,8 @@ class _NewEntryState extends State<NewEntry> {
 //collection names
   //CollectionReference users = FirebaseFirestore.instance.collection('users');
   //CollectionReference
-   final collectionReference = FirebaseFirestore.instance.collection('medicine_name').doc(firebaseUser.uid);
+   final collectionReference = FirebaseFirestore.instance.collection(user.uid);
+   //.doc(user.uid);
 
 //string for firebase
 String medname;
@@ -249,14 +251,14 @@ _NewEntryState({this.uid});
                       String medicineName;
                       int dosage;
                       
-                      await collectionReference.set(
+                      await collectionReference.add(
                         {
                         'medicine_name':medname,
                         'dosage':dos, 
-                        'time':timeOfDayToFirebase(myTimeOfDayObject),
-                        'interval': intervalT,
+                        'time':timeOfDayToFirebase(myTimeOfDayObject).toString(),
+                        'interval': intervalT.toString(),
                         },
-                        SetOptions(merge : true)
+                        //SetOptions(merge : true)
                         );
                         //time=TimeOfDay(hour: 0, minute: 0);
 

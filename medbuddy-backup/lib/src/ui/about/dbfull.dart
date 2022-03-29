@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
+import 'package:medbuddy/src/ui/login%20page/register.dart';
 
 class dbfull extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ Widget build(BuildContext context) {
 }
 
 class AddData extends StatelessWidget {
-  CollectionReference collectionReference = FirebaseFirestore.instance.collection('medicine_name');
+  CollectionReference collectionReference = FirebaseFirestore.instance.collection(user.uid);
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 @override
 Widget build(BuildContext context) {
@@ -51,7 +51,8 @@ Widget build(BuildContext context) {
           ),
 
            title: Text(doc['time'].toString()),
-           subtitle:  Text(doc["dosage"].toString())
+           subtitle:  Text(doc["dosage"].toString()),
+           
            ))
         .toList(),
 

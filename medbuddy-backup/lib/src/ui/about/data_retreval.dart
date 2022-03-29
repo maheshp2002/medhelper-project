@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/login%20page/register.dart';
 import 'package:medbuddy/src/ui/about/dbfull.dart';
 
 class UserInformation extends StatefulWidget {
@@ -27,7 +28,7 @@ Widget build(BuildContext context) {
 
 class AddData extends StatelessWidget {
   //CollectionReference  
-  final collectionReference = FirebaseFirestore.instance.collection('medicine_name').snapshots();
+  final collectionReference = FirebaseFirestore.instance.collection(user.uid).snapshots();
 
 
 @override
@@ -48,7 +49,7 @@ Widget build(BuildContext context) {
         elevation: 0.0,
   ),
 	body: 
- Center(child: FutureBuilder(
+ /*Center(child: FutureBuilder(
    future: fetch(),
     builder: (context, snapshot) {
      if (snapshot.connectionState != ConnectionState.done)
@@ -62,11 +63,11 @@ Widget build(BuildContext context) {
       );
     }
     ),
-    )
+    )*/
   
 
 
-  /* StreamBuilder(stream: collectionReference//.snapshots()
+  StreamBuilder(stream: collectionReference//.snapshots()
   ,
    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
      if(snapshot.hasData){
@@ -90,19 +91,19 @@ Widget build(BuildContext context) {
      }
      return Center(child: CircularProgressIndicator(),
      );
-     },),*/
+     },),
 
   );
 	
   
 }
 }
-fetch() async{
+/*fetch() async{
   final firebaseUser = await FirebaseAuth.instance.currentUser;
   if(firebaseUser != null){
   await FirebaseFirestore.instance
-  .collection('medicine_name')
-  .doc(firebaseUser.uid)
+  .collection(user.uid)
+  .doc()
   .get()
   //.then((data) async {
    //var dataReceive 
@@ -120,5 +121,5 @@ print(e);
   }
   );
     }
-  }
+  }*/
 
