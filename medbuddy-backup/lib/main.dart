@@ -1,13 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/global_bloc.dart';
-
-
 import 'package:medbuddy/src/ui/splash_screen/splash.dart';
-
 import 'package:medbuddy/Login_ui/Screens/Login/index.dart';
-
-
 import 'package:provider/provider.dart';
 
 

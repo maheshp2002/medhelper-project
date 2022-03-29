@@ -1,9 +1,9 @@
-
+import 'package:flutter_restart/flutter_restart.dart';
 import 'dart:core';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-//import 'package:medbuddy/src/ui/tabpage/tabs.dart';
+import 'package:path_provider/path_provider.dart';
 
 class AuthenticationService{
   final FirebaseAuth _firebaseAuth;
@@ -15,6 +15,8 @@ class AuthenticationService{
 
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
+    _restartApp();
+    _deleteCacheDir();
   }
 
   Future<String> signIn({String email, String password}) async{
@@ -93,3 +95,16 @@ class AuthenticationService{
   }
 }
 
+//restart app
+   void _restartApp() async {
+  await FlutterRestart.restartApp();
+}
+
+// this will delete cache
+Future<void> _deleteCacheDir() async {
+final cacheDir = await getTemporaryDirectory();
+
+if (cacheDir.existsSync()) {
+cacheDir.deleteSync(recursive: true);
+}
+}
