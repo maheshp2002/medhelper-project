@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/main.dart';
 import 'package:medbuddy/src/common/convert_time.dart';
 import 'package:medbuddy/src/global_bloc.dart';
 import 'package:medbuddy/src/models/errors.dart';
@@ -88,6 +89,25 @@ _NewEntryState({this.uid});
     initializeNotifications();
     initializeErrorListen();
   }
+
+  void showNotification(){
+  flutterLocalNotificationsPlugin.show(
+    0,
+    "Time to take your medicine ",
+    "as per prescription",
+    NotificationDetails(
+      android: AndroidNotificationDetails(
+        channel.id,
+        channel.name,
+        channel.description,
+        importance: Importance.high,
+        color: Colors.blue,
+        playSound: true,
+        //icon: '@minmap/ic_launcher'
+      )
+    )
+    );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -254,6 +274,7 @@ _NewEntryState({this.uid});
                     onPressed: () async{
                       String medicineName;
                       int dosage;
+                      showNotification();
                       
                       await collectionReference.add(
                         {

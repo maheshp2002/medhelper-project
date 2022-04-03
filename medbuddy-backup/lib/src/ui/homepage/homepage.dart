@@ -123,16 +123,19 @@ class TopContainer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                
               Text(DateFormat.yMMMMd().format(DateTime.now()),
               style: TextStyle(
                 fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: "Ic"
                 ),
               ),
+             
               Text("Today",
                style: TextStyle(
               fontSize: 15,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: "Ic"
               ),
               ),
+              
             ]),
           ),
         Container(
@@ -212,7 +215,6 @@ class TopContainer extends StatelessWidget {
             },
           ),*/
         ],
-      //),
     );
   }
 }
@@ -383,170 +385,3 @@ class MedicineCard extends StatelessWidget {
     );
   }
 }
-
-// class MiddleContainer extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     final GlobalBloc globalBloc = Provider.of<GlobalBloc>(context);
-//     return StreamBuilder<Object>(
-//         stream: globalBloc.selectedDay$,
-//         builder: (context, snapshot) {
-//           return Container(
-//             height: double.infinity,
-//             width: double.infinity,
-//             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//               children: <Widget>[
-//                 GestureDetector(
-//                   onTap: () {
-//                     globalBloc.updateSelectedDay(Day.Saturday);
-//                   },
-//                   child: Container(
-//                     height: double.infinity,
-//                     width: 50,
-//                     child: Center(
-//                       child: Text(
-//                         "Sat",
-//                         style: TextStyle(
-//                           color: snapshot.data == (Day.Saturday)
-//                               ? Colors.black
-//                               : Color(0xFFC9C9C9),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//                 GestureDetector(
-//                   onTap: () {
-//                     globalBloc.updateSelectedDay(Day.Sunday);
-//                   },
-//                   child: Container(
-//                     height: double.infinity,
-//                     width: 50,
-//                     child: Center(
-//                       child: Text(
-//                         "Sun",
-//                         style: TextStyle(
-//                           color: snapshot.data == (Day.Sunday)
-//                               ? Colors.black
-//                               : Color(0xFFC9C9C9),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//                 GestureDetector(
-//                   onTap: () {
-//                     globalBloc.updateSelectedDay(Day.Monday);
-//                   },
-//                   child: Container(
-//                     height: double.infinity,
-//                     width: 50,
-//                     child: Center(
-//                       child: Text(
-//                         "Mon",
-//                         style: TextStyle(
-//                           color: snapshot.data == (Day.Monday)
-//                               ? Colors.black
-//                               : Color(0xFFC9C9C9),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//                 GestureDetector(
-//                   onTap: () {
-//                     globalBloc.updateSelectedDay(Day.Tuesday);
-//                   },
-//                   child: Container(
-//                     height: double.infinity,
-//                     width: 50,
-//                     child: Center(
-//                       child: Text(
-//                         "Tue",
-//                         style: TextStyle(
-//                           color: snapshot.data == (Day.Tuesday)
-//                               ? Colors.black
-//                               : Color(0xFFC9C9C9),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//                 GestureDetector(
-//                   onTap: () {
-//                     globalBloc.updateSelectedDay(Day.Wednesday);
-//                   },
-//                   child: Container(
-//                     height: double.infinity,
-//                     width: 50,
-//                     child: Center(
-//                       child: Text(
-//                         "Wed",
-//                         style: TextStyle(
-//                           color: snapshot.data == (Day.Wednesday)
-//                               ? Colors.black
-//                               : Color(0xFFC9C9C9),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//                 GestureDetector(
-//                   onTap: () {
-//                     globalBloc.updateSelectedDay(Day.Thursday);
-//                   },
-//                   child: Container(
-//                     height: double.infinity,
-//                     width: 50,
-//                     child: Center(
-//                       child: Text(
-//                         "Thu",
-//                         style: TextStyle(
-//                           color: snapshot.data == (Day.Thursday)
-//                               ? Colors.black
-//                               : Color(0xFFC9C9C9),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//                 GestureDetector(
-//                   onTap: () {
-//                     globalBloc.updateSelectedDay(Day.Friday);
-//                   },
-//                   child: Container(
-//                     height: double.infinity,
-//                     width: 50,
-//                     child: Center(
-//                       child: Text(
-//                         "Fri",
-//                         style: TextStyle(
-//                           color: snapshot.data == (Day.Friday)
-//                               ? Colors.black
-//                               : Color(0xFFC9C9C9),
-//                           fontSize: 16,
-//                           fontWeight: FontWeight.w500,
-//                         ),
-//                       ),
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           );
-//         });
-//   }
-// }
