@@ -1,10 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:medbuddy/src/ui/homepage/homepage.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
+import 'package:medbuddy/src/ui/prescription/Prescription.dart';
 import 'package:medbuddy/src/ui/search/search.dart';
-import 'package:medbuddy/src/ui/settings/settings.dart';
 
 
 class tab extends StatefulWidget {
@@ -20,11 +19,11 @@ class _TabPageState extends State<tab>{
   Widget build(BuildContext context) {
   
     //for screens
-    final screen = [settings(), HomePage(), search(), NewEntry()];
+    final screen = [Prescrition(), HomePage(), search(), NewEntry()];
  
     //for tabs icon
     final items = <Widget>[
-      Icon(Icons.settings, size: 30, color: Colors.white),
+      Icon(Icons.book, size: 30, color: Colors.white),
       Icon(Icons.home, size: 30, color: Colors.white),
       Icon(Icons.search, size: 30, color: Colors.white),    
       Icon(Icons.add, size: 30, color: Colors.white),

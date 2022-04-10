@@ -5,6 +5,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:intl/intl.dart';
 import 'package:medbuddy/src/global_bloc.dart';
 import 'package:medbuddy/src/models/medicine.dart';
+import 'package:medbuddy/src/ui/homepage/navBar.dart';
 import 'package:medbuddy/src/ui/medicine_details/medicine_details.dart';
 import 'package:provider/provider.dart';
 
@@ -26,18 +27,27 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
     return Scaffold(
+      
+      drawer: NavDrawer(),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color(0xFF3EB16F),
         title: Text("Medbuddy"),
-        elevation: 0.0,
-                actions: [
-          IconButton(icon: Icon(Icons.person, size: 20),
-              onPressed: ()  {
-                //context.read<AuthenticationService>().signOut();
-
-              }
-          ),
-                ]
+        elevation: 16.0,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: Colors.white, // Change Custom Drawer Icon Color
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              //tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
         
       ),
       body: Container(

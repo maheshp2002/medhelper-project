@@ -3,19 +3,19 @@ import 'package:medbuddy/src/ui/about/about.dart';
 import 'package:provider/provider.dart';
 import '../login page/auth_class.dart';
 
-class Settings extends StatefulWidget {
+class Prescrition extends StatefulWidget {
   @override
-  _SettingsPageState createState() => _SettingsPageState();
+  _PrescritionPageState createState() => _PrescritionPageState();
 }
 
-class _SettingsPageState extends State<Settings>{
+class _PrescritionPageState extends State<Prescrition>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
         backgroundColor: Color(0xFF3EB16F),
         title: Text(
-          "Settings",
+          "Prescription",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -34,7 +34,7 @@ class _SettingsPageState extends State<Settings>{
         child: Column(
          
           children: <Widget>[  
-            Text("Settings"),
+            Text("Prescription"),
 
          ])) ));
   }
