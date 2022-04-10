@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/Login_ui/Screens/Login/index.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
 class Register extends StatefulWidget {
@@ -149,7 +150,7 @@ class _RegisterState extends State<Register> {
                       textColor: Colors.white  
                   );
                       Navigator.push(context, 
-                      MaterialPageRoute(builder: (BuildContext context) =>  login1()));
+                      MaterialPageRoute(builder: (BuildContext context) =>  tab()));
 
                        
                     } on FirebaseAuthException catch (e) {

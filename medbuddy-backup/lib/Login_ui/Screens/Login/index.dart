@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/Login_ui/Components/seller.dart';
 import 'package:medbuddy/global/myColors.dart';
+import 'package:medbuddy/seller/sellerLogin/Screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import '../../../src/ui/login page/auth_class.dart';
 import '../../../src/ui/tabpage/tabs.dart';
@@ -65,8 +67,7 @@ class AuthenticationWrapper extends StatelessWidget{
 }
    
 
-class LoginScreenState extends StatelessWidget
-     {
+class LoginScreenState extends StatelessWidget {
   AnimationController _loginButtonController;
   var animationStatus = 0;
 
@@ -97,9 +98,9 @@ class LoginScreenState extends StatelessWidget
                 ),
                 new TextButton(
                   onPressed: (){
-                context.read<AuthenticationService>().signIn(
+                //context.read<AuthenticationService>().signIn(
         
-              );
+              //);
               //Navigator.push(
                 //context,
                 //MaterialPageRoute(builder: (BuildContext context) =>  tab())
@@ -148,6 +149,7 @@ class LoginScreenState extends StatelessWidget
                           new Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
+                              new Seller(),
                               new Tick(image: tick),
                               new FormContainer(),
                               new SignUp()

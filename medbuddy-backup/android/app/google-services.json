@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "289184445857-at7iqqle9km7g7aelvd9nd88fu3d8u5h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medhelper.medhelper",
+            "certificate_hash": "13308d69d23c412ba5c6d3f64e768ac516483f34"
+          }
+        },
+        {
           "client_id": "289184445857-7jjhdm1nbt436ei1iqa12v4h37a5flhu.apps.googleusercontent.com",
           "client_type": 3
         }

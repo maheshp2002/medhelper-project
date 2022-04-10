@@ -81,7 +81,7 @@ Widget build(BuildContext context) {
             side: BorderSide(color: Colors.white30),
           ),
              onTap: () {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                   builder: (context) => dbfull(),
