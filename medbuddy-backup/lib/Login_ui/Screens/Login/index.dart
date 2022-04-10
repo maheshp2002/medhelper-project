@@ -121,7 +121,15 @@ class LoginScreenState extends StatelessWidget {
   Widget build(BuildContext context) {
     timeDilation = 0.4;
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    return (new WillPopScope(
+    return ( 
+    /*Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF3EB16F),
+        title: Text("Medbuddy"),
+        elevation: 0.0,
+      ),
+    body: */
+     new WillPopScope(
         onWillPop: _onWillPop,
         child: new Scaffold(
           body: new Container(
@@ -149,10 +157,10 @@ class LoginScreenState extends StatelessWidget {
                           new Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              new Seller(),
                               new Tick(image: tick),
                               new FormContainer(),
-                              new SignUp()
+                              new SignUp(),
+                              new Seller(),
                             ],
                           ),
                           /*animationStatus == 0

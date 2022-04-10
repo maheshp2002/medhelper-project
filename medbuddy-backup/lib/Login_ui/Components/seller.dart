@@ -15,7 +15,7 @@ class Seller extends StatelessWidget {
           },
      child: new Padding(
       padding: const EdgeInsets.only(
-        top: 30, right: 300,
+        top: 50,
       ),
       child: new Text(
         "SELLER",
@@ -25,7 +25,7 @@ class Seller extends StatelessWidget {
         style: new TextStyle(
             fontWeight: FontWeight.w500,
             letterSpacing: 0.5,
-            color: Colors.black38,
+            color: Colors.white38,
             fontSize: 12.0),
       ),
     ));
