@@ -18,15 +18,15 @@ class Seller extends StatelessWidget {
         top: 50,
       ),
       child: new Text(
-        "SELLER",
+        "Seller Login",
         textAlign: TextAlign.left,
         overflow: TextOverflow.ellipsis,
         softWrap: true,
         style: new TextStyle(
             fontWeight: FontWeight.w500,
             letterSpacing: 0.5,
-            color: Colors.white38,
-            fontSize: 12.0),
+            color: Colors.white60,
+            fontSize: 15),
       ),
     ));
   }
