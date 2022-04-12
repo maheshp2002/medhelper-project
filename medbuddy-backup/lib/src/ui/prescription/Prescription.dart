@@ -1,19 +1,36 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/about/about.dart';
-import 'package:provider/provider.dart';
-import '../login page/auth_class.dart';
 
-class Prescrition extends StatefulWidget {
+class Prescription extends StatefulWidget {
   @override
-  _PrescritionPageState createState() => _PrescritionPageState();
+    _PrescriptionState createState() => _PrescriptionState();
 }
 
-class _PrescritionPageState extends State<Prescrition>{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
+
+String prescription;
+
+class _PrescriptionState extends State<Prescription> {
+
+@override
+Widget build(BuildContext context) {
+	return MaterialApp(
+	home: AddData(),
+	);
+}
+}
+
+class AddData extends StatelessWidget {
+  final collectionReference = FirebaseFirestore.instance.collection("prescription").snapshots();
+
+
+@override
+Widget build(BuildContext context) {
+	return 
+  
+  Scaffold(
+  appBar: AppBar(
         backgroundColor: Color(0xFF3EB16F),
+
         title: Text(
           "Prescription",
           style: TextStyle(
@@ -22,24 +39,36 @@ class _PrescritionPageState extends State<Prescrition>{
           ),
         ),
         elevation: 0.0,
-
-      ),
-      backgroundColor: Colors.white,
-
-      body: Container(
-        alignment: Alignment.topLeft,
-        child: Padding(
-          padding: EdgeInsets.only(top: 20),
-        
-        child: Column(
+  ),
+	body: StreamBuilder(stream: collectionReference,
+   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+     if(snapshot.hasData){
+       return ListView(
          
-          children: <Widget>[  
-            Text("Prescription"),
+         children: snapshot.data.docs.map((e) => ListTile(
+           
+           tileColor: Colors.blue,
+           shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+            side: BorderSide(color: Colors.white30),
+          ),
+            /* onTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => dbfull(),
+                  ),);},*/
+           title: Text(e['prescription']),)).toList(),
+       );
+     }
+     return Center(child: CircularProgressIndicator(),
+     );
+     },),
 
-         ])) ));
-  }
-
+  );
+	
+  
 }
-
+}
 
 

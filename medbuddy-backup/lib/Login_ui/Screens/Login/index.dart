@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/Login_ui/Components/doctor.dart';
 import 'package:medbuddy/Login_ui/Components/seller.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/seller/sellerLogin/Screens/welcome_screen.dart';
@@ -161,6 +162,7 @@ class LoginScreenState extends StatelessWidget {
                               new FormContainer(),
                               new SignUp(),
                               new Seller(),
+                              new Doctor(),
                             ],
                           ),
                           /*animationStatus == 0

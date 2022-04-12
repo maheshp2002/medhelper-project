@@ -81,6 +81,7 @@ flutter:
     - assets/splash/
     - assets/logo/
     - assets/login.jpg
+    - assets/images/login.png
     - assets/home.jpeg
     - assets/tick.png
     - assets/

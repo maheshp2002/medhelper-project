@@ -19,7 +19,7 @@ class _TabPageState extends State<tab>{
   Widget build(BuildContext context) {
   
     //for screens
-    final screen = [Prescrition(), HomePage(), search(), NewEntry()];
+    final screen = [Prescription(), HomePage(), search(), NewEntry()];
  
     //for tabs icon
     final items = <Widget>[

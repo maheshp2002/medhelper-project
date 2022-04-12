@@ -93,8 +93,8 @@ _NewEntryState({this.uid});
   void showNotification(){
   flutterLocalNotificationsPlugin.show(
     0,
-    "Time to take your medicine ",
-    "as per prescription",
+    "New Medicine Added",
+    "Check home screen",
     NotificationDetails(
       android: AndroidNotificationDetails(
         channel.id,
