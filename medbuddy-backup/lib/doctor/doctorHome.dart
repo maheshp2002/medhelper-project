@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:medbuddy/seller/sellerLogin/Screens/welcome_screen.dart';
-import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
+import 'package:medbuddy/doctor/dcNavBar.dart';
+
 
 
 class doctorHomePage extends StatefulWidget {
@@ -19,7 +18,6 @@ class _doctorHomePageState extends State<doctorHomePage> {
    TextEditingController prescriptionController = TextEditingController();
    TextEditingController emailidController = TextEditingController();
   final collectionReference = FirebaseFirestore.instance;
- // User user = FirebaseAuth.instance.currentUser;
   @override
   void initState() {
     super.initState();
@@ -28,41 +26,65 @@ class _doctorHomePageState extends State<doctorHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: dcNavBar(),
         appBar: AppBar(
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.logout,
-                color: Colors.white,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.blue,
+        title: Text("Home"),
+        elevation: 16.0,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: Colors.white, 
               ),
-              onPressed: () async {
-               FirebaseService service = new FirebaseService();
-                await service.signOutFromGoogle();
-               Navigator.of(context).pop(MaterialPageRoute(builder: (ctx) => WelcomeScreen()));
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
               },
-            )
-          ],
-          systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.blue),
-          title: Text("Home"),
-        ),
-        body: Column(
+            
+            );
+          },
+        ),),
+
+        body:  Padding(
+        padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Flexible(child:
-            Text("Enter Prescription here:", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),),
+
             Flexible(
               child:TextField(
+              decoration: InputDecoration(
+              hintText: "Enter prescription here",
+              labelText: "Prescription:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
                onChanged: ((value) {
                   prescription = value;
                 }),
             controller: prescriptionController,
             keyboardType: TextInputType.multiline,
-            maxLines: 20,
+            maxLines: 30,
           ),),
-          Flexible(child:
-            Text("Enter email ID:", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),),
+          SizedBox(
+            height: 16,
+          ),
             Flexible(
               child:TextField(
+              decoration: InputDecoration(
+              hintText: "Enter email ID of patient",
+              labelText: "Email ID:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
                onChanged: ((value) {
                   emailid = value;
                 }),
@@ -76,7 +98,7 @@ class _doctorHomePageState extends State<doctorHomePage> {
                   width: 220,
                   height: 70,
                   child: FlatButton(
-                    color: Color(0xFF3EB16F),
+                    color: Colors.blue,
                     shape: StadiumBorder(),
                     child: Center(
                       child: Text(
@@ -108,6 +130,6 @@ class _doctorHomePageState extends State<doctorHomePage> {
                         )
                         )),),
           ],
-        ));
+        )));
   }
 }

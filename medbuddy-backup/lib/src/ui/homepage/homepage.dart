@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color(0xFF3EB16F),
-        title: Text("Medbuddy"),
+        title: Text("MedHelper"),
         elevation: 16.0,
         leading: Builder(
           builder: (BuildContext context) {
