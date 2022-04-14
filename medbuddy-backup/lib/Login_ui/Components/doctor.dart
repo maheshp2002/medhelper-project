@@ -18,7 +18,7 @@ class Doctor extends StatelessWidget {
           },
      child: new Padding(
       padding: const EdgeInsets.only(
-        top: 50,
+        top: 30,
       ),
       child: new Text(
         "Doctor Login",

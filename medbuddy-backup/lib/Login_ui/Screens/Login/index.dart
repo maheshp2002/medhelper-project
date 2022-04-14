@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:medbuddy/Login_ui/Components/doctor.dart';
 import 'package:medbuddy/Login_ui/Components/seller.dart';
 import 'package:medbuddy/global/myColors.dart';
-import 'package:medbuddy/seller/sellerLogin/Screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import '../../../src/ui/login page/auth_class.dart';
 import '../../../src/ui/tabpage/tabs.dart';

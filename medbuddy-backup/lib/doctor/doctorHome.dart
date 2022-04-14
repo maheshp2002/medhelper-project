@@ -15,8 +15,10 @@ class doctorHomePage extends StatefulWidget {
 
 class _doctorHomePageState extends State<doctorHomePage> {
   String prescription;
+  String emailid;
    TextEditingController prescriptionController = TextEditingController();
-  final collectionReference = FirebaseFirestore.instance.collection("prescription");
+   TextEditingController emailidController = TextEditingController();
+  final collectionReference = FirebaseFirestore.instance;
  // User user = FirebaseAuth.instance.currentUser;
   @override
   void initState() {
@@ -53,9 +55,20 @@ class _doctorHomePageState extends State<doctorHomePage> {
                onChanged: ((value) {
                   prescription = value;
                 }),
-              controller: prescriptionController,
+            controller: prescriptionController,
             keyboardType: TextInputType.multiline,
             maxLines: 20,
+          ),),
+          Flexible(child:
+            Text("Enter email ID:", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),),
+            Flexible(
+              child:TextField(
+               onChanged: ((value) {
+                  emailid = value;
+                }),
+            controller: emailidController,
+            keyboardType: TextInputType.emailAddress,
+            
           ),),
           Flexible(child: Padding(
             padding: EdgeInsets.all(20),
@@ -84,11 +97,12 @@ class _doctorHomePageState extends State<doctorHomePage> {
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   ); 
-                      await collectionReference.add(
+                      await collectionReference.collection(emailid).add(
                         {
                         'prescription':prescription,}, 
                         );
                         prescriptionController.clear();
+                        emailidController.clear();
                         }
                         
                         )
