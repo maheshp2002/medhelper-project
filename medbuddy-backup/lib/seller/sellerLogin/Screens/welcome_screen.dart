@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/seller/sellerLogin/Screens/login_screen.dart';
 import 'package:medbuddy/seller/sellerLogin/Screens/sign_in_page.dart';
 class WelcomeScreen extends StatelessWidget {
 
@@ -82,7 +81,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
+                   /* Container(
                       height: 80,
                       width: double.infinity,
                       padding: const EdgeInsets.only(top: 25, left: 24, right: 24),
@@ -105,7 +104,7 @@ class WelcomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               ),

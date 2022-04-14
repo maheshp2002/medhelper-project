@@ -1,9 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
+/*import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:medbuddy/seller/sellerLogin/Screens/welcome_screen.dart';
-import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
-import 'package:medbuddy/seller/sellerLogin/utils/constants.dart';
+import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
+
+
 
 class SellerHomePage extends StatefulWidget {
   SellerHomePage({Key key}) : super(key: key);
@@ -22,23 +21,26 @@ class _HomePageState extends State<SellerHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       drawer: sellerNavBar(),
         appBar: AppBar(
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.logout,
-                color: Colors.white,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.blue,
+        title: Text("Home"),
+        elevation: 16.0,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: Colors.white, 
               ),
-              onPressed: () async {
-                FirebaseService service = new FirebaseService();
-                await service.signOutFromGoogle();
-                Navigator.of(context).pop(MaterialPageRoute(builder: (ctx) => WelcomeScreen()));
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
               },
-            )
-          ],
-          systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: Colors.blue),
-          title: Text("Home"),
-        ),
+            
+            );
+          },
+        ),),
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -52,4 +54,4 @@ class _HomePageState extends State<SellerHomePage> {
           ],
         )));
   }
-}
+}*/

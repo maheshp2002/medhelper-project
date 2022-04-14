@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:medbuddy/seller/sellerLogin/Screens/sellerHome.dart';
+import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/constants.dart';
 
@@ -18,7 +18,7 @@ class SignInPage extends StatelessWidget {
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset("assets/sign-in.png", width: 200,height: 200),
+          Image.asset("assets/sign-in.png", width: 300,height: 300),
           RichText(
               textAlign: TextAlign.center,
               text: TextSpan(children: <TextSpan>[
@@ -36,9 +36,9 @@ class SignInPage extends StatelessWidget {
             style: TextStyle(color: Constants.kDarkGreyColor),
           ),
           GoogleSignIn(),
-          buildRowDivider(size: size),
+     /*       buildRowDivider(size: size),
           Padding(padding: EdgeInsets.only(bottom: size.height * 0.02)),
-          SizedBox(
+        SizedBox(
             width: size.width * 0.8,
             child: TextField(
                 decoration: InputDecoration(
@@ -96,11 +96,11 @@ class SignInPage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Constants.kDarkBlueColor,
                     )),
-              ])),
+              ])),*/
         ])));
   }
 
-  Widget buildRowDivider({Size size}) {
+  /*Widget buildRowDivider({Size size}) {
     return SizedBox(
       width: size.width * 0.8,
       child: Row(children: <Widget>[
@@ -114,7 +114,7 @@ class SignInPage extends StatelessWidget {
         Expanded(child: Divider(color: Constants.kDarkGreyColor)),
       ]),
     );
-  }
+  }*/
 }
 
 class GoogleSignIn extends StatefulWidget {
@@ -141,7 +141,7 @@ class _GoogleSignInState extends State<GoogleSignIn> {
           FirebaseService service = new FirebaseService();
           try {
            await service.signInwithGoogle();
-           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => SellerHomePage()));
+           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => DataFeed()));
           // Navigator.pushNamedAndRemoveUntil(context, Constants.homeNavigate, (route) => false);
           } catch(e){
             if(e is FirebaseAuthException){

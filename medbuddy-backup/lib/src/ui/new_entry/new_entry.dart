@@ -446,13 +446,13 @@ _NewEntryState({this.uid});
     var hour = int.parse(medicine.startTime[0] + medicine.startTime[1]);
     var ogValue = hour;
     var minute = int.parse(medicine.startTime[2] + medicine.startTime[3]);
-
+   // const alarmAudioPath = "assets/sound/sound.mp3";
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'repeatDailyAtTime channel id',
       'repeatDailyAtTime channel name',
       'repeatDailyAtTime description',
       importance: Importance.max,
-      
+      //sound: alarmAudioPath,
       ledColor: Color(0xFF3EB16F),
       ledOffMs: 1000,
       ledOnMs: 1000,

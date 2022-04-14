@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:latlng/latlng.dart';
+import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
+
+
 
 
 class DataFeed extends StatefulWidget {
@@ -8,29 +12,61 @@ class DataFeed extends StatefulWidget {
   @override
   DataState createState() => DataState();
 }
-
+  LatLng _center ;
+  Position currentLocation;
 class DataState extends State<DataFeed>{
 
 
 //Controller
 TextEditingController _id = new TextEditingController();
 TextEditingController _name = new TextEditingController();
-TextEditingController _address = new TextEditingController();
-TextEditingController _policyno = new TextEditingController();
-TextEditingController _table = new TextEditingController();
-TextEditingController _term = new TextEditingController();
+TextEditingController _dosage = new TextEditingController();
+TextEditingController _availability = new TextEditingController();
+TextEditingController _emailID = new TextEditingController();
+TextEditingController _location = new TextEditingController();
 TextEditingController _mobileno = new TextEditingController();
-TextEditingController _mode = new TextEditingController();
-TextEditingController _amount = new TextEditingController();
 
-DateTime _date = DateTime.now();
+
 
   @override
   Widget build(BuildContext context) {
+
+ Future<Position> locateUser() async {
+    return Geolocator
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  }
+
+  getUserLocation() async {
+    currentLocation = await locateUser();
+    setState(() {
+      _center = LatLng(currentLocation.latitude, currentLocation.longitude);
+    });
+    //print('center $_center');
+    return _center;
+  }
+
+
   return Scaffold(
-    appBar: AppBar(
-      title: Text("Data Feed"),
-    ),
+       drawer: sellerNavBar(),
+        appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.orange,
+        title: Text("Home"),
+        elevation: 16.0,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.person,
+                color: Colors.white, 
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            
+            );
+          },
+        ),),
 //page UI
       body: Column(
     children: [
@@ -48,7 +84,7 @@ DateTime _date = DateTime.now();
             controller: _id,
               decoration: InputDecoration(
                   hintText: "ID",
-                  labelText: "ID",
+                  labelText: "ID:",
                   labelStyle: TextStyle(
                       fontSize: 15,
                       color: Colors.black
@@ -66,8 +102,8 @@ DateTime _date = DateTime.now();
           TextField(
             controller: _name,
             decoration: InputDecoration(
-              hintText: "Your Name",
-              labelText: "Name",
+              hintText: "medicine name",
+              labelText: "Medicine name:",
               labelStyle: TextStyle(
                 fontSize: 15,
                 color: Colors.black
@@ -80,12 +116,33 @@ DateTime _date = DateTime.now();
           SizedBox(
             height: 16,
           ),
-//address
+//dosage
           TextField(
-            controller: _address,
+            controller: _dosage,
             decoration: InputDecoration(
-                hintText: "Your Address",
-                labelText: "Address",
+                hintText: "Dosage",
+                labelText: "Dosage:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
+                ),
+                border: OutlineInputBorder()
+            ),
+
+            maxLength: 15,
+            keyboardType: TextInputType.number,
+          ),
+//gap btw borders
+          SizedBox(
+            height: 16,
+          ),
+//Location
+          Text('center $_center'),
+          TextField(
+            controller: _location,
+            decoration: InputDecoration(
+                hintText: "Location",
+                labelText: "Location:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -95,16 +152,17 @@ DateTime _date = DateTime.now();
 
             maxLines: 3,
           ),
+
 //gap btw borders
           SizedBox(
             height: 16,
           ),
-//policy no.
+//availability
           TextField(
-            controller: _policyno,
+            controller: _availability,
             decoration: InputDecoration(
-                hintText: "Policy number",
-                labelText: "Policy No.",
+                hintText: "Availability",
+                labelText: "Availability:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -115,70 +173,20 @@ DateTime _date = DateTime.now();
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
-//gap btw borders
-          SizedBox(
-            height: 16,
-          ),
-//Term and table
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            new Flexible(
-              child:
-//table
-          new TextField(
-            controller: _table,
-            decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(20),
-                hintText: "Table",
-                labelText: "Table",
-                labelStyle: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black
-                ),
-                border: OutlineInputBorder()
-            ),
-
-            maxLength: 15,
-            keyboardType: TextInputType.number,
-
-          ),
-            ),
-//Term
-          new Flexible(
-            child:
-       new  TextField(
-          controller: _term,
-          decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(20),
-              hintText: "Term",
-              labelText: "Term",
-              labelStyle: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black
-              ),
-              border: OutlineInputBorder()
-          ),
-
-          maxLength: 15,
-          keyboardType: TextInputType.number,
-        ),
-          ),
-],
-        ),
 
 
 //gap btw borders
           SizedBox(
             height: 16,
           ),
+
+
 //mobile no
           TextField(
             controller: _mobileno,
             decoration: InputDecoration(
-                hintText: "Your Mobile Number",
-                labelText: "Mobile No.",
+                hintText: "Mobile Number",
+                labelText: "Mobile No:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -193,12 +201,12 @@ DateTime _date = DateTime.now();
           SizedBox(
             height: 16,
           ),
-//premium paging mode
+//emailID
           TextField(
-            controller: _mode,
+            controller: _emailID,
             decoration: InputDecoration(
-                hintText: "eg:monthly, quaterly, yearly",
-                labelText: "Mode",
+                hintText: "email ID",
+                labelText: "Email-ID:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -207,42 +215,18 @@ DateTime _date = DateTime.now();
             ),
 
           ),
-//gap btw borders
-          SizedBox(
-            height: 16,
-          ),
-//premium amount
-          TextField(
-            controller: _amount,
-            decoration: InputDecoration(
-                hintText: "Premium amount",
-                labelText: "Amount",
-                labelStyle: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black
-                ),
-                border: OutlineInputBorder()
-            ),
 
-            maxLength: 15,
-            keyboardType: TextInputType.number,
-          ),
 //gap btw borders
             SizedBox(
               height: 16,
             ),
-//Date
+
  
-
-//gap btw borders
-          SizedBox(
-            height: 16,
-          ),
-
 
 //Submit Button
           ElevatedButton(
-          child: Text('Submit'),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: Text('Submit', style: TextStyle(color: Colors.white),),
               
           )
         ],

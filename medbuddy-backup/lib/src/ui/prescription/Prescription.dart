@@ -103,7 +103,7 @@ Widget build(BuildContext context) {
  @override
 Widget build(BuildContext context) {
 
-  _tilecolor (){
+ /* _tilecolor (){
   Color mycolor;
   int n=0;
   if(n<=5){
@@ -119,7 +119,7 @@ Widget build(BuildContext context) {
   }
   return mycolor;
 
-}
+}*/
 	return Scaffold(
   appBar: AppBar(
         backgroundColor: Color(0xFF3EB16F),
