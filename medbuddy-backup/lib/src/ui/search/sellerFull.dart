@@ -43,10 +43,6 @@ class _DetailedItemState extends State<SellerFull> {
     Card(
     child: ListTile(               
     title:  Text("Address:" + " " + indexno['address']),
-    onTap: (){
-      //print(indexno['Latitude'].toString());
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomeView()));
-    }
     )),
 //gap btw borders
           const SizedBox(
@@ -68,12 +64,45 @@ class _DetailedItemState extends State<SellerFull> {
 
           const SizedBox(
             height: 16,
-          ),      
-     // Text(geoPoint.toString()),
-    ]),
+          ), 
+ //button for navigator              
+            Padding(
+            padding: EdgeInsets.only(top: 10),
+              child: Flexible(
+                child: SizedBox(              
+                 height: 50,
+                 width: 500,
+                 child: FlatButton(                  
+                splashColor: Colors.white,
+                color: Colors.grey[300],
+                child: Row (
+                 mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text("Location", textAlign: TextAlign.left,
+                  style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                        ),
+                ),
+                  ),
+           const SizedBox(
+            width: 10,
+          ),
+                  Icon(Icons.location_pin),
+                ],
+                ),
+     onPressed: (){
+     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomeView()));
+    }
+    )),     
+    )
+    ),
       
-    
-  ),
+    ]
+  ),),
 );
 }
 
