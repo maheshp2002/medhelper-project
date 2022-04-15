@@ -16,6 +16,10 @@
 
         android:label="Mediminder"
         android:icon="@mipmap/launcher_icon">
+
+        <meta-data 
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDxZFosXzWXNpJ_5eGY2MK6e5VG7WiWjgU"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -27,6 +31,7 @@
                  until Flutter renders its first frame. It can be removed if
                  there is no splash screen (such as the default splash screen
                  defined in @style/LaunchTheme). -->
+
             <meta-data
                 android:name="io.flutter.embedding.android.SplashScreenDrawable"
                 android:resource="@drawable/launch_background" />

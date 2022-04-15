@@ -1,10 +1,7 @@
-// ignore_for_file: unnecessary_import
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/ui/homepage/homepage.dart';
-import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 import 'package:provider/provider.dart';
 
 import '../../global_bloc.dart';
@@ -124,24 +121,37 @@ class MedicineDetails extends StatelessWidget {
                       Flexible(child: 
                       GestureDetector(
                         onTap: () {
-                          _globalBloc.removeMedicine(medicine);
+                      _globalBloc.removeMedicine(medicine);
+                      Fluttertoast.showToast(  
+                      msg: 'Medicine Deleted',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                      Fluttertoast.showToast(  
+                      msg: 'click on back icon to navigate to homescreen',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+
+
                           /*Navigator.popUntil(
                             context,
                             ModalRoute.withName('/'),
-                          );*/
-                      //Navigator.pop(
-                       // context,
-                        //MaterialPageRoute(
-                          //builder: (BuildContext context) {
-                            //return HomePage();
-                          //},
-                        //),
-                        //);
-                        Navigator.pop(context,
+                          );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                             HomePage()));
+                          */
                         
-                        );
-  
-                        },
+                        
+                        Navigator.pop(context);
+               },
                         child: InkWell(
                           child: Container(
                             width: MediaQuery.of(context).size.width / 2.743,

@@ -1,6 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/search/SellerMap.dart';
+import 'package:medbuddy/src/ui/search/googleMap.dart';
 
 
 class SellerFull extends StatefulWidget {
@@ -11,42 +12,7 @@ class SellerFull extends StatefulWidget {
 
 class _DetailedItemState extends State<SellerFull> {
 
-GeoPoint geoPoint = indexno['Latitude'];
-
-/*  var _long, _lat;
-  //List<Address> results = [];
-  bool isLoading = false;
-  String itemAddress;
-
-@override
-  initState() {
-    super.initState();
-   // _long = widget.Item.location.longitude;
-    _lat = widget.Item.location.latitude;
-    getAddressFromCoords(_lat, _long);
-  }
-
-Future getAddressFromCoords(_lat, _long) async {
-    this.setState(() {
-      this.isLoading = true;
-    });
-
-    try {
-      var results = await Geocoder.local
-          .findAddressesFromCoordinates(new Coordinates(_lat, _long));
-      this.setState(() {
-        this.results = results;
-      });
-    } catch (e) {
-      print("Error occured: $e");
-    } finally {
-      this.setState(() {
-        this.isLoading = false;
-        itemAddress =
-            "${results[0].thoroughfare}, ${results[0].locality}, ${results[0].countryName}";
-      });}}
-
-*/
+//GeoPoint geoPoint = indexno['Latitude'];
 
 //....................................................................................................
   @override
@@ -77,6 +43,10 @@ Future getAddressFromCoords(_lat, _long) async {
     Card(
     child: ListTile(               
     title:  Text("Address:" + " " + indexno['address']),
+    onTap: (){
+      //print(indexno['Latitude'].toString());
+      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomeView()));
+    }
     )),
 //gap btw borders
           const SizedBox(
@@ -99,7 +69,7 @@ Future getAddressFromCoords(_lat, _long) async {
           const SizedBox(
             height: 16,
           ),      
-      Text(geoPoint.toString()),
+     // Text(geoPoint.toString()),
     ]),
       
     
