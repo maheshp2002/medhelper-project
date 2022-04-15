@@ -1,9 +1,8 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/1mg.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/netmeds.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/pharmeasy.dart';
+import 'package:medbuddy/src/ui/search/SellerMap.dart';
 
 class search extends StatefulWidget {
   @override
@@ -139,6 +138,44 @@ class _searchPageState extends State<search>{
               ),
                 
               ),
+
+//new
+            Padding(
+            padding: EdgeInsets.only(top: 10),
+              child: Flexible(
+                child: SizedBox(              
+                 height: 50,
+                 width: 500,
+                 child: FlatButton(                  
+                splashColor: Colors.lightGreenAccent,
+                color: Colors.lightGreen,
+                child: Row (children: [
+                  Image.asset("assets/logo/netmeds.png", width: 50),
+                  Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text("New", textAlign: TextAlign.left,
+                  style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.w700,
+                        ),
+                ),
+                  ),
+                ],
+                ),
+                
+/*MaterialPageRoute(builder: (context) => const SecondRoute()*/
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => sellerMap())
+                  );
+                },
+              ),
+                  
+                ),
+              ),
+                
+              ),
+    
 
         ],
       ),

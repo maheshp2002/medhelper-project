@@ -20,7 +20,6 @@ class _UserInformationState extends State<UserInformation> {
 @override
 Widget build(BuildContext context) {
 	return MaterialApp(
-	title: 'Firebase',
 	home: AddData(),
 	);
 }
@@ -33,9 +32,7 @@ class AddData extends StatelessWidget {
 
 @override
 Widget build(BuildContext context) {
-	return 
-  
-  Scaffold(
+	return Scaffold(
   appBar: AppBar(
         backgroundColor: Color(0xFF3EB16F),
 
@@ -48,26 +45,7 @@ Widget build(BuildContext context) {
         ),
         elevation: 0.0,
   ),
-	body: 
- /*Center(child: FutureBuilder(
-   future: fetch(),
-    builder: (context, snapshot) {
-     if (snapshot.connectionState != ConnectionState.done)
-        return Text("Loading");
-      return Column(children: [
-        Text("medicine_name : $medname"),
-        Text("dosage : $dosage"),
-        Text("interval: $interval"),
-        Text("time: $time"),
-  ],
-      );
-    }
-    ),
-    )*/
-  
-
-
-  StreamBuilder(stream: collectionReference//.snapshots()
+	body: StreamBuilder(stream: collectionReference//.snapshots()
   ,
    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
      if(snapshot.hasData){
