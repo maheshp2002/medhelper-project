@@ -20,7 +20,7 @@ class sellerNavBar extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          DrawerHeader(
+          const DrawerHeader(
             child: Text(
               'MedHelper',
               style: TextStyle(color: Colors.white, fontSize: 25),
@@ -32,28 +32,28 @@ class sellerNavBar extends StatelessWidget {
                     image: AssetImage("assets/images/pill1.png"))),
           ),
           ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
+            leading: const Icon(Icons.input),
+            title: const Text('Welcome'),
             onTap: () => {},
           ),
           ListTile(
-            leading: Icon(Icons.verified_user),
-            title: Text('Profile'),
+            leading: const Icon(Icons.verified_user),
+            title: const Text('Profile'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Settings()))},
           ),
           ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('about'),
+            leading: const Icon(Icons.border_color),
+            title: const Text('about'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => about()))},
           ),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
+            leading: const Icon(Icons.exit_to_app),
+            title: const Text('Logout'),
             onTap: () =>  {
                 logout()
               },
