@@ -2,7 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/homepage/homepage.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
-import 'package:medbuddy/src/ui/prescription/Prescription.dart';
+import 'package:medbuddy/src/ui/prescription/prescTile.dart';
 import 'package:medbuddy/src/ui/search/search.dart';
 
 
@@ -19,7 +19,7 @@ class _TabPageState extends State<tab>{
   Widget build(BuildContext context) {
   
     //for screens
-    final screen = [Prescription(), HomePage(), search(), NewEntry()];
+    final screen = [prescTile(), HomePage(), search(), NewEntry()];
  
     //for tabs icon
     final items = <Widget>[
