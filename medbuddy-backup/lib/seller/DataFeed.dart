@@ -24,6 +24,7 @@ final TextEditingController _availability = TextEditingController();
 final TextEditingController _emailID = TextEditingController();
 final TextEditingController _address = TextEditingController();
 final TextEditingController _mobileno = TextEditingController();
+final TextEditingController _storename = TextEditingController();
 
 String id;
 String name;
@@ -32,6 +33,7 @@ String availability;
 String emailID;
 String address;
 String mobileno;
+String storename;
 
 //..........................................................................................
 //LOCATION
@@ -47,6 +49,7 @@ getCurrentLocation() async {
                         'medicine name':name,
                         'dosage':dosage,
                         'address':address,
+                        'store name':storename,
                         'availability':availability,
                         'mobile no':mobileno,
                         'email id':emailID,
@@ -160,7 +163,7 @@ getCurrentLocation() async {
           const SizedBox(
             height: 16,
           ),
-//Location
+//Address
           TextField(
                   onChanged: ((value) {
                   address=value;
@@ -183,6 +186,29 @@ getCurrentLocation() async {
           const SizedBox(
             height: 16,
           ),
+//Store name
+          TextField(
+                  onChanged: ((value) {
+                  storename=value;
+                }),            
+            controller: _storename,
+            decoration: const InputDecoration(
+                hintText: "Store name",
+                labelText: "Store name:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
+                ),
+                border: UnderlineInputBorder()
+            ),
+
+            maxLines: 3,
+          ),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),          
 //availability
           TextField(
                   onChanged: ((value) {
@@ -279,6 +305,7 @@ getCurrentLocation() async {
                   _availability.clear();
                   _mobileno.clear();
                   _emailID.clear();
+                  _storename.clear();
             }          
               
           )

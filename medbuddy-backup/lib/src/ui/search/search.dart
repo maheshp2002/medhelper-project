@@ -148,12 +148,12 @@ class _searchPageState extends State<search>{
                  width: 500,
                  child: FlatButton(                  
                 splashColor: Colors.lightGreenAccent,
-                color: Colors.lightGreen,
+                color: Color(0xFF3EB16F),
                 child: Row (children: [
-                  Image.asset("assets/logo/netmeds.png", width: 50),
+                  Image.asset("assets/splash/medbuddy.png", width: 50),
                   Padding(
                   padding: EdgeInsets.only(left: 10),
-                  child: Text("New", textAlign: TextAlign.left,
+                  child: Text("Med Seller", textAlign: TextAlign.left,
                   style: TextStyle(
                           color: Colors.white,
                           fontSize: 22,

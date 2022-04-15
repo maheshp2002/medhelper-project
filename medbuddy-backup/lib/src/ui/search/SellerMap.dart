@@ -36,6 +36,7 @@ return Scaffold(
                 return Card(
                   child: ListTile(
                     title: Text(snapshot.data.docs[index]['medicine name']),
+                    subtitle:  Text(snapshot.data.docs[index]['store name']),
                     onTap: (){
                       indexno = snapshot.data.docs[index];
                       Navigator.push(context,
