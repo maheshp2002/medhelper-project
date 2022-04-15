@@ -82,7 +82,8 @@ return Scaffold(
               itemCount: snapshot.data.docs.length,
        );
      }
-     return Center(child: CircularProgressIndicator(),
+     return Center(child:
+     Text("No Prescription Found !", style: TextStyle(fontSize: 20,color: Colors.grey),),
      );
      },),
 

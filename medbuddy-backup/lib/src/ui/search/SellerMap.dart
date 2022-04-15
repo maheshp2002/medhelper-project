@@ -54,7 +54,8 @@ return Scaffold(
               itemCount: snapshot.data.docs.length,
        );
      }
-     return Center(child: CircularProgressIndicator(),
+     return Center(child:
+     Text("No medicine found!", style: TextStyle(fontSize: 20,color: Colors.grey),),
      );
      },),
 
