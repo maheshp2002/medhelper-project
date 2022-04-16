@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
@@ -142,7 +143,13 @@ class _GoogleSignInState extends State<GoogleSignIn> {
           try {
            await service.signInwithGoogle();
            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => DataFeed()));
-          // Navigator.pushNamedAndRemoveUntil(context, Constants.homeNavigate, (route) => false);
+                      Fluttertoast.showToast(  
+                      msg: 'This Page stores Location,so turn on your location',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );  
           } catch(e){
             if(e is FirebaseAuthException){
               showMessage(e.message);

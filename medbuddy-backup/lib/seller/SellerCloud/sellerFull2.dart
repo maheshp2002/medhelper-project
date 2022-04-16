@@ -101,7 +101,7 @@ class _DetailedItemState extends State<SellerFull2> {
           ),
                   Icon(Icons.location_pin),
            const SizedBox(
-            width: 150,
+            width: 160,
           ),
                   Icon(Icons.arrow_forward_ios),
                 ],

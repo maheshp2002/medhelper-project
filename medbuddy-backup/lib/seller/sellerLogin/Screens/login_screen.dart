@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+/*import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 //import 'package:medbuddy/seller/sellerLogin/Models/auth.dart';
@@ -195,3 +195,4 @@ class Login extends StatelessWidget {
     );
   }
 }
+*/
