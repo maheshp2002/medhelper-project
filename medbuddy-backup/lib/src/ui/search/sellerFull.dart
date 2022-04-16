@@ -18,7 +18,8 @@ class _DetailedItemState extends State<SellerFull> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-      title: Text(indexno['medicine name'])
+      title: Text(indexno['medicine name']),
+      backgroundColor: Colors.deepPurple,
 ),
   //backgroundColor: Colors.orange[300],
   body: Container(

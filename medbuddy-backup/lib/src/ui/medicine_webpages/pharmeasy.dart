@@ -16,7 +16,8 @@ class pharmeasyState  extends State<pharmeasy> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xFF3EB16F),
+        backgroundColor: Colors.deepPurple,
+        //Color(0xFF3EB16F),
         title: Text("PharmEasy",
           style: TextStyle(color: Colors.white),
         ),

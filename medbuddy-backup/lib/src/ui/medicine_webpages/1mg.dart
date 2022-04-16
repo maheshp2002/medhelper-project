@@ -15,7 +15,8 @@ class tatastate  extends State<tatamg> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xFF3EB16F),
+        backgroundColor: Colors.deepPurple,
+        //Color(0xFF3EB16F),
         title: Text("1mg",
           style: TextStyle(color: Colors.white),
         ),

@@ -259,7 +259,8 @@ _NewEntryState({this.uid});
                   width: 220,
                   height: 70,
                   child: FlatButton(
-                    color: Color(0xFF3EB16F),
+                    color: Colors.deepPurple,
+                    //Color(0xFF3EB16F),
                     shape: StadiumBorder(),
                     child: Center(
                       child: Text(
@@ -453,7 +454,8 @@ _NewEntryState({this.uid});
       'repeatDailyAtTime description',
       importance: Importance.max,
       //sound: alarmAudioPath,
-      ledColor: Color(0xFF3EB16F),
+      ledColor: Colors.deepPurple,
+      //Color(0xFF3EB16F),
       ledOffMs: 1000,
       ledOnMs: 1000,
       enableLights: true,
@@ -516,7 +518,8 @@ class _IntervalSelectionState extends State<IntervalSelection> {
             ),
             ),
             DropdownButton<int>(
-              iconEnabledColor: Color(0xFF3EB16F),
+              iconEnabledColor: Colors.deepPurple,
+              //Color(0xFF3EB16F),
               hint: _selected == 0
                   ? Text(
                       "Select an Interval",
@@ -611,7 +614,8 @@ class _SelectTimeState extends State<SelectTime> {
       child: Padding(
         padding: EdgeInsets.only(top: 10.0, bottom: 4),
         child: FlatButton(
-          color: Color(0xFF3EB16F),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
           shape: StadiumBorder(),
           onPressed: () {
             //timepc();
@@ -663,7 +667,8 @@ class MedicineTypeColumn extends StatelessWidget {
             width: 85,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: isSelected ? Color(0xFF3EB16F) : Colors.white,
+              color: isSelected ? //Color(0xFF3EB16F)
+              Colors.deepPurple : Colors.white,
             ),
             child: Center(
               child: Padding(
@@ -671,7 +676,8 @@ class MedicineTypeColumn extends StatelessWidget {
                 child: Icon(
                   IconData(iconValue, fontFamily: "Ic"),
                   size: 75,
-                  color: isSelected ? Colors.white : Color(0xFF3EB16F),
+                  color: isSelected ? Colors.white : Colors.deepPurple,
+                  //Color(0xFF3EB16F),
                 ),
               ),
             ),
@@ -690,7 +696,9 @@ class MedicineTypeColumn extends StatelessWidget {
                   name,
                   style: TextStyle(
                     fontSize: 16,
-                    color: isSelected ? Colors.white : Color(0xFF3EB16F),
+                    color: isSelected ? Colors.white : Colors.deepPurple,
+                    
+                    //Color(0xFF3EB16F),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -725,7 +733,8 @@ class PanelTitle extends StatelessWidget {
           ),
           TextSpan(
             text: isRequired ? " *" : "",
-            style: TextStyle(fontSize: 14, color: Color(0xFF3EB16F)),
+            style: TextStyle(fontSize: 14, color: Colors.deepPurple,),
+            //Color(0xFF3EB16F)),
           ),
         ]),
       ),

@@ -16,7 +16,8 @@ class netmedstate  extends State<netmed> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Color(0xFF3EB16F),
+        backgroundColor: Colors.deepPurple,
+        //Color(0xFF3EB16F),
         title: Text("Netmeds",
           style: TextStyle(color: Colors.white),
         ),

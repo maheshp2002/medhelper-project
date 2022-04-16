@@ -15,7 +15,8 @@ class _sellerMapageState extends State<sellerMap>{
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-        backgroundColor: Color(0xFF3EB16F),
+        backgroundColor: Colors.deepPurple,
+        //Color(0xFF3EB16F),
 
         title: Text(
           "Seller Data",

@@ -37,7 +37,8 @@ class _TabPageState extends State<tab>{
       height: 60,
       items: items,
       backgroundColor: Colors.transparent,
-      color: Color(0xFF3EB16F),
+      color: Colors.deepPurple,
+      //Color(0xFF3EB16F),
       index: slindex,
         onTap: (index) {  
           setState(() {

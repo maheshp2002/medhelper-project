@@ -15,8 +15,10 @@ class doctorHomePage extends StatefulWidget {
 class _doctorHomePageState extends State<doctorHomePage> {
   String prescription;
   String emailid;
+  String date;
    TextEditingController prescriptionController = TextEditingController();
    TextEditingController emailidController = TextEditingController();
+   TextEditingController dateController = TextEditingController();
   final collectionReference = FirebaseFirestore.instance;
   @override
   void initState() {
@@ -52,6 +54,27 @@ class _doctorHomePageState extends State<doctorHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
+           Flexible(
+              child:TextField(
+              decoration: InputDecoration(
+              hintText: "dd/MM/YY",
+              labelText: "Date:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  date = value;
+                }),
+            controller: dateController,
+            keyboardType: TextInputType.datetime,
+            
+          ),),
+          SizedBox(
+            height: 16,
+          ),
 
             Flexible(
               child:TextField(
@@ -121,10 +144,13 @@ class _doctorHomePageState extends State<doctorHomePage> {
                   ); 
                       await collectionReference.collection(emailid).add(
                         {
-                        'prescription':prescription,}, 
+                        'prescription':prescription,
+                        'date':date,
+                        }, 
                         );
                         prescriptionController.clear();
                         emailidController.clear();
+                        dateController.clear();
                         }
                         
                         )

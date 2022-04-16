@@ -31,7 +31,8 @@ class _HomePageState extends State<HomePage> {
       drawer: NavDrawer(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Color(0xFF3EB16F),
+        backgroundColor: Colors.deepPurple,
+        //Color(0xFF3EB16F),
         title: Text("MedHelper"),
         elevation: 16.0,
         leading: Builder(
@@ -155,7 +156,8 @@ class TopContainer extends StatelessWidget {
           height: 100,
           width: 80,
           initialSelectedDate: DateTime.now(),
-          selectionColor: Colors.green,
+          selectionColor: Colors.deepPurple,
+          //Colors.green,
           selectedTextColor: Colors.white,
           dateTextStyle: TextStyle(
             fontSize: 20,
@@ -288,7 +290,8 @@ class MedicineCard extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe900, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
           size: size,
         ),
       );
@@ -297,7 +300,8 @@ class MedicineCard extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe901, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
           size: size,
         ),
       );
@@ -306,7 +310,8 @@ class MedicineCard extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe902, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
           size: size,
         ),
       );
@@ -315,7 +320,8 @@ class MedicineCard extends StatelessWidget {
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
           IconData(0xe903, fontFamily: "Ic"),
-          color: Color(0xFF3EB16F),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
           size: size,
         ),
       );
@@ -324,7 +330,8 @@ class MedicineCard extends StatelessWidget {
       tag: medicine.medicineName + medicine.medicineType,
       child: Icon(
         Icons.error,
-        color: Color(0xFF3EB16F),
+        color: Colors.deepPurple,
+        //Color(0xFF3EB16F),
         size: size,
       ),
     );
@@ -373,7 +380,8 @@ class MedicineCard extends StatelessWidget {
                       medicine.medicineName,
                       style: TextStyle(
                           fontSize: 22,
-                          color: Color(0xFF3EB16F),
+                          color: Colors.deepPurple,
+                          //Color(0xFF3EB16F),
                           fontWeight: FontWeight.w500),
                     ),
                   ),
