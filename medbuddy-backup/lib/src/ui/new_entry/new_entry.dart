@@ -8,7 +8,7 @@ import 'package:medbuddy/src/models/errors.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/models/medicine_type.dart';
 import 'package:medbuddy/src/ui/homepage/homepage.dart';
-import 'package:medbuddy/src/ui/login%20page/register.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry_bloc.dart';
 import 'package:medbuddy/src/ui/success_screen/success_screen.dart';
 import 'package:provider/provider.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 import 'package:provider/provider.dart';
-import '../../src/ui/login page/auth_class.dart';
+
 
 
 class FormContainer extends StatelessWidget {

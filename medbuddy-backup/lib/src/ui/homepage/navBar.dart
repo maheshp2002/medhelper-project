@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
-import 'package:medbuddy/src/ui/login%20page/auth_class.dart';
+import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 import 'package:medbuddy/src/ui/settings/settings.dart';
 import 'package:provider/provider.dart';
 

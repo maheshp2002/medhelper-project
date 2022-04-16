@@ -1,16 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/Login_ui/Components/Form.dart';
+import 'package:medbuddy/Login_ui/Components/SignUpLink.dart';
+import 'package:medbuddy/Login_ui/Components/WhiteTick.dart';
 import 'package:medbuddy/Login_ui/Components/doctor.dart';
 import 'package:medbuddy/Login_ui/Components/seller.dart';
 import 'package:medbuddy/global/myColors.dart';
+import 'package:medbuddy/src/ui/login_page/auth_class.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 import 'package:provider/provider.dart';
-import '../../../src/ui/login page/auth_class.dart';
-import '../../../src/ui/tabpage/tabs.dart';
+
 import 'styles.dart';
 import 'dart:async';
-import '../../Components/SignUpLink.dart';
-import '../../Components/Form.dart';
-import '../../Components/WhiteTick.dart';
+
 import 'package:flutter/services.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
 

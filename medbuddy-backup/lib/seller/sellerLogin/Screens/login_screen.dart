@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/login%20page/auth_class.dart';
+import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 //import 'package:medbuddy/seller/sellerLogin/Models/auth.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 import 'package:provider/provider.dart';

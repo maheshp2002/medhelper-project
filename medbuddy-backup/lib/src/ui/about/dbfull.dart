@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/data_retreval.dart';
-import 'package:medbuddy/src/ui/login%20page/register.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
 
 class dbfull extends StatefulWidget {
   @override

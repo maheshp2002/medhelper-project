@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/login%20page/register.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
 
 class SignUp extends StatelessWidget {
   SignUp();
