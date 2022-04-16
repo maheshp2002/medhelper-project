@@ -122,7 +122,8 @@ _NewEntryState({this.uid});
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(
-          color: Color(0xFF3EB16F),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
         ),
         centerTitle: true,
         title: Text(
@@ -688,7 +689,8 @@ class MedicineTypeColumn extends StatelessWidget {
               width: 80,
               height: 30,
               decoration: BoxDecoration(
-                color: isSelected ? Color(0xFF3EB16F) : Colors.transparent,
+                color: isSelected ? Colors.deepPurple//Color(0xFF3EB16F) 
+                : Colors.transparent,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
