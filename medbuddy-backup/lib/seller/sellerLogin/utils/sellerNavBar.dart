@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
+import 'package:medbuddy/seller/sellerSettings.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
-import 'package:medbuddy/src/ui/settings/settings.dart';
 
 
 class sellerNavBar extends StatelessWidget {
@@ -44,7 +44,7 @@ class sellerNavBar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Settings()))},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => sellerSettings()))},
           ),
           ListTile(
             leading: const Icon(Icons.border_color),

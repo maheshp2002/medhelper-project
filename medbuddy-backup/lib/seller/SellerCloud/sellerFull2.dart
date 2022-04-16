@@ -1,28 +1,29 @@
-//import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/SellerMap.dart';
-import 'package:medbuddy/src/ui/search/googleMap.dart';
+import 'package:medbuddy/seller/SellerCloud/SellerMap2.dart';
+import 'package:medbuddy/seller/SellerCloud/googleMap2.dart';
 
 
-class SellerFull extends StatefulWidget {
+
+
+class SellerFull2 extends StatefulWidget {
 
 @override
   _DetailedItemState createState() => _DetailedItemState();
 }
 
-class _DetailedItemState extends State<SellerFull> {
-
+class _DetailedItemState extends State<SellerFull2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-      title: Text(indexno['medicine name']),
-      backgroundColor: Colors.deepPurple,
+      title: Text(sindexno['medicine name']),
+      backgroundColor: Colors.orange,
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => sellerMap()),
+              MaterialPageRoute(builder: (context) => sellerMap2()),
             );
           },
         ),
@@ -33,7 +34,7 @@ class _DetailedItemState extends State<SellerFull> {
     child: Column(children: [
     Card(
     child: ListTile(
-    title:  Text("Dosage:" + " " + indexno['dosage']),
+    title:  Text("Dosage:" + " " + sindexno['dosage']),
     )),
 //gap btw borders
           const SizedBox(
@@ -41,7 +42,7 @@ class _DetailedItemState extends State<SellerFull> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + indexno['availability']),
+    title:  Text("Availability:" + " " + sindexno['availability']),
     )),
 //gap btw borders
           const SizedBox(
@@ -49,7 +50,7 @@ class _DetailedItemState extends State<SellerFull> {
           ), 
     Card(
     child: ListTile(               
-    title:  Text("Address:" + " " + indexno['address']),
+    title:  Text("Address:" + " " + sindexno['address']),
     )),
 //gap btw borders
           const SizedBox(
@@ -57,7 +58,7 @@ class _DetailedItemState extends State<SellerFull> {
           ),
     Card(
     child: ListTile(                
-    title:  Text("Mobile no:" + " " + indexno['mobile no']),
+    title:  Text("Mobile no:" + " " + sindexno['mobile no']),
     )),
 //gap btw borders
           const SizedBox(
@@ -65,7 +66,7 @@ class _DetailedItemState extends State<SellerFull> {
           ), 
     Card(
     child: ListTile(               
-    title:  Text("Email-id:" + " " + indexno['email id']),
+    title:  Text("Email-id:" + " " + sindexno['email id']),
     )),
 //gap btw borders
 
@@ -106,7 +107,7 @@ class _DetailedItemState extends State<SellerFull> {
                 ],
                 ),
      onPressed: (){
-     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomeView()));
+     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SellerHomeView()));
     }
     )),     
     )

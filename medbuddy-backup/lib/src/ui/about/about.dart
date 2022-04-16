@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/about/data_retreval.dart';
+
 
 class about extends StatefulWidget {
   @override
@@ -85,23 +85,7 @@ return Scaffold(
           ),
           ),
           ),
-          ElevatedButton(
-                  onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return UserInformation();
-                          },
-                        ),
-                      
-                          
-                    );
-
-                  },
-                  child: Text("submit data"),
-
-                ),
+ 
       ],
     ),
     

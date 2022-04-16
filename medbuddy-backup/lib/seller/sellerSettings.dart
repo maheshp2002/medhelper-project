@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/about/data_retreval.dart';
+import 'package:medbuddy/seller/DataFeed.dart';
+import 'package:medbuddy/seller/SellerCloud/SellerMap2.dart';
 
 
-class Settings extends StatefulWidget {
+
+class sellerSettings extends StatefulWidget {
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
 
-class _SettingsPageState extends State<Settings>{
+class _SettingsPageState extends State<sellerSettings>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.orange,
         //Color(0xFF3EB16F),
+          leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DataFeed()),
+            );
+          },
+        ),
         title: Text(
           "Settings",
           style: TextStyle(
@@ -37,10 +48,10 @@ class _SettingsPageState extends State<Settings>{
             Card(
               child: 
                 ListTile(
-                title: Text('User backup data'),
+                title: Text('Data in cloud'),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserInformation()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => sellerMap2()));
                 },
                  ),
 
