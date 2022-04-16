@@ -12,14 +12,20 @@ class SellerFull extends StatefulWidget {
 
 class _DetailedItemState extends State<SellerFull> {
 
-//GeoPoint geoPoint = indexno['Latitude'];
-
-//....................................................................................................
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
       title: Text(indexno['medicine name']),
       backgroundColor: Colors.deepPurple,
+              leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => sellerMap()),
+            );
+          },
+        ),
 ),
   //backgroundColor: Colors.orange[300],
   body: Container(

@@ -1,19 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login%20page/register.dart';
 import 'package:medbuddy/src/ui/about/dbfull.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
+
+
 
 class UserInformation extends StatefulWidget {
   @override
     _UserInformationState createState() => _UserInformationState();
 }
 
-User loggedInUser;
-String medname;
-String dosage;
-String interval;
-String time;
 
 class _UserInformationState extends State<UserInformation> {
 
@@ -24,6 +21,8 @@ Widget build(BuildContext context) {
 	);
 }
 }
+
+var DTindexno;
 
 class AddData extends StatelessWidget {
   //CollectionReference  
@@ -36,7 +35,15 @@ Widget build(BuildContext context) {
   appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
-
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => tab()),
+            );
+          },
+        ),
         title: Text(
           "Data Retrival",
           style: TextStyle(
@@ -46,29 +53,56 @@ Widget build(BuildContext context) {
         ),
         elevation: 0.0,
   ),
-	body: StreamBuilder(stream: collectionReference//.snapshots()
-  ,
+	body: StreamBuilder(stream: collectionReference,
    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
      if(snapshot.hasData){
-       return ListView(
-         
-         children: snapshot.data.docs.map((e) => ListTile(
-           
-           tileColor: Colors.blue,
-           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: BorderSide(color: Colors.white30),
-          ),
-             onTap: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => dbfull(),
-                  ),);},
-           title: Text(e['medicine_name']),)).toList(),
+       return ListView.separated(
+         itemBuilder:(BuildContext context, int index) {
+           return Column(
+              children: snapshot.data.docs.map((doc) {
+                return Card(
+                  child: ListTile(
+                    title: Text(snapshot.data.docs[index]['medicine_name']),
+                    subtitle:  Text(snapshot.data.docs[index]['time']),
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    onTap: (){
+                      DTindexno = snapshot.data.docs[index];
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) => dbfull())
+                      );
+                    },
+                  onLongPress: () {
+                      
+                  showModalBottomSheet<void>(context: context,
+                    builder: (BuildContext context) {
+                    return Container(
+                    child: new Wrap(
+                    children: <Widget>[
+                        new ListTile(
+                        leading: new Icon(Icons.delete),
+                        title: new Text('Delete'),
+                        onTap: () async{
+                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
+                        await myTransaction.delete(snapshot.data.docs[index].reference);}
+                        );
+                        })
+                        ]
+                        )
+                        );}
+                        );
+                      })
+                  );
+              }).toList(),);
+              
+              },
+               separatorBuilder: (context, index) {
+           return Divider();
+          },
+              itemCount: snapshot.data.docs.length,
        );
      }
-     return Center(child: CircularProgressIndicator(),
+     return Center(child:
+     Text("No Data found!", style: TextStyle(fontSize: 20,color: Colors.grey),),
      );
      },),
 
@@ -77,28 +111,3 @@ Widget build(BuildContext context) {
   
 }
 }
-/*fetch() async{
-  final firebaseUser = await FirebaseAuth.instance.currentUser;
-  if(firebaseUser != null){
-  await FirebaseFirestore.instance
-  .collection(user.uid)
-  .doc()
-  .get()
-  //.then((data) async {
-   //var dataReceive 
-   //medname = data['medicine_name'];
-   //return medname;
-  // });
-  .then((ds){
-    medname = ds.data()["medicine_name"];
-    dosage = ds.data()["dosage"];
-    interval = ds.data()["interval"];
-    time = ds.data()["time"];
-    }
-  ).catchError((e){
-print(e);
-  }
-  );
-    }
-  }*/
-

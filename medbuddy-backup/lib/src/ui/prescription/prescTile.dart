@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login%20page/register.dart';
 import 'package:medbuddy/src/ui/prescription/Prescription.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
 
@@ -19,9 +20,18 @@ return Scaffold(
   appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
+                leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => tab()),
+            );
+          },
+        ),
 
         title: Text(
-          "Seller Data",
+          "Prescription",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -41,6 +51,7 @@ return Scaffold(
                   child: ListTile(
                     
                   title: Text(snapshot.data.docs[index]['date']),
+                  trailing: Icon(Icons.arrow_forward_ios),
                    onTap: (){
                       preindexno = snapshot.data.docs[index];
                       Navigator.push(context,

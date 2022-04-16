@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login%20page/register.dart';
 import 'package:medbuddy/src/ui/prescription/prescTile.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 class Prescription extends StatefulWidget {
   @override
@@ -32,7 +33,15 @@ Widget build(BuildContext context) {
   appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
-
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => tab()),
+            );
+          },
+        ),
         title: Text(
           "Prescription",
           style: TextStyle(

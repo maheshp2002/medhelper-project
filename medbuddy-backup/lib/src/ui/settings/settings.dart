@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/about/about.dart';
-import 'package:provider/provider.dart';
-import '../login page/auth_class.dart';
+import 'package:medbuddy/src/ui/about/data_retreval.dart';
+
 
 class Settings extends StatefulWidget {
   @override
@@ -25,7 +24,7 @@ class _SettingsPageState extends State<Settings>{
         elevation: 0.0,
 
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[300],
 
       body: Container(
         alignment: Alignment.topLeft,
@@ -35,7 +34,19 @@ class _SettingsPageState extends State<Settings>{
         child: Column(
          
           children: <Widget>[  
-            Text("Settings"),
+            Card(
+              child: 
+                ListTile(
+                title: Text('User backup data'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => UserInformation()));
+                },
+                 ),
+
+                
+                
+            )
 
          ])) ));
   }

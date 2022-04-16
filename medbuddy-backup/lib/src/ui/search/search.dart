@@ -3,6 +3,7 @@ import 'package:medbuddy/src/ui/medicine_webpages/1mg.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/netmeds.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/pharmeasy.dart';
 import 'package:medbuddy/src/ui/search/SellerMap.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 class search extends StatefulWidget {
   @override
@@ -14,6 +15,15 @@ class _searchPageState extends State<search>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+                leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => tab()),
+            );
+          },
+        ),
       backgroundColor: Colors.deepPurple,
       //Color(0xFF3EB16F),
       elevation: 0.0,
@@ -52,6 +62,10 @@ class _searchPageState extends State<search>{
                         ),
                 ),
                   ),
+                  Flexible(child: 
+                  Padding(
+                padding: EdgeInsets.only(left: 125,),
+                 child: Icon(Icons.arrow_forward_ios, color: Colors.white,),),),
                 ],
                 ),
                 
@@ -88,6 +102,10 @@ class _searchPageState extends State<search>{
                         ),
                 ),
                   ),
+                Flexible(child: 
+                Padding(
+                padding: EdgeInsets.only(left: 148,),
+                 child: Icon(Icons.arrow_forward_ios, color: Colors.white,),),),
                 ],
                 ),
                 
@@ -125,6 +143,10 @@ class _searchPageState extends State<search>{
                         ),
                 ),
                   ),
+                Flexible(child: 
+                Padding(
+                padding: EdgeInsets.only(left: 190,),
+                 child: Icon(Icons.arrow_forward_ios, color: Colors.white,),),),                 
                 ],
                 ),
                 
@@ -162,6 +184,10 @@ class _searchPageState extends State<search>{
                         ),
                 ),
                   ),
+                Flexible(child: 
+                Padding(
+                padding: EdgeInsets.only(left: 130,),
+                 child: Icon(Icons.arrow_forward_ios, color: Colors.white,),),),                  
                 ],
                 ),
                 

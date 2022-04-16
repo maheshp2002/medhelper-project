@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/search/sellerFull.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
 class sellerMap extends StatefulWidget {
@@ -17,7 +18,15 @@ return Scaffold(
   appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
-
+        leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => tab()),
+            );
+          },
+        ),
         title: Text(
           "Seller Data",
           style: TextStyle(
@@ -38,6 +47,7 @@ return Scaffold(
                   child: ListTile(
                     title: Text(snapshot.data.docs[index]['medicine name']),
                     subtitle:  Text(snapshot.data.docs[index]['store name']),
+                    trailing: Icon(Icons.arrow_forward_ios),
                     onTap: (){
                       indexno = snapshot.data.docs[index];
                       Navigator.push(context,

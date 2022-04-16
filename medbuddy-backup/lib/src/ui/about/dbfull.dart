@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/about/data_retreval.dart';
 import 'package:medbuddy/src/ui/login%20page/register.dart';
 
 class dbfull extends StatefulWidget {
@@ -12,7 +13,6 @@ class _dbfullState extends State<dbfull> {
 @override
 Widget build(BuildContext context) {
 	return MaterialApp(
-	title: 'Firebase',
 	home: AddData(),
 	);
 }
@@ -21,50 +21,63 @@ Widget build(BuildContext context) {
 class AddData extends StatelessWidget {
   CollectionReference collectionReference = FirebaseFirestore.instance.collection(user.uid);
   final FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-@override
-Widget build(BuildContext context) {
-	return Scaffold(
-
-  appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        //Color(0xFF3EB16F),
-        title: Text(
-          "Doc",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-          ),
+ @override
+  Widget build(BuildContext context) {
+    return Scaffold(appBar: AppBar(
+      title: Text(DTindexno['medicine_name']),
+      backgroundColor: Colors.deepPurple,
+              leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => UserInformation()),
+            );
+          },
         ),
-        elevation: 0.0,
-  ),
+),
+  //backgroundColor: Colors.orange[300],
+  body: Container(
+    
+    child: Column(children: [
+//name      
+    Card(
+    child: ListTile(               
+    title:  Text("Name:" + " " + DTindexno['medicine_name']),
+    )),
+//gap btw borders
 
-	body: StreamBuilder(stream: collectionReference.snapshots(),
-   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-     if(snapshot.hasData){
-       return ListView(
-         
-         children: snapshot.data.docs.map((doc) => ListTile(
-           
-           tileColor: Colors.blue,
-           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: BorderSide(color: Colors.white30),
-          ),
+          const SizedBox(
+            height: 16,
+          ), 
+ 
+//dosage
+    Card(
+    child: ListTile(
+    title:  Text("Dosage:" + " " + DTindexno['dosage']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),  
+    Card(
+    child: ListTile(              
+    title:  Text("Interval:" + " " + DTindexno['interval']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ), 
+    Card(
+    child: ListTile(               
+    title:  Text("time:" + " " + DTindexno['time']),
+    )),
 
-           title: Text(doc['time'].toString()),
-           subtitle:  Text(doc["dosage"].toString()),
-           
-           ))
-        .toList(),
 
-       );
-     }
-     return Center(child: CircularProgressIndicator(),
-     );
-     },),
-
-  
-  
-	);
+      
+    ]
+  ),),
+);
 }
+
 }
