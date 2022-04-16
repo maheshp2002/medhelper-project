@@ -35,7 +35,7 @@ class Splash extends StatefulWidget {
           Container(
             child: Padding(
               padding: EdgeInsets.only(top: 20),
-            child: Text('MedBuddy',
+            child: Text('MedHelper',
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
