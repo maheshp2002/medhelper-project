@@ -43,14 +43,12 @@ class _searchPageState extends State<search>{
 //pharmeasy
           Padding(
             padding: EdgeInsets.only(top: 10),
-              child: Flexible(
-                child: SizedBox(              
-                 height: 50,
-                 width: 500,
-                 child: FlatButton(                  
-                splashColor: Colors.lightGreenAccent,
+                child: Card(
                 color: Color(0xFF3EB16F),
-                child: Row (children: [
+                 child: TextButton(                  
+                child: Row (
+                  children: [
+                  
                   Image.asset("assets/logo/pharmeasyl2.png", width: 50),
                   Padding(
                   padding: EdgeInsets.only(left: 10),
@@ -79,18 +77,15 @@ class _searchPageState extends State<search>{
                 ),
               ),
                 
-              ),
+              
 //netmeds
             Padding(
             padding: EdgeInsets.only(top: 10),
-              child: Flexible(
-                child: SizedBox(              
-                 height: 50,
-                 width: 500,
-                 child: FlatButton(                  
-                splashColor: Colors.lightGreenAccent,
+                child: Card(
                 color: Colors.lightGreen,
-                child: Row (children: [
+                 child: TextButton(                  
+                child: Row (
+                  children: [
                   Image.asset("assets/logo/netmeds.png", width: 50),
                   Padding(
                   padding: EdgeInsets.only(left: 10),
@@ -119,19 +114,16 @@ class _searchPageState extends State<search>{
                 ),
               ),
                 
-              ),
+              
 
 //1mg
           Padding(
             padding: EdgeInsets.only(top: 10),
-              child: Flexible(
-                child: SizedBox(              
-                 height: 50,
-                 width: 500,
-                 child: FlatButton(                  
-                splashColor: Colors.orange,
-                color: Colors.orange,
-                child: Row (children: [
+                child: Card(
+                  color: Colors.orange,
+                 child: TextButton(                  
+                child: Row (
+                  children: [
                   Image.asset("assets/logo/1mg.png", width: 70, height: 80,),
                   Padding(
                   padding: EdgeInsets.only(left: 1),
@@ -145,7 +137,7 @@ class _searchPageState extends State<search>{
                   ),
                 Flexible(child: 
                 Padding(
-                padding: EdgeInsets.only(left: 190,),
+                padding: EdgeInsets.only(left: 185,),
                  child: Icon(Icons.arrow_forward_ios, color: Colors.white,),),),                 
                 ],
                 ),
@@ -160,19 +152,16 @@ class _searchPageState extends State<search>{
                 ),
               ),
                 
-              ),
+              
 
 //new
             Padding(
             padding: EdgeInsets.only(top: 10),
-              child: Flexible(
-                child: SizedBox(              
-                 height: 50,
-                 width: 500,
-                 child: FlatButton(                  
-                splashColor: Colors.lightGreenAccent,
-                color: Color(0xFF3EB16F),
-                child: Row (children: [
+                child: Card(
+               color: Color(0xFF3EB16F),
+                 child: TextButton(                  
+                child: Row (
+                  children: [
                   Image.asset("assets/splash/medbuddy.png", width: 50),
                   Padding(
                   padding: EdgeInsets.only(left: 10),
@@ -201,7 +190,7 @@ class _searchPageState extends State<search>{
                 ),
               ),
                 
-              ),
+              
     
 
         ],

@@ -76,15 +76,12 @@ class _DetailedItemState extends State<SellerFull2> {
  //button for navigator              
             Padding(
             padding: EdgeInsets.only(top: 10),
-              child: Flexible(
                 child: Card(
                   color: Colors.grey[300],
-                 child: FlatButton(                  
-                splashColor: Colors.white,
-                child: Row (
-                 //mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-               
+                 child: TextButton(                   
+                child: 
+                Row (
+                  children: [            
                   Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: Text("Location", textAlign: TextAlign.left,
@@ -99,11 +96,11 @@ class _DetailedItemState extends State<SellerFull2> {
          const SizedBox(
             width: 10,
           ),
-                  Icon(Icons.location_pin),
+                   Icon(Icons.location_pin, color: Colors.black),
            const SizedBox(
-            width: 160,
+            width: 150,
           ),
-                  Icon(Icons.arrow_forward_ios),
+                   Icon(Icons.arrow_forward_ios, color: Colors.black),
                 ],
                 ),
      onPressed: (){
@@ -111,7 +108,7 @@ class _DetailedItemState extends State<SellerFull2> {
     }
     )),     
     )
-    ),
+    
       
     ]
   ),),
