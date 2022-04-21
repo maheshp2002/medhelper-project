@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/about/detail_about/Anuragh.dart';
+import 'package:medbuddy/src/ui/about/detail_about/Anurag.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Dillsith.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Sarath.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Suma.dart';
@@ -89,7 +89,7 @@ return Scaffold(
     )),     
     
     
-//Anuragh        
+//Anurag        
             Padding(
             padding: EdgeInsets.only(top: 10),
                 child: Card(
@@ -100,7 +100,7 @@ return Scaffold(
                
                   Padding(
                   padding: EdgeInsets.only(left: 10),
-                  child: Text("Anuragh", textAlign: TextAlign.left,
+                  child: Text("Anurag", textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'JosefinSans',
                           color: Colors.black,

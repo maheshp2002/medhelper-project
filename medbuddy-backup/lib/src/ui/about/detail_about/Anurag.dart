@@ -16,7 +16,7 @@ return Scaffold(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
         title: Text(
-          "Anuragh",
+          "Anurag",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -38,7 +38,7 @@ return Scaffold(
             height: 150,
           ),         
         Image.asset("assets/creatorspic/boy2.png",  width: 200,),
-        Text("Anuragh P",style: TextStyle(fontFamily: 'JosefinSans',
+        Text("Anurag P",style: TextStyle(fontFamily: 'JosefinSans',
         color: Colors.black,
         fontWeight: FontWeight.bold,
         fontSize: 20,

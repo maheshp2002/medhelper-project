@@ -38,7 +38,7 @@ return Scaffold(
             height: 150,
           ),   
         Image.asset("assets/creatorspic/boy3.png", width: 200,),
-        Text("Dillsith",style: TextStyle(fontFamily: 'JosefinSans',
+        Text("Dillsith T S",style: TextStyle(fontFamily: 'JosefinSans',
         color: Colors.black,
         fontWeight: FontWeight.bold,
         fontSize: 20,        
