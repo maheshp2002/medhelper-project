@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
 import 'package:medbuddy/src/ui/login_page/auth_class.dart';
+import 'package:medbuddy/src/ui/settings/patientAbout.dart';
 import 'package:medbuddy/src/ui/settings/settings.dart';
 import 'package:provider/provider.dart';
 
@@ -23,15 +24,15 @@ class NavDrawer extends StatelessWidget {
                     fit: BoxFit.fill,
                     image: AssetImage("assets/mnav.png"))),
           ),
-          ListTile(
+     /*     ListTile(
             leading: Icon(Icons.input),
             title: Text('Welcome'),
             onTap: () => {},
-          ),
+          ),*/
           ListTile(
             leading: Icon(Icons.verified_user),
             title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => patientAbout()))},
           ),
           ListTile(
             leading: Icon(Icons.settings),

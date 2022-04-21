@@ -22,7 +22,8 @@ class Splash extends StatefulWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xFF3EB16F),
+        color: Colors.deepPurple,
+        //Color(0xFF3EB16F),
         child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,17 +31,17 @@ class Splash extends StatefulWidget {
         children: [
           Container(
 
-        child: Image.asset('assets/splash/medbuddy.png', width:200,height:200),
+        child: Image.asset('assets/splash/pilllogo.png', width:300,height:300),
         ),
           Container(
             child: Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: 1),
             child: Text('MedHelper',
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                fontFamily: "Angel",
-                fontSize: 64,
+                fontFamily: "JosefinSans",
+                fontSize: 44,
                 color: Colors.white,
               ),)
             )

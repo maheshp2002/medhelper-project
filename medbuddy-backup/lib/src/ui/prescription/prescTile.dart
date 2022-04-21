@@ -86,7 +86,7 @@ return Scaffold(
               },
                separatorBuilder: (context, index) {
            return Divider(
-             color: Colors.white70,
+             color: Colors.grey,
              thickness: 5,
              height: 20,
            );

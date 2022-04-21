@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_restart/flutter_restart.dart';
 import 'package:medbuddy/src/ui/about/data_retreval.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
 
 
 class Settings extends StatefulWidget {
@@ -43,15 +45,44 @@ class _SettingsPageState extends State<Settings>{
                   Navigator.push(context, MaterialPageRoute(builder: (context) => UserInformation()));
                 },
                  ),
+            ),
+             Card(
+              child: 
+                ListTile(
+                title: Text('Delete User Account'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: (){
+        showModalBottomSheet<void>(context: context,
+            builder: (BuildContext context) {
+                return Container(
+                    child: new Wrap(
+                    children: <Widget>[
+                        new ListTile(
+                        leading: new Icon(Icons.delete),
+                        title: new Text('Delete'),
+                        onTap: () async{
+                          await user?.delete();
+                            _restartApp();
+
+                        })
+                        ]
+                        )
+                        );}
+                        );
+                },
+                 ),
 
                 
                 
-            )
 
-         ])) ));
+    )])) ));
   }
 
 }
 
 
 
+//restart app
+   void _restartApp() async {
+  await FlutterRestart.restartApp();
+}

@@ -60,7 +60,11 @@ return Scaffold(
               
               },
                separatorBuilder: (context, index) {
-           return Divider();
+           return Divider(
+             color: Colors.grey,
+             thickness: 5,
+             height: 20,
+           );
           },
               itemCount: snapshot.data.docs.length,
        );

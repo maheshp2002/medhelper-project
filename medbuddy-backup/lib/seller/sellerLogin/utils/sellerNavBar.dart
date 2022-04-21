@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
+import 'package:medbuddy/seller/sellerLogin/Screens/sellerProfile.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerSettings.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
@@ -31,15 +32,15 @@ class sellerNavBar extends StatelessWidget {
                     fit: BoxFit.fill,
                     image: AssetImage("assets/images/pill1.png"))),
           ),
-          ListTile(
+  /*        ListTile(
             leading: const Icon(Icons.input),
             title: const Text('Welcome'),
             onTap: () => {},
-          ),
+          ),*/
           ListTile(
             leading: const Icon(Icons.verified_user),
             title: const Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: ((context) => SellerAbout())))}
           ),
           ListTile(
             leading: const Icon(Icons.settings),

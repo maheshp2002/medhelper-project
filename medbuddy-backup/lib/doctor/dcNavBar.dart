@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
+import 'package:medbuddy/doctor/doctorProfile.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
-import 'package:medbuddy/src/ui/settings/settings.dart';
 
 
 class dcNavBar extends StatelessWidget {
@@ -31,21 +31,21 @@ class dcNavBar extends StatelessWidget {
                     fit: BoxFit.fill,
                     image: AssetImage("assets/images/doc.png"))),
           ),
-          ListTile(
+          /*ListTile(
             leading: Icon(Icons.input),
             title: Text('Welcome'),
             onTap: () => {},
-          ),
+          ),*/
           ListTile(
             leading: Icon(Icons.verified_user),
             title: Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => doctorAbout()))},
           ),
-          ListTile(
+          /*ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
-            onTap: () => {Navigator.of(context).pop()},
-          ),
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => doctorSettings()))},
+          ),*/
           ListTile(
             leading: Icon(Icons.border_color),
             title: Text('about'),

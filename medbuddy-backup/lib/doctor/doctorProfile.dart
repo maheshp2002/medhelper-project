@@ -1,17 +1,17 @@
-/*import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
+import 'package:medbuddy/doctor/doctorHome.dart';
 
 
 
-class SellerHomePage extends StatefulWidget {
-  SellerHomePage({Key key}) : super(key: key);
+class doctorAbout extends StatefulWidget {
+  doctorAbout({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<SellerHomePage> {
+class _HomePageState extends State<doctorAbout> {
   User user = FirebaseAuth.instance.currentUser;
   @override
   void initState() {
@@ -21,26 +21,21 @@ class _HomePageState extends State<SellerHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       drawer: sellerNavBar(),
         appBar: AppBar(
-        automaticallyImplyLeading: false,
         backgroundColor: Colors.blue,
-        title: Text("Home"),
+        title: Text("About"),
         elevation: 16.0,
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(
-                Icons.person,
-                color: Colors.white, 
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            
+         leading: new IconButton(
+          icon: new Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => doctorHomePage()),
             );
           },
-        ),),
+        ),
+          
+        ),
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -54,4 +49,4 @@ class _HomePageState extends State<SellerHomePage> {
           ],
         )));
   }
-}*/
+}

@@ -92,6 +92,7 @@ flutter:
     - assets/tick.png
     - assets/
     - assets/images/
+    - assets/creatorspic/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -112,7 +113,9 @@ flutter:
     - family: Angel
       fonts:
         - asset: assets/fonts/neu/Angel Signature.ttf    
-        
+    - family: JosefinSans
+      fonts:
+        - asset: assets\fonts\Josefin_Sans\static\JosefinSans-Light.ttf
         
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
