@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
 import 'package:medbuddy/src/ui/about/data_retreval.dart';
@@ -10,6 +11,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<Settings>{
+  final collectionReference = FirebaseFirestore.instance.collection(user.uid);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +64,11 @@ class _SettingsPageState extends State<Settings>{
                         title: new Text('Delete'),
                         onTap: () async{
                           await user?.delete();
+                          collectionReference.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }
+                        });
                             _restartApp();
 
                         })
