@@ -112,7 +112,7 @@ return Scaffold(
 
 
            const SizedBox(
-            width: 150,
+            width: 160,
           ),
                  Image.asset("assets/creatorspic/boy2.png", width: 70),
                 ],
