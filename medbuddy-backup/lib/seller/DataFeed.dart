@@ -1,6 +1,11 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:medbuddy/seller/imageselector.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -15,6 +20,7 @@ class DataFeed extends StatefulWidget {
 class DataState extends State<DataFeed>{
 
 final collectionReference = FirebaseFirestore.instance.collection("Medicinesell");
+//DocumentReference sightingRef = FirebaseFirestore.instance.collection("Medicinesell").doc();
 
 //Controller
 final TextEditingController _id = TextEditingController();
@@ -35,13 +41,37 @@ String address;
 String mobileno;
 String storename;
 
+
+
+//..........................................................................................
+            Future<String> uploadFile(_image) async {
+
+            FirebaseStorage storage = FirebaseStorage.instance;
+              Reference ref = storage.ref().child("image" + DateTime.now().toString());
+              await ref.putFile(File(_image.path));
+              String returnURL = await ref.getDownloadURL();
+              //await uploadTask.whenComplete(() {
+                  //returnURL = ref.getDownloadURL().toString();
+                  
+              //});
+              return returnURL;
+            }
+
 //..........................................................................................
 //LOCATION
-getCurrentLocation() async {
+//getCurrentLocation() async {
+  Future<void> saveImages(List<File> _images) async {
+
   Position position;
   position = await Geolocator.getCurrentPosition(
     desiredAccuracy: LocationAccuracy.high);
 //....................................................................
+               
+              _images.forEach((image) async {
+              String imageURL = await uploadFile(image);
+               
+//..........................................................................................
+
 //Firebase data write
                 await collectionReference.add(
                         {
@@ -54,12 +84,48 @@ getCurrentLocation() async {
                         'mobile no':mobileno,
                         'email id':emailID,
                         'Latitude': GeoPoint(position.latitude, position.longitude),
-  
+                        "images": imageURL,
                         },
                         );
+                });
+              
+              
+            
 //...........................................................................................
 }
+
+
+// Image Picker
+  List<File> _images = [];
+  File _image; // Used only if you need a single picture
+
+  Future getImage(bool gallery) async {
+    ImagePicker picker = ImagePicker();
+    PickedFile pickedFile;
+    // Let user select photo from gallery
+    if(gallery) {
+      pickedFile = await picker.getImage(
+          source: ImageSource.gallery,);
+    } 
+    // Otherwise open camera to get new photo
+    else{
+      pickedFile = await picker.getImage(
+          source: ImageSource.camera,);
+    }
+
+    setState(() {
+      if (pickedFile != null) {
+        _images.add(File(pickedFile.path));
+        //_image = File(pickedFile.path); // Use if you only need a single picture
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
 //..........................................................................................
+
+
 
 
   @override
@@ -278,6 +344,25 @@ getCurrentLocation() async {
           ),
 
 //gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
+
+ //Image selection
+RawMaterialButton(
+          fillColor: Theme.of(context).accentColor,
+          child: Icon(Icons.add_photo_alternate_rounded,
+          color: Colors.white,),
+          elevation: 8,
+          onPressed: () {
+            getImage(true);
+          },
+          padding: EdgeInsets.all(15),
+         shape: CircleBorder(),
+),
+
+
+//gap btw borders
             const SizedBox(
               height: 16,
             ),
@@ -290,14 +375,20 @@ getCurrentLocation() async {
           style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
-              getCurrentLocation();
-                      Fluttertoast.showToast(  
+              //getCurrentLocation();
+              uploadFile(_image);
+              Fluttertoast.showToast(  
                       msg: 'Data Added to DataBase',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
-                  );  
+                  ); 
+                  await saveImages(_images);
+                
+                
+              
+                 
                   _id.clear();    
                   _name.clear();         
                   _dosage.clear();
@@ -321,6 +412,9 @@ getCurrentLocation() async {
 
 );
   }
-  
+
  
 }
+
+
+

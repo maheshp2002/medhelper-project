@@ -13,7 +13,7 @@ class prescTile extends StatefulWidget {
     var preindexno;
 
 class _prescTilepageState extends State<prescTile>{
-    final collectionReference = FirebaseFirestore.instance.collection(user.email).snapshots();
+    //final collectionReference = FirebaseFirestore.instance.collection(user.email).snapshots();
   @override
   Widget build(BuildContext context) {
 return Scaffold(
@@ -40,7 +40,71 @@ return Scaffold(
         elevation: 0.0,
   ),
   backgroundColor: Colors.grey[200],
-	body:  StreamBuilder(stream: collectionReference,
+	body:  StreamBuilder(
+      stream: FirebaseFirestore.instance.collection(user.email).limit(12)
+          .orderBy("date", descending: true).snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+         if (!snapshot.hasData) {
+          return Center
+          (child: Image.asset("assets/nothing.gif")
+     );
+        }
+        return ListView(
+          children: [
+             ListView.builder(
+                  physics: ScrollPhysics(),
+                  padding: EdgeInsets.all(10),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: snapshot.data.docs.length,
+
+                  itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                  child: ListTile(
+                    
+                  title: Text(snapshot.data.docs[index]['date']),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                   onTap: (){
+                      preindexno = snapshot.data.docs[index];
+                      Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) => Prescription())
+                      );
+                    },
+                    onLongPress: () {
+                      
+        showModalBottomSheet<void>(context: context,
+            builder: (BuildContext context) {
+                return Container(
+                    child: new Wrap(
+                    children: <Widget>[
+                        new ListTile(
+                        leading: new Icon(Icons.delete),
+                        title: new Text('Delete'),
+                        onTap: () async{
+                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
+                        await myTransaction.delete(snapshot.data.docs[index].reference);}
+                        );
+                        })
+                        ]
+                        )
+                        );}
+                        );
+                    }
+                  ),
+          
+            );
+                  })
+                  ],
+
+        );
+      }
+  ));
+        }
+        }
+
+//old one
+//.......................................................................................................
+  /*StreamBuilder(stream: collectionReference,
    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
      if(snapshot.hasData){
        return ListView.separated(
@@ -103,4 +167,5 @@ return Scaffold(
 	
   
 }
-}
+}*/
+//.......................................................................................................

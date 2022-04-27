@@ -40,7 +40,7 @@ Future<void> main() async {
     sound: true,
   );
 
-  runApp(MyApp());
+  runApp(MyApp2());
 }
 
 class medbuddy extends StatefulWidget {
@@ -48,7 +48,7 @@ class medbuddy extends StatefulWidget {
   _medbuddy createState() => _medbuddy();
 }
 
-class MyApp extends StatelessWidget {
+class MyApp2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -139,7 +139,7 @@ void showNotification(){
           primarySwatch: Colors.green,
           brightness: Brightness.light,
         ),
-        home: //WelcomeScreen(),
+        home: //MyApp(),
             login1(),
         debugShowCheckedModeBanner: false,
       ),
