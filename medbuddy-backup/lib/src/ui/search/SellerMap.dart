@@ -1,6 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/search/sellerFull.dart';
+import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
+import 'package:medbuddy/src/ui/search/tags/Pill.dart';
+import 'package:medbuddy/src/ui/search/tags/Syringe.dart';
+import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
@@ -51,6 +55,92 @@ return Scaffold(
 //new streambuilder include image
         return  ListView(
           children: [
+ //.......................................................................................................
+ //top bar 
+      Padding(padding: EdgeInsets.only(top: 60, left: 10),  
+     child: Text("Categories:",textAlign: TextAlign.start,
+      style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
+      Divider(
+        indent: 20,
+        endIndent: 20,
+        color: Colors.black,
+    ),      
+
+      Padding(padding: EdgeInsets.all(10),            
+            child: Row( 
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            TextButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+              child: Row(children: [
+              Text("Pill",textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+              SizedBox(width: 5,),
+              Icon(Icons.bookmark,color: Colors.white),
+              ],),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> pill()));
+              }
+              ),
+
+              SizedBox(width: 5,),
+
+             TextButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+              child: Row(children: [
+              Text("Syringe",textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+              SizedBox(width: 5,),
+              Icon(Icons.bookmark,color: Colors.white),
+              ]),
+                onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> syringe()));
+              }            
+              ),  
+
+            SizedBox(width: 5,),
+
+            TextButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+              child: Row(children: [
+              Text("Tablet",textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+              SizedBox(width: 5,),
+              Icon(Icons.bookmark,color: Colors.white),
+              ]),
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> tablet()));
+              }          
+              ),
+
+              SizedBox(width: 5,),    
+
+             TextButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+              child: Row(children: [
+              Text("Bottle",textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+              SizedBox(width: 5,),
+              Icon(Icons.bookmark,color: Colors.white),
+              ]),
+               onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> bottle()));
+              }             
+              )
+                                
+              
+              ]),),
+
+
+      Padding(padding: EdgeInsets.only(left: 10, top: 20),  
+     child: Text("Products",textAlign: TextAlign.start,
+      style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
+      Divider(
+        indent: 20,
+        endIndent: 20,
+        color: Colors.black,
+    ),
+ //.......................................................................................................
              GridView.builder(
                   physics: ScrollPhysics(),
                   padding: EdgeInsets.all(10),

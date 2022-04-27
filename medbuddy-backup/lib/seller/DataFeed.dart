@@ -105,7 +105,7 @@ String storename;
     // Let user select photo from gallery
     if(gallery) {
       pickedFile = await picker.getImage(
-          source: ImageSource.gallery,);
+          source: ImageSource.gallery,maxWidth: 150, maxHeight: 150);
     } 
     // Otherwise open camera to get new photo
     else{
@@ -170,8 +170,8 @@ String storename;
                 }),            
             controller: _id,
               decoration: const InputDecoration(
-                  hintText: "ID",
-                  labelText: "ID:",
+                  hintText: "pill, tablet, syringe, bottle",
+                  labelText: "Tag:",
                   labelStyle: TextStyle(
                       fontSize: 15,
                       color: Colors.black
