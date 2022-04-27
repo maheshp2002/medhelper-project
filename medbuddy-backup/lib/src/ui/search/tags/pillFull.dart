@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/tags/Pill.dart';
 

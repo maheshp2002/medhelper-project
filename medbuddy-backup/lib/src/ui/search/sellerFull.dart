@@ -30,7 +30,14 @@ class _DetailedItemState extends State<SellerFull> {
   //backgroundColor: Colors.orange[300],
   body: Container(
     
-    child: Column(children: [
+    child: ListView(children: [
+      Padding(padding: EdgeInsets.all(10),
+     child: Image.network(indexno['images'],
+                height: 300,
+                width: 300,
+                
+         ),),
+
     Card(
     child: ListTile(
     title:  Text("Dosage:" + " " + indexno['dosage']),
