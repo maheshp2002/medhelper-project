@@ -38,6 +38,28 @@ class _DetailedItemState extends State<SellerFull2> {
                 width: 300,
                 
          ),),
+
+    Card(
+    child: ListTile(
+    title:  Text( sindexno['discount %'] + "%",
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ), 
+
+    Card(
+    child: ListTile(
+    title:  Text("Discount price:" + " " + sindexno['discount price']),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
+
     Card(
     child: ListTile(
     title:  Text("Dosage:" + " " + sindexno['dosage']),
@@ -48,7 +70,7 @@ class _DetailedItemState extends State<SellerFull2> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + sindexno['availability']),
+    title:  Text("Price:" + " " + sindexno['price']),
     )),
 //gap btw borders
           const SizedBox(

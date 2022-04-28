@@ -45,7 +45,7 @@ return Scaffold(
 	body:  StreamBuilder(
       stream: FirebaseFirestore.instance.collection("Medicinesell")
       .limit(12)
-          .orderBy("medicine name", descending: true).snapshots(),
+          .orderBy("medicine name", descending: false).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
           return Center
@@ -189,6 +189,10 @@ return Scaffold(
                       Text(snapshot.data.docs[index]['medicine name'],textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black38,fontFamily: 'JosefinSans'),
                       ),),
+                      Flexible(child: 
+                      Text(snapshot.data.docs[index]['discount %'],textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.green),
+                      ),),                      
                     ],
                   ),
                 ),

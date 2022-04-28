@@ -96,6 +96,10 @@ return Scaffold(
                       Text(snapshot.data.docs[index]['medicine name'],textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.black38,fontFamily: 'JosefinSans'),
                       ),),
+                      Flexible(child: 
+                      Text(snapshot.data.docs[index]['discount %'],textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.green),
+                      ),),                       
                     ],
                   ),
                 ),

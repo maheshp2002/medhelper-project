@@ -24,13 +24,13 @@ class sellerNavBar extends StatelessWidget {
           const DrawerHeader(
             child: Text(
               'MedHelper',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              style: TextStyle(color: Colors.black, fontSize: 25, fontFamily: 'JosefinSans'),
             ),
             decoration: BoxDecoration(
                 color: Color(0xFF3EB16F),
                 image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: AssetImage("assets/images/pill1.png"))),
+                    image: AssetImage("assets/images/seller.png"))),
           ),
   /*        ListTile(
             leading: const Icon(Icons.input),

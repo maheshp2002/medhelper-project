@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/doctor/dcNavBar.dart';
+import 'package:medbuddy/doctor/splash_screen/doctorSplash.dart';
 
 
 
@@ -16,9 +17,11 @@ class _doctorHomePageState extends State<doctorHomePage> {
   String prescription;
   String emailid;
   String date;
+  String name;
    TextEditingController prescriptionController = TextEditingController();
    TextEditingController emailidController = TextEditingController();
    TextEditingController dateController = TextEditingController();
+   TextEditingController nameController = TextEditingController();
   final collectionReference = FirebaseFirestore.instance;
   @override
   void initState() {
@@ -70,6 +73,28 @@ class _doctorHomePageState extends State<doctorHomePage> {
                 }),
             controller: dateController,
             keyboardType: TextInputType.datetime,
+            
+          ),),
+          SizedBox(
+            height: 16,
+          ),
+
+           Flexible(
+              child:TextField(
+              decoration: InputDecoration(
+              hintText: "name",
+              labelText: "Name:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  name = value;
+                }),
+            controller: nameController,
+            keyboardType: TextInputType.name,
             
           ),),
           SizedBox(
@@ -142,12 +167,18 @@ class _doctorHomePageState extends State<doctorHomePage> {
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   ); 
+                  
                       await collectionReference.collection(emailid).add(
                         {
                         'prescription':prescription,
                         'date':date,
+                        'doctor name': name,
                         }, 
                         );
+                      
+
+                        
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorSplash()));
                         prescriptionController.clear();
                         emailidController.clear();
                         dateController.clear();

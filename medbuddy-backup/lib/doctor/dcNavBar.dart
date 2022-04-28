@@ -23,7 +23,7 @@ class dcNavBar extends StatelessWidget {
           DrawerHeader(
             child: Text(
               'MedHelper',
-              style: TextStyle(color: Colors.white, fontSize: 25),
+              style: TextStyle(color: Colors.white, fontSize: 25, fontFamily: 'JosefinSans'),
             ),
             decoration: BoxDecoration(
                 color: Color(0xFF3EB16F),

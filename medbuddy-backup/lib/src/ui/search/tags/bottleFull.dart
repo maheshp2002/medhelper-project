@@ -38,6 +38,27 @@ class _DetailedItemState extends State<bottleFull> {
          ),),
     Card(
     child: ListTile(
+    title:  Text( indexnobottle['discount %'] + "%",
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ), 
+
+    Card(
+    child: ListTile(
+    title:  Text("Discount price:" + " " + indexnobottle['discount price']),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
+
+    Card(
+    child: ListTile(
     title:  Text("Dosage:" + " " + indexnobottle['dosage']),
     )),
 //gap btw borders
@@ -46,7 +67,7 @@ class _DetailedItemState extends State<bottleFull> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + indexnobottle['availability']),
+    title:  Text("Availability:" + " " + indexnobottle['price']),
     )),
 //gap btw borders
           const SizedBox(

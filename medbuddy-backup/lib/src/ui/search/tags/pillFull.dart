@@ -38,6 +38,27 @@ class _DetailedItemState extends State<pillFull> {
          ),),
     Card(
     child: ListTile(
+    title:  Text( indexnopill['discount %'] + "%",
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ), 
+
+    Card(
+    child: ListTile(
+    title:  Text("Discount price:" + " " + indexnopill['discount price']),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
+
+    Card(
+    child: ListTile(
     title:  Text("Dosage:" + " " + indexnopill['dosage']),
     )),
 //gap btw borders
@@ -46,7 +67,7 @@ class _DetailedItemState extends State<pillFull> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + indexnopill['availability']),
+    title:  Text("Availability:" + " " + indexnopill['price']),
     )),
 //gap btw borders
           const SizedBox(

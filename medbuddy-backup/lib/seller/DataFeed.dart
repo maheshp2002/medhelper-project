@@ -5,9 +5,10 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:medbuddy/seller/imageselector.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:medbuddy/seller/splash_screen/sellerSplash.dart';
+
 
 
 class DataFeed extends StatefulWidget {
@@ -20,56 +21,64 @@ class DataFeed extends StatefulWidget {
 class DataState extends State<DataFeed>{
 
 final collectionReference = FirebaseFirestore.instance.collection("Medicinesell");
-//DocumentReference sightingRef = FirebaseFirestore.instance.collection("Medicinesell").doc();
+
 
 //Controller
 final TextEditingController _id = TextEditingController();
 final TextEditingController _name = TextEditingController();
 final TextEditingController _dosage = TextEditingController();
-final TextEditingController _availability = TextEditingController();
+final TextEditingController _price = TextEditingController();
 final TextEditingController _emailID = TextEditingController();
 final TextEditingController _address = TextEditingController();
 final TextEditingController _mobileno = TextEditingController();
 final TextEditingController _storename = TextEditingController();
+final TextEditingController _discount= TextEditingController();
 
 String id;
 String name;
 String dosage;
-String availability;
 String emailID;
 String address;
 String mobileno;
 String storename;
 
 
+String price;
+String discountvalue;
 
 //..........................................................................................
-            Future<String> uploadFile(_image) async {
+Future<String> uploadFile(_image) async {
 
             FirebaseStorage storage = FirebaseStorage.instance;
               Reference ref = storage.ref().child("image" + DateTime.now().toString());
               await ref.putFile(File(_image.path));
               String returnURL = await ref.getDownloadURL();
-              //await uploadTask.whenComplete(() {
-                  //returnURL = ref.getDownloadURL().toString();
-                  
-              //});
               return returnURL;
             }
 
 //..........................................................................................
 //LOCATION
 //getCurrentLocation() async {
-  Future<void> saveImages(List<File> _images) async {
+  Future<void> saveImages(File _image) async {
 
   Position position;
   position = await Geolocator.getCurrentPosition(
     desiredAccuracy: LocationAccuracy.high);
 //....................................................................
                
-              _images.forEach((image) async {
-              String imageURL = await uploadFile(image);
+              //_image.forEach((image) async {
+              String imageURL = await uploadFile(_image);
                
+//..........................................................................................
+         
+        double oldprice = double.parse(price);
+        double discountv = double.parse(discountvalue);
+        double discount = 0.0;
+        String returnStr = discount.toString();
+
+        discount = (oldprice - discountv)/oldprice*100;
+        returnStr = discount.toStringAsFixed(4);
+
 //..........................................................................................
 
 //Firebase data write
@@ -80,14 +89,17 @@ String storename;
                         'dosage':dosage,
                         'address':address,
                         'store name':storename,
-                        'availability':availability,
+                        'price':price.toString(),
+                        'discount %':returnStr,
+                        'discount price':discountvalue.toString(),
                         'mobile no':mobileno,
                         'email id':emailID,
                         'Latitude': GeoPoint(position.latitude, position.longitude),
-                        "images": imageURL,
+                        'images': imageURL,
                         },
                         );
-                });
+                //}
+                //);
               
               
             
@@ -96,7 +108,7 @@ String storename;
 
 
 // Image Picker
-  List<File> _images = [];
+  //List<File> _images = [];
   File _image; // Used only if you need a single picture
 
   Future getImage(bool gallery) async {
@@ -115,8 +127,8 @@ String storename;
 
     setState(() {
       if (pickedFile != null) {
-        _images.add(File(pickedFile.path));
-        //_image = File(pickedFile.path); // Use if you only need a single picture
+        //_images.add(File(pickedFile.path));
+        _image = File(pickedFile.path); // Use if you only need a single picture
       } else {
         print('No image selected.');
       }
@@ -124,10 +136,32 @@ String storename;
   }
 
 //..........................................................................................
+//   var newPrice = 0.0;
+//   var savedAmount = 0.0;
+//   double originalPrice;
+//   double discount;
+// void _calculateDiscount() {
+//     setState(() {
+//       savedAmount = originalPrice * discount;
+//       newPrice = originalPrice - (originalPrice * discount);
+//     });
+//     print(newPrice);
+// }
+//..........................................................................................
 
+    // String calDiscount() {
+    //     double oldprice = double.parse(price);
+    //     double discountv = double.parse(discountvalue);
+    //     double discount = 0.0;
+    //     returnStr = discount.toString();
 
+    //     discount = (oldprice - discountv)/oldprice*100;
+    //     returnStr = discount.toStringAsFixed(4);
 
+    //     return returnStr;
+    // }
 
+//..........................................................................................
   @override
   Widget build(BuildContext context) {
   return Scaffold(
@@ -151,7 +185,7 @@ String storename;
             );
           },
         ),),
-//page UI
+//page UI.....................................................................................
       body: Column(
     children: [
       Flexible(
@@ -163,7 +197,7 @@ String storename;
       mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
 
-//id
+//id.............................................................................................
           TextField(
                 onChanged: ((value) {
                   id = value;
@@ -185,7 +219,7 @@ String storename;
           const SizedBox(
             height: 16,
           ),
-//name
+//name............................................................................................
           TextField(
                  onChanged: ((value) {
                   name= value;
@@ -206,7 +240,7 @@ String storename;
           const SizedBox(
             height: 16,
           ),
-//dosage
+//dosage.............................................................................................
           TextField(
                  onChanged: ((value) {
                   dosage= value;
@@ -229,7 +263,7 @@ String storename;
           const SizedBox(
             height: 16,
           ),
-//Address
+//Address............................................................................................
           TextField(
                   onChanged: ((value) {
                   address=value;
@@ -252,7 +286,7 @@ String storename;
           const SizedBox(
             height: 16,
           ),
-//Store name
+//Store name.....................................................................................
           TextField(
                   onChanged: ((value) {
                   storename=value;
@@ -275,15 +309,40 @@ String storename;
           const SizedBox(
             height: 16,
           ),          
-//availability
+//price.............................................................................................
           TextField(
                   onChanged: ((value) {
-                  availability= value;
+                  price= value;
                 }),            
-            controller: _availability,
+            controller: _price,
             decoration: const InputDecoration(
-                hintText: "Availability",
-                labelText: "Availability:",
+                hintText: "price",
+                labelText: "Price:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
+                ),
+                border: OutlineInputBorder()
+            ),
+
+            maxLength: 15,
+            keyboardType: TextInputType.number,
+          ),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
+
+//discount.........................................................................................
+//Row(children: [
+          TextField(
+                  onChanged: ((value) {
+                  discountvalue= value;
+                }),            
+            controller: _discount,
+            decoration: const InputDecoration(
+                hintText: "discount value(new value)",
+                labelText: "Discount price:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -295,7 +354,27 @@ String storename;
             keyboardType: TextInputType.number,
           ),
 
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
 
+          //TextField(            
+          //   decoration: const InputDecoration(
+                
+          //       labelText: "Discount %:",
+          //       labelStyle: TextStyle(
+          //           fontSize: 15,
+          //           color: Colors.black
+          //       ),
+          //       border: OutlineInputBorder()
+          //   ),
+
+          //   maxLength: 15,
+          //   keyboardType: TextInputType.number,
+          // ),
+          
+//]),
 //gap btw borders
           const SizedBox(
             height: 16,
@@ -375,8 +454,8 @@ RawMaterialButton(
           style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
-              //getCurrentLocation();
               uploadFile(_image);
+              await saveImages(_image);
               Fluttertoast.showToast(  
                       msg: 'Data Added to DataBase',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -384,7 +463,7 @@ RawMaterialButton(
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   ); 
-                  await saveImages(_images);
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> sellerSucess()));
                 
                 
               
@@ -393,7 +472,8 @@ RawMaterialButton(
                   _name.clear();         
                   _dosage.clear();
                   _address.clear();
-                  _availability.clear();
+                  _price.clear();
+                  _discount.clear();
                   _mobileno.clear();
                   _emailID.clear();
                   _storename.clear();
@@ -418,3 +498,19 @@ RawMaterialButton(
 
 
 
+/*              TextField(
+                decoration: InputDecoration(
+                  hintText: '100',
+                  labelText: 'Original Price',
+                  suffix: Text("\$"),
+                ),
+                onChanged: (value) => originalPrice = double.parse(value),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: '20',
+                  labelText: 'Discount Percentage',
+                  suffix: Text("%"),
+                ),
+                onChanged: (value) => discount = double.parse(value) / 100,
+              ),*/

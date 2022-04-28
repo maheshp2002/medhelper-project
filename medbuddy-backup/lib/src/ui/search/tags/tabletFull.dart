@@ -39,6 +39,27 @@ class _DetailedItemState extends State<tabletFull> {
          ),),
     Card(
     child: ListTile(
+    title:  Text( indexnotablet['discount %'] + "%",
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ), 
+
+    Card(
+    child: ListTile(
+    title:  Text("Discount price:" + " " + indexnotablet['discount price']),
+    )),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
+
+    Card(
+    child: ListTile(
     title:  Text("Dosage:" + " " + indexnotablet['dosage']),
     )),
 //gap btw borders
@@ -47,7 +68,7 @@ class _DetailedItemState extends State<tabletFull> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + indexnotablet['availability']),
+    title:  Text("Availability:" + " " + indexnotablet['price']),
     )),
 //gap btw borders
           const SizedBox(
