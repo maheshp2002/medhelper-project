@@ -75,6 +75,7 @@ return Scaffold(
                   child: ListTile(
                     
                   title: Text(snapshot.data.docs[index]['date']),
+                  subtitle: Text(snapshot.data.docs[index]['doctor name']),
                   trailing: Icon(Icons.arrow_forward_ios),
                    onTap: (){
                       preindexno = snapshot.data.docs[index];

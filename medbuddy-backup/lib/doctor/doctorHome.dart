@@ -79,11 +79,35 @@ class _doctorHomePageState extends State<doctorHomePage> {
             height: 16,
           ),
 
+
+            Flexible(
+              child:TextField(
+              decoration: InputDecoration(
+              hintText: "Enter prescription here",
+              labelText: "Prescription:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  prescription = value;
+                }),
+            controller: prescriptionController,
+            keyboardType: TextInputType.multiline,
+            maxLines: 30,
+          ),),
+
+          SizedBox(
+            height: 16,
+          ),
+
            Flexible(
               child:TextField(
               decoration: InputDecoration(
               hintText: "name",
-              labelText: "Name:",
+              labelText: "Doctor name:",
               labelStyle: TextStyle(
                 fontSize: 15,
                 color: Colors.black
@@ -104,29 +128,8 @@ class _doctorHomePageState extends State<doctorHomePage> {
             Flexible(
               child:TextField(
               decoration: InputDecoration(
-              hintText: "Enter prescription here",
-              labelText: "Prescription:",
-              labelStyle: TextStyle(
-                fontSize: 15,
-                color: Colors.black
-              ),
-                border: OutlineInputBorder()
-            ),
-               onChanged: ((value) {
-                  prescription = value;
-                }),
-            controller: prescriptionController,
-            keyboardType: TextInputType.multiline,
-            maxLines: 30,
-          ),),
-          SizedBox(
-            height: 16,
-          ),
-            Flexible(
-              child:TextField(
-              decoration: InputDecoration(
               hintText: "Enter email ID of patient",
-              labelText: "Email ID:",
+              labelText: "Patient EmailID:",
               labelStyle: TextStyle(
                 fontSize: 15,
                 color: Colors.black

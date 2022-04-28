@@ -98,7 +98,7 @@ return Scaffold(
                       style: TextStyle(color: Colors.black38,fontFamily: 'JosefinSans'),
                       ),),
                        Flexible(child: 
-                      Text(snapshot.data.docs[index]['discount %'],textAlign: TextAlign.center,
+                      Text("Discount: " + snapshot.data.docs[index]['discount %'] + "%",textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.green),
                       ),),                        
                     ],

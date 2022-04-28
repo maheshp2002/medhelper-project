@@ -56,7 +56,14 @@ Widget build(BuildContext context) {
     child: Column(children: [
     Card(
     child: ListTile(
-    title:  Text(preindexno['date']),),),
+    title:  Text(preindexno['date']),),),//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),  
+    Card(
+    child: ListTile(              
+    title:  Text(preindexno['doctor name']),
+    )),
 //gap btw borders
           const SizedBox(
             height: 16,

@@ -26,7 +26,7 @@ var DTindexno;
 
 class AddData extends StatelessWidget {
   //CollectionReference  
-  final collectionReference = FirebaseFirestore.instance.collection(user.uid).snapshots();
+  //final collectionReference = FirebaseFirestore.instance.collection(user.uid).snapshots();
 
 
 @override
@@ -53,15 +53,17 @@ Widget build(BuildContext context) {
         ),
         elevation: 0.0,
   ),
-	body: StreamBuilder(
-      stream: FirebaseFirestore.instance.collection(user.email).limit(12)
-          .orderBy("date", descending: true).snapshots(),
+	body:   StreamBuilder(
+      stream: FirebaseFirestore.instance.collection(user.uid).limit(12)
+          .orderBy("medicine_name", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
+          //hasdata = true;
           return Center
           (child: Image.asset("assets/nothing.gif")
      );
         }
+        
         else if (snapshot.data?.size == 0) {
 
           
@@ -70,9 +72,7 @@ Widget build(BuildContext context) {
         }
 
         else{
-
-
-        return ListView(
+          return ListView(
           children: [
              ListView.builder(
                   physics: ScrollPhysics(),
@@ -125,6 +125,7 @@ Widget build(BuildContext context) {
       }));
         }
         }
+
   
   
   //........................................................................................................

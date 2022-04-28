@@ -77,7 +77,7 @@ Future<String> uploadFile(_image) async {
         String returnStr = discount.toString();
 
         discount = (oldprice - discountv)/oldprice*100;
-        returnStr = discount.toStringAsFixed(4);
+        returnStr = discount.toStringAsFixed(0);
 
 //..........................................................................................
 
@@ -204,7 +204,7 @@ Future<String> uploadFile(_image) async {
                 }),            
             controller: _id,
               decoration: const InputDecoration(
-                  hintText: "pill, tablet, syringe, bottle",
+                  hintText: "eg:- pill, tablet, syringe, bottle",
                   labelText: "Tag:",
                   labelStyle: TextStyle(
                       fontSize: 15,
@@ -212,7 +212,7 @@ Future<String> uploadFile(_image) async {
                   ),
                 border: OutlineInputBorder()
               ),
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.name,
             maxLength: 10,
           ),
 //gap btw borders
@@ -341,7 +341,7 @@ Future<String> uploadFile(_image) async {
                 }),            
             controller: _discount,
             decoration: const InputDecoration(
-                hintText: "discount value(new value)",
+                hintText: "new price",
                 labelText: "Discount price:",
                 labelStyle: TextStyle(
                     fontSize: 15,
@@ -375,10 +375,6 @@ Future<String> uploadFile(_image) async {
           // ),
           
 //]),
-//gap btw borders
-          const SizedBox(
-            height: 16,
-          ),
 
 
 //mobile no
