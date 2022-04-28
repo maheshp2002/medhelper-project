@@ -11,6 +11,7 @@ class prescTile extends StatefulWidget {
   _prescTilepageState createState() => _prescTilepageState();
 }
     var preindexno;
+    bool hasdata;
 
 class _prescTilepageState extends State<prescTile>{
     //final collectionReference = FirebaseFirestore.instance.collection(user.email).snapshots();
@@ -40,16 +41,27 @@ return Scaffold(
         elevation: 0.0,
   ),
   backgroundColor: Colors.grey[200],
-	body:  StreamBuilder(
+	body:  
+  StreamBuilder(
       stream: FirebaseFirestore.instance.collection(user.email).limit(12)
           .orderBy("date", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
+          //hasdata = true;
           return Center
           (child: Image.asset("assets/nothing.gif")
      );
         }
-        return ListView(
+        
+        else if (snapshot.data?.size == 0) {
+
+          
+            return Center
+          (child: Image.asset("assets/nothing.gif"));
+        }
+
+        else{
+          return ListView(
           children: [
              ListView.builder(
                   physics: ScrollPhysics(),
@@ -98,7 +110,7 @@ return Scaffold(
 
         );
       }
-  ));
+      }));
         }
         }
 

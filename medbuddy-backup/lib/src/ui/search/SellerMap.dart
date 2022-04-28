@@ -45,13 +45,18 @@ return Scaffold(
       stream: FirebaseFirestore.instance.collection("Medicinesell").limit(12)
           .orderBy("medicine name", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-         if (!snapshot.hasData) {
+         if (!snapshot.hasData) {   
           return Center
-          (child: Image.asset("assets/nothing.gif")
+          (child: 
+          Image.asset("assets/nothing.gif")
      );
         }
 
-
+      else if (snapshot.data?.size == 0) {
+        return Center
+          (child: Image.asset("assets/nothing.gif"));
+        }
+        else{
 //new streambuilder include image
         return  ListView(
           children: [
@@ -218,9 +223,9 @@ return Scaffold(
 
         )]
         );
-      },
+      }
 
-    ));
+      }));
   }}
        
 //old strembuilder,list view

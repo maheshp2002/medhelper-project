@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
 
@@ -31,7 +30,13 @@ class _DetailedItemState extends State<tabletFull> {
   //backgroundColor: Colors.orange[300],
   body: Container(
     
-    child: Column(children: [
+    child: ListView(children: [
+      Padding(padding: EdgeInsets.all(10),
+     child: Image.network(indexnotablet['images'],
+                height: 300,
+                width: 300,
+                
+         ),),
     Card(
     child: ListTile(
     title:  Text("Dosage:" + " " + indexnotablet['dosage']),

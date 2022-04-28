@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/constants.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 
 class SignInPage extends StatelessWidget {
@@ -141,8 +142,25 @@ class _GoogleSignInState extends State<GoogleSignIn> {
           });
           FirebaseService service = new FirebaseService();
           try {
+//sign in....................................................................................            
            await service.signInwithGoogle();
+ //Naigate to next page......................................................................          
            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => DataFeed()));
+ //Permission request........................................................................          
+           Map<Permission, PermissionStatus> statuses = await [
+                Permission.location, 
+                 Permission.camera,
+                        //add more permission to request here.
+                ].request();
+                     
+              if(statuses[Permission.location].isDenied){ //check each permission status after.
+                print("Location permission is denied.");
+                }
+
+              if(statuses[Permission.camera].isDenied){ //check each permission status after.
+                          print("Camera permission is denied.");
+                      }
+  //toast..........................................................................                    
                       Fluttertoast.showToast(  
                       msg: 'This Page stores Location,so turn on your location',  
                       toastLength: Toast.LENGTH_LONG,  

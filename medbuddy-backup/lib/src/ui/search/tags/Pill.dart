@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/SellerMap.dart';
-import 'package:medbuddy/src/ui/search/sellerFull.dart';
+import 'package:medbuddy/src/ui/search/tags/pillFull.dart';
 
 
 
@@ -47,6 +46,14 @@ return Scaffold(
           (child: Image.asset("assets/nothing.gif")
      );
         }
+                else if (snapshot.data?.size == 0) {
+
+          
+            return Center
+          (child: Image.asset("assets/nothing.gif"));
+        }
+
+        else{
 
 
 //new streambuilder include image
@@ -74,7 +81,7 @@ return Scaffold(
                   onTap: (){
                       indexnopill = snapshot.data.docs[index];
                       Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull()));
+                      MaterialPageRoute(builder: (BuildContext context) => pillFull()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +110,7 @@ return Scaffold(
 
         )]
         );
-      },
+        }}
 
     ));
   }}

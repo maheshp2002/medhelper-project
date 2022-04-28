@@ -52,7 +52,14 @@ return Scaffold(
           (child: Image.asset("assets/nothing.gif")
      );
         }
+        else if (snapshot.data?.size == 0) {
 
+          
+            return Center
+          (child: Image.asset("assets/nothing.gif"));
+        }
+
+        else{
 
 //new streambuilder include image
         return  ListView(
@@ -194,7 +201,7 @@ return Scaffold(
 
         )]
         );
-      },
+      }}
 
     ));
   }}

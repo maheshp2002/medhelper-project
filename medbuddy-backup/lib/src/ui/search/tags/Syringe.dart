@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/SellerMap.dart';
-import 'package:medbuddy/src/ui/search/sellerFull.dart';
+import 'package:medbuddy/src/ui/search/tags/syringeFull.dart';
 
 
 
@@ -11,7 +10,6 @@ class syringe extends StatefulWidget {
   _sellerMapageState createState() => _sellerMapageState();
 }
 var indexnosyringe;
-String pills = "pill";
 class _sellerMapageState extends State<syringe>{
     //final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
   @override
@@ -30,7 +28,7 @@ return Scaffold(
         //   },
         // ),
         title: Text(
-          "Pill",
+          "Syringe",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -47,7 +45,14 @@ return Scaffold(
           (child: Image.asset("assets/nothing.gif")
      );
         }
+        else if (snapshot.data?.size == 0) {
 
+          
+            return Center
+          (child: Image.asset("assets/nothing.gif"));
+        }
+
+        else{
 
 //new streambuilder include image
         return  ListView(
@@ -74,7 +79,7 @@ return Scaffold(
                   onTap: (){
                       indexnosyringe = snapshot.data.docs[index];
                       Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull()));
+                      MaterialPageRoute(builder: (BuildContext context) => syringeFull()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +108,7 @@ return Scaffold(
 
         )]
         );
-      },
+      }}
 
     ));
   }}
