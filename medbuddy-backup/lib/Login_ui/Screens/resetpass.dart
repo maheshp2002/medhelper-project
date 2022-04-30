@@ -63,7 +63,7 @@ class _reserpassState extends State<resetpass> {
                 ),
                 textCapitalization: TextCapitalization.words,
                 decoration: InputDecoration(
-                  hintText: 'example@gmail.com',
+                  hintText: 'Enter your email',
                   prefixIcon: Icon(Icons.email),
                   border: UnderlineInputBorder(),
                 ),

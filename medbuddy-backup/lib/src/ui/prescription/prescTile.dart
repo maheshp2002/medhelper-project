@@ -40,7 +40,7 @@ return Scaffold(
         ),
         elevation: 0.0,
   ),
-  backgroundColor: Colors.grey[200],
+  //backgroundColor: Colors.grey[200],
 	body:  
   StreamBuilder(
       stream: FirebaseFirestore.instance.collection(user.email).limit(12)

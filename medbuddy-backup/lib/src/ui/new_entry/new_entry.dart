@@ -358,6 +358,9 @@ _NewEntryState({this.uid});
                   ),
                 ),
               ),
+                            SizedBox(
+                height: 35,
+              ),
               /*Padding(
                 padding: EdgeInsets.only(top: 5),
                 child: ElevatedButton(

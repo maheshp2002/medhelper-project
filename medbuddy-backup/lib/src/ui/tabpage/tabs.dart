@@ -36,7 +36,7 @@ class _TabPageState extends State<tab>{
       animationDuration: const Duration(milliseconds: 300),
       height: 60,
       items: items,
-      backgroundColor: Colors.transparent,
+      backgroundColor: Color.fromARGB(0, 255, 255, 255),
       color: Colors.deepPurple,
       //Color(0xFF3EB16F),
       index: slindex,
