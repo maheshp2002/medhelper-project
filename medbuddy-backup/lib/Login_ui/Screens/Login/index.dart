@@ -4,6 +4,7 @@ import 'package:medbuddy/Login_ui/Components/Form.dart';
 import 'package:medbuddy/Login_ui/Components/SignUpLink.dart';
 import 'package:medbuddy/Login_ui/Components/WhiteTick.dart';
 import 'package:medbuddy/Login_ui/Components/doctor.dart';
+import 'package:medbuddy/Login_ui/Components/forgotpassword.dart';
 import 'package:medbuddy/Login_ui/Components/gap.dart';
 import 'package:medbuddy/Login_ui/Components/seller.dart';
 import 'package:medbuddy/global/myColors.dart';
@@ -163,6 +164,7 @@ class LoginScreenState extends StatelessWidget {
                               new Tick(image: tick),
                               new FormContainer(),
                               new SignUp(),
+                              new reset(),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

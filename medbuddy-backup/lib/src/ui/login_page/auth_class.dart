@@ -3,6 +3,7 @@ import 'dart:core';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:path_provider/path_provider.dart';
 
 class AuthenticationService{
@@ -24,6 +25,7 @@ class AuthenticationService{
       await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       //await ;
       //return "Signed in";
+     // if (user.isEmailVerified) return user.uid;
                       Fluttertoast.showToast(  
                       msg: 'Signed in',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -32,6 +34,7 @@ class AuthenticationService{
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );  
+      //return null;
     } on FirebaseAuthException catch (e){
       //return e.message;
                       Fluttertoast.showToast(  
@@ -46,11 +49,25 @@ class AuthenticationService{
     }
 
   }
+
+  /*Future<void> resetPassword(String email) async {
+    await _firebaseAuth.sendPasswordResetEmail(email: email);
+     Fluttertoast.showToast(  
+                      msg: 'password reset email send',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );
+}*/
   
   
   Future<String> signUp({String email, String password}) async{
     try{
       await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+        try {
+           //await user.sendEmailVerification();   
       //return "Signed up";
                       Fluttertoast.showToast(  
                       msg: 'Signed up',  
@@ -59,7 +76,13 @@ class AuthenticationService{
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
-                  ); 
+                  );
+        //return user.uid;
+
+     } catch (e) {
+        print("An error occured while trying to send email verification");
+        print(e.message);
+     } 
                               
 
     } on FirebaseAuthException catch (e) {

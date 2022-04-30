@@ -424,7 +424,7 @@ Future<String> uploadFile(_image) async {
           ),
 
  //Image selection
-RawMaterialButton(
+/*RawMaterialButton(
           fillColor: Theme.of(context).accentColor,
           child: Icon(Icons.add_photo_alternate_rounded,
           color: Colors.white,),
@@ -434,7 +434,42 @@ RawMaterialButton(
           },
           padding: EdgeInsets.all(15),
          shape: CircleBorder(),
-),
+),*/
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                 getImage(true);
+              },
+              child: Container(
+                //radius: 55,
+              height: 150.0,
+                width: 150.0,
+                color: Colors.orange,
+                child: _image != null
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.file(
+                          _image,
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.fill
+                        ),
+                      )
+                    : Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(50)),
+                        width: 100,
+                        height: 100,
+                        child: Icon(
+                          Icons.camera_alt,
+                          color: Colors.grey[800],
+                        ),
+                      ),
+              ),
+            ),
+          ),
+
 
 
 //gap btw borders

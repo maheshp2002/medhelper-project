@@ -1,24 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/Login_ui/Screens/Login/index.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
-import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
-class Register extends StatefulWidget {
+
+class resetpass extends StatefulWidget {
 
   @override
-  _RegisterState createState() => _RegisterState();
+  _reserpassState createState() => _reserpassState();
 }
-final user =  FirebaseAuth.instance.currentUser;
-var cred;
-class _RegisterState extends State<Register> {
+
+class _reserpassState extends State<resetpass> {
 
   TextEditingController emailController = TextEditingController();
-  TextEditingController passController = TextEditingController();
   FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
@@ -59,7 +56,7 @@ class _RegisterState extends State<Register> {
                                     horizontal: MyDimens.double_30),
                                 child: Align(
                                   alignment: Alignment.center,
-                                  child: Text("SignUp new account",
+                                  child: Text("Reset your password",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyText2
@@ -90,23 +87,7 @@ class _RegisterState extends State<Register> {
                 ),
     
               ),
-              Padding(padding: EdgeInsets.only(top: 10),
-               child:
-              new TextFormField(
-                controller: passController,
-                 obscureText: true,
-                keyboardType: TextInputType.text,
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-                textCapitalization: TextCapitalization.words,
-                decoration: InputDecoration(
-                  hintText: 'password',
-                  prefixIcon: Icon(Icons.lock),
-                  border: UnderlineInputBorder(),
-                ),
-              ),
-              ),              
+ 
         
       
              
@@ -122,84 +103,29 @@ class _RegisterState extends State<Register> {
                                     Expanded(
                                       child: OutlineButton(
                                         onPressed: () async {
-                                         if (emailController.text.isNotEmpty & passController.text.isNotEmpty) {
-
-                    try {
-                      //UserCredential userCredential = 
-                      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                        email: emailController.text.trim(),
-                        password: passController.text.trim(),   
-                      ).then((cred) => {
-                        cred.user.sendEmailVerification(), 
-                        FirebaseFirestore.instance.collection(cred.user.uid).doc().set(
-                          {
-                        'medicine_name':"0",
-                        'dosage':"0", 
-                        'time':"0",
-                        'interval': "0",
-                          }
-                        )
-                      }
-                      
-                       );                   
-                      Fluttertoast.showToast(  
-                      msg: 'Signed up',  
-                      toastLength: Toast.LENGTH_LONG,  
-                      gravity: ToastGravity.BOTTOM,  
-                      //timeInSecForIosWeb: 1,  
-                      backgroundColor: Colors.black,  
-                      textColor: Colors.white  
-                  );
-                     Fluttertoast.showToast(  
-                      msg: 'Verify your email',  
-                      toastLength: Toast.LENGTH_LONG,  
-                      gravity: ToastGravity.BOTTOM,  
-                      //timeInSecForIosWeb: 1,  
-                      backgroundColor: Colors.black,  
-                      textColor: Colors.white  
-                  );
-                      Navigator.push(context, 
-                      MaterialPageRoute(builder: (BuildContext context) =>  tab()));
-
-                       
-                    } on FirebaseAuthException catch (e) {
-                      if (e.code == 'weak-password') {
-                            Fluttertoast.showToast(  
-                            msg: 'The password provided is too weak.',  
-                            toastLength: Toast.LENGTH_LONG,  
-                            gravity: ToastGravity.BOTTOM,  
-                            //timeInSecForIosWeb: 1,  
-                            backgroundColor: Colors.black,  
-                            textColor: Colors.white, 
-                             ); 
-                        
-                      } else if (e.code == 'email-already-in-use') {
-                             Fluttertoast.showToast(  
-                            msg: 'The account already exists for that email.',  
-                            toastLength: Toast.LENGTH_LONG,  
-                            gravity: ToastGravity.BOTTOM,  
-                            //timeInSecForIosWeb: 1,  
-                            backgroundColor: Colors.black,  
-                            textColor: Colors.white, 
-                             ); 
-                        
-                      }
-                    } catch (e) {
-                      print(e);
-                    }
-
-                        } else {
-                          //toast
-                            Fluttertoast.showToast(  
-                            msg: 'Enter email and password',  
-                            toastLength: Toast.LENGTH_LONG,  
-                            gravity: ToastGravity.BOTTOM,  
-                            //timeInSecForIosWeb: 1,  
-                            backgroundColor: Colors.black,  
-                            textColor: Colors.white  
-                        );  
-
+                                          try{
+                                        await FirebaseAuth.instance.sendPasswordResetEmail(email: emailController.text.trim());
+                                             Fluttertoast.showToast(  
+                                              msg: 'Password reset email send',  
+                                              toastLength: Toast.LENGTH_LONG,  
+                                              gravity: ToastGravity.BOTTOM,  
+                                              //timeInSecForIosWeb: 1,  
+                                              backgroundColor: Colors.black,  
+                                              textColor: Colors.white  
+                                          );
+                                          } on FirebaseAuthException catch (e){
+                                            print (e);
+                                             Fluttertoast.showToast(  
+                                              msg: e.message,  
+                                              toastLength: Toast.LENGTH_LONG,  
+                                              gravity: ToastGravity.BOTTOM,  
+                                              //timeInSecForIosWeb: 1,  
+                                              backgroundColor: Colors.black,  
+                                              textColor: Colors.white  
+                                          );
                                           }
+                                          Navigator.push(context, 
+                                         MaterialPageRoute(builder: (BuildContext context) =>  login1()));                                    
                                         },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
@@ -212,7 +138,7 @@ class _RegisterState extends State<Register> {
                                           padding: EdgeInsets.only(
                                               top: MyDimens.double_15,
                                               bottom: MyDimens.double_15),
-                                          child: Text("Sign Up",
+                                          child: Text("Send email",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1

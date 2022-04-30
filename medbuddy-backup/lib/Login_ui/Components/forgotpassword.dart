@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/login_page/register.dart';
+import 'package:medbuddy/Login_ui/Screens/resetpass.dart';
 
-class SignUp extends StatelessWidget {
-  SignUp();
+class reset extends StatelessWidget {
+  reset();
   @override
   Widget build(BuildContext context) {
     return new InkWell(
           onTap: () {
             Navigator.push(
               context, MaterialPageRoute(
-                builder: (BuildContext context) =>  Register()
+                builder: (BuildContext context) =>  resetpass()
                 ));
           },
      child: new Padding(
       padding: const EdgeInsets.only(
-        top: 60.0,
+        top: 50.0,
       ),
       child: new Text(
-        "Don't have an account? Sign Up",
+        "Forgot password",
         textAlign: TextAlign.center,
         overflow: TextOverflow.ellipsis,
         softWrap: true,
