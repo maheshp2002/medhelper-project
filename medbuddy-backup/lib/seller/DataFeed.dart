@@ -447,7 +447,7 @@ Future<String> uploadFile(_image) async {
                 color: Colors.orange,
                 child: _image != null
                     ? ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
+                        //borderRadius: BorderRadius.circular(50),
                         child: Image.file(
                           _image,
                           width: 150,
@@ -487,6 +487,7 @@ Future<String> uploadFile(_image) async {
            onPressed: () async{
               uploadFile(_image);
               await saveImages(_image);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> sellerSucess()));
               Fluttertoast.showToast(  
                       msg: 'Data Added to DataBase',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -494,7 +495,6 @@ Future<String> uploadFile(_image) async {
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   ); 
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> sellerSucess()));
                 
                 
               

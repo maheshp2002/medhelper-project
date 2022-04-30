@@ -43,7 +43,7 @@ class _reserpassState extends State<resetpass> {
                                           .textTheme
                                           .bodyText2
                                           .copyWith(
-                                          color: MyColors.white,
+                                          color: Colors.grey,
                                           //fontFamily: 'lexenddeca'
                                           )),
                                 ),
