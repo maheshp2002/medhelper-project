@@ -21,7 +21,7 @@ class _reserpassState extends State<resetpass> {
   Widget build(BuildContext context) {
     return  Material(
               child: Scaffold(
-                backgroundColor: MyColors.primaryColor,
+                backgroundColor: Colors.white,
                 body: SafeArea(
                   child: SingleChildScrollView(
                     child: Container(
@@ -31,26 +31,8 @@ class _reserpassState extends State<resetpass> {
                         children: <Widget>[
                           Column(
                             children: <Widget>[
-                              Container(
-                                margin: EdgeInsets.only(
-                                  left: MyDimens.double_30,
-                                  right: MyDimens.double_30,
-                                  top: MyDimens.double_25 * 2,
-                                ),
-                                child: Column(
-                                  children: <Widget>[  
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: MyDimens.double_30,
-                                      vertical: MyDimens.double_30),
-                                  child: Image(
-                                    image: AssetImage(
-                                        'assets/medicine.png'),
-                                    fit: BoxFit.cover,
-                                  )),
+                              Image.asset(
+                                'assets/images/forgotpassword image.png', width: 600,height: 350,),
                               Container(
                                 margin: EdgeInsets.symmetric(
                                     horizontal: MyDimens.double_30),

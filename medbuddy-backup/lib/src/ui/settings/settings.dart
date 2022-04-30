@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/ui/about/data_retreval.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 
@@ -48,6 +49,26 @@ class _SettingsPageState extends State<Settings>{
                 },
                  ),
             ),
+
+             Card(
+              child: 
+                ListTile(
+                title: Text('Send Verification mail'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: (){
+
+                          user.sendEmailVerification();
+                      Fluttertoast.showToast(  
+                      msg: 'Check out your email inbox',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+
+                        }),),
+
+
              Card(
               child: 
                 ListTile(
