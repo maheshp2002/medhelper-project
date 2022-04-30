@@ -29,7 +29,7 @@ android {
     compileSdkVersion 31
 
     lintOptions {
-        disable 'InvalidPackage'
+        disable 'Instantiatable'
     }
 
     defaultConfig {
