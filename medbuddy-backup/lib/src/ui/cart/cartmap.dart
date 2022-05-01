@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/cart/cartfull.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
-
+import 'package:fluttertoast/fluttertoast.dart';
 
 class cartMap extends StatefulWidget {
   @override
@@ -93,7 +93,16 @@ return Scaffold(
                         title: new Text('Delete'),
                         onTap: () async{
                         await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
-                        await myTransaction.delete(snapshot.data.docs[index].reference);}
+                        await myTransaction.delete(snapshot.data.docs[index].reference);
+                          Fluttertoast.showToast(  
+                          msg: 'Item removed from cart',  
+                          toastLength: Toast.LENGTH_LONG,  
+                          gravity: ToastGravity.BOTTOM,  
+                          //timeInSecForIosWeb: 1,  
+                          backgroundColor: Colors.black,  
+                          textColor: Colors.white  
+                      );                       
+                        }
                         );
                         })
                         ]

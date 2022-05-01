@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
-import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
@@ -154,7 +153,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
         bool docExits = await checkIfDocExists(docid);
         if(docExits == true){
                       Fluttertoast.showToast(  
-                      msg: 'cart removed',  
+                      msg: 'Item removed from cart',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
@@ -178,7 +177,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
                         });
                        Fluttertoast.showToast(  
-                      msg: 'cart added',  
+                      msg: 'Item added to cart',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  

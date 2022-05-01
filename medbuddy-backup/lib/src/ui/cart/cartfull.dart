@@ -151,7 +151,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                                           await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
                                           await myTransaction.delete(cindexno.reference);});
                                          Fluttertoast.showToast(  
-                                          msg: 'cart removed',  
+                                          msg: 'Item removed from cart',  
                                           toastLength: Toast.LENGTH_LONG,  
                                           gravity: ToastGravity.BOTTOM,  
                                           //timeInSecForIosWeb: 1,  
