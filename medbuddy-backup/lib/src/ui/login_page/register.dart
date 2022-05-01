@@ -141,7 +141,7 @@ class _RegisterState extends State<Register> {
                         ),
                         FirebaseFirestore.instance.collection(cred.user.email + "cart").doc().set(
                           {
-                          'medicine name': 0,
+                          'medicine name': "Default value to keep your collection",
                           'email id': 0,
                           'mobile no': 0,
                           'address': 0,

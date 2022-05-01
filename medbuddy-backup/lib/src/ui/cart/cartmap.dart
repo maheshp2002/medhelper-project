@@ -81,6 +81,26 @@ return Scaffold(
                       Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) => cartFull()));
                   },
+                    onLongPress: () {
+                      
+        showModalBottomSheet<void>(context: context,
+            builder: (BuildContext context) {
+                return Container(
+                    child: new Wrap(
+                    children: <Widget>[
+                        new ListTile(
+                        leading: new Icon(Icons.delete),
+                        title: new Text('Delete'),
+                        onTap: () async{
+                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
+                        await myTransaction.delete(snapshot.data.docs[index].reference);}
+                        );
+                        })
+                        ]
+                        )
+                        );}
+                        );
+                    },                  
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
