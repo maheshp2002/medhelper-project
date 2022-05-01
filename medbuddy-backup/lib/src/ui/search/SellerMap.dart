@@ -13,9 +13,10 @@ class sellerMap extends StatefulWidget {
   _sellerMapageState createState() => _sellerMapageState();
 }
     var indexno;
+    String docid;
 
 class _sellerMapageState extends State<sellerMap>{
-//final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
+//final collectionRef = FirebaseFirestore.instance.collection("Medicinesell");
     
   @override
   Widget build(BuildContext context) {
@@ -167,6 +168,9 @@ return Scaffold(
                   splashColor: Colors.black26,
                   onTap: (){
                       indexno = snapshot.data.docs[index];
+                      docid = snapshot.data.docs[index].id;
+                      //print(docid);
+                      //collectionRef.doc().id;
                       Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) => SellerFull()));
                   },

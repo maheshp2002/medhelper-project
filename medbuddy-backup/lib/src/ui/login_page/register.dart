@@ -138,7 +138,22 @@ class _RegisterState extends State<Register> {
                         'time':"0",
                         'interval': "0",
                           }
-                        )
+                        ),
+                        FirebaseFirestore.instance.collection(cred.user.email + "cart").doc().set(
+                          {
+                          'medicine name': 0,
+                          'email id': 0,
+                          'mobile no': 0,
+                          'address': 0,
+                          'price': 0,
+                          'dosage': 0,
+                          'discount %': 0,
+                          'discount price': 0,
+                          'images': 0,
+
+                          }
+                        ),                        
+                                              
                       }
                       
                        );                   
