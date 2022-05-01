@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/seller/DataFeed.dart';
+import 'package:medbuddy/seller/SellerCloud/SellerMap2.dart';
 
 class sellerSucess extends StatefulWidget {
 
@@ -15,7 +15,7 @@ class sellerSucess extends StatefulWidget {
 
   _navigatetoHome()async{
     await Future.delayed(Duration(milliseconds: 2000), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DataFeed()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => sellerMap2()));
   }
 
   @override
