@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
+import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 import 'package:medbuddy/src/ui/settings/patientAbout.dart';
 import 'package:medbuddy/src/ui/settings/settings.dart';
@@ -34,6 +35,11 @@ class NavDrawer extends StatelessWidget {
             title: Text('Profile'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => patientAbout()))},
           ),
+          ListTile(
+            leading: Icon(Icons.shopping_cart),
+            title: Text('Cart'),
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartMap()))},
+          ),          
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),

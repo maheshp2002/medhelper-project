@@ -11,6 +11,7 @@ class tablet extends StatefulWidget {
   _sellerMapageState createState() => _sellerMapageState();
 }
 var indexnotablet;
+String Tdocid;
 class _sellerMapageState extends State<tablet>{
     //final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
   @override
@@ -79,6 +80,7 @@ return Scaffold(
                   splashColor: Colors.black26,
                   onTap: (){
                       indexnotablet = snapshot.data.docs[index];
+                      Tdocid = snapshot.data.docs[index].id;
                       Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) => tabletFull()));
                   },

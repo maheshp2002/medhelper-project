@@ -66,7 +66,7 @@ return Scaffold(
           children: [
  //.......................................................................................................
  //top bar 
-      Padding(padding: EdgeInsets.only(top: 60, left: 10),  
+  /*    Padding(padding: EdgeInsets.only(top: 60, left: 10),  
      child: Text("Categories:",textAlign: TextAlign.start,
       style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
       Divider(
@@ -150,6 +150,7 @@ return Scaffold(
         color: Colors.black,
     ),
  //.......................................................................................................
+ */
              GridView.builder(
                   physics: ScrollPhysics(),
                   padding: EdgeInsets.all(10),

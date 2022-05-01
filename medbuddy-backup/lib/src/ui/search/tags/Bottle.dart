@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/tags/bottleFull.dart';
 
 
@@ -11,6 +12,7 @@ class bottle extends StatefulWidget {
   _sellerMapageState createState() => _sellerMapageState();
 }
 var indexnobottle;
+String Bdocid;
 class _sellerMapageState extends State<bottle>{
     //final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
   @override
@@ -79,6 +81,7 @@ return Scaffold(
                   splashColor: Colors.black26,
                   onTap: (){
                       indexnobottle = snapshot.data.docs[index];
+                      Bdocid = snapshot.data.docs[index].id;
                       Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) => bottleFull()));
                   },
@@ -116,7 +119,10 @@ return Scaffold(
       }}
 
     ));
-  }}
+  }
+
+
+  }
   
   
   

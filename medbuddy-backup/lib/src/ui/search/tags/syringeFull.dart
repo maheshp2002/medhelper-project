@@ -1,4 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:medbuddy/global/myColors.dart';
+import 'package:medbuddy/global/myDimens.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
+import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/tags/Syringe.dart';
 
@@ -134,12 +140,101 @@ class _DetailedItemState extends State<syringeFull> {
      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => HomeView()));
     }
     )),     
-    )
-    
+    ),
+     SizedBox(
+      height: 10,
+    ),
+
+//button for fav  
+        OutlineButton(
+        onPressed: () async {
+
+        bool docExits = await checkIfDocExists(Sdocid);
+        if(docExits == true){
+                      Fluttertoast.showToast(  
+                      msg: 'cart removed',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );
+            return collectionCart.doc(Sdocid).delete();
+        } else{
+          collectionCart.doc(Sdocid).set(
+                        {
+                          'medicine name': indexnosyringe['medicine name'],
+                          'email id': indexnosyringe['email id'],
+                          'mobile no': indexnosyringe['mobile no'],
+                          'address': indexnosyringe['address'],
+                          'price': indexnosyringe['price'],
+                          'dosage': indexnosyringe['dosage'],
+                          'discount %': indexnosyringe['discount %'],
+                          'discount price': indexnosyringe['discount price'],
+                          'images': indexnosyringe['images'],
+
+
+                        });
+                       Fluttertoast.showToast(  
+                      msg: 'cart added',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );                       
+        }
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartSucess()));
+        },
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                                MyDimens.double_4)),
+                                        borderSide: BorderSide(
+                                            color: MyColors.lighterPink,
+                                            width: MyDimens.double_1),
+                                        color: MyColors.primaryColor,
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              top: MyDimens.double_15,
+                                              bottom: MyDimens.double_15),
+                                          child: Row(
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children:[
+                                           Text("Cart",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle1
+                                                  .copyWith(
+                                                  color:
+                                                  MyColors.lighterPink,
+                                                  //fontFamily:
+                                                 // 'lexenddeca'
+                                                 )),
+                                                const SizedBox(
+                                                  width: 5,
+                                                ),
+                                                Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,),
+                                                 ])
+                                        ),
+                                      ),           
+  SizedBox(
+      height: 10,
+    ),   
       
     ]
   ),),
 );
 }
-
+//.......................................................................................
+//to check doc id
+var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
+ Future<bool> checkIfDocExists(String docId) async{
+  try{
+    var doc = await collectionCart.doc(docId).get();
+    return doc.exists;
+  }catch (e){
+    print(e);
+  }
+}
+//.......................................................................................
 }
