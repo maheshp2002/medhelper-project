@@ -44,13 +44,13 @@ return Scaffold(
          if (!snapshot.hasData) {   
           return Center
           (child: 
-          Image.asset("assets/nothing.gif")
+          Image.asset("assets/emptycart.gif",width:500, height:500,)
      );
         }
 
       else if (snapshot.data?.size == 0) {
         return Center
-          (child: Image.asset("assets/nothing.gif"));
+          (child: Image.asset("assets/emptycart.gif",width:500, height:500,));
         }
         else{
 //new streambuilder include image
