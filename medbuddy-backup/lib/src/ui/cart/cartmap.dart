@@ -30,7 +30,7 @@ return Scaffold(
           },
         ),
         title: Text(
-          "Cart",
+          "WishList",
           style: TextStyle(
             color: Color.fromARGB(255, 250, 248, 248),
             fontSize: 18,
@@ -90,12 +90,12 @@ return Scaffold(
                     children: <Widget>[
                         new ListTile(
                         leading: new Icon(Icons.delete),
-                        title: new Text('Delete'),
+                        title: new Text('Remove'),
                         onTap: () async{
                         await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
                         await myTransaction.delete(snapshot.data.docs[index].reference);
                           Fluttertoast.showToast(  
-                          msg: 'Item removed from cart',  
+                          msg: 'Item removed from WishList',  
                           toastLength: Toast.LENGTH_LONG,  
                           gravity: ToastGravity.BOTTOM,  
                           //timeInSecForIosWeb: 1,  

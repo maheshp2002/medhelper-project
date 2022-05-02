@@ -7,6 +7,7 @@ import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class bottleFull extends StatefulWidget {
@@ -90,6 +91,11 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
     Card(
     child: ListTile(                
     title:  Text("Mobile no:" + " " + indexnobottle['mobile no']),
+        trailing: Icon(Icons.arrow_forward_ios),
+        onTap: (){
+     _makePhoneCall();
+
+    },
     )),
 //gap btw borders
           const SizedBox(
@@ -98,6 +104,11 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
     Card(
     child: ListTile(               
     title:  Text("Email-id:" + " " + indexnobottle['email id']),
+    trailing: Icon(Icons.arrow_forward_ios),
+        onTap: (){
+     _sendingMails();
+
+    }
     )),
 //gap btw borders
 
@@ -199,7 +210,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                                           child: Row(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children:[
-                                           Text("Cart",
+                                           Text("WishList",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1
@@ -236,4 +247,28 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
   }
 }
 //.......................................................................................
+_sendingMails()  {
+String encodeQueryParameters(Map<String, String> params) {
+  return params.entries
+      .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .join('&');
+}
+final Uri emailLaunchUri = Uri(
+  scheme: 'mailto',
+  path: indexnobottle['email id'],
+  query: encodeQueryParameters(<String, String>{
+    'subject': 'medhelper'
+  }),
+);
+
+launchUrl(emailLaunchUri);
+}
+
+ _makePhoneCall() async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: indexnobottle['mobile no'],
+    );
+    await launchUrl(launchUri);
+  }
 }

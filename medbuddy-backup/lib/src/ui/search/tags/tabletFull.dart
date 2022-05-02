@@ -7,6 +7,7 @@ import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 
@@ -91,6 +92,11 @@ class _DetailedItemState extends State<tabletFull> {
     Card(
     child: ListTile(                
     title:  Text("Mobile no:" + " " + indexnotablet['mobile no']),
+      trailing: Icon(Icons.arrow_forward_ios),
+        onTap: (){
+     _makePhoneCall();
+
+    }
     )),
 //gap btw borders
           const SizedBox(
@@ -99,6 +105,11 @@ class _DetailedItemState extends State<tabletFull> {
     Card(
     child: ListTile(               
     title:  Text("Email-id:" + " " + indexnotablet['email id']),
+        trailing: Icon(Icons.arrow_forward_ios),
+        onTap: (){
+     _sendingMails();
+
+    }
     )),
 //gap btw borders
 
@@ -197,7 +208,7 @@ class _DetailedItemState extends State<tabletFull> {
                                           child: Row(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children:[
-                                           Text("Cart",
+                                           Text("WishList",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1
@@ -221,6 +232,29 @@ class _DetailedItemState extends State<tabletFull> {
     ]
   ),),
 );
+}
+ _makePhoneCall() async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: indexnotablet['mobile no'],
+    );
+    await launchUrl(launchUri);
+  }
+_sendingMails()  {
+String encodeQueryParameters(Map<String, String> params) {
+  return params.entries
+      .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .join('&');
+}
+final Uri emailLaunchUri = Uri(
+  scheme: 'mailto',
+  path: indexnotablet['email id'],
+  query: encodeQueryParameters(<String, String>{
+    'subject': 'medhelper'
+  }),
+);
+
+launchUrl(emailLaunchUri);
 }
 //.......................................................................................
 //to check doc id

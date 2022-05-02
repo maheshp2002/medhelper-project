@@ -8,7 +8,7 @@ import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class SellerFull extends StatefulWidget {
 
@@ -98,7 +98,11 @@ class _DetailedItemState extends State<SellerFull> {
     Card(
     child: ListTile(                
     title:  Text("Mobile no:" + " " + indexno['mobile no']),
-    )),
+    trailing: Icon(Icons.arrow_forward_ios),
+    onTap: (){
+     _makePhoneCall();
+
+    })),
 //gap btw borders
           const SizedBox(
             height: 16,
@@ -106,6 +110,11 @@ class _DetailedItemState extends State<SellerFull> {
     Card(
     child: ListTile(               
     title:  Text("Email-id:" + " " + indexno['email id']),
+    trailing: Icon(Icons.arrow_forward_ios),
+        onTap: (){
+     _sendingMails();
+
+    }
     )),
 //gap btw borders
 
@@ -162,7 +171,7 @@ class _DetailedItemState extends State<SellerFull> {
           
          // checkbool1();
                       Fluttertoast.showToast(  
-                      msg: 'Item removed from cart',  
+                      msg: 'Item removed from WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
@@ -188,7 +197,7 @@ class _DetailedItemState extends State<SellerFull> {
 
                         });
                        Fluttertoast.showToast(  
-                      msg: 'Item added to cart',  
+                      msg: 'Item added to WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
@@ -213,7 +222,7 @@ class _DetailedItemState extends State<SellerFull> {
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children:[
                                              //docex == true?
-                                           Text("Cart",
+                                           Text("WishList",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1
@@ -250,6 +259,30 @@ class _DetailedItemState extends State<SellerFull> {
 );
 }
 
+ _makePhoneCall() async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: indexno['mobile no'],
+    );
+    await launchUrl(launchUri);
+  }
+_sendingMails()  {
+String encodeQueryParameters(Map<String, String> params) {
+  return params.entries
+      .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .join('&');
+}
+final Uri emailLaunchUri = Uri(
+  scheme: 'mailto',
+  path: indexno['email id'],
+  query: encodeQueryParameters(<String, String>{
+    'subject': 'medhelper'
+  }),
+);
+
+launchUrl(emailLaunchUri);
+}
+ 
 }
 //  checkbool() async{
 //  bool docExits = await checkIfDocExists(docid);
@@ -271,8 +304,9 @@ class _DetailedItemState extends State<SellerFull> {
   }catch (e){
     print(e);
   }
+//.............................................................
 
-} 
+ }
 //use checkifdoc to check a doc exit, if yes remove it, else create a doc in sellercart with name
 //of sellermap doc, using a seperate function to check if docex is true if true display text
 
