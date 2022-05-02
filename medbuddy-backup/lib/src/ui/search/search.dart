@@ -66,7 +66,7 @@ class _searchPageState extends State<search>{
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Ink.image(image: AssetImage('assets/logo/pharmeasyl2.png'),
+                      Ink.image(image: AssetImage('assets/logo/pharmeasy.png'),
                         height: 100,
                         width: 150,
                         fit: BoxFit.fitWidth,
@@ -84,7 +84,7 @@ class _searchPageState extends State<search>{
             ),
             Padding(padding: EdgeInsets.only(left: 10, right: 10),
               child: Material(
-                color: Colors.lightGreen,
+                color: Colors.white,
                 elevation: 18,
                 borderRadius: BorderRadius.circular(28),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -106,7 +106,7 @@ class _searchPageState extends State<search>{
                       ),
                 Text(
                       'Netmed',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.grey),
                     ),
                 SizedBox(height: 10,),                    
                     ],
