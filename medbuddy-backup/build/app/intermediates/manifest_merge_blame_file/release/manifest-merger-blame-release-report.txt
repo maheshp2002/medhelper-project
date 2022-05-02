@@ -1,45 +1,45 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.medhelper.medhelper"
-4    android:versionCode="16"
-5    android:versionName="1.1.6" >
+4    android:versionCode="18"
+5    android:versionName="1.1.8" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml
+8-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml
+9-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.VIBRATE" />
-11-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:4:5-66
-11-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:4:22-63
+11-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:4:5-66
+11-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:4:22-63
 12    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-12-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:5:5-80
-12-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:5:22-78
+12-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:5:5-80
+12-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:5:22-78
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:6:5-79
-13-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:6:22-76
+13-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:6:5-79
+13-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:6:22-76
 14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-14-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:7:5-77
-14-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:7:22-74
+14-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:7:5-77
+14-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:7:22-74
 15    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
-15-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:8:5-85
-15-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:8:22-82
+15-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:8:5-85
+15-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:8:22-82
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:9:5-79
-16-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:9:22-76
+16-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:9:5-79
+16-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:9:22-76
 17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-17-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:10:5-81
-17-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:10:22-78
+17-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:10:5-81
+17-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:10:22-78
 18    <uses-permission android:name="android.permission.INTERNET" />
-18-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:7:5-67
-18-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:7:22-64
+18-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:7:5-67
+18-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:7:22-64
 19    <uses-permission android:name="android.permission.WAKE_LOCK" />
-19-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:8:5-68
-19-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:8:22-65
+19-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:8:5-68
+19-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:8:22-65
 20    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-20-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:5-81
-20-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:22-78
+20-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:5-81
+20-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:9:22-78
 21    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 21-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:5-82
 21-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:22-79
@@ -64,36 +64,36 @@
 33         FlutterApplication and put your custom class here.
 34    -->
 35    <application
-35-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:16:5-56:19
+35-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:16:5-56:19
 36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 36-->[androidx.core:core:1.6.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6a37916e13d25ef32986ec945ae6ef64\core-1.6.0\AndroidManifest.xml:24:18-86
 37        android:icon="@mipmap/launcher_icon"
-37-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:19:9-45
+37-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:19:9-45
 38        android:label="MedHelper" >
-38-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:18:9-34
+38-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:18:9-34
 39        <meta-data
-39-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:21:9-23:70
+39-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:21:9-23:70
 40            android:name="com.google.android.geo.API_KEY"
-40-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:22:13-58
+40-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:22:13-58
 41            android:value="AIzaSyDxZFosXzWXNpJ_5eGY2MK6e5VG7WiWjgU" />
-41-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:23:13-68
+41-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:23:13-68
 42
 43        <activity
-43-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:24:9-45:20
+43-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:24:9-45:20
 44            android:name="com.medhelper.medhelper.MainActivity"
-44-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:25:13-41
+44-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:25:13-41
 45            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-45-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:30:13-144
+45-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:30:13-144
 46            android:exported="true"
-46-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:26:13-36
+46-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:26:13-36
 47            android:hardwareAccelerated="true"
-47-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:31:13-47
+47-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:31:13-47
 48            android:launchMode="singleTop"
-48-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:28:13-43
+48-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:28:13-43
 49            android:theme="@style/LaunchTheme"
-49-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:29:13-47
+49-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:29:13-47
 50            android:windowSoftInputMode="adjustResize" >
-50-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:32:13-55
+50-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:32:13-55
 51
 52            <!--
 53                 This keeps the window background of the activity showing
@@ -103,98 +103,98 @@
 57            -->
 58
 59            <meta-data
-59-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:38:13-40:66
+59-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:38:13-40:66
 60                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-60-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:39:17-81
+60-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:39:17-81
 61                android:resource="@drawable/launch_background" />
-61-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:40:17-63
+61-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:40:17-63
 62
 63            <intent-filter>
-63-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:41:13-44:29
+63-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:41:13-44:29
 64                <action android:name="android.intent.action.MAIN" />
-64-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:42:17-68
-64-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:42:25-66
+64-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:42:17-68
+64-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:42:25-66
 65
 66                <category android:name="android.intent.category.LAUNCHER" />
-66-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:43:17-76
-66-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:43:27-74
+66-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:43:17-76
+66-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:43:27-74
 67            </intent-filter>
 68        </activity>
 69
 70        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
-70-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:46:13-50:24
-70-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:46:23-111
+70-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:46:13-50:24
+70-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:46:23-111
 71            <intent-filter>
-71-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:47:17-49:33
+71-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:47:17-49:33
 72                <action android:name="android.intent.action.BOOT_COMPLETED" />
-72-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:21-90
-72-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:29-80
+72-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:21-90
+72-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:29-80
 73            </intent-filter>
 74            <intent-filter>
-74-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:14:13-19:29
+74-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:14:13-19:29
 75                <action android:name="android.intent.action.BOOT_COMPLETED" />
-75-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:21-90
-75-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:29-80
+75-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:21-90
+75-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:29-80
 76                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-76-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:16:17-84
-76-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:16:25-81
+76-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:16:17-84
+76-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:16:25-81
 77                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-77-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:17:17-82
-77-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:17:25-79
+77-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:17:17-82
+77-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:17:25-79
 78                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-78-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:18:17-82
-78-->[:flutter_local_notifications] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:18:25-79
+78-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:18:17-82
+78-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\release\AndroidManifest.xml:18:25-79
 79            </intent-filter>
 80        </receiver>
 81        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
-81-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:13-110
-81-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:23-107
+81-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:13-110
+81-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:23-107
 82
 83        <meta-data
-83-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:53:9-55:33
+83-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:53:9-55:33
 84            android:name="flutterEmbedding"
-84-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:54:13-44
+84-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:54:13-44
 85            android:value="2" />
-85-->C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:55:13-30
+85-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:55:13-30
 86
 87        <service
-87-->[:cloud_firestore] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
+87-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:9-12:19
 88            android:name="com.google.firebase.components.ComponentDiscoveryService"
-88-->[:cloud_firestore] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
+88-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:8:18-89
 89            android:directBootAware="true"
 89-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 90            android:exported="false" >
 90-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:51:13-37
 91            <meta-data
-91-->[:cloud_firestore] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+91-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 92                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-92-->[:cloud_firestore] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:10:17-134
+92-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:10:17-134
 93                android:value="com.google.firebase.components.ComponentRegistrar" />
-93-->[:cloud_firestore] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+93-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 94            <meta-data
-94-->[:firebase_auth] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+94-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 95                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-95-->[:firebase_auth] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
+95-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
 96                android:value="com.google.firebase.components.ComponentRegistrar" />
-96-->[:firebase_auth] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+96-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 97            <meta-data
-97-->[:firebase_storage] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+97-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 98                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-98-->[:firebase_storage] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\release\AndroidManifest.xml:10:17-126
+98-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\release\AndroidManifest.xml:10:17-126
 99                android:value="com.google.firebase.components.ComponentRegistrar" />
-99-->[:firebase_storage] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+99-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 100            <meta-data
-100-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:34:13-36:85
+100-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:34:13-36:85
 101                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
-101-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:35:17-128
+101-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:35:17-128
 102                android:value="com.google.firebase.components.ComponentRegistrar" />
-102-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:36:17-82
+102-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:36:17-82
 103            <meta-data
-103-->[:firebase_core] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
+103-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:9:13-11:85
 104                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-104-->[:firebase_core] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
+104-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:10:17-124
 105                android:value="com.google.firebase.components.ComponentRegistrar" />
-105-->[:firebase_core] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
+105-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\release\AndroidManifest.xml:11:17-82
 106            <meta-data
 106-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:52:13-54:85
 107                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
@@ -239,81 +239,81 @@
 126-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3eb01c8c867f2f6082b9f6c8804ed6b8\firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
 127        </service>
 128        <service
-128-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:12:9-15:72
+128-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:12:9-15:72
 129            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
-129-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:13:13-107
+129-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:13:13-107
 130            android:exported="false"
-130-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
+130-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:14:13-37
 131            android:permission="android.permission.BIND_JOB_SERVICE" />
-131-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:15:13-69
+131-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:15:13-69
 132        <service
-132-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:16:9-22:19
+132-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:16:9-22:19
 133            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-133-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:17:13-97
+133-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:17:13-97
 134            android:exported="false" >
-134-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:18:13-37
+134-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:18:13-37
 135            <intent-filter>
-135-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:19:13-21:29
+135-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:19:13-21:29
 136                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-136-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:17-78
-136-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:25-75
+136-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:17-78
+136-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:25-75
 137            </intent-filter>
 138        </service>
 139
 140        <receiver
-140-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:24:9-31:20
+140-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:24:9-31:20
 141            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
-141-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:25:13-98
+141-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:25:13-98
 142            android:exported="true"
-142-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:26:13-36
+142-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:26:13-36
 143            android:permission="com.google.android.c2dm.permission.SEND" >
-143-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:27:13-73
+143-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:27:13-73
 144            <intent-filter>
-144-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:28:13-30:29
+144-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:28:13-30:29
 145                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-145-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:17-81
-145-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:25-78
+145-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:17-81
+145-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:25-78
 146            </intent-filter>
 147        </receiver>
 148
 149        <provider
-149-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:39:9-43:38
+149-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:39:9-43:38
 150            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-150-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:40:13-102
+150-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:40:13-102
 151            android:authorities="com.medhelper.medhelper.flutterfirebasemessaginginitprovider"
-151-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:41:13-88
+151-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:41:13-88
 152            android:exported="false"
-152-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:42:13-37
+152-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:42:13-37
 153            android:initOrder="99" />
-153-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:43:13-35
+153-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:43:13-35
 154
 155        <service
-155-->[:geolocator_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:10:9-14:56
+155-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:10:9-14:56
 156            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-156-->[:geolocator_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-77
+156-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-77
 157            android:enabled="true"
-157-->[:geolocator_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:12:13-35
+157-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:12:13-35
 158            android:exported="false"
-158-->[:geolocator_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:13:13-37
+158-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:13:13-37
 159            android:foregroundServiceType="location" />
-159-->[:geolocator_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:14:13-53
+159-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\release\AndroidManifest.xml:14:13-53
 160
 161        <provider
-161-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:8:9-16:20
+161-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:8:9-16:20
 162            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-162-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:9:13-82
+162-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:9:13-82
 163            android:authorities="com.medhelper.medhelper.flutter.image_provider"
-163-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:10:13-74
+163-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:10:13-74
 164            android:exported="false"
-164-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-37
+164-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:11:13-37
 165            android:grantUriPermissions="true" >
-165-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:12:13-47
+165-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:12:13-47
 166            <meta-data
-166-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:13:13-15:75
+166-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:13:13-15:75
 167                android:name="android.support.FILE_PROVIDER_PATHS"
-167-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:14:17-67
+167-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:14:17-67
 168                android:resource="@xml/flutter_image_picker_file_paths" />
-168-->[:image_picker_android] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:15:17-72
+168-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\release\AndroidManifest.xml:15:17-72
 169        </provider>
 170
 171        <receiver
@@ -325,10 +325,10 @@
 174            android:permission="com.google.android.c2dm.permission.SEND" >
 174-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:31:13-73
 175            <intent-filter>
-175-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:28:13-30:29
+175-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:28:13-30:29
 176                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-176-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:17-81
-176-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:25-78
+176-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:17-81
+176-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:29:25-78
 177            </intent-filter>
 178        </receiver>
 179        <!--
@@ -344,10 +344,10 @@
 186            android:exported="false" >
 186-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:44:13-37
 187            <intent-filter android:priority="-500" >
-187-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:19:13-21:29
+187-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:19:13-21:29
 188                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-188-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:17-78
-188-->[:firebase_messaging] C:\Users\Mahesh\Downloads\flutter\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:25-75
+188-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:17-78
+188-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\release\AndroidManifest.xml:20:25-75
 189            </intent-filter>
 190        </service>
 191        <service

@@ -5,6 +5,7 @@ import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
+import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/mddeleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 
 
@@ -158,7 +159,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                                           backgroundColor: Colors.black,  
                                           textColor: Colors.white  
                                       );                       
-                                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartMap()));
+                                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MDSplash()));
                                         },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
@@ -187,7 +188,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                                                 const SizedBox(
                                                   width: 5,
                                                 ),
-                                                Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,),
+                                                Icon(Icons.shopping_cart,color: MyColors.lightPink,),
                                                  ])
                                         ),
                                       ),           

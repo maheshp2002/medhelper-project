@@ -6,6 +6,7 @@ import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
+import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 
 
@@ -14,9 +15,20 @@ class SellerFull extends StatefulWidget {
 @override
   _DetailedItemState createState() => _DetailedItemState();
 }
-
+bool docex;
 class _DetailedItemState extends State<SellerFull> {
 var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
+
+checkbool() async{
+bool docExits = await checkIfDocExists(docid);
+        if(docExits == true){
+          docex = true;
+          
+}else{
+  docex = false;
+}
+return docex;
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
@@ -149,9 +161,11 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 //button for fav  
         OutlineButton(
         onPressed: () async {
-
+        
         bool docExits = await checkIfDocExists(docid);
         if(docExits == true){
+          
+          checkbool();
                       Fluttertoast.showToast(  
                       msg: 'Item removed from cart',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -160,8 +174,10 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));
             return collectionCart.doc(docid).delete();
         } else{
+          checkbool();
           collectionCart.doc(docid).set(
                         {
                           'medicine name': indexno['medicine name'],
@@ -173,7 +189,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                           'discount %': indexno['discount %'],
                           'discount price': indexno['discount price'],
                           'images': indexno['images'],
-
+                            
 
                         });
                        Fluttertoast.showToast(  
@@ -201,7 +217,18 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                                           child: Row(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children:[
-                                           Text("Cart",
+                                             docex == true?
+                                           Text("Remove from Cart",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle1
+                                                  .copyWith(
+                                                  color:
+                                                  MyColors.lighterPink,
+                                                  //fontFamily:
+                                                 // 'lexenddeca'
+                                                 )):                                              
+                                           Text("add Cart",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1
@@ -214,7 +241,9 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                                                 const SizedBox(
                                                   width: 5,
                                                 ),
-                                                Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,),
+                                                docex == true?
+                                                Icon(Icons.shopping_cart,color: MyColors.lightPink,)
+                                               : Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,)
                                                  ])
                                         ),
                                       ),           
@@ -236,7 +265,10 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
   }catch (e){
     print(e);
   }
-}
+} 
+//use checkifdoc to check a doc exit, if yes remove it, else create a doc in sellercart with name
+//of sellermap doc, using a seperate function to check if docex is true if true display text
+
 //.......................................................................................
 
 }

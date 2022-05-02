@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/about/contact.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Anurag.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Dillsith.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Sarath.dart';
@@ -225,6 +226,9 @@ return Scaffold(
     )),     
     ),
  
+Container(alignment: Alignment.bottomCenter,
+child: contact()
+)      
       ],
     ),
     

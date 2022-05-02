@@ -1,422 +1,422 @@
 [
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_bg_low.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable\\notification_bg_low.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-v21_notification_action_background.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_browser_actions_context_menu_page.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\57d4ed595eaf6d548fbd09a3131e7992\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_page.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_action.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_browser_actions_context_menu_row.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\57d4ed595eaf6d548fbd09a3131e7992\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_row.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_tile_bg.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable\\notification_tile_bg.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-hdpi_launcher_icon1.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon1.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_media_action.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_media_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_disabled.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xhdpi_launcher_icon1.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon1.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\raw_sound.mp3.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\raw\\sound.mp3"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_dark.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_narrow.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_light_normal.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_launcher_icon1.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon1.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\googleg_disabled_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_launch_background.xml.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_googleg_standard_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_launcher_icon.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_full_open_on_phone.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_launcher_icon.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-watch-v20_common_google_signin_btn_text_light_normal.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\7dd5ed0735e3f6c6c2392cb9958f1a46\\play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_dark.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_toast_bg.xml.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\fluttertoast\\intermediates\\packaged_res\\release\\drawable\\toast_bg.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_launcher_icon1.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon1.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_action_tombstone.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_corner.xml.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\fluttertoast\\intermediates\\packaged_res\\release\\drawable\\corner.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_template_icon_group.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_lines_media.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_lines_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-mdpi_launcher_icon.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_light_focused.xml.flat",
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_light_focused.xml.flat",
         "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-mdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-watch-v20_common_google_signin_btn_text_dark_normal.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\7dd5ed0735e3f6c6c2392cb9958f1a46\\play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_light.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_narrow_custom.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media_narrow_custom.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\xml_flutter_image_picker_file_paths.xml.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\image_picker_android\\intermediates\\packaged_res\\release\\xml\\flutter_image_picker_file_paths.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_disabled.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\color_common_google_signin_btn_text_dark.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\color\\common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_part_time.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_icon_background.xml.flat",
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_icon_background.xml.flat",
         "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable\\notification_icon_background.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_custom.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media_custom.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_part_chronometer.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_disabled.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_disabled.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_bg.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable\\notification_bg.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\color_common_google_signin_btn_text_light.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\color\\common_google_signin_btn_text_light.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_media.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_media.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xhdpi_launcher_icon.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-hdpi_launcher_icon.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\googleg_disabled_color_18.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\color_common_google_signin_btn_tint.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\color\\common_google_signin_btn_tint.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_narrow.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_media_cancel_action.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_media_cancel_action.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_bg_low.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable\\notification_bg_low.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_toast_custom.xml.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\fluttertoast\\intermediates\\packaged_res\\release\\layout\\toast_custom.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_custom_dialog.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout\\custom_dialog.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_light_normal.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_light.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_dark_normal.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-mdpi_launcher_icon1.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon1.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_action.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
-    },
-    {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_media_custom.xml.flat",
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_media_custom.xml.flat",
         "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_media_custom.xml"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-watch-v20_common_google_signin_btn_text_disabled.xml.flat",
-        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\7dd5ed0735e3f6c6c2392cb9958f1a46\\play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\googleg_disabled_color_18.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-hdpi_launcher_icon1.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon1.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_corner.xml.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\fluttertoast\\intermediates\\packaged_res\\release\\drawable\\corner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_lines_media.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_lines_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-watch-v20_common_google_signin_btn_text_dark_normal.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\7dd5ed0735e3f6c6c2392cb9958f1a46\\play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_dark.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_launcher_icon1.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon1.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_light.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_disabled.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-v21_notification_action_background.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_media_cancel_action.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_browser_actions_context_menu_row.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\57d4ed595eaf6d548fbd09a3131e7992\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_toast_custom.xml.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\fluttertoast\\intermediates\\packaged_res\\release\\layout\\toast_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_launch_background.xml.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\raw_sound.mp3.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\raw\\sound.mp3"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout-v21_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_dark_focused.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-mdpi_launcher_icon1.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon1.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_big_media_custom.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_part_chronometer.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_bg.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\color_common_google_signin_btn_text_light.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xhdpi_launcher_icon1.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon1.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_browser_actions_context_menu_page.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\57d4ed595eaf6d548fbd09a3131e7992\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_page.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_light.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_media.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_notification_tile_bg.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-watch-v20_common_google_signin_btn_text_light_normal.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\7dd5ed0735e3f6c6c2392cb9958f1a46\\play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-hdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_custom_dialog.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-hdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-hdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_toast_bg.xml.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\fluttertoast\\intermediates\\packaged_res\\release\\drawable\\toast_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_launcher_icon.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_media_action.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9efe5a80e2c9b8817dac7cd306383861\\media-1.1.0\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-xxhdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\xml_flutter_image_picker_file_paths.xml.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\image_picker_android\\intermediates\\packaged_res\\release\\xml\\flutter_image_picker_file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\color_common_google_signin_btn_tint.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-watch-v20_common_google_signin_btn_text_disabled.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\7dd5ed0735e3f6c6c2392cb9958f1a46\\play-services-auth-20.0.1\\res\\drawable-watch-v20\\common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\layout_notification_template_part_time.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xxxhdpi_launcher_icon1.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon1.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\color_common_google_signin_btn_text_dark.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_text_light_normal.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_dark.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",
+        "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\res\\merged\\release\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     }
 ]

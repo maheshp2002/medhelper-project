@@ -47,7 +47,7 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.border_color),
-            title: Text('about'),
+            title: Text('About'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => about()))},
           ),
           ListTile(

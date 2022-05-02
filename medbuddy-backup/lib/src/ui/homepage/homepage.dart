@@ -345,22 +345,23 @@ class MedicineCard extends StatelessWidget {
         highlightColor: Colors.white,
         splashColor: Colors.grey,
         onTap: () {
-          Navigator.of(context).push(
-            PageRouteBuilder<Null>(
-              pageBuilder: (BuildContext context, Animation<double> animation,
-                  Animation<double> secondaryAnimation) {
-                return AnimatedBuilder(
-                    animation: animation,
-                    builder: (BuildContext context, Widget child) {
-                      return Opacity(
-                        opacity: animation.value,
-                        child: MedicineDetails(medicine),
-                      );
-                    });
-              },
-              transitionDuration: Duration(milliseconds: 500),
-            ),
-          );
+          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=> MedicineDetails(medicine)));
+          // Navigator.of(context).push(
+          //   PageRouteBuilder<Null>(
+          //     pageBuilder: (BuildContext context, Animation<double> animation,
+          //         Animation<double> secondaryAnimation) {
+          //       return AnimatedBuilder(
+          //           animation: animation,
+          //           builder: (BuildContext context, Widget child) {
+          //             return Opacity(
+          //               opacity: animation.value,
+          //               child: MedicineDetails(medicine),
+          //             );
+          //           });
+          //     },
+          //     transitionDuration: Duration(milliseconds: 500),
+          //   ),
+          // );
         },
         child: Container(
           decoration: BoxDecoration(

@@ -38,7 +38,172 @@ class _searchPageState extends State<search>{
       
       backgroundColor: Colors.white,
 
-      body: Column(
+      body: 
+      Center(
+        child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+        Padding(padding: EdgeInsets.only(top: 20),
+
+        child: Row(
+
+        mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+
+            Padding(padding: EdgeInsets.only(left: 10, right: 10),
+              child: Material(
+                color: Color(0xFF3EB16F),
+                elevation: 18,
+                borderRadius: BorderRadius.circular(28),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: InkWell(
+                  splashColor: Colors.lightGreen,
+                  onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)
+                    => pharmeasy()
+                  ));
+                  },
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Ink.image(image: AssetImage('assets/logo/pharmeasyl2.png'),
+                        height: 100,
+                        width: 150,
+                        fit: BoxFit.fitWidth,
+
+                      ),
+                        Text(
+                          'Pharmeasy',
+                          style: TextStyle(fontSize: 30, color: Colors.white),
+                        ),
+                      SizedBox(height: 10,),                        
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(padding: EdgeInsets.only(left: 10, right: 10),
+              child: Material(
+                color: Colors.lightGreen,
+                elevation: 18,
+                borderRadius: BorderRadius.circular(28),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: InkWell(
+                  splashColor: Colors.lightGreenAccent,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return netmed();
+                    }));
+                  },
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Ink.image(image: AssetImage('assets/logo/netmeds.png'),
+                        height: 100,
+                        width: 150,
+                        fit: BoxFit.fitWidth,
+
+                      ),
+                Text(
+                      'Netmed',
+                      style: TextStyle(fontSize: 30, color: Colors.white),
+                    ),
+                SizedBox(height: 10,),                    
+                    ],
+
+                  ),
+
+                ),
+              ),
+            ),
+      ],
+        ),
+        ),
+//second Row
+      Padding(padding: EdgeInsets.only(top: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+
+              Padding(padding: EdgeInsets.only(left: 10, right: 10),
+                child: Material(
+                  color: Colors.orange,
+                  elevation: 18,
+                  borderRadius: BorderRadius.circular(28),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: InkWell(
+                    splashColor: Colors.orangeAccent,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return tatamg();
+                    }));
+                  },
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Ink.image(image: AssetImage('assets/logo/1mg.png'),
+                          height: 100,
+                          width: 150,
+                          fit: BoxFit.fitWidth
+
+                        ),
+                        Text(
+                          '1mg',
+                          style: TextStyle(fontSize: 30, color: Colors.white),
+                        ),
+                         SizedBox(height: 10,),                       
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(padding: EdgeInsets.only(left: 10, right: 10),
+                child: Material(
+                  color: Colors.deepPurple,
+                  elevation: 18,
+                  borderRadius: BorderRadius.circular(28),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: InkWell(
+                    splashColor: Colors.purpleAccent,
+                    onTap: (){
+                     Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      return sellerMap();
+                    }));                     
+                    },
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Ink.image(image: AssetImage('assets/splash/pilllogo.png'),
+                          height: 100,
+                          width: 150,
+                          fit: BoxFit.fitWidth,
+                        ),
+                        Text(
+                          'Medhelper',
+                          style: TextStyle(fontSize: 30, color: Colors.white),
+                        ),
+                          SizedBox(height: 10,),                      
+                      ],
+
+                    ),
+
+                  ),
+                ),
+              ),
+            ],
+          ),
+      ),
+  ],
+
+
+        ),
+
+
+
+
+    ),
+  //......................................................................................................................................     
+ /*     Column(
         children: <Widget>[
 //pharmeasy
           Padding(
@@ -194,7 +359,9 @@ class _searchPageState extends State<search>{
     
 
         ],
-      ),
+      ),*/
+
+
     );
   }
 

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\values-fi\\values-fi.xml",
+            "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\res\\merged\\debug\\values-fi\\values-fi.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-fi\\values-fi.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fi\\values-fi.xml",
+            "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\shared_preferences_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fi\\values-fi.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-fi\\values-fi.xml",

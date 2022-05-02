@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\00719ab60d91932055b355a4680250cf\\coordinatorlayout-1.0.0\\res\\values\\values.xml",
@@ -39,6 +39,25 @@
                         "endLines": "3,12,13,26,27,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,115,142,146,150,152,158,160,162,163,185,192,339,371,408,415",
                         "endColumns": "59,71,87,68,62,69,67,71,69,60,73,72,60,60,61,63,61,60,67,99,59,65,72,68,56,51,61,71,75,64,58,58,59,59,59,59,59,59,59,59,59,59,58,59,59,59,59,59,59,59,59,59,59,58,59,59,58,58,58,58,58,58,34,34,54,62,54,57,57,60,62,56,50,49,60,56,65,33,34,34,69,70,116,12,109,12,128,71,66,24,24,24,24,24,24",
                         "endOffsets": "221,629,717,1706,1769,2215,2283,2355,2425,2486,2560,2633,2694,2755,2817,2881,2943,3004,3072,3172,3232,3298,3371,3440,3497,3549,3611,3895,3971,4036,4095,4154,4214,4274,4334,4394,4454,4514,4574,4634,4694,4754,4813,4873,4933,4993,5053,5113,5173,5233,5293,5353,5413,5472,5532,5592,5651,5710,5769,5828,5887,5946,6041,6076,6131,6194,6249,6307,6365,6426,6489,6546,6597,6647,6708,6765,6831,6865,6900,6935,7133,10353,10642,10843,11019,11403,11598,11737,11804,13001,13299,22418,24483,26243,26620"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "226"
+                    },
+                    "to": {
+                        "startLines": "143",
+                        "startColumns": "4",
+                        "startOffsets": "10358",
+                        "endLines": "145",
+                        "endColumns": "12",
+                        "endOffsets": "10525"
                     }
                 },
                 {
@@ -114,6 +133,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\app\\generated\\res\\google-services\\release\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,713",
+                        "endColumns": "143,81,103,108,119,98,75",
+                        "endOffsets": "194,276,380,489,609,708,784"
+                    },
+                    "to": {
+                        "startLines": "134,136,137,138,139,140,141",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "9471,9697,9779,9883,9992,10112,10211",
+                        "endColumns": "143,81,103,108,119,98,75",
+                        "endOffsets": "9610,9774,9878,9987,10107,10206,10282"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\1132729eac2754a23371ce5da7c2310a\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,19,23,34,51",
@@ -133,23 +169,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\app\\generated\\res\\google-services\\release\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,713",
-                        "endColumns": "143,81,103,108,119,98,75",
-                        "endOffsets": "194,276,380,489,609,708,784"
-                    },
-                    "to": {
-                        "startLines": "134,136,137,138,139,140,141",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "9471,9697,9779,9883,9992,10112,10211",
-                        "endColumns": "143,81,103,108,119,98,75",
-                        "endOffsets": "9610,9774,9878,9987,10107,10206,10282"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\57d4ed595eaf6d548fbd09a3131e7992\\browser-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
@@ -164,25 +183,6 @@
                         "startOffsets": "722,780,846,909,2007,2078",
                         "endColumns": "57,65,62,61,70,71",
                         "endOffsets": "775,841,904,966,2073,2145"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "226"
-                    },
-                    "to": {
-                        "startLines": "143",
-                        "startColumns": "4",
-                        "startOffsets": "10358",
-                        "endLines": "145",
-                        "endColumns": "12",
-                        "endOffsets": "10525"
                     }
                 },
                 {

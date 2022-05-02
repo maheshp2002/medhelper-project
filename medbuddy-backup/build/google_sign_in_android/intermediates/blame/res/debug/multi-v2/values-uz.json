@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\google_sign_in_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+            "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\google_sign_in_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\values-uz\\values.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Mahesh\\Downloads\\flutter\\medhelper-project\\medbuddy-backup\\build\\google_sign_in_android\\intermediates\\res\\merged\\debug\\values-uz\\values-uz.xml",
+            "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\google_sign_in_android\\intermediates\\res\\merged\\debug\\values-uz\\values-uz.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\values-uz\\values.xml",

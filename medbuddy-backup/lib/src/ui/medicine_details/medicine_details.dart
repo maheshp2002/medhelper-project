@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/models/medicine.dart';
-import 'package:medbuddy/src/ui/homepage/homepage.dart';
+import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/mddeleteSplash.dart';
 import 'package:provider/provider.dart';
 
 import '../../global_bloc.dart';
@@ -143,13 +143,13 @@ class MedicineDetails extends StatelessWidget {
                           /*Navigator.popUntil(
                             context,
                             ModalRoute.withName('/'),
-                          );
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                             HomePage()));
-                          */
+                          );*/
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) =>
+                      //        MDSplash()));
+                          
                         
                         
                         Navigator.pop(context);
@@ -213,7 +213,7 @@ class MedicineDetails extends StatelessWidget {
   }
 }
 // _globalBloc.removeMedicine(medicine);
-//                       Navigator.of(context).pop()
+//                        Navigator.of(context).pop()
 
 class MainSection extends StatelessWidget {
   final Medicine medicine;
