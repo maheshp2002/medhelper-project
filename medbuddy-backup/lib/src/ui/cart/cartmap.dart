@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/cart/cartfull.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
-import 'package:medbuddy/src/ui/tabpage/tabs.dart';
+import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class cartMap extends StatefulWidget {
@@ -25,7 +25,7 @@ return Scaffold(
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => tab()),
+              MaterialPageRoute(builder: (context) => sellerMap()),
             );
           },
         ),

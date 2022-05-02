@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\firebase_messaging\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-or\\values-or.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2fd5c2391a17aa294ae2ad50a44c4f5e\\jetified-play-services-basement-17.0.0\\res\\values-or\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2a71385555d235ced658c8b26f3ed125\\jetified-play-services-basement-17.0.0\\res\\values-or\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\5aa186ef234ff59f9588aaac9393dc8a\\jetified-firebase-messaging-23.0.0\\res\\values-or\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "207",
-                        "endColumns": "72",
-                        "endOffsets": "279"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "304",
-                        "endColumns": "76",
-                        "endOffsets": "376"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-or\\values-or.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-or\\values-or.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,6 +35,23 @@
                         "startOffsets": "381",
                         "endColumns": "100",
                         "endOffsets": "477"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\cf77934035a1dbba3de572e71bc513b3\\jetified-firebase-messaging-23.0.0\\res\\values-or\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "207",
+                        "endColumns": "72",
+                        "endOffsets": "279"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "304",
+                        "endColumns": "76",
+                        "endOffsets": "376"
                     }
                 }
             ]
@@ -60,7 +60,7 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\firebase_messaging\\intermediates\\res\\merged\\release\\values-or\\values-or.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2fd5c2391a17aa294ae2ad50a44c4f5e\\jetified-play-services-basement-17.0.0\\res\\values-or\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2a71385555d235ced658c8b26f3ed125\\jetified-play-services-basement-17.0.0\\res\\values-or\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -77,24 +77,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\5aa186ef234ff59f9588aaac9393dc8a\\jetified-firebase-messaging-23.0.0\\res\\values-or\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "207",
-                        "endColumns": "72",
-                        "endOffsets": "279"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "304",
-                        "endColumns": "76",
-                        "endOffsets": "376"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-or\\values-or.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-or\\values-or.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -108,6 +91,23 @@
                         "startOffsets": "381",
                         "endColumns": "100",
                         "endOffsets": "477"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\cf77934035a1dbba3de572e71bc513b3\\jetified-firebase-messaging-23.0.0\\res\\values-or\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "207",
+                        "endColumns": "72",
+                        "endOffsets": "279"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "304",
+                        "endColumns": "76",
+                        "endOffsets": "376"
                     }
                 }
             ]

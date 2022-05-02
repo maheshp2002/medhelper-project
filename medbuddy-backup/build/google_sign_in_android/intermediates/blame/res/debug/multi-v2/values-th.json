@@ -4,7 +4,24 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\google_sign_in_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-th\\values-th.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\cf7d4f72b48983b34a26c92fb4235579\\play-services-basement-18.0.0\\res\\values-th\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\ac0fab01100269ba6921e674b81bedc8\\play-services-base-18.0.1\\res\\values-th\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,295,438,557,660,792,912,1027,1131,1271,1372,1515,1633,1769,1916,1976,2040",
+                        "endColumns": "101,142,118,102,131,119,114,103,139,100,142,117,135,146,59,63,79",
+                        "endOffsets": "294,437,556,659,791,911,1026,1130,1270,1371,1514,1632,1768,1915,1975,2039,2119"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,161,308,431,538,674,798,917,1154,1298,1403,1550,1672,1812,1963,2027,2095",
+                        "endColumns": "105,146,122,106,135,123,118,107,143,104,146,121,139,150,63,67,83",
+                        "endOffsets": "156,303,426,533,669,793,912,1020,1293,1398,1545,1667,1807,1958,2022,2090,2174"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\47420ca4ad878560df0972317545be59\\play-services-basement-18.0.0\\res\\values-th\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -35,23 +52,6 @@
                         "startOffsets": "2179",
                         "endColumns": "100",
                         "endOffsets": "2275"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\values-th\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "193,295,438,557,660,792,912,1027,1131,1271,1372,1515,1633,1769,1916,1976,2040",
-                        "endColumns": "101,142,118,102,131,119,114,103,139,100,142,117,135,146,59,63,79",
-                        "endOffsets": "294,437,556,659,791,911,1026,1130,1270,1371,1514,1632,1768,1915,1975,2039,2119"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,161,308,431,538,674,798,917,1154,1298,1403,1550,1672,1812,1963,2027,2095",
-                        "endColumns": "105,146,122,106,135,123,118,107,143,104,146,121,139,150,63,67,83",
-                        "endOffsets": "156,303,426,533,669,793,912,1020,1293,1398,1545,1667,1807,1958,2022,2090,2174"
                     }
                 }
             ]
@@ -60,7 +60,24 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\google_sign_in_android\\intermediates\\res\\merged\\debug\\values-th\\values-th.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\cf7d4f72b48983b34a26c92fb4235579\\play-services-basement-18.0.0\\res\\values-th\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\ac0fab01100269ba6921e674b81bedc8\\play-services-base-18.0.1\\res\\values-th\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "193,295,438,557,660,792,912,1027,1131,1271,1372,1515,1633,1769,1916,1976,2040",
+                        "endColumns": "101,142,118,102,131,119,114,103,139,100,142,117,135,146,59,63,79",
+                        "endOffsets": "294,437,556,659,791,911,1026,1130,1270,1371,1514,1632,1768,1915,1975,2039,2119"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,161,308,431,538,674,798,917,1154,1298,1403,1550,1672,1812,1963,2027,2095",
+                        "endColumns": "105,146,122,106,135,123,118,107,143,104,146,121,139,150,63,67,83",
+                        "endOffsets": "156,303,426,533,669,793,912,1020,1293,1398,1545,1667,1807,1958,2022,2090,2174"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\47420ca4ad878560df0972317545be59\\play-services-basement-18.0.0\\res\\values-th\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -77,7 +94,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-th\\values-th.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-th\\values-th.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -91,23 +108,6 @@
                         "startOffsets": "2179",
                         "endColumns": "100",
                         "endOffsets": "2275"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\330afbe823a71e134d687d3d16a591d4\\play-services-base-18.0.1\\res\\values-th\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "193,295,438,557,660,792,912,1027,1131,1271,1372,1515,1633,1769,1916,1976,2040",
-                        "endColumns": "101,142,118,102,131,119,114,103,139,100,142,117,135,146,59,63,79",
-                        "endOffsets": "294,437,556,659,791,911,1026,1130,1270,1371,1514,1632,1768,1915,1975,2039,2119"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,161,308,431,538,674,798,917,1154,1298,1403,1550,1672,1812,1963,2027,2095",
-                        "endColumns": "105,146,122,106,135,123,118,107,143,104,146,121,139,150,63,67,83",
-                        "endOffsets": "156,303,426,533,669,793,912,1020,1293,1398,1545,1667,1807,1958,2022,2090,2174"
                     }
                 }
             ]

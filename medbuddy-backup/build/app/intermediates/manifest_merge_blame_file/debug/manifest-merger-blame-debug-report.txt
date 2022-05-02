@@ -35,555 +35,566 @@
 21    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 21-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:10:5-81
 21-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:10:22-78
-22    <uses-permission android:name="android.permission.WAKE_LOCK" />
-22-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-68
-22-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-65
-23    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-23-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-81
-23-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-78
-24    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-24-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:5-82
-24-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:22-79
-25    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-25-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:26:5-110
-25-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:26:22-107
-26
-27    <uses-feature
-27-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e881e546aafba85db1524c3563998953\play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
-28        android:glEsVersion="0x00020000"
-28-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e881e546aafba85db1524c3563998953\play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
-29        android:required="true" /> <!-- Include required permissions for Advertising Id -->
-29-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e881e546aafba85db1524c3563998953\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
-30    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-30-->[com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\8e799ce66e3707eacc907ee83e5298ce\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
-30-->[com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\8e799ce66e3707eacc907ee83e5298ce\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:22-76
-31    <!--
-32 io.flutter.app.FlutterApplication is an android.app.Application that
-33         calls FlutterMain.startInitialization(this); in its onCreate method.
-34         In most cases you can leave this as-is, but you if you want to provide
-35         additional functionality it is fine to subclass or reimplement
-36         FlutterApplication and put your custom class here.
-37    -->
-38    <application
-38-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:16:5-56:19
-39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.6.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6a37916e13d25ef32986ec945ae6ef64\core-1.6.0\AndroidManifest.xml:24:18-86
-40        android:debuggable="true"
-41        android:icon="@mipmap/launcher_icon"
-41-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:19:9-45
-42        android:label="MedHelper" >
-42-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:18:9-34
-43        <meta-data
-43-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:21:9-23:70
-44            android:name="com.google.android.geo.API_KEY"
-44-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:22:13-58
-45            android:value="AIzaSyDxZFosXzWXNpJ_5eGY2MK6e5VG7WiWjgU" />
-45-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:23:13-68
-46
-47        <activity
-47-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:24:9-45:20
-48            android:name="com.medhelper.medhelper.MainActivity"
-48-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:25:13-41
-49            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-49-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:30:13-144
-50            android:exported="true"
-50-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:26:13-36
-51            android:hardwareAccelerated="true"
-51-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:31:13-47
-52            android:launchMode="singleTop"
-52-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:28:13-43
-53            android:theme="@style/LaunchTheme"
-53-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:29:13-47
-54            android:windowSoftInputMode="adjustResize" >
-54-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:32:13-55
-55
-56            <!--
-57                 This keeps the window background of the activity showing
-58                 until Flutter renders its first frame. It can be removed if
-59                 there is no splash screen (such as the default splash screen
-60                 defined in @style/LaunchTheme).
-61            -->
-62
-63            <meta-data
-63-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:38:13-40:66
-64                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-64-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:39:17-81
-65                android:resource="@drawable/launch_background" />
-65-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:40:17-63
+22    <!--
+23 io.flutter.app.FlutterApplication is an android.app.Application that
+24         calls FlutterMain.startInitialization(this); in its onCreate method.
+25         In most cases you can leave this as-is, but you if you want to provide
+26         additional functionality it is fine to subclass or reimplement
+27         FlutterApplication and put your custom class here.
+28    -->
+29    <queries>
+29-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:17:1-23:11
+30
+31        <!-- If your app emails -->
+32        <intent>
+32-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:19:3-22:12
+33            <action android:name="android.intent.action.SEND" />
+33-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:20:5-57
+33-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:20:13-54
+34
+35            <data android:mimeType="*/*" />
+35-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:21:5-36
+35-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:21:11-33
+36        </intent>
+37    </queries>
+38
+39    <uses-permission android:name="android.permission.WAKE_LOCK" />
+39-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:5-68
+39-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:8:22-65
+40    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+40-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:5-81
+40-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:9:22-78
+41    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+41-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:5-82
+41-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:25:22-79
+42    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+42-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:26:5-110
+42-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:26:22-107
+43
+44    <uses-feature
+44-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\b04cba4dad9cb2b9cb1071971c944981\play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+45        android:glEsVersion="0x00020000"
+45-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\b04cba4dad9cb2b9cb1071971c944981\play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+46        android:required="true" /> <!-- Include required permissions for Advertising Id -->
+46-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\b04cba4dad9cb2b9cb1071971c944981\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+47    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+47-->[com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\83acf121777e017528c2f5019b58156b\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+47-->[com.google.android.gms:play-services-ads-identifier:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\83acf121777e017528c2f5019b58156b\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:22-76
+48
+49    <application
+49-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:25:5-65:19
+50        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+50-->[androidx.core:core:1.6.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\2e8b97c8800d169629093eed89e56422\core-1.6.0\AndroidManifest.xml:24:18-86
+51        android:debuggable="true"
+52        android:icon="@mipmap/launcher_icon"
+52-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:28:9-45
+53        android:label="MedHelper" >
+53-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:27:9-34
+54        <meta-data
+54-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:30:9-32:70
+55            android:name="com.google.android.geo.API_KEY"
+55-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:31:13-58
+56            android:value="AIzaSyDxZFosXzWXNpJ_5eGY2MK6e5VG7WiWjgU" />
+56-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:32:13-68
+57
+58        <activity
+58-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:33:9-54:20
+59            android:name="com.medhelper.medhelper.MainActivity"
+59-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:34:13-41
+60            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+60-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:39:13-144
+61            android:exported="true"
+61-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:35:13-36
+62            android:hardwareAccelerated="true"
+62-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:40:13-47
+63            android:launchMode="singleTop"
+63-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:37:13-43
+64            android:theme="@style/LaunchTheme"
+64-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:38:13-47
+65            android:windowSoftInputMode="adjustResize" >
+65-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:41:13-55
 66
-67            <intent-filter>
-67-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:41:13-44:29
-68                <action android:name="android.intent.action.MAIN" />
-68-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:42:17-68
-68-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:42:25-66
-69
-70                <category android:name="android.intent.category.LAUNCHER" />
-70-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:43:17-76
-70-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:43:27-74
-71            </intent-filter>
-72        </activity>
+67            <!--
+68                 This keeps the window background of the activity showing
+69                 until Flutter renders its first frame. It can be removed if
+70                 there is no splash screen (such as the default splash screen
+71                 defined in @style/LaunchTheme).
+72            -->
 73
-74        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
-74-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:46:13-50:24
-74-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:46:23-111
-75            <intent-filter>
-75-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:47:17-49:33
-76                <action android:name="android.intent.action.BOOT_COMPLETED" />
-76-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:21-90
-76-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:29-80
-77            </intent-filter>
+74            <meta-data
+74-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:47:13-49:66
+75                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+75-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:17-81
+76                android:resource="@drawable/launch_background" />
+76-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:49:17-63
+77
 78            <intent-filter>
-78-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-19:29
-79                <action android:name="android.intent.action.BOOT_COMPLETED" />
-79-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:21-90
-79-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:48:29-80
-80                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
-80-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-84
-80-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:25-81
-81                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-81-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-82
-81-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:25-79
-82                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
-82-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-82
-82-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:25-79
-83            </intent-filter>
-84        </receiver>
-85        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
-85-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:13-110
-85-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:23-107
-86
-87        <meta-data
-87-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:53:9-55:33
-88            android:name="flutterEmbedding"
-88-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:54:13-44
-89            android:value="2" />
-89-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:55:13-30
-90
-91        <service
-91-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
-92            android:name="com.google.firebase.components.ComponentDiscoveryService"
-92-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
-93            android:directBootAware="true"
-93-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
-94            android:exported="false" >
-94-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:51:13-37
-95            <meta-data
-95-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-96                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-96-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
-97                android:value="com.google.firebase.components.ComponentRegistrar" />
-97-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-98            <meta-data
-98-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-99                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-99-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
-100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-101            <meta-data
-101-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-102                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-102-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
-103                android:value="com.google.firebase.components.ComponentRegistrar" />
-103-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-104            <meta-data
-104-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:34:13-36:85
-105                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
-105-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:35:17-128
-106                android:value="com.google.firebase.components.ComponentRegistrar" />
-106-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:36:17-82
-107            <meta-data
-107-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
-108                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-108-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
-109                android:value="com.google.firebase.components.ComponentRegistrar" />
-109-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
-110            <meta-data
-110-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:52:13-54:85
-111                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
-111-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:53:17-119
-112                android:value="com.google.firebase.components.ComponentRegistrar" />
-112-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:54:17-82
-113            <meta-data
-113-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f483ab84184cc9454a5e3a9273bf5dfb\firebase-datatransport-18.0.0\AndroidManifest.xml:28:13-30:85
-114                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
-114-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f483ab84184cc9454a5e3a9273bf5dfb\firebase-datatransport-18.0.0\AndroidManifest.xml:29:17-115
-115                android:value="com.google.firebase.components.ComponentRegistrar" />
-115-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f483ab84184cc9454a5e3a9273bf5dfb\firebase-datatransport-18.0.0\AndroidManifest.xml:30:17-82
-116            <meta-data
-116-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
-117                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-117-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
-118                android:value="com.google.firebase.components.ComponentRegistrar" />
-118-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
-119            <meta-data
-119-->[com.google.firebase:firebase-firestore:24.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\02d71288027b85043d9263b3731ac45a\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:20:13-22:85
-120                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-120-->[com.google.firebase:firebase-firestore:24.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\02d71288027b85043d9263b3731ac45a\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:21:17-111
-121                android:value="com.google.firebase.components.ComponentRegistrar" />
-121-->[com.google.firebase:firebase-firestore:24.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\02d71288027b85043d9263b3731ac45a\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:22:17-82
-122            <meta-data
-122-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\0a975653b9e1e481e2561c0b91213c81\firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
-123                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-123-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\0a975653b9e1e481e2561c0b91213c81\firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
-124                android:value="com.google.firebase.components.ComponentRegistrar" />
-124-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\0a975653b9e1e481e2561c0b91213c81\firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
-125            <meta-data
-125-->[com.google.android.gms:play-services-measurement-api:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\ef366cdcd834fdb225fb6ef624982183\play-services-measurement-api-20.1.0\AndroidManifest.xml:30:13-32:85
-126                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-126-->[com.google.android.gms:play-services-measurement-api:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\ef366cdcd834fdb225fb6ef624982183\play-services-measurement-api-20.1.0\AndroidManifest.xml:31:17-139
-127                android:value="com.google.firebase.components.ComponentRegistrar" />
-127-->[com.google.android.gms:play-services-measurement-api:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\ef366cdcd834fdb225fb6ef624982183\play-services-measurement-api-20.1.0\AndroidManifest.xml:32:17-82
-128            <meta-data
-128-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3eb01c8c867f2f6082b9f6c8804ed6b8\firebase-installations-17.0.0\AndroidManifest.xml:18:13-20:85
-129                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-129-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3eb01c8c867f2f6082b9f6c8804ed6b8\firebase-installations-17.0.0\AndroidManifest.xml:19:17-127
-130                android:value="com.google.firebase.components.ComponentRegistrar" />
-130-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3eb01c8c867f2f6082b9f6c8804ed6b8\firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
-131        </service>
-132        <service
-132-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-15:72
-133            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
-133-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-107
-134            android:exported="false"
-134-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
-135            android:permission="android.permission.BIND_JOB_SERVICE" />
-135-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-69
-136        <service
-136-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-22:19
-137            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
-137-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-97
-138            android:exported="false" >
-138-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-37
-139            <intent-filter>
-139-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-21:29
-140                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-140-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-78
-140-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-75
-141            </intent-filter>
+78-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:50:13-53:29
+79                <action android:name="android.intent.action.MAIN" />
+79-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:51:17-68
+79-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:51:25-66
+80
+81                <category android:name="android.intent.category.LAUNCHER" />
+81-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:17-76
+81-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:52:27-74
+82            </intent-filter>
+83        </activity>
+84
+85        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver" >
+85-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:55:13-59:24
+85-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:55:23-111
+86            <intent-filter>
+86-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:56:17-58:33
+87                <action android:name="android.intent.action.BOOT_COMPLETED" />
+87-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:57:21-90
+87-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:57:29-80
+88            </intent-filter>
+89            <intent-filter>
+89-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-19:29
+90                <action android:name="android.intent.action.BOOT_COMPLETED" />
+90-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:57:21-90
+90-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:57:29-80
+91                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+91-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:17-84
+91-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:16:25-81
+92                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+92-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:17-82
+92-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:17:25-79
+93                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+93-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:17-82
+93-->[:flutter_local_notifications] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\flutter_local_notifications\intermediates\library_manifest\debug\AndroidManifest.xml:18:25-79
+94            </intent-filter>
+95        </receiver>
+96        <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+96-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:61:13-110
+96-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:61:23-107
+97
+98        <meta-data
+98-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:62:9-64:33
+99            android:name="flutterEmbedding"
+99-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:63:13-44
+100            android:value="2" />
+100-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:64:13-30
+101
+102        <service
+102-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+103            android:name="com.google.firebase.components.ComponentDiscoveryService"
+103-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+104            android:directBootAware="true"
+104-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6bb6618396f26e98004ca7023947c392\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+105            android:exported="false" >
+105-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:51:13-37
+106            <meta-data
+106-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+107                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+107-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[:cloud_firestore] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+109            <meta-data
+109-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+110                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+110-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[:firebase_auth] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+112            <meta-data
+112-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+113                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+113-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-126
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[:firebase_storage] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+115            <meta-data
+115-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:34:13-36:85
+116                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+116-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:35:17-128
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:36:17-82
+118            <meta-data
+118-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+119                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+119-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[:firebase_core] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+121            <meta-data
+121-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:52:13-54:85
+122                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+122-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:53:17-119
+123                android:value="com.google.firebase.components.ComponentRegistrar" />
+123-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:54:17-82
+124            <meta-data
+124-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\9df20e17af2dc313e484a776c35b6ec6\firebase-datatransport-18.0.0\AndroidManifest.xml:28:13-30:85
+125                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+125-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\9df20e17af2dc313e484a776c35b6ec6\firebase-datatransport-18.0.0\AndroidManifest.xml:29:17-115
+126                android:value="com.google.firebase.components.ComponentRegistrar" />
+126-->[com.google.firebase:firebase-datatransport:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\9df20e17af2dc313e484a776c35b6ec6\firebase-datatransport-18.0.0\AndroidManifest.xml:30:17-82
+127            <meta-data
+127-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:77:13-79:85
+128                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+128-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
+129                android:value="com.google.firebase.components.ComponentRegistrar" />
+129-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
+130            <meta-data
+130-->[com.google.firebase:firebase-firestore:24.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\58eaa4e27399024e108f0799ff13aaf0\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:20:13-22:85
+131                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+131-->[com.google.firebase:firebase-firestore:24.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\58eaa4e27399024e108f0799ff13aaf0\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:21:17-111
+132                android:value="com.google.firebase.components.ComponentRegistrar" />
+132-->[com.google.firebase:firebase-firestore:24.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\58eaa4e27399024e108f0799ff13aaf0\jetified-firebase-firestore-24.0.1\AndroidManifest.xml:22:17-82
+133            <meta-data
+133-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\2eec83665f86f3a98e9754ec14c8d018\firebase-storage-20.0.0\AndroidManifest.xml:33:13-35:85
+134                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+134-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\2eec83665f86f3a98e9754ec14c8d018\firebase-storage-20.0.0\AndroidManifest.xml:34:17-107
+135                android:value="com.google.firebase.components.ComponentRegistrar" />
+135-->[com.google.firebase:firebase-storage:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\2eec83665f86f3a98e9754ec14c8d018\firebase-storage-20.0.0\AndroidManifest.xml:35:17-82
+136            <meta-data
+136-->[com.google.android.gms:play-services-measurement-api:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e8232575ba4d7c2e8029321bdfa9f281\play-services-measurement-api-20.1.0\AndroidManifest.xml:30:13-32:85
+137                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+137-->[com.google.android.gms:play-services-measurement-api:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e8232575ba4d7c2e8029321bdfa9f281\play-services-measurement-api-20.1.0\AndroidManifest.xml:31:17-139
+138                android:value="com.google.firebase.components.ComponentRegistrar" />
+138-->[com.google.android.gms:play-services-measurement-api:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e8232575ba4d7c2e8029321bdfa9f281\play-services-measurement-api-20.1.0\AndroidManifest.xml:32:17-82
+139            <meta-data
+139-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\d73cd6f6af9cc2fb9be2ffd528e7a06b\firebase-installations-17.0.0\AndroidManifest.xml:18:13-20:85
+140                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+140-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\d73cd6f6af9cc2fb9be2ffd528e7a06b\firebase-installations-17.0.0\AndroidManifest.xml:19:17-127
+141                android:value="com.google.firebase.components.ComponentRegistrar" />
+141-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\d73cd6f6af9cc2fb9be2ffd528e7a06b\firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
 142        </service>
-143
-144        <receiver
-144-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-31:20
-145            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
-145-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:25:13-98
-146            android:exported="true"
-146-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-36
-147            android:permission="com.google.android.c2dm.permission.SEND" >
-147-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:27:13-73
-148            <intent-filter>
-148-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-30:29
-149                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-149-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-81
-149-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-78
-150            </intent-filter>
-151        </receiver>
-152
-153        <provider
-153-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:39:9-43:38
-154            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
-154-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-102
-155            android:authorities="com.medhelper.medhelper.flutterfirebasemessaginginitprovider"
-155-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:41:13-88
-156            android:exported="false"
-156-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:42:13-37
-157            android:initOrder="99" />
-157-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:43:13-35
-158
-159        <service
-159-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:56
-160            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-160-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-77
-161            android:enabled="true"
-161-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-35
-162            android:exported="false"
-162-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-37
-163            android:foregroundServiceType="location" />
-163-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-53
-164
-165        <provider
-165-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
-166            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-166-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
-167            android:authorities="com.medhelper.medhelper.flutter.image_provider"
-167-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
-168            android:exported="false"
-168-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
-169            android:grantUriPermissions="true" >
-169-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
-170            <meta-data
-170-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
-171                android:name="android.support.FILE_PROVIDER_PATHS"
-171-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
-172                android:resource="@xml/flutter_image_picker_file_paths" />
-172-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
-173        </provider>
-174
-175        <activity
-175-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
-176            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-176-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
-177            android:exported="false"
-177-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
-178            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-178-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
-179
-180        <receiver
-180-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:28:9-35:20
-181            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-181-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:29:13-78
-182            android:exported="true"
-182-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:30:13-36
-183            android:permission="com.google.android.c2dm.permission.SEND" >
-183-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:31:13-73
-184            <intent-filter>
-184-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-30:29
-185                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-185-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-81
-185-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-78
-186            </intent-filter>
-187        </receiver>
-188        <!--
-189             FirebaseMessagingService performs security checks at runtime,
-190             but set to not exported to explicitly avoid allowing another app to call it.
-191        -->
-192        <service
-192-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:41:9-48:19
-193            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-193-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:42:13-82
-194            android:directBootAware="true"
-194-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:43:13-43
-195            android:exported="false" >
-195-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\5aa186ef234ff59f9588aaac9393dc8a\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:44:13-37
-196            <intent-filter android:priority="-500" >
-196-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-21:29
-197                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-197-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-78
-197-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-75
-198            </intent-filter>
-199        </service>
-200        <service
-200-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\c9ef648fbad3dd118d462080806560ea\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:29:9-35:19
-201            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-201-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\c9ef648fbad3dd118d462080806560ea\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:30:13-103
-202            android:exported="false" >
-202-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\c9ef648fbad3dd118d462080806560ea\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:31:13-37
-203            <meta-data
-203-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\c9ef648fbad3dd118d462080806560ea\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:32:13-34:39
-204                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-204-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\c9ef648fbad3dd118d462080806560ea\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:33:17-94
-205                android:value="cct" />
-205-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\c9ef648fbad3dd118d462080806560ea\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:34:17-36
-206        </service>
-207
-208        <activity
-208-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:27:9-44:20
-209            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-209-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:28:13-80
-210            android:excludeFromRecents="true"
-210-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:29:13-46
-211            android:exported="true"
-211-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:30:13-36
-212            android:launchMode="singleTask"
-212-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:31:13-44
-213            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-213-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:32:13-72
-214            <intent-filter>
-214-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
-215                <action android:name="android.intent.action.VIEW" />
-215-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
-215-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
-216
-217                <category android:name="android.intent.category.DEFAULT" />
-217-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
-217-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
-218                <category android:name="android.intent.category.BROWSABLE" />
-218-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
-218-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
-219
-220                <data
-220-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:39:17-42:51
-221                    android:host="firebase.auth"
-221-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:40:21-49
-222                    android:path="/"
-222-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:41:21-37
-223                    android:scheme="genericidp" />
-223-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
-224            </intent-filter>
-225        </activity>
-226        <activity
-226-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:45:9-62:20
-227            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-227-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:46:13-79
-228            android:excludeFromRecents="true"
-228-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:47:13-46
-229            android:exported="true"
-229-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:48:13-36
-230            android:launchMode="singleTask"
-230-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:49:13-44
-231            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-231-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:50:13-72
-232            <intent-filter>
-232-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
-233                <action android:name="android.intent.action.VIEW" />
-233-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
-233-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
-234
-235                <category android:name="android.intent.category.DEFAULT" />
-235-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
-235-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
-236                <category android:name="android.intent.category.BROWSABLE" />
-236-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
-236-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
-237
-238                <data
-238-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:39:17-42:51
-239                    android:host="firebase.auth"
-239-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:40:21-49
-240                    android:path="/"
-240-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:41:21-37
-241                    android:scheme="recaptcha" />
-241-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:42:21-48
-242            </intent-filter>
-243        </activity>
-244
-245        <service
-245-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:64:9-73:19
-246            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-246-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:65:13-101
-247            android:enabled="true"
-247-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:66:13-35
-248            android:exported="false" >
-248-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:67:13-37
-249            <intent-filter>
-249-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:68:13-72:29
-250                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-250-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:17-89
-250-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
-251
-252                <category android:name="android.intent.category.DEFAULT" />
-252-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
-252-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\a5c0d0d2c54ad7de53d822b90e2f481e\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+143        <service
+143-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-15:72
+144            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+144-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-107
+145            android:exported="false"
+145-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-37
+146            android:permission="android.permission.BIND_JOB_SERVICE" />
+146-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:15:13-69
+147        <service
+147-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-22:19
+148            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+148-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-97
+149            android:exported="false" >
+149-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-37
+150            <intent-filter>
+150-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-21:29
+151                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+151-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-78
+151-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-75
+152            </intent-filter>
+153        </service>
+154
+155        <receiver
+155-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:24:9-31:20
+156            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+156-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:25:13-98
+157            android:exported="true"
+157-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:26:13-36
+158            android:permission="com.google.android.c2dm.permission.SEND" >
+158-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:27:13-73
+159            <intent-filter>
+159-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-30:29
+160                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+160-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-81
+160-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-78
+161            </intent-filter>
+162        </receiver>
+163
+164        <provider
+164-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:39:9-43:38
+165            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+165-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:40:13-102
+166            android:authorities="com.medhelper.medhelper.flutterfirebasemessaginginitprovider"
+166-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:41:13-88
+167            android:exported="false"
+167-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:42:13-37
+168            android:initOrder="99" />
+168-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:43:13-35
+169
+170        <service
+170-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:9-14:56
+171            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+171-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-77
+172            android:enabled="true"
+172-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-35
+173            android:exported="false"
+173-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-37
+174            android:foregroundServiceType="location" />
+174-->[:geolocator_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\geolocator_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:13-53
+175
+176        <provider
+176-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-16:20
+177            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+177-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-82
+178            android:authorities="com.medhelper.medhelper.flutter.image_provider"
+178-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-74
+179            android:exported="false"
+179-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-37
+180            android:grantUriPermissions="true" >
+180-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:12:13-47
+181            <meta-data
+181-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:13:13-15:75
+182                android:name="android.support.FILE_PROVIDER_PATHS"
+182-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:14:17-67
+183                android:resource="@xml/flutter_image_picker_file_paths" />
+183-->[:image_picker_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\image_picker_android\intermediates\library_manifest\debug\AndroidManifest.xml:15:17-72
+184        </provider>
+185
+186        <activity
+186-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+187            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+187-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+188            android:exported="false"
+188-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+189            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+189-->[:url_launcher_android] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\url_launcher_android\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+190
+191        <receiver
+191-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:28:9-35:20
+192            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+192-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:29:13-78
+193            android:exported="true"
+193-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:30:13-36
+194            android:permission="com.google.android.c2dm.permission.SEND" >
+194-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:31:13-73
+195            <intent-filter>
+195-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-30:29
+196                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+196-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:17-81
+196-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:29:25-78
+197            </intent-filter>
+198        </receiver>
+199        <!--
+200             FirebaseMessagingService performs security checks at runtime,
+201             but set to not exported to explicitly avoid allowing another app to call it.
+202        -->
+203        <service
+203-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:41:9-48:19
+204            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+204-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:42:13-82
+205            android:directBootAware="true"
+205-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:43:13-43
+206            android:exported="false" >
+206-->[com.google.firebase:firebase-messaging:23.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf77934035a1dbba3de572e71bc513b3\jetified-firebase-messaging-23.0.0\AndroidManifest.xml:44:13-37
+207            <intent-filter android:priority="-500" >
+207-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:19:13-21:29
+208                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+208-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:17-78
+208-->[:firebase_messaging] C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\build\firebase_messaging\intermediates\library_manifest\debug\AndroidManifest.xml:20:25-75
+209            </intent-filter>
+210        </service>
+211        <service
+211-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3268671f17aa42b48313c770db996b0c\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:29:9-35:19
+212            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+212-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3268671f17aa42b48313c770db996b0c\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:30:13-103
+213            android:exported="false" >
+213-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3268671f17aa42b48313c770db996b0c\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:31:13-37
+214            <meta-data
+214-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3268671f17aa42b48313c770db996b0c\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:32:13-34:39
+215                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+215-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3268671f17aa42b48313c770db996b0c\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:33:17-94
+216                android:value="cct" />
+216-->[com.google.android.datatransport:transport-backend-cct:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3268671f17aa42b48313c770db996b0c\jetified-transport-backend-cct-3.0.0\AndroidManifest.xml:34:17-36
+217        </service>
+218
+219        <activity
+219-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:27:9-44:20
+220            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+220-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:28:13-80
+221            android:excludeFromRecents="true"
+221-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:29:13-46
+222            android:exported="true"
+222-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:30:13-36
+223            android:launchMode="singleTask"
+223-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:31:13-44
+224            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+224-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:32:13-72
+225            <intent-filter>
+225-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:33:13-43:29
+226                <action android:name="android.intent.action.VIEW" />
+226-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
+226-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
+227
+228                <category android:name="android.intent.category.DEFAULT" />
+228-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+228-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+229                <category android:name="android.intent.category.BROWSABLE" />
+229-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
+229-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
+230
+231                <data
+231-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:21:5-36
+232                    android:host="firebase.auth"
+233                    android:path="/"
+234                    android:scheme="genericidp" />
+235            </intent-filter>
+236        </activity>
+237        <activity
+237-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:45:9-62:20
+238            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+238-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:46:13-79
+239            android:excludeFromRecents="true"
+239-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:47:13-46
+240            android:exported="true"
+240-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:48:13-36
+241            android:launchMode="singleTask"
+241-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:49:13-44
+242            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+242-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:50:13-72
+243            <intent-filter>
+243-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:51:13-61:29
+244                <action android:name="android.intent.action.VIEW" />
+244-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:17-69
+244-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:34:25-66
+245
+246                <category android:name="android.intent.category.DEFAULT" />
+246-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+246-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+247                <category android:name="android.intent.category.BROWSABLE" />
+247-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:17-78
+247-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:37:27-75
+248
+249                <data
+249-->C:\Users\Mahesh\Documents\medhelper-project\medbuddy-backup\android\app\src\main\AndroidManifest.xml:21:5-36
+250                    android:host="firebase.auth"
+251                    android:path="/"
+252                    android:scheme="recaptcha" />
 253            </intent-filter>
-254        </service>
+254        </activity>
 255
-256        <provider
-256-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
-257            android:name="com.google.firebase.provider.FirebaseInitProvider"
-257-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
-258            android:authorities="com.medhelper.medhelper.firebaseinitprovider"
-258-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
-259            android:directBootAware="true"
-259-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
-260            android:exported="false"
-260-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
-261            android:initOrder="100" />
-261-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\583686f45f4cd3f4a2d66b94bc983625\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+256        <service
+256-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:64:9-73:19
+257            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+257-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:65:13-101
+258            android:enabled="true"
+258-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:66:13-35
+259            android:exported="false" >
+259-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:67:13-37
+260            <intent-filter>
+260-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:68:13-72:29
+261                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+261-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:17-89
+261-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:69:25-86
 262
-263        <uses-library
-263-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1132729eac2754a23371ce5da7c2310a\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-264            android:name="androidx.window.extensions"
-264-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1132729eac2754a23371ce5da7c2310a\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-265            android:required="false" />
-265-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1132729eac2754a23371ce5da7c2310a\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-266        <uses-library
-266-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1132729eac2754a23371ce5da7c2310a\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-267            android:name="androidx.window.sidecar"
-267-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1132729eac2754a23371ce5da7c2310a\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-268            android:required="false" />
-268-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1132729eac2754a23371ce5da7c2310a\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-269
-270        <receiver
-270-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:29:9-33:20
-271            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-271-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:30:13-85
-272            android:enabled="true"
-272-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:31:13-35
-273            android:exported="false" >
-273-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:32:13-37
-274        </receiver>
-275
-276        <service
-276-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:35:9-38:40
-277            android:name="com.google.android.gms.measurement.AppMeasurementService"
-277-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:36:13-84
-278            android:enabled="true"
-278-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:37:13-35
-279            android:exported="false" />
-279-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:38:13-37
-280        <service
-280-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:39:9-43:72
-281            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-281-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:40:13-87
-282            android:enabled="true"
-282-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:41:13-35
-283            android:exported="false"
-283-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:42:13-37
-284            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Needs to be explicitly declared on P+ -->
-284-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\f6886b0e3106344bddf0b743d01ec113\play-services-measurement-20.1.0\AndroidManifest.xml:43:13-69
-285        <uses-library
-285-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e881e546aafba85db1524c3563998953\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-286            android:name="org.apache.http.legacy"
-286-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e881e546aafba85db1524c3563998953\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-287            android:required="false" />
-287-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\e881e546aafba85db1524c3563998953\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-288
-289        <activity
-289-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:23:9-27:75
-290            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-290-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:24:13-93
-291            android:excludeFromRecents="true"
-291-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:25:13-46
-292            android:exported="false"
-292-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:26:13-37
-293            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-293-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:27:13-72
-294        <!--
-295            Service handling Google Sign-In user revocation. For apps that do not integrate with
-296            Google Sign-In, this service will never be started.
-297        -->
-298        <service
-298-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:33:9-37:51
-299            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-299-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:34:13-89
-300            android:exported="true"
-300-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:35:13-36
-301            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-301-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:36:13-107
-302            android:visibleToInstantApps="true" />
-302-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\7dd5ed0735e3f6c6c2392cb9958f1a46\play-services-auth-20.0.1\AndroidManifest.xml:37:13-48
-303
-304        <activity
-304-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\330afbe823a71e134d687d3d16a591d4\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-305            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-305-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\330afbe823a71e134d687d3d16a591d4\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-306            android:exported="false"
-306-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\330afbe823a71e134d687d3d16a591d4\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-307            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-307-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\330afbe823a71e134d687d3d16a591d4\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
-308
-309        <meta-data
-309-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf7d4f72b48983b34a26c92fb4235579\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
-310            android:name="com.google.android.gms.version"
-310-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf7d4f72b48983b34a26c92fb4235579\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
-311            android:value="@integer/google_play_services_version" />
-311-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\cf7d4f72b48983b34a26c92fb4235579\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
-312
-313        <service
-313-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1728b4e1fd7761dfbee11f80ae6a77ab\jetified-transport-runtime-3.0.0\AndroidManifest.xml:26:9-30:19
-314            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-314-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1728b4e1fd7761dfbee11f80ae6a77ab\jetified-transport-runtime-3.0.0\AndroidManifest.xml:27:13-117
-315            android:exported="false"
-315-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1728b4e1fd7761dfbee11f80ae6a77ab\jetified-transport-runtime-3.0.0\AndroidManifest.xml:28:13-37
-316            android:permission="android.permission.BIND_JOB_SERVICE" >
-316-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1728b4e1fd7761dfbee11f80ae6a77ab\jetified-transport-runtime-3.0.0\AndroidManifest.xml:29:13-69
-317        </service>
-318
-319        <receiver
-319-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1728b4e1fd7761dfbee11f80ae6a77ab\jetified-transport-runtime-3.0.0\AndroidManifest.xml:32:9-34:40
-320            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-320-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1728b4e1fd7761dfbee11f80ae6a77ab\jetified-transport-runtime-3.0.0\AndroidManifest.xml:33:13-132
-321            android:exported="false" />
-321-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1728b4e1fd7761dfbee11f80ae6a77ab\jetified-transport-runtime-3.0.0\AndroidManifest.xml:34:13-37
-322    </application>
+263                <category android:name="android.intent.category.DEFAULT" />
+263-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:17-76
+263-->[com.google.firebase:firebase-auth:21.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\885369ce7dedc20f73e9507ed3181786\jetified-firebase-auth-21.0.1\AndroidManifest.xml:36:27-73
+264            </intent-filter>
+265        </service>
+266
+267        <provider
+267-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6bb6618396f26e98004ca7023947c392\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+268            android:name="com.google.firebase.provider.FirebaseInitProvider"
+268-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6bb6618396f26e98004ca7023947c392\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+269            android:authorities="com.medhelper.medhelper.firebaseinitprovider"
+269-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6bb6618396f26e98004ca7023947c392\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+270            android:directBootAware="true"
+270-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6bb6618396f26e98004ca7023947c392\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+271            android:exported="false"
+271-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6bb6618396f26e98004ca7023947c392\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+272            android:initOrder="100" />
+272-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\6bb6618396f26e98004ca7023947c392\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+273
+274        <uses-library
+274-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\051750b39e664c3f333177c84f6d612f\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+275            android:name="androidx.window.extensions"
+275-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\051750b39e664c3f333177c84f6d612f\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+276            android:required="false" />
+276-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\051750b39e664c3f333177c84f6d612f\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+277        <uses-library
+277-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\051750b39e664c3f333177c84f6d612f\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+278            android:name="androidx.window.sidecar"
+278-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\051750b39e664c3f333177c84f6d612f\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+279            android:required="false" />
+279-->[androidx.window:window:1.0.0-beta04] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\051750b39e664c3f333177c84f6d612f\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+280
+281        <receiver
+281-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:29:9-33:20
+282            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+282-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:30:13-85
+283            android:enabled="true"
+283-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:31:13-35
+284            android:exported="false" >
+284-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:32:13-37
+285        </receiver>
+286
+287        <service
+287-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:35:9-38:40
+288            android:name="com.google.android.gms.measurement.AppMeasurementService"
+288-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:36:13-84
+289            android:enabled="true"
+289-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:37:13-35
+290            android:exported="false" />
+290-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:38:13-37
+291        <service
+291-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:39:9-43:72
+292            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+292-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:40:13-87
+293            android:enabled="true"
+293-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:41:13-35
+294            android:exported="false"
+294-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:42:13-37
+295            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Needs to be explicitly declared on P+ -->
+295-->[com.google.android.gms:play-services-measurement:20.1.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\69facadcdfad56ec4207b41a7eceaae3\play-services-measurement-20.1.0\AndroidManifest.xml:43:13-69
+296        <uses-library
+296-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\b04cba4dad9cb2b9cb1071971c944981\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+297            android:name="org.apache.http.legacy"
+297-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\b04cba4dad9cb2b9cb1071971c944981\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+298            android:required="false" />
+298-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\b04cba4dad9cb2b9cb1071971c944981\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+299
+300        <activity
+300-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:23:9-27:75
+301            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+301-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:24:13-93
+302            android:excludeFromRecents="true"
+302-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:25:13-46
+303            android:exported="false"
+303-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:26:13-37
+304            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+304-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:27:13-72
+305        <!--
+306            Service handling Google Sign-In user revocation. For apps that do not integrate with
+307            Google Sign-In, this service will never be started.
+308        -->
+309        <service
+309-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:33:9-37:51
+310            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+310-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:34:13-89
+311            android:exported="true"
+311-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:35:13-36
+312            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+312-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:36:13-107
+313            android:visibleToInstantApps="true" />
+313-->[com.google.android.gms:play-services-auth:20.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\1f7fba593200ef9eff2cdb685b795b04\play-services-auth-20.0.1\AndroidManifest.xml:37:13-48
+314
+315        <activity
+315-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\ac0fab01100269ba6921e674b81bedc8\play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+316            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+316-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\ac0fab01100269ba6921e674b81bedc8\play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+317            android:exported="false"
+317-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\ac0fab01100269ba6921e674b81bedc8\play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+318            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+318-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\ac0fab01100269ba6921e674b81bedc8\play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+319
+320        <meta-data
+320-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\47420ca4ad878560df0972317545be59\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+321            android:name="com.google.android.gms.version"
+321-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\47420ca4ad878560df0972317545be59\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+322            android:value="@integer/google_play_services_version" />
+322-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\47420ca4ad878560df0972317545be59\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
 323
-324</manifest>
+324        <service
+324-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3f8fc59c24392bf00459afe11ac2c601\jetified-transport-runtime-3.0.0\AndroidManifest.xml:26:9-30:19
+325            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+325-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3f8fc59c24392bf00459afe11ac2c601\jetified-transport-runtime-3.0.0\AndroidManifest.xml:27:13-117
+326            android:exported="false"
+326-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3f8fc59c24392bf00459afe11ac2c601\jetified-transport-runtime-3.0.0\AndroidManifest.xml:28:13-37
+327            android:permission="android.permission.BIND_JOB_SERVICE" >
+327-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3f8fc59c24392bf00459afe11ac2c601\jetified-transport-runtime-3.0.0\AndroidManifest.xml:29:13-69
+328        </service>
+329
+330        <receiver
+330-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3f8fc59c24392bf00459afe11ac2c601\jetified-transport-runtime-3.0.0\AndroidManifest.xml:32:9-34:40
+331            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+331-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3f8fc59c24392bf00459afe11ac2c601\jetified-transport-runtime-3.0.0\AndroidManifest.xml:33:13-132
+332            android:exported="false" />
+332-->[com.google.android.datatransport:transport-runtime:3.0.0] C:\Users\Mahesh\.gradle\caches\transforms-2\files-2.1\3f8fc59c24392bf00459afe11ac2c601\jetified-transport-runtime-3.0.0\AndroidManifest.xml:34:13-37
+333    </application>
+334
+335</manifest>

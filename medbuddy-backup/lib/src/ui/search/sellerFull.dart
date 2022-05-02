@@ -15,20 +15,14 @@ class SellerFull extends StatefulWidget {
 @override
   _DetailedItemState createState() => _DetailedItemState();
 }
-bool docex;
-class _DetailedItemState extends State<SellerFull> {
-var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
-checkbool() async{
-bool docExits = await checkIfDocExists(docid);
-        if(docExits == true){
-          docex = true;
-          
-}else{
-  docex = false;
-}
-return docex;
-}
+var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
+class _DetailedItemState extends State<SellerFull> {
+@override
+  void setState(VoidCallback checkbool1) {
+    super.setState(checkbool1);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
@@ -37,7 +31,8 @@ return docex;
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
+           // checkbool1();
+            Navigator.pop(
               context,
               MaterialPageRoute(builder: (context) => sellerMap()),
             );
@@ -165,7 +160,7 @@ return docex;
         bool docExits = await checkIfDocExists(docid);
         if(docExits == true){
           
-          checkbool();
+         // checkbool1();
                       Fluttertoast.showToast(  
                       msg: 'Item removed from cart',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -177,7 +172,7 @@ return docex;
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));
             return collectionCart.doc(docid).delete();
         } else{
-          checkbool();
+          //checkbool1();
           collectionCart.doc(docid).set(
                         {
                           'medicine name': indexno['medicine name'],
@@ -217,8 +212,8 @@ return docex;
                                           child: Row(
                                             mainAxisAlignment: MainAxisAlignment.center,
                                             children:[
-                                             docex == true?
-                                           Text("Remove from Cart",
+                                             //docex == true?
+                                           Text("Cart",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1
@@ -227,23 +222,23 @@ return docex;
                                                   MyColors.lighterPink,
                                                   //fontFamily:
                                                  // 'lexenddeca'
-                                                 )):                                              
-                                           Text("add Cart",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .subtitle1
-                                                  .copyWith(
-                                                  color:
-                                                  MyColors.lighterPink,
-                                                  //fontFamily:
-                                                 // 'lexenddeca'
-                                                 )),
+                                                 )),                                              
+                                            // :Text("add to Cart",
+                                            //    style: Theme.of(context)
+                                            //        .textTheme
+                                            //        .subtitle1
+                                            //        .copyWith(
+                                            //        color:
+                                            //        MyColors.lighterPink,
+                                            //        //fontFamily:
+                                            //      // 'lexenddeca'
+                                            //      )),
                                                 const SizedBox(
                                                   width: 5,
                                                 ),
-                                                docex == true?
+                                                //docex == true?
                                                 Icon(Icons.shopping_cart,color: MyColors.lightPink,)
-                                               : Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,)
+                                               //: Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,)
                                                  ])
                                         ),
                                       ),           
@@ -255,6 +250,17 @@ return docex;
 );
 }
 
+}
+//  checkbool() async{
+//  bool docExits = await checkIfDocExists(docid);
+//          if(docExits == true){
+//            docex = true;
+          
+//  }else{
+//    docex = false;
+// return docex;
+//  }
+//  }
 //.......................................................................................
 //to check doc id
  Future<bool> checkIfDocExists(String docId) async{
@@ -265,10 +271,9 @@ return docex;
   }catch (e){
     print(e);
   }
+
 } 
 //use checkifdoc to check a doc exit, if yes remove it, else create a doc in sellercart with name
 //of sellermap doc, using a seperate function to check if docex is true if true display text
 
 //.......................................................................................
-
-}

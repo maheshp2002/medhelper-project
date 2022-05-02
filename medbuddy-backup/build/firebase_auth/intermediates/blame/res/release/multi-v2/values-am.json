@@ -4,24 +4,24 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\firebase_auth\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\e8b50c4e306d3d7a23727e5ac8ca4a4b\\jetified-play-services-basement-17.1.0\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-am\\values-am.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "10",
+                        "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "1188",
-                        "endColumns": "190",
-                        "endOffsets": "1374"
+                        "startOffsets": "2600",
+                        "endColumns": "100",
+                        "endOffsets": "2696"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\165ac2d6f86ff7318502b5c7b17efff4\\play-services-base-17.1.0\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\aea547cf45fbd396a6c7c052261f194b\\play-services-base-17.1.0\\res\\values-am\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,20 +38,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9271e23308b55e55ffadc0387f72f6a0\\jetified-play-services-basement-17.1.0\\res\\values-am\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "10",
                         "startColumns": "4",
-                        "startOffsets": "2600",
-                        "endColumns": "100",
-                        "endOffsets": "2696"
+                        "startOffsets": "1188",
+                        "endColumns": "190",
+                        "endOffsets": "1374"
                     }
                 }
             ]
@@ -60,24 +60,24 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\firebase_auth\\intermediates\\res\\merged\\release\\values-am\\values-am.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\e8b50c4e306d3d7a23727e5ac8ca4a4b\\jetified-play-services-basement-17.1.0\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-am\\values-am.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "10",
+                        "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "1188",
-                        "endColumns": "190",
-                        "endOffsets": "1374"
+                        "startOffsets": "2600",
+                        "endColumns": "100",
+                        "endOffsets": "2696"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\165ac2d6f86ff7318502b5c7b17efff4\\play-services-base-17.1.0\\res\\values-am\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\aea547cf45fbd396a6c7c052261f194b\\play-services-base-17.1.0\\res\\values-am\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -94,20 +94,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-am\\values-am.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\9271e23308b55e55ffadc0387f72f6a0\\jetified-play-services-basement-17.1.0\\res\\values-am\\values.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "10",
                         "startColumns": "4",
-                        "startOffsets": "2600",
-                        "endColumns": "100",
-                        "endOffsets": "2696"
+                        "startOffsets": "1188",
+                        "endColumns": "190",
+                        "endOffsets": "1374"
                     }
                 }
             ]

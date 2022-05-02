@@ -4,24 +4,7 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\google_maps_flutter\\intermediates\\res\\merged\\release\\values-lo\\values-lo.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2fd5c2391a17aa294ae2ad50a44c4f5e\\jetified-play-services-basement-17.0.0\\res\\values-lo\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1279",
-                        "endColumns": "190",
-                        "endOffsets": "1465"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\d8b3a0c1b1ee04fe33edfc11979b3c4d\\play-services-base-17.0.0\\res\\values-lo\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\b0abe5d936c8362b0df933ba39581750\\play-services-base-17.0.0\\res\\values-lo\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,6 +35,23 @@
                         "startOffsets": "105,215,417,549,658,869,996,1134,1470,1681,1788,1985,2116,2346,2537,2635,2734",
                         "endColumns": "109,201,131,108,210,126,137,144,210,106,196,130,229,190,97,98,113",
                         "endOffsets": "210,412,544,653,864,991,1129,1274,1676,1783,1980,2111,2341,2532,2630,2729,2843"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2a71385555d235ced658c8b26f3ed125\\jetified-play-services-basement-17.0.0\\res\\values-lo\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1279",
+                        "endColumns": "190",
+                        "endOffsets": "1465"
                     }
                 }
             ]
@@ -60,24 +60,7 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\google_maps_flutter\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-lo\\values-lo.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2fd5c2391a17aa294ae2ad50a44c4f5e\\jetified-play-services-basement-17.0.0\\res\\values-lo\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1279",
-                        "endColumns": "190",
-                        "endOffsets": "1465"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -94,7 +77,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\d8b3a0c1b1ee04fe33edfc11979b3c4d\\play-services-base-17.0.0\\res\\values-lo\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\b0abe5d936c8362b0df933ba39581750\\play-services-base-17.0.0\\res\\values-lo\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -108,6 +91,23 @@
                         "startOffsets": "105,215,417,549,658,869,996,1134,1470,1681,1788,1985,2116,2346,2537,2635,2734",
                         "endColumns": "109,201,131,108,210,126,137,144,210,106,196,130,229,190,97,98,113",
                         "endOffsets": "210,412,544,653,864,991,1129,1274,1676,1783,1980,2111,2341,2532,2630,2729,2843"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2a71385555d235ced658c8b26f3ed125\\jetified-play-services-basement-17.0.0\\res\\values-lo\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1279",
+                        "endColumns": "190",
+                        "endOffsets": "1465"
                     }
                 }
             ]

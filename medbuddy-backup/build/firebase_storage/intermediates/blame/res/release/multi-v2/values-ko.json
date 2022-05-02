@@ -4,24 +4,7 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\firebase_storage\\intermediates\\res\\merged\\release\\values-ko\\values-ko.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\165ac2d6f86ff7318502b5c7b17efff4\\play-services-base-17.1.0\\res\\values-ko\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,347,518,632,732,906,1021,1154,1274,1478,1579,1746,1862,2039,2184,2269,2353",
-                        "endColumns": "101,170,113,99,173,114,132,119,203,100,166,115,176,144,84,83,99",
-                        "endOffsets": "346,517,631,731,905,1020,1153,1273,1477,1578,1745,1861,2038,2183,2268,2352,2452"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,211,382,500,604,778,897,1034,1338,1542,1647,1814,1934,2111,2260,2349,2437",
-                        "endColumns": "105,170,117,103,173,118,136,123,203,104,166,119,176,148,88,87,103",
-                        "endOffsets": "206,377,495,599,773,892,1029,1153,1537,1642,1809,1929,2106,2255,2344,2432,2536"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2fd5c2391a17aa294ae2ad50a44c4f5e\\jetified-play-services-basement-17.0.0\\res\\values-ko\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2a71385555d235ced658c8b26f3ed125\\jetified-play-services-basement-17.0.0\\res\\values-ko\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-ko\\values-ko.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\aea547cf45fbd396a6c7c052261f194b\\play-services-base-17.1.0\\res\\values-ko\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,347,518,632,732,906,1021,1154,1274,1478,1579,1746,1862,2039,2184,2269,2353",
+                        "endColumns": "101,170,113,99,173,114,132,119,203,100,166,115,176,144,84,83,99",
+                        "endOffsets": "346,517,631,731,905,1020,1153,1273,1477,1578,1745,1861,2038,2183,2268,2352,2452"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,211,382,500,604,778,897,1034,1338,1542,1647,1814,1934,2111,2260,2349,2437",
+                        "endColumns": "105,170,117,103,173,118,136,123,203,104,166,119,176,148,88,87,103",
+                        "endOffsets": "206,377,495,599,773,892,1029,1153,1537,1642,1809,1929,2106,2255,2344,2432,2536"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -60,24 +60,7 @@
             "outputFile": "C:\\Users\\Mahesh\\Documents\\medhelper-project\\medbuddy-backup\\build\\firebase_storage\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-ko\\values-ko.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\165ac2d6f86ff7318502b5c7b17efff4\\play-services-base-17.1.0\\res\\values-ko\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,347,518,632,732,906,1021,1154,1274,1478,1579,1746,1862,2039,2184,2269,2353",
-                        "endColumns": "101,170,113,99,173,114,132,119,203,100,166,115,176,144,84,83,99",
-                        "endOffsets": "346,517,631,731,905,1020,1153,1273,1477,1578,1745,1861,2038,2183,2268,2352,2452"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,211,382,500,604,778,897,1034,1338,1542,1647,1814,1934,2111,2260,2349,2437",
-                        "endColumns": "105,170,117,103,173,118,136,123,203,104,166,119,176,148,88,87,103",
-                        "endOffsets": "206,377,495,599,773,892,1029,1153,1537,1642,1809,1929,2106,2255,2344,2432,2536"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2fd5c2391a17aa294ae2ad50a44c4f5e\\jetified-play-services-basement-17.0.0\\res\\values-ko\\values.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2a71385555d235ced658c8b26f3ed125\\jetified-play-services-basement-17.0.0\\res\\values-ko\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -94,7 +77,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\6a37916e13d25ef32986ec945ae6ef64\\core-1.6.0\\res\\values-ko\\values-ko.xml",
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\aea547cf45fbd396a6c7c052261f194b\\play-services-base-17.1.0\\res\\values-ko\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,347,518,632,732,906,1021,1154,1274,1478,1579,1746,1862,2039,2184,2269,2353",
+                        "endColumns": "101,170,113,99,173,114,132,119,203,100,166,115,176,144,84,83,99",
+                        "endOffsets": "346,517,631,731,905,1020,1153,1273,1477,1578,1745,1861,2038,2183,2268,2352,2452"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,211,382,500,604,778,897,1034,1338,1542,1647,1814,1934,2111,2260,2349,2437",
+                        "endColumns": "105,170,117,103,173,118,136,123,203,104,166,119,176,148,88,87,103",
+                        "endOffsets": "206,377,495,599,773,892,1029,1153,1537,1642,1809,1929,2106,2255,2344,2432,2536"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Mahesh\\.gradle\\caches\\transforms-2\\files-2.1\\2e8b97c8800d169629093eed89e56422\\core-1.6.0\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

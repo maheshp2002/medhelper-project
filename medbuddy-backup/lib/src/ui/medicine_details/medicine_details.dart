@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/mddeleteSplash.dart';
+import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 import 'package:provider/provider.dart';
 
 import '../../global_bloc.dart';
@@ -65,6 +66,7 @@ class MedicineDetails extends StatelessWidget {
                     shape: StadiumBorder(),
                     onPressed: () {
                       openAlertBox(context, _globalBloc);
+
                     },
                     child: Center(
                       child: Text(
@@ -144,15 +146,11 @@ class MedicineDetails extends StatelessWidget {
                             context,
                             ModalRoute.withName('/'),
                           );*/
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) =>
-                      //        MDSplash()));
+
                           
                         
                         
-                        Navigator.pop(context);
+                        Navigator.of(context).pop();
                },
                         child: InkWell(
                           child: Container(

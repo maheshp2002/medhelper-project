@@ -34,36 +34,36 @@ return Scaffold(
 
     
     child: 
-    Container(
-      alignment: Alignment.center,
-      child: Column(children: [
+    ListView(
+      children: [Column(
+        children: [
            const SizedBox(
              height: 140,
            ), 
 
         Image.asset("assets/splash/mail_us.png", width: 200,height: 200,),
-        Flexible(child:         
+       
         Text("Want to delete a product?",style: TextStyle(fontFamily: 'JosefinSans',
         color: Colors.black,
         fontWeight: FontWeight.bold,
         fontSize: 20,
-        ),),),
+        ),),
           const SizedBox(
             height: 30,
           ),
-         Flexible(child:          
+         
         Text("Just send a mail along with following details:",style: TextStyle(fontFamily: 'JosefinSans',fontSize: 15),), 
-         ),
+         
           const SizedBox(
             height: 20,
           ), 
-         Flexible(child:                  
-        Text("- Medicine name\n\n- E-mail ID\n\n- Phone number",style: TextStyle(fontFamily: 'JosefinSans',fontSize: 15),),      
-           ),
+                
+        Text("- Medicine name\n\n- E-mail ID\n\n- Phone number\n\n- Store name",style: TextStyle(fontFamily: 'JosefinSans',fontSize: 15),),      
+           
            const SizedBox(
             height: 20,
           ), 
-                   Flexible(child: 
+
                                      OutlineButton(
                                         onPressed: () async {
                                            _sendingMails();  
@@ -90,10 +90,10 @@ return Scaffold(
                                                  // 'lexenddeca'
                                                  )),
                                         ),
-                                      ),),       
+                                      ),      
       ],),
 
-    ),
+   ]),
 ));
   }
     _sendingMails()  {

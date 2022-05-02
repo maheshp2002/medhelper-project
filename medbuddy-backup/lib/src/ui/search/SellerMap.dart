@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/search/sellerFull.dart';
 import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
 import 'package:medbuddy/src/ui/search/tags/Pill.dart';
@@ -14,7 +15,7 @@ class sellerMap extends StatefulWidget {
 }
     var indexno;
     String docid;
-
+      //bool docex;
 class _sellerMapageState extends State<sellerMap>{
 //final collectionRef = FirebaseFirestore.instance.collection("Medicinesell");
     
@@ -24,17 +25,36 @@ return Scaffold(
   appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => tab()),
-            );
-          },
-        ),
+        // leading: new IconButton(
+        //   icon: new Icon(Icons.arrow_back),
+        //   onPressed: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(builder: (context) => tab()),
+        //     );
+        //   },
+        // ),
+  leading: IconButton(
+    onPressed: () { 
+      Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => tab()),
+      );},
+    icon: Icon(Icons.arrow_back),
+  ),
+  actions: [
+    IconButton(
+      onPressed: () {
+       Navigator.push(
+       context,
+      MaterialPageRoute(builder: (context) => cartMap()),
+      );
+      },
+      icon: Icon(Icons.shopping_cart),
+    ),
+  ],    
         title: Text(
-          "Seller Data",
+          "Med-Seller",
           style: TextStyle(
             color: Color.fromARGB(255, 250, 248, 248),
             fontSize: 18,
@@ -169,6 +189,8 @@ return Scaffold(
                   onTap: (){
                       indexno = snapshot.data.docs[index];
                       docid = snapshot.data.docs[index].id;
+                      //checkIfDocExists1(snapshot.data.docs[index].id);
+                      //checkbool1();
                       //print(docid);
                       //collectionRef.doc().id;
                       Navigator.push(context,
@@ -290,3 +312,30 @@ return Scaffold(
 }));
 }}*/
 //......................................................................................................
+//.......................................................................................
+//  checkbool1() async{
+//  bool docExits = await checkIfDocExists(docid);
+//          if(docExits == true){
+//            docex = true;
+          
+//  }else{
+//    docex = false;
+// return docex;
+//  }
+//  }
+// //.......................................................................................
+// //to check doc id
+//  Future<bool> checkIfDocExists1(String docId) async{
+//   try{
+//     //var collectionRef = FirebaseFirestore.instance.collection(user.email + "cart");
+//     var doc = await collectionCart.doc(docId).get();
+//     return doc.exists;
+//   }catch (e){
+//     print(e);
+//   }
+
+// } 
+// //use checkifdoc to check a doc exit, if yes remove it, else create a doc in sellercart with name
+// //of sellermap doc, using a seperate function to check if docex is true if true display text
+
+// //.......................................................................................

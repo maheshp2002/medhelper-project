@@ -74,7 +74,7 @@ class _searchPageState extends State<search>{
                       ),
                         Text(
                           'Pharmeasy',
-                          style: TextStyle(fontSize: 30, color: Colors.white),
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       SizedBox(height: 10,),                        
                     ],
@@ -106,7 +106,7 @@ class _searchPageState extends State<search>{
                       ),
                 Text(
                       'Netmed',
-                      style: TextStyle(fontSize: 30, color: Colors.white),
+                      style: TextStyle(fontSize: 20, color: Colors.white),
                     ),
                 SizedBox(height: 10,),                    
                     ],
@@ -149,7 +149,7 @@ class _searchPageState extends State<search>{
                         ),
                         Text(
                           '1mg',
-                          style: TextStyle(fontSize: 30, color: Colors.white),
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                          SizedBox(height: 10,),                       
                       ],
@@ -179,8 +179,8 @@ class _searchPageState extends State<search>{
                           fit: BoxFit.fitWidth,
                         ),
                         Text(
-                          'Medhelper',
-                          style: TextStyle(fontSize: 30, color: Colors.white),
+                          'MedSeller',
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                           SizedBox(height: 10,),                      
                       ],
