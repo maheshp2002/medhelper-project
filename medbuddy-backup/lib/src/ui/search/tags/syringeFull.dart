@@ -193,6 +193,7 @@ class _DetailedItemState extends State<syringeFull> {
                           'discount %': indexnosyringe['discount %'],
                           'discount price': indexnosyringe['discount price'],
                           'images': indexnosyringe['images'],
+                          'date': indexnosyringe['date'],
 
 
                         });

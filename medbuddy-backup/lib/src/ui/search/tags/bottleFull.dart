@@ -192,6 +192,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                           'discount %': indexnobottle['discount %'],
                           'discount price': indexnobottle['discount price'],
                           'images': indexnobottle['images'],
+                          'date': indexnobottle['date'],
 
 
                         });

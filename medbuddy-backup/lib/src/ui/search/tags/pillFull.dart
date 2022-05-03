@@ -192,6 +192,7 @@ class _DetailedItemState extends State<pillFull> {
                           'discount %': indexnopill['discount %'],
                           'discount price': indexnopill['discount price'],
                           'images': indexnopill['images'],
+                          'date': indexnopill['date'],
 
 
                         });

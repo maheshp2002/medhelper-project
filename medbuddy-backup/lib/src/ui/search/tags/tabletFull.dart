@@ -190,6 +190,7 @@ class _DetailedItemState extends State<tabletFull> {
                           'discount %': indexnotablet['discount %'],
                           'discount price': indexnotablet['discount price'],
                           'images': indexnotablet['images'],
+                          'date': indexnotablet['date'],
 
 
                         });

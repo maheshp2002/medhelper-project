@@ -201,6 +201,7 @@ class _DetailedItemState extends State<SellerFull> {
                           'discount %': indexno['discount %'],
                           'discount price': indexno['discount price'],
                           'images': indexno['images'],
+                          'date': indexno['date'],
                             
 
                         });
