@@ -15,7 +15,7 @@ class DSplash extends StatefulWidget {
 
   _navigatetoHome()async{
     await Future.delayed(Duration(milliseconds: 3000), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SellerFull()));
+    Navigator.of(context).pop();
   }
 
   @override

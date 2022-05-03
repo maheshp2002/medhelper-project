@@ -5,6 +5,7 @@ import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
+import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/tags/Pill.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -177,6 +178,7 @@ class _DetailedItemState extends State<pillFull> {
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));                  
             return collectionCart.doc(Pdocid).delete();
         } else{
           collectionCart.doc(Pdocid).set(

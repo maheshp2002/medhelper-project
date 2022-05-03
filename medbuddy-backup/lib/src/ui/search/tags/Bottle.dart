@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/tags/bottleFull.dart';
 
 
