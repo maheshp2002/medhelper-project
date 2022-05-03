@@ -37,7 +37,7 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.shopping_cart),
-            title: Text('Cart'),
+            title: Text('wishList'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartMap()))},
           ),          
           ListTile(

@@ -2,10 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/seller/SellerCloud/sellerFull2.dart';
 import 'package:medbuddy/seller/sellerSettings.dart';
-import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
-import 'package:medbuddy/src/ui/search/tags/Pill.dart';
-import 'package:medbuddy/src/ui/search/tags/Syringe.dart';
-import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
 
 
 

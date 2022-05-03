@@ -101,6 +101,15 @@ class _DetailedItemState extends State<SellerFull2> {
           const SizedBox(
             height: 16,
           ), 
+    Card(
+    child: ListTile(               
+    title:  Text("Date:" + " " + sindexno['date']),
+    )),
+//gap btw borders
+
+          const SizedBox(
+            height: 16,
+          ), 
  //button for navigator              
             Padding(
             padding: EdgeInsets.only(top: 10),

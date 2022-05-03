@@ -4,7 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:medbuddy/doctor/dcNavBar.dart';
 import 'package:medbuddy/doctor/splash_screen/doctorSplash.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 class doctorHomePage extends StatefulWidget {
@@ -15,6 +15,7 @@ class doctorHomePage extends StatefulWidget {
 }
 
 class _doctorHomePageState extends State<doctorHomePage> {
+  User user = FirebaseAuth.instance.currentUser;
   String prescription;
   String emailid;
   String date;
@@ -222,6 +223,7 @@ if(pickedDate != null ){
                         'prescription':prescription,
                         'date':date,
                         'doctor name': name,
+                        'email':user.email
                         }, 
                         );
                       

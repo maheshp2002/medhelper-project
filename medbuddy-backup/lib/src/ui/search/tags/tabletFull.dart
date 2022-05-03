@@ -111,6 +111,14 @@ class _DetailedItemState extends State<tabletFull> {
 
     }
     )),
+        Card(
+    child: ListTile(              
+    title:  Text("Date:" + " " + indexnotablet['date']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
 //gap btw borders
 
           const SizedBox(
@@ -160,7 +168,7 @@ class _DetailedItemState extends State<tabletFull> {
         bool docExits = await checkIfDocExists(Tdocid);
         if(docExits == true){
                       Fluttertoast.showToast(  
-                      msg: 'cart removed',  
+                      msg: 'Item removed from WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
@@ -184,7 +192,7 @@ class _DetailedItemState extends State<tabletFull> {
 
                         });
                        Fluttertoast.showToast(  
-                      msg: 'cart added',  
+                      msg: 'Item added to WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  

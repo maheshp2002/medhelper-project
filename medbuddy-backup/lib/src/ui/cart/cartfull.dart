@@ -111,6 +111,14 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
     }
     )),
+        Card(
+    child: ListTile(              
+    title:  Text("Date:" + " " + cindexno['date']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
 //gap btw borders
 
           const SizedBox(

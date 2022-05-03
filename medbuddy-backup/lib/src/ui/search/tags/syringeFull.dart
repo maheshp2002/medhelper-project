@@ -111,6 +111,14 @@ class _DetailedItemState extends State<syringeFull> {
 
     }
     )),
+        Card(
+    child: ListTile(              
+    title:  Text("Date:" + " " + indexnosyringe['date']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
 //gap btw borders
 
           const SizedBox(
@@ -163,7 +171,7 @@ class _DetailedItemState extends State<syringeFull> {
         bool docExits = await checkIfDocExists(Sdocid);
         if(docExits == true){
                       Fluttertoast.showToast(  
-                      msg: 'cart removed',  
+                      msg: 'Item removed from WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
@@ -187,7 +195,7 @@ class _DetailedItemState extends State<syringeFull> {
 
                         });
                        Fluttertoast.showToast(  
-                      msg: 'cart added',  
+                      msg: 'Item added to WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  

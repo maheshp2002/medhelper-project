@@ -67,11 +67,20 @@ Widget build(BuildContext context) {
 //gap btw borders
           const SizedBox(
             height: 16,
-          ),  
+          ),
+    Card(
+    child: ListTile(              
+    title:  Text(preindexno['email']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),   
     Card(
     child: ListTile(              
     title:  Text(preindexno['prescription']),
-    )),])));
+    )),
+    ])));
 }}
        
        

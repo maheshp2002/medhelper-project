@@ -5,6 +5,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:medbuddy/seller/splash_screen/sellerSplash.dart';
@@ -45,6 +46,8 @@ String storename;
 
 String price;
 String discountvalue;
+bool hasDiscount;
+String datenow1 = DateFormat("yyyy-MM-dd").format(DateTime.now());
 
 //..........................................................................................
 Future<String> uploadFile(_image) async {
@@ -71,17 +74,30 @@ Future<String> uploadFile(_image) async {
                
 //..........................................................................................
          
-        double oldprice = double.parse(price);
-        double discountv = double.parse(discountvalue);
-        double discount = 0.0;
-        String returnStr = discount.toString();
+        double oldprice;
+        double discountv;
+        double discount;
+        String DiscountVal;
+        String returnStr;
+        if(hasDiscount == true){
+        oldprice = double.parse(price);
+        discountv = double.parse(discountvalue);
+        discount = 0.0;
+        returnStr = discount.toString();
 
         discount = (oldprice - discountv)/oldprice*100;
         returnStr = discount.toStringAsFixed(0);
-
+        DiscountVal = discountvalue.toString();
+        }
+        else{
+          returnStr = "No discount";
+          DiscountVal = "0";
+        }
+        String datenow = datenow1;
 //..........................................................................................
 
 //Firebase data write
+          
                 await collectionReference.add(
                         {
                         'ID':id,
@@ -91,11 +107,12 @@ Future<String> uploadFile(_image) async {
                         'store name':storename,
                         'price':price.toString(),
                         'discount %':returnStr,
-                        'discount price':discountvalue.toString(),
+                        'discount price':DiscountVal,
                         'mobile no':mobileno,
                         'email id':emailID,
                         'Latitude': GeoPoint(position.latitude, position.longitude),
                         'images': imageURL,
+                        'date' : datenow,
                         },
                         );
                 //}
@@ -334,6 +351,53 @@ Future<String> uploadFile(_image) async {
           ),
 
 //discount.........................................................................................
+//gap btw borders
+
+Row(mainAxisAlignment: MainAxisAlignment.start,
+  children: [
+          Row(
+            children:[
+          SizedBox(
+          width: 10,
+        ), 
+          Text("Discount:",textAlign: TextAlign.left,style: TextStyle(fontSize: 15),),  
+          SizedBox(
+          width: 20,
+        ),           
+           Radio(
+            value: true,
+            groupValue: hasDiscount,
+            onChanged: (value) {
+              setState(() {
+                hasDiscount = value;
+                print(hasDiscount);
+              });
+            },
+          ),
+           const Text('Yes'),
+        ]),
+        SizedBox(
+          width: 30,
+        ),
+          Row(
+            children:[
+           Radio(
+            value: false,
+            groupValue: hasDiscount,
+            onChanged: (value) {
+              setState(() {
+                hasDiscount = value;
+                print(hasDiscount);
+              });
+            },
+          ),
+           const Text('No'),
+            ]),
+  ]
+),
+          const SizedBox(
+            height: 16,
+          ),
 //Row(children: [
           TextField(
                   onChanged: ((value) {
@@ -375,7 +439,6 @@ Future<String> uploadFile(_image) async {
           // ),
           
 //]),
-
 
 //mobile no
           TextField(
@@ -510,7 +573,18 @@ Future<String> uploadFile(_image) async {
                   _storename.clear();
             }          
               
-          )
+          ),
+          //gap btw borders
+            const SizedBox(
+              height: 10,
+            ),
+            Row(children: [
+          Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
+          Text("Note: Data upload take some time so please be patient",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
+            ]),
+          Text("only click submit button once,if not uploaded for 20sec check if all data are given",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
         ],
       ),
           ),

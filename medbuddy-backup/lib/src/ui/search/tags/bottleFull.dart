@@ -110,6 +110,14 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
     }
     )),
+      Card(
+    child: ListTile(              
+    title:  Text("Date:" + " " + indexnobottle['date']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
 //gap btw borders
 
           const SizedBox(
@@ -162,7 +170,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
         bool docExits = await checkIfDocExists(Bdocid);
         if(docExits == true){
                       Fluttertoast.showToast(  
-                      msg: 'cart removed',  
+                      msg: 'Item removed from WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
@@ -186,7 +194,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
                         });
                        Fluttertoast.showToast(  
-                      msg: 'cart added',  
+                      msg: 'Item added to WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  

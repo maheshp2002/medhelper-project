@@ -120,7 +120,15 @@ class _DetailedItemState extends State<SellerFull> {
 
           const SizedBox(
             height: 16,
-          ), 
+          ),
+    Card(
+    child: ListTile(              
+    title:  Text("Date:" + " " + indexno['date']),
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),  
  //button for navigator              
             Padding(
             padding: EdgeInsets.only(top: 10),
@@ -246,7 +254,7 @@ class _DetailedItemState extends State<SellerFull> {
                                                   width: 5,
                                                 ),
                                                 //docex == true?
-                                                Icon(Icons.shopping_cart,color: MyColors.lightPink,)
+                                                Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,)
                                                //: Icon(Icons.shopping_cart_outlined,color: MyColors.lightPink,)
                                                  ])
                                         ),
