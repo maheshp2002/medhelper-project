@@ -76,7 +76,7 @@ class _DetailedItemState extends State<syringeFull> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + indexnosyringe['price']),
+    title:  Text("Price:" + " " + indexnosyringe['price']),
     )),
 //gap btw borders
           const SizedBox(

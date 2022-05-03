@@ -75,7 +75,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + indexnobottle['price']),
+    title:  Text("Price:" + " " + indexnobottle['price']),
     )),
 //gap btw borders
           const SizedBox(

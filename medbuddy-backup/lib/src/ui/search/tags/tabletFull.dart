@@ -76,7 +76,7 @@ class _DetailedItemState extends State<tabletFull> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Availability:" + " " + indexnotablet['price']),
+    title:  Text("Price:" + " " + indexnotablet['price']),
     )),
 //gap btw borders
           const SizedBox(
