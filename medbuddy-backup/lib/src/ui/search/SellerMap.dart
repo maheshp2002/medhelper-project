@@ -64,7 +64,7 @@ return Scaffold(
   ),
 	body:  StreamBuilder(
       stream: FirebaseFirestore.instance.collection("Medicinesell")
-          .orderBy("date", descending: false).snapshots(),
+          .orderBy("date", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {   
           return Center
