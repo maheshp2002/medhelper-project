@@ -4,6 +4,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
+import 'package:medbuddy/src/ui/rateing/rateing.dart';
+import 'package:medbuddy/src/ui/rateing/rateingtag/rateingP.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
@@ -238,10 +240,112 @@ class _DetailedItemState extends State<pillFull> {
                                                  ])
                                         ),
                                       ),           
-  SizedBox(
-      height: 10,
-    ),
-     
+        SizedBox(height: 40,),
+
+        Text("Coustomer Review:",
+        style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
+        ),
+
+        Divider(
+        indent: 5,
+        endIndent: 5,
+        color: Colors.black,
+    ), 
+
+        SizedBox(height: 30,),
+  StreamBuilder(
+      stream: FirebaseFirestore.instance.collection(Pdocid + "review")
+          .orderBy("rateing", descending: true).snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+         if (!snapshot.hasData) {
+          //hasdata = true;
+          return Center
+          (child: Text("No coustomer rateing")
+     );
+        }
+        
+        else if (snapshot.data?.size == 0) {
+
+          
+            return Center
+          (child: Text("No coustomer rateing"));
+        }
+
+        else{
+                 return ListView.builder(
+                  physics: ScrollPhysics(),
+                  padding: EdgeInsets.all(10),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: snapshot.data.docs.length,
+
+                  itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                  child: Column(
+                  children: [
+                  SizedBox(height: 10,),
+                    Row(children:[
+                  SizedBox(width: 10,),
+                  Container(
+                  color: Colors.green,
+                  child: Row(children: [
+                  SizedBox(width: 5,),
+                  Text(snapshot.data.docs[index]['rateing'],
+                  style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans', fontSize: 20,)),
+                  SizedBox(width: 5,),
+                  Icon(Icons.star,color: Colors.white,size: 15,),
+                  SizedBox(width: 5,),
+                     ],) ),]),
+
+                  SizedBox(height: 10,),
+                  Row(children:[
+                  SizedBox(width: 10,),
+                  Text("Email:" + " "),
+                  Text(snapshot.data.docs[index]['email']),]),
+
+                  SizedBox(height: 30,),
+                  Row(children:[
+                  SizedBox(width: 10,),
+                  Text('Review:'),]),  
+                  SizedBox(height: 10,),                  
+                  Row(children:[
+                  SizedBox(width:20),
+                  Text(snapshot.data.docs[index]['review']),]),
+                  ],),
+          
+            );
+                  });}}),
+                              SizedBox(height: 30),         
+  //button for review
+                                OutlineButton(
+                                        onPressed: () async {
+                             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => rateingP()));
+                                        },
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                                MyDimens.double_4)),
+                                        borderSide: BorderSide(
+                                            color: Colors.deepPurpleAccent,
+                                            width: MyDimens.double_1),
+                                        color: Colors.deepPurpleAccent,
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              top: MyDimens.double_15,
+                                              bottom: MyDimens.double_15),
+                                          child: 
+                                           Text("Add your review",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle1
+                                                  .copyWith(
+                                                  color:
+                                                  Colors.deepPurpleAccent,
+                                                  //fontFamily:
+                                                 // 'lexenddeca'
+                                                 )),
+                                        ),
+                                      ),  
+            SizedBox(height: 30,),
     ]
   ),),
 );
