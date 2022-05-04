@@ -306,9 +306,10 @@ class _DetailedItemState extends State<tabletFull> {
                   SizedBox(width: 10,),
                   Text('Review:'),]),  
                   SizedBox(height: 10,),                  
-                  Row(children:[
-                  SizedBox(width:20),
-                  Text(snapshot.data.docs[index]['review']),]),
+                  Padding(
+                    padding: EdgeInsets.all(20), 
+                    child:
+                  Text(snapshot.data.docs[index]['review']),),
                   ],),
           
             );
