@@ -5,7 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/rateing/rateingsplash.dart';
 import 'package:medbuddy/src/ui/search/SellerMap.dart';
-import 'package:medbuddy/src/ui/search/sellerFull.dart';
+
 
 
 
@@ -32,7 +32,7 @@ class _rateingState extends State<rateing> {
     return Scaffold(
         appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title: Text("Rateing"),
+        title: Text("Rating"),
         elevation: 16.0,
 ),
 
