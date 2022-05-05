@@ -301,7 +301,7 @@ class _DetailedItemState extends State<tabletFull> {
                   Row(children:[
                   SizedBox(width: 10,),
                   Text("Name:" + " "),
-                  Text(snapshot.data.docs[index]['username']),]),
+                  Text(snapshot.data.docs[index]['name']),]),
 
                   SizedBox(height: 30,),
                   Row(children:[
