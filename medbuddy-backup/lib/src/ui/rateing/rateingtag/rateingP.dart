@@ -21,6 +21,8 @@ class _rateingState extends State<rateingP> {
   String review;
 
    TextEditingController reviewController = TextEditingController();
+   final users = FirebaseFirestore.instance.collection("username").doc(user.uid);
+
   final collectionReference = FirebaseFirestore.instance;
   @override
   void initState() {
@@ -110,12 +112,15 @@ class _rateingState extends State<rateingP> {
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   ); 
-                  
-                      await collectionReference.collection(Pdocid + "review").add(
+                        String uname;
+                        await users.get().then((snapshot) {
+                              uname = snapshot.get('username');
+                            });
+                        await collectionReference.collection(Pdocid + "review").add(
                         {
                         'review':review,
                         'rateing':rating1.toString(),
-                        'email':user.email
+                        'name':uname
                         }, 
                         );
                       
