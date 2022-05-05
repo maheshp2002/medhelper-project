@@ -290,7 +290,9 @@ class _DetailedItemState extends State<SellerFull> {
 
           
             return Center
-          (child: Text("No coustomer rateing"));
+          (child: Text("No coustomer rateing",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
+          );
         }
 
         else{
@@ -322,18 +324,19 @@ class _DetailedItemState extends State<SellerFull> {
                   SizedBox(height: 10,),
                   Row(children:[
                   SizedBox(width: 10,),
-                  Text("Email:" + " "),
-                  Text(snapshot.data.docs[index]['email']),]),
+                  Text("Name:" + " "),
+                  Text(snapshot.data.docs[index]['name']),]),
 
                   SizedBox(height: 30,),
                   Row(children:[
                   SizedBox(width: 10,),
                   Text('Review:'),]),  
-                  SizedBox(height: 10,),                  
-                  Padding(
+                  SizedBox(height: 10,),
+                  Container(  alignment: Alignment.topLeft,              
+                  child:  Padding(
                     padding: EdgeInsets.all(20), 
                     child:
-                  Text(snapshot.data.docs[index]['review']),),
+                  Text(snapshot.data.docs[index]['review']),),)
                   ]),
 
           
@@ -343,6 +346,7 @@ class _DetailedItemState extends State<SellerFull> {
   //button for review
                                 OutlineButton(
                                         onPressed: () async {
+                                       
                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => rateing()));
                                         },
                                         shape: RoundedRectangleBorder(

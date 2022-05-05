@@ -14,6 +14,7 @@ class Settings extends StatefulWidget {
 class _SettingsPageState extends State<Settings>{
   final collectionReference = FirebaseFirestore.instance.collection(user.uid);
   var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
+   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,6 +95,9 @@ class _SettingsPageState extends State<Settings>{
                           for (QueryDocumentSnapshot snapshot in element.docs) {
                             snapshot.reference.delete();
                           }});
+                          FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
+                         
+                         
                             _restartApp();
 
                         })

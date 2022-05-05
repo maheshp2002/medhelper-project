@@ -6,6 +6,7 @@ import 'package:medbuddy/src/ui/settings/patientAbout.dart';
 import 'package:medbuddy/src/ui/settings/settings.dart';
 import 'package:provider/provider.dart';
 
+
 class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,10 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.verified_user),
             title: Text('Profile'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => patientAbout()))},
+            
+            onTap: () async{
+              
+               Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => patientAbout()));},
           ),
           ListTile(
             leading: Icon(Icons.shopping_cart),
@@ -59,4 +63,4 @@ class NavDrawer extends StatelessWidget {
       ),
     );
   }
-}
+}  

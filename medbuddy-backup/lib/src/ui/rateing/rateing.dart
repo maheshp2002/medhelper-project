@@ -23,6 +23,8 @@ class _rateingState extends State<rateing> {
 
    TextEditingController reviewController = TextEditingController();
   final collectionReference = FirebaseFirestore.instance;
+  final users = FirebaseFirestore.instance.collection("username").doc(user.uid);
+
   @override
   void initState() {
     super.initState();
@@ -103,6 +105,18 @@ class _rateingState extends State<rateing> {
                       ),
                     ),
                     onPressed: () async{
+                        
+                        String uname;
+                        await users.get().then((snapshot) {
+                              uname = snapshot.get('username');
+                            });
+                        await collectionReference.collection(docid + "review").add(
+                        {
+                        'review':review,
+                        'rateing':rating1.toString(),
+                        'name':uname
+                        }, 
+                        );
                       Fluttertoast.showToast(  
                       msg: 'Review added',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -112,14 +126,7 @@ class _rateingState extends State<rateing> {
                       textColor: Colors.white  
                   ); 
                   
-                      await collectionReference.collection(docid + "review").add(
-                        {
-                        'review':review,
-                        'rateing':rating1.toString(),
-                        'email':user.email
-                        }, 
-                        );
-                      
+
 
                         
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> rateingSucess()));
@@ -131,4 +138,5 @@ class _rateingState extends State<rateing> {
           ],
         )));
   }
+
 }

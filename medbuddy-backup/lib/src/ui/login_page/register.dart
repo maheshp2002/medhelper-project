@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:medbuddy/Login_ui/Screens/Login/index.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
@@ -19,6 +18,10 @@ class _RegisterState extends State<Register> {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
+
+  String name;
+
   FirebaseAuth auth = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
@@ -90,6 +93,27 @@ class _RegisterState extends State<Register> {
                 ),
     
               ),
+
+              Padding(padding: EdgeInsets.only(top: 10),
+               child:
+              new TextFormField(
+                controller: nameController,
+               onChanged: ((value) {
+                  name = value;
+                }),
+                keyboardType: TextInputType.text,
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+                textCapitalization: TextCapitalization.words,
+                decoration: InputDecoration(
+                  hintText: 'Enter your name',
+                  prefixIcon: Icon(Icons.keyboard),
+                  border: UnderlineInputBorder(),
+                ),
+    
+              ),),
+
               Padding(padding: EdgeInsets.only(top: 10),
                child:
               new TextFormField(
@@ -108,8 +132,9 @@ class _RegisterState extends State<Register> {
               ),
               ),              
         
-      
-             
+
+  
+//.................................................................................          
 
                               Container(
                                 margin: EdgeInsets.symmetric(
@@ -137,22 +162,16 @@ class _RegisterState extends State<Register> {
                         'dosage':"0", 
                         'time':"0",
                         'interval': "0",
+                        
                           }
                         ),
-                        // FirebaseFirestore.instance.collection(cred.user.email + "cart").doc().set(
-                        //   {
-                        //   'medicine name': "Default value ",
-                        //   'email id': "0",
-                        //   'mobile no': "0",
-                        //   'address': "0",
-                        //   'price': "0",
-                        //   'dosage': "0",
-                        //   'discount %': "Long press to delete",
-                        //   'discount price': "0",
-                        //   'images': "https://image.shutterstock.com/image-vector/picture-icon-image-photo-260nw-1672289161.jpg",
+                        FirebaseFirestore.instance.collection("username").doc(cred.user.uid).set(
+                          {
+                           'username': name,
+   
 
-                        //   }
-                        // ),                        
+                          }
+                         ),                        
                                               
                       }
                       

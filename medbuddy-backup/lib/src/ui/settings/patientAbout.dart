@@ -1,6 +1,5 @@
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/homepage/homepage.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
@@ -12,8 +11,9 @@ class patientAbout extends StatefulWidget {
 
 String prescription;
 
-class patientAboutState extends State<patientAbout> {
 
+class patientAboutState extends State<patientAbout> {
+ CollectionReference users = FirebaseFirestore.instance.collection('username');
 @override
 Widget build(BuildContext context) {
 	return Scaffold(
@@ -38,17 +38,39 @@ Widget build(BuildContext context) {
         ),
         elevation: 0.0,
   ),
-	body: Container(
-    alignment: Alignment.center,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+	body: 
 
-      Text("Email:" + " " + user.email),
+    FutureBuilder<DocumentSnapshot>(
+      future: users.doc(user.uid).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
 
-    ],)
-  
-  )
-  );
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.hasData && !snapshot.data.exists) {
+          return Text("Document does not exist");
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data = snapshot.data.data() as Map<String, dynamic>;
+          return Center(
+          child: Column (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          Text("Name: ${data['username']}"),
+          Text("Email id: " + user.email)
+          ],));
+        }
+
+        return Text("loading");
+      },
+    )
+    );
+  }
 }
-}
+
+
+
+//..................................................................................................
