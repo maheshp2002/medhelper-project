@@ -57,6 +57,7 @@ dependencies:
   date_picker_timeline: ^1.2.3
   url_launcher: ^6.0.13
   flutter_rating_bar: ^4.0.0
+  blinking_text: ^1.0.2
   flutter_local_notifications:
   # flare_flutter:
   #   git: 

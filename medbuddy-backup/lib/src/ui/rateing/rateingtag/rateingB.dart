@@ -121,12 +121,19 @@ class _rateingState extends State<rateingB> {
                         {
                         'review':review,
                         'rateing':rating1.toString(),
-                        'name':uname
+                        'name':uname,
+                        'email': user.email
                         }, 
                         );
-                      
-
-                        
+                        //add rating for avg
+                        await collectionReference.collection('average rating').doc(Bdocid).set(
+                          {
+                          'avg': FieldValue.increment(rating1),
+                          'length': FieldValue.increment(1)
+                          },
+                          SetOptions(merge: true)
+                         
+                          );
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> rateingSucess()));
                         reviewController.clear();
                         }

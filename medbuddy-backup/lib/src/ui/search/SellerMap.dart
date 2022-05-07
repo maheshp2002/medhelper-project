@@ -16,7 +16,7 @@ class sellerMap extends StatefulWidget {
 }
     var indexno;
     String docid;
-    String rating;
+
 
 
 class _sellerMapageState extends State<sellerMap>{
@@ -193,41 +193,39 @@ return Scaffold(
                       docid = snapshot.data.docs[index].id;
 
 
-                      int avg;
-                      int length;
-                      double average;
-                      double dclength;
-                      
-                      
-                      
-                      
-                     
+                      // int avg;
+                      // int length;
+                      // double average;
+                      // double dclength;
+                      // String rating;
 
-                        FirebaseFirestore.instance.collection("average rating").doc(docid).get().then(
-                        (DocumentSnapshot snapShot) {
-                            if (snapShot.exists) {
-                              
-                              //here we retrieve the length and average from firestore and store them in int
-                              //then divide them to find average rating
-                              
-                            average = snapShot.get('avg');
-                            length = snapShot.get('length');
 
-                              avg = average.toInt();
+                      //   FirebaseFirestore.instance.collection("average rating").doc(docid).get().then(
+                      //   (DocumentSnapshot snapShot) {
+                      //       if (snapShot.exists) {
+                              
+                      //         //here we retrieve the length and average from firestore and store them in int
+                      //         //then divide them to find average rating
+                              
+                      //       average = snapShot.get('avg');
+                      //       length = snapShot.get('length');
+
+                      //         avg = average.toInt();
                             
 
-                              dclength = (avg/length);
-                              rating = dclength.toStringAsFixed(1);
-                              print(rating);
-                            }else{
-                              rating="0";
-                            }
-                              } );
+                      //         dclength = (avg/length);
+                      //         rating = dclength.toStringAsFixed(1);
+                      //         print(rating);
+                      //       }else{
+                      //         rating="0";
+                      //       }
+                      //         } );
+                      //         print(rating);
                              
 
 
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull()));
+                      Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => SellerFull()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

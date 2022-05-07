@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -10,24 +12,28 @@ import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:blinking_text/blinking_text.dart';
+
+var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
 class SellerFull extends StatefulWidget {
 
 @override
   _DetailedItemState createState() => _DetailedItemState();
+
 }
 
-var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 class _DetailedItemState extends State<SellerFull> {
 
 
 
-@override
-  void setState(VoidCallback checkbool1) {
-    super.setState(checkbool1);
+ @override
+   void setState(VoidCallback checkbool1) {
+     super.setState(checkbool1);
   }
 
-
+// String rating1;
+// SellerFull({this.rating1});
 
 
   @override
@@ -56,14 +62,53 @@ class _DetailedItemState extends State<SellerFull> {
                 width: 300,
                 
          ),),
-    
-    //Text("Rateing:" + rating),
+//............................................................................................................ 
 
-    Card(
-    child: ListTile(
-    title:  Text( indexno['discount %'] + "%",
-     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),),
-    )),
+   StreamBuilder(
+      stream:  FirebaseFirestore.instance.collection("average rating").doc(docid).snapshots(),
+      builder: (context, snapshot) {
+         if (!snapshot.hasData) {
+          //hasdata = true;
+          return Center
+          (child: Text("0.0")
+     );
+        }
+        
+
+        else{
+         double avg;
+          try{
+           avg = (snapshot.data.get('avg') / snapshot.data.get('length'));
+          }catch(e){
+            avg=0.0;
+          }
+                  return Container(
+                   padding: EdgeInsets.only(left: 20),
+                  child: Row(children:[
+                  Text("Rating: ", style: TextStyle(fontFamily: 'JosefinSans',fontSize: 20),),
+                  SizedBox(width: 5,),
+                  Text(avg.toStringAsFixed(1),
+                  style: TextStyle(color: Color.fromARGB(255, 38, 121, 216),
+                  fontFamily: 'JosefinSansBI', fontSize: 50,),),
+                  SizedBox(width: 5,),
+                  Text("out of 5", style: TextStyle(fontFamily: 'JosefinSans'),),
+
+                  ])
+                  );
+                  }}),
+ 
+//............................................................................................................
+
+                  Row(mainAxisAlignment: MainAxisAlignment.end,
+                    children:[
+                  Text("Discount:", style: TextStyle(fontFamily: 'JosefinSans'),),
+                  SizedBox(width: 10,),
+                  Padding(padding: EdgeInsets.only(right: 10),
+                  child: BlinkText(indexno['discount %'] + "%",
+                  style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),
+                  	endColor: Colors.greenAccent,
+	                  duration: Duration(seconds: 1)),
+                  )]),
 
 //gap btw borders
           const SizedBox(

@@ -10,7 +10,7 @@ class cartMap extends StatefulWidget {
   _sellerMapageState createState() => _sellerMapageState();
 }
     var cindexno;
-
+    String cdocid;
 class _sellerMapageState extends State<cartMap>{
 //final collectionRef = FirebaseFirestore.instance.collection("Medicinesell");
     
@@ -77,6 +77,7 @@ return Scaffold(
                   splashColor: Colors.black26,
                   onTap: (){
                       cindexno = snapshot.data.docs[index];
+                      cdocid = snapshot.data.docs[index].id;
                       //collectionRef.doc().id;
                       Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) => cartFull()));
