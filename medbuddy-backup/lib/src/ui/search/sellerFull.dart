@@ -54,7 +54,7 @@ class _DetailedItemState extends State<SellerFull> {
     Card(
     child: ListTile(
     title:  Text( indexno['discount %'] + "%",
-     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),),
     )),
 
 //gap btw borders

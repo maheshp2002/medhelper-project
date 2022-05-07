@@ -49,7 +49,7 @@ class _DetailedItemState extends State<pillFull> {
     Card(
     child: ListTile(
     title:  Text( indexnopill['discount %'] + "%",
-     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),),
     )),
 
 //gap btw borders

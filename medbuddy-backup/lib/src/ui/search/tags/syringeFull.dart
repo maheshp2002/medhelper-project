@@ -50,7 +50,7 @@ class _DetailedItemState extends State<syringeFull> {
     Card(
     child: ListTile(
     title:  Text( indexnosyringe['discount %'] + "%",
-     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),),
     )),
 
 //gap btw borders

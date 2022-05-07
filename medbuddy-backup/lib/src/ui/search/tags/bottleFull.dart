@@ -48,7 +48,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
     Card(
     child: ListTile(
     title:  Text( indexnobottle['discount %'] + "%",
-     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),),
     )),
 
 //gap btw borders

@@ -42,7 +42,7 @@ String emailID;
 String address;
 String mobileno;
 String storename;
-
+bool isLoadingDF = false;
 
 String price;
 String discountvalue;
@@ -115,6 +115,9 @@ Future<String> uploadFile(_image) async {
                         'date' : datenow,
                         },
                         );
+           setState(() {
+            isLoadingDF = false;
+          });
                 //}
                 //);
               
@@ -203,7 +206,7 @@ Future<String> uploadFile(_image) async {
           },
         ),),
 //page UI.....................................................................................
-      body: Column(
+      body:  !isLoadingDF? Column(
     children: [
       Flexible(
         child: ListView(
@@ -548,6 +551,9 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
+           setState(() {
+            isLoadingDF = true;
+          });
               uploadFile(_image);
               await saveImages(_image);
               Fluttertoast.showToast(  
@@ -592,7 +598,9 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
         ),
   ),
     ],
-      ),
+      ):Center(
+      
+      child: Image.asset('assets/splash/loading.gif'),),
 
 
 );

@@ -50,7 +50,7 @@ class _DetailedItemState extends State<tabletFull> {
     Card(
     child: ListTile(
     title:  Text( indexnotablet['discount %'] + "%",
-     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'JosefinSans'),),
+     style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),),
     )),
 
 //gap btw borders

@@ -40,18 +40,21 @@ class WelcomeScreen extends StatelessWidget {
               Expanded(
                 flex: 6,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 60, left: 25),
+                  padding: const EdgeInsets.only(top: 60, left: 15, right: 15),
                   child: Column(
+                    //mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Hello',textAlign: TextAlign.center,
                        style: TextStyle(fontSize: 55, fontWeight: FontWeight.bold, color: Colors.white),),
                       SizedBox(height: 30,),
-                      Text('“He who has health has hope; and he who has hope, has everything.”',
+                      Text('“He who has health has hope;\n And he who has hope,\n has everything.”',
                       textAlign: TextAlign.center,
-                       style: TextStyle(fontSize: 25, fontStyle: FontStyle.italic, color: Colors.white),),
+                       style: TextStyle(fontFamily: 'JosefinSansBI',
+                         fontSize: 25, color: Colors.white),),
                        SizedBox(height: 10,),
                         Text(' - Thomas Carlyle',textAlign: TextAlign.center,
-                         style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic, color: Colors.white),),
+                         style: TextStyle(fontFamily: 'JosefinSans',
+                           fontSize: 20, fontStyle: FontStyle.italic, color: Colors.white),),
                     ],
                   ),
                 ),),

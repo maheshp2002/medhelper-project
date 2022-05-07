@@ -126,6 +126,14 @@ flutter:
     - family: JosefinSans
       fonts:
         - asset: assets\fonts\Josefin_Sans\static\JosefinSans-Light.ttf
+
+    - family: arvoBold
+      fonts:
+        - asset: assets\fonts\Arvo\Arvo-Bold.ttf
+
+    - family: JosefinSansBI
+      fonts:
+        - asset: assets\fonts\Josefin_Sans\static\JosefinSans-BoldItalic.ttf
         
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
