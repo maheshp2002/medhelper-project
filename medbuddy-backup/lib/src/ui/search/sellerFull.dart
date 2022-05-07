@@ -19,10 +19,16 @@ class SellerFull extends StatefulWidget {
 
 var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 class _DetailedItemState extends State<SellerFull> {
+
+
+
 @override
   void setState(VoidCallback checkbool1) {
     super.setState(checkbool1);
   }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +56,8 @@ class _DetailedItemState extends State<SellerFull> {
                 width: 300,
                 
          ),),
+    
+    //Text("Rateing:" + rating),
 
     Card(
     child: ListTile(

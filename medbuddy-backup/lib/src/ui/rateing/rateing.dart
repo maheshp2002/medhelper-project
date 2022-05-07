@@ -21,9 +21,10 @@ class _rateingState extends State<rateing> {
   String emailid;
   String review;
 
-   TextEditingController reviewController = TextEditingController();
+  TextEditingController reviewController = TextEditingController();
   final collectionReference = FirebaseFirestore.instance;
   final users = FirebaseFirestore.instance.collection("username").doc(user.uid);
+
 
   @override
   void initState() {
@@ -114,9 +115,19 @@ class _rateingState extends State<rateing> {
                         {
                         'review':review,
                         'rateing':rating1.toString(),
-                        'name':uname
+                        'name':uname,
+                        'email': user.email
                         }, 
                         );
+                        //add rating for avg
+                        await collectionReference.collection('average rating').doc(docid).set(
+                          {
+                          'avg': FieldValue.increment(rating1),
+                          'length': FieldValue.increment(1)
+                          },
+                          SetOptions(merge: true)
+                         
+                          );
                       Fluttertoast.showToast(  
                       msg: 'Review added',  
                       toastLength: Toast.LENGTH_LONG,  

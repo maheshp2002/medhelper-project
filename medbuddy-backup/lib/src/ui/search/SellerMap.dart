@@ -11,13 +11,15 @@ import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 class sellerMap extends StatefulWidget {
   @override
+  const sellerMap({Key key}) : super(key: key);
   _sellerMapageState createState() => _sellerMapageState();
 }
     var indexno;
     String docid;
-      //bool docex;
+    String rating;
+
+
 class _sellerMapageState extends State<sellerMap>{
-//final collectionRef = FirebaseFirestore.instance.collection("Medicinesell");
     
   @override
   Widget build(BuildContext context) {
@@ -189,10 +191,41 @@ return Scaffold(
                   onTap: (){
                       indexno = snapshot.data.docs[index];
                       docid = snapshot.data.docs[index].id;
-                      //checkIfDocExists1(snapshot.data.docs[index].id);
-                      //checkbool1();
-                      //print(docid);
-                      //collectionRef.doc().id;
+
+
+                      int avg;
+                      int length;
+                      double average;
+                      double dclength;
+                      
+                      
+                      
+                      
+                     
+
+                        FirebaseFirestore.instance.collection("average rating").doc(docid).get().then(
+                        (DocumentSnapshot snapShot) {
+                            if (snapShot.exists) {
+                              
+                              //here we retrieve the length and average from firestore and store them in int
+                              //then divide them to find average rating
+                              
+                            average = snapShot.get('avg');
+                            length = snapShot.get('length');
+
+                              avg = average.toInt();
+                            
+
+                              dclength = (avg/length);
+                              rating = dclength.toStringAsFixed(1);
+                              print(rating);
+                            }else{
+                              rating="0";
+                            }
+                              } );
+                             
+
+
                       Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) => SellerFull()));
                   },
@@ -342,3 +375,5 @@ return Scaffold(
 // //of sellermap doc, using a seperate function to check if docex is true if true display text
 
 // //.......................................................................................
+
+ 
