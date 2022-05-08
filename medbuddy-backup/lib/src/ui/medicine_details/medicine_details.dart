@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:medbuddy/main.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/mddeleteSplash.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
@@ -11,8 +13,27 @@ import '../../global_bloc.dart';
 class MedicineDetails extends StatelessWidget {
   final Medicine medicine;
 
-  MedicineDetails(this.medicine);
+  var flutterLocalNotificationsPlugin;
 
+  MedicineDetails(this.medicine);
+  void showNotification(){
+  flutterLocalNotificationsPlugin.show(
+    0,
+    "Medicine deleted",
+    "Go back to home screen",
+    NotificationDetails(
+      android: AndroidNotificationDetails(
+        channel.id,
+        channel.name,
+        channel.description,
+        importance: Importance.high,
+        color: Colors.deepPurple,
+        playSound: true,
+        //icon: '@minmap/ic_launcher'
+      )
+    )
+    );
+}
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
@@ -125,6 +146,7 @@ class MedicineDetails extends StatelessWidget {
                       Flexible(child: 
                       GestureDetector(
                         onTap: () {
+                          showNotification();
                       _globalBloc.removeMedicine(medicine);
                       Fluttertoast.showToast(  
                       msg: 'Medicine Deleted',  

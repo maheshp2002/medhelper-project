@@ -101,7 +101,7 @@ _NewEntryState({this.uid});
         channel.name,
         channel.description,
         importance: Importance.high,
-        color: Colors.blue,
+        color: Colors.deepPurple,
         playSound: true,
         //icon: '@minmap/ic_launcher'
       )

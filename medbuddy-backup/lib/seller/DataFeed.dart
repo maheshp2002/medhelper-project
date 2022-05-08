@@ -34,8 +34,13 @@ final TextEditingController _address = TextEditingController();
 final TextEditingController _mobileno = TextEditingController();
 final TextEditingController _storename = TextEditingController();
 final TextEditingController _discount= TextEditingController();
+final TextEditingController _lat= TextEditingController();
+final TextEditingController _long= TextEditingController();
+
 
 String id;
+double lat;
+double long;
 String name;
 String dosage;
 String emailID;
@@ -47,6 +52,8 @@ bool isLoadingDF = false;
 String price;
 String discountvalue;
 bool hasDiscount;
+bool clocation;
+GeoPoint cloc;
 String datenow1 = DateFormat("yyyy-MM-dd").format(DateTime.now());
 
 //..........................................................................................
@@ -63,10 +70,14 @@ Future<String> uploadFile(_image) async {
 //LOCATION
 //getCurrentLocation() async {
   Future<void> saveImages(File _image) async {
-
   Position position;
+  if(clocation == true){
   position = await Geolocator.getCurrentPosition(
     desiredAccuracy: LocationAccuracy.high);
+    cloc= GeoPoint(position.latitude, position.longitude);
+  }else{
+    cloc = GeoPoint(lat, long);
+  }
 //....................................................................
                
               //_image.forEach((image) async {
@@ -110,7 +121,7 @@ Future<String> uploadFile(_image) async {
                         'discount price':price,
                         'mobile no':mobileno,
                         'email id':emailID,
-                        'Latitude': GeoPoint(position.latitude, position.longitude),
+                        'Latitude': cloc,
                         'images': imageURL,
                         'date' : datenow,
                         },
@@ -355,7 +366,14 @@ Future<String> uploadFile(_image) async {
 
 //discount.........................................................................................
 //gap btw borders
-
+            Row(children: [
+          Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
+          Text("Note: If no, No need to enter discount value.",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
+            ]),
+            const SizedBox(
+              height: 10,
+            ),
 Row(mainAxisAlignment: MainAxisAlignment.start,
   children: [
           Row(
@@ -420,12 +438,106 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
+//location
+Row(mainAxisAlignment: MainAxisAlignment.start,
+  children: [
+          Row(
+            children:[
+          SizedBox(
+          width: 10,
+        ), 
+          Text("Location:",textAlign: TextAlign.left,style: TextStyle(fontSize: 15),),  
+          SizedBox(
+          width: 5,
+        ),           
+           Radio(
+            value: true,
+            groupValue: clocation,
+            onChanged: (value) {
+              setState(() {
+                clocation = value;
+                //print(hasDiscount);
+              });
+            },
+          ),
+           const Text('Current loc'),
+        ]),
+        SizedBox(
+          width: 5,
+        ),
+          Row(
+            children:[
+           Radio(
+            value: false,
+            groupValue: clocation,
+            onChanged: (value) {
+              setState(() {
+                clocation = value;
+                //print(hasDiscount);
+              });
+            },
+          ),
+           const Text('Input lat/long'),
+            ]),
+  ]
+),
+          const SizedBox(
+            height: 16,
+          ),
+            Row(children: [
+          Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
+          Text("Note: No need to enter lat/long when current location on.",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
+            ]),
+            const SizedBox(
+              height: 10,
+            ),
+//lat
+          TextField(
+                  onChanged: ((value) {
+                  lat= double.parse(value);
+                }),            
+            controller: _lat,
+            decoration: const InputDecoration(
+                hintText: "Latitude",
+                labelText: "Latitude:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
+                ),
+                border: OutlineInputBorder()
+            ),
 
+            maxLength: 15,
+            keyboardType: TextInputType.number,
+          ),
 //gap btw borders
           const SizedBox(
             height: 16,
           ),
+ //long         
+          TextField(
+                  onChanged: ((value) {
+                  long= double.parse(value);
+                }),            
+            controller: _long,
+            decoration: const InputDecoration(
+                hintText: "Longitude",
+                labelText: "Longitude:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
+                ),
+                border: OutlineInputBorder()
+            ),
 
+            maxLength: 15,
+            keyboardType: TextInputType.number,
+          ),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
           //TextField(            
           //   decoration: const InputDecoration(
                 
