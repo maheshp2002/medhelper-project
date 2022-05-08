@@ -16,7 +16,7 @@ return Scaffold(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
         title: Text(
-          "Dillsith",
+          "Dilshith",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,

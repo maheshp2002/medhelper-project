@@ -135,7 +135,7 @@ return Scaffold(
                
                   Padding(
                   padding: EdgeInsets.only(left: 10),
-                  child: Text("Dillsith", textAlign: TextAlign.left,
+                  child: Text("Dilshith", textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'JosefinSans',
                           color: Colors.black,
