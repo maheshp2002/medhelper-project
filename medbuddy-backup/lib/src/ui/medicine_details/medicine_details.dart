@@ -146,7 +146,7 @@ class MedicineDetails extends StatelessWidget {
                       Flexible(child: 
                       GestureDetector(
                         onTap: () {
-                          showNotification();
+                       
                       _globalBloc.removeMedicine(medicine);
                       Fluttertoast.showToast(  
                       msg: 'Medicine Deleted',  
@@ -173,6 +173,7 @@ class MedicineDetails extends StatelessWidget {
                         
                         
                         Navigator.of(context).pop();
+                           showNotification();
                },
                         child: InkWell(
                           child: Container(
