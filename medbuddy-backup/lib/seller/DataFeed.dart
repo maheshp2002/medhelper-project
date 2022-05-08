@@ -91,7 +91,7 @@ Future<String> uploadFile(_image) async {
         }
         else{
           returnStr = "No discount";
-          DiscountVal = "0";
+          DiscountVal = price;
         }
         String datenow = datenow1;
 //..........................................................................................
@@ -105,9 +105,9 @@ Future<String> uploadFile(_image) async {
                         'dosage':dosage,
                         'address':address,
                         'store name':storename,
-                        'price':price.toString(),
+                        'price':DiscountVal,
                         'discount %':returnStr,
-                        'discount price':DiscountVal,
+                        'discount price':price,
                         'mobile no':mobileno,
                         'email id':emailID,
                         'Latitude': GeoPoint(position.latitude, position.longitude),

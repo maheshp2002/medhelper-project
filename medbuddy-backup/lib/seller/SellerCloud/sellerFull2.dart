@@ -52,7 +52,7 @@ class _DetailedItemState extends State<SellerFull2> {
 
     Card(
     child: ListTile(
-    title:  Text("Discount price:" + " " + sindexno['discount price']),
+    title:  Text("Actual price:" + " " + sindexno['discount price']),
     )),
 
 //gap btw borders

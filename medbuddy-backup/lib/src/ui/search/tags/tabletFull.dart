@@ -119,7 +119,7 @@ class _DetailedItemState extends State<tabletFull> {
 
     Card(
     child: ListTile(
-    title:  Text("Discount price:" + " " + indexnotablet['discount price']),
+    title:  Text("Actual price:" + " " + indexnotablet['discount price']),
     )),
 
 //gap btw borders
