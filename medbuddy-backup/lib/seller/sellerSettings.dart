@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/seller/SellerCloud/SellerMap2.dart';
-import 'package:medbuddy/seller/deletePDT.dart';
+import 'package:medbuddy/seller/SellerCloud/dltSeller.dart';
 
 
 
@@ -65,7 +65,7 @@ class _SettingsPageState extends State<sellerSettings>{
                 title: Text('Delete a product'),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DeletePdt()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => dltSeller()));
                 },
                  ),
                 
@@ -77,6 +77,5 @@ class _SettingsPageState extends State<sellerSettings>{
   }
 
 }
-
 
 

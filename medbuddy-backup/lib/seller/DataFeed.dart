@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -20,7 +21,7 @@ class DataFeed extends StatefulWidget {
 }
 
 class DataState extends State<DataFeed>{
-
+User user = FirebaseAuth.instance.currentUser;
 final collectionReference = FirebaseFirestore.instance.collection("Medicinesell");
 
 
@@ -124,6 +125,7 @@ Future<String> uploadFile(_image) async {
                         'Latitude': cloc,
                         'images': imageURL,
                         'date' : datenow,
+                        'Did':user.email,
                         },
                         );
            setState(() {
@@ -460,7 +462,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
               });
             },
           ),
-           const Text('Current loc'),
+           const Text('Current loc',style: TextStyle(fontSize: 10),),
         ]),
         SizedBox(
           width: 5,
@@ -477,7 +479,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
               });
             },
           ),
-           const Text('Input lat/long'),
+           const Text('Input lat/long',style: TextStyle(fontSize: 10),),
             ]),
   ]
 ),
@@ -666,7 +668,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
            setState(() {
             isLoadingDF = true;
           });
-              uploadFile(_image);
+              //uploadFile(_image);
               await saveImages(_image);
               Fluttertoast.showToast(  
                       msg: 'Data Added to DataBase',  

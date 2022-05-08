@@ -8,14 +8,103 @@ import 'package:medbuddy/src/ui/about/about.dart';
 class dcNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    logout() async {
-    FirebaseService service = new FirebaseService();
-    await service.signOutFromGoogle();
-    _restartApp();
-  
-}
 
 
+  openAlertBox() {
+    return showDialog(
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(30.0),
+              ),
+            ),
+            contentPadding: EdgeInsets.only(top: 10.0),
+            content: Container(
+              width: 300.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(18),
+                    child: Center(
+                      child: Text(
+                        "Do you want to logout?",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Flexible(child: 
+                      GestureDetector(
+                        onTap: () {
+                          logout();
+                       
+
+               },
+                        child: InkWell(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 2.743,
+                            padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+                            decoration: BoxDecoration(
+                              color: Colors.orange,
+                              //Color(0xFF3EB16F),
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(30.0),
+                              ),
+                            ),
+                            child: Text(
+                              "Yes",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      ),
+                      Flexible(child: 
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: InkWell(
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 2.743,
+                            padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+                            decoration: BoxDecoration(
+                              color: Colors.red[700],
+                              borderRadius: BorderRadius.only(
+                                  bottomRight: Radius.circular(30.0)),
+                            ),
+                            child: Text(
+                              "No",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          );
+        }, context: null);
+  }
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -54,8 +143,8 @@ class dcNavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Logout'),
-            onTap: () =>  {
-                logout()
+            onTap: () async  {
+                final ConfirmAction action = await _asyncConfirmDialog(context);
               },
           ),
         ],
@@ -67,3 +156,38 @@ class dcNavBar extends StatelessWidget {
    void _restartApp() async {
   await FlutterRestart.restartApp();
 }
+
+    logout() async {
+    FirebaseService service = new FirebaseService();
+    await service.signOutFromGoogle();
+    _restartApp();
+  
+}
+
+enum ConfirmAction { Cancel, Accept}  
+Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {  
+  return showDialog<ConfirmAction>(  
+    context: context,  
+    barrierDismissible: false, // user must tap button for close dialog!  
+    builder: (BuildContext context) {  
+      return AlertDialog( 
+        backgroundColor: Colors.grey, 
+        title: Text('Do you want to logout?'),    
+        actions: <Widget>[  
+          FlatButton(  
+            child: const Text('Cancel'),  
+            onPressed: () {  
+              Navigator.of(context).pop(ConfirmAction.Cancel);  
+            },  
+          ),  
+          FlatButton(  
+            child: const Text('Logout'),  
+            onPressed: () {  
+              logout();  
+            },  
+          )  
+        ],  
+      );  
+    },  
+  );  
+} 

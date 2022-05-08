@@ -6,15 +6,10 @@ import 'package:medbuddy/seller/sellerSettings.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
 
 
+
 class sellerNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    logout() async {
-    FirebaseService service = new FirebaseService();
-    await service.signOutFromGoogle();
-    _restartApp();
-  
-}
 
 
     return Drawer(
@@ -55,8 +50,8 @@ class sellerNavBar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Logout'),
-            onTap: () =>  {
-                logout()
+            onTap: () async {
+                final ConfirmAction action = await _asyncConfirmDialog(context);
               },
           ),
         ],
@@ -68,3 +63,41 @@ class sellerNavBar extends StatelessWidget {
    void _restartApp() async {
   await FlutterRestart.restartApp();
 }
+//logout
+    logout() async {
+    FirebaseService service = new FirebaseService();
+    await service.signOutFromGoogle();
+    _restartApp();
+  
+}
+//alert
+enum ConfirmAction { Cancel, Accept}  
+Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {  
+  return showDialog<ConfirmAction>(  
+    context: context,  
+    barrierDismissible: false, // user must tap button for close dialog!  
+    builder: (BuildContext context) {  
+      return AlertDialog( 
+        backgroundColor: Colors.grey, 
+        title: Text('Do you want to logout?'),    
+        actions: <Widget>[  
+          FlatButton(  
+            child: const Text('Cancel'),  
+            onPressed: () {  
+              Navigator.of(context).pop(ConfirmAction.Cancel);  
+            },  
+          ),  
+          FlatButton(  
+            child: const Text('Logout'),  
+            onPressed: () {  
+              logout();  
+            },  
+          )  
+        ],  
+      );  
+    },  
+  );  
+}  
+
+
+
