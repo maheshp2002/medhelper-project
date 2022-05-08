@@ -276,6 +276,7 @@ _NewEntryState({this.uid});
                     onPressed: () async{
                       String medicineName;
                       int dosage;
+                      
                       showNotification();
                       
                       await collectionReference.add(
@@ -341,6 +342,8 @@ _NewEntryState({this.uid});
                         medicineType: medicineType,
                         interval: interval,
                         startTime: startTime,
+                        id: user.email,
+                       
                       );
 
                       _globalBloc.updateMedicineList(newEntryMedicine);
@@ -354,6 +357,7 @@ _NewEntryState({this.uid});
                           },
                         ),
                       );
+                      
                     },
                   ),
                 ),

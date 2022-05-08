@@ -5,6 +5,7 @@ class Medicine {
   final String medicineType;
   final int interval;
   final String startTime;
+  final String id;
 
   Medicine({
     this.notificationIDs,
@@ -13,9 +14,11 @@ class Medicine {
     this.medicineType,
     this.startTime,
     this.interval,
+    this.id,
   });
 
   String get getName => medicineName;
+  String get getid => id;
   int get getDosage => dosage;
   String get getType => medicineType;
   int get getInterval => interval;
@@ -30,6 +33,7 @@ class Medicine {
       "type": this.medicineType,
       "interval": this.interval,
       "start": this.startTime,
+      "emailid": this.id,
     };
   }
 
@@ -38,6 +42,7 @@ class Medicine {
       notificationIDs: parsedJson['ids'],
       medicineName: parsedJson['name'],
       dosage: parsedJson['dosage'],
+      id: parsedJson['emailid'],
       medicineType: parsedJson['type'],
       interval: parsedJson['interval'],
       startTime: parsedJson['start'],

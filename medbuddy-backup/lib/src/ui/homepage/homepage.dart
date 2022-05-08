@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:medbuddy/src/global_bloc.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/ui/homepage/navBar.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/medicine_details/medicine_details.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,7 @@ import 'package:provider/provider.dart';
 
 
 class HomePage extends StatefulWidget {
+  
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -232,12 +234,17 @@ class TopContainer extends StatelessWidget {
 }
 
 class BottomContainer extends StatelessWidget {
+
+
+  // BottomContainer(this.medicine);
+  
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
     return StreamBuilder<List<Medicine>>(
       stream: _globalBloc.medicineList$,
       builder: (context, snapshot) {
+        //final Medicine medicine=snapshot.data;
         if (!snapshot.hasData) {
           return Container();
         } else if (snapshot.data.length == 0) {
@@ -255,7 +262,9 @@ class BottomContainer extends StatelessWidget {
             ),
           );
         } else {
-          return Container(
+          return  //medicine.id==user.uid
+          //?
+          Container(
             color: Color(0xFFF6F8FC),
             child: //GridView
             ListView.builder(
@@ -267,12 +276,25 @@ class BottomContainer extends StatelessWidget {
                 return  AnimationConfiguration.staggeredList(
                   position: index,
   
-                child: MedicineCard(snapshot.data[index])
+                child: snapshot.data[index].id == user.email?
+                MedicineCard(snapshot.data[index]):SizedBox()
                 );
               },
              
-            ),
-          );
+            ));
+          // ): Container(
+          //   color: Color(0xFFF6F8FC),
+          //   child: Center(
+          //     child: Text(
+          //       "Press + to add a reminder",
+          //       textAlign: TextAlign.center,
+          //       style: TextStyle(
+          //           fontSize: 24,
+          //           color: Color(0xFFC9C9C9),
+          //           fontWeight: FontWeight.bold),
+          //     ),
+          //   ),
+          // );
         }
       },
     );
