@@ -6,6 +6,7 @@ import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/rateing/rateing.dart';
+import 'package:medbuddy/src/ui/rateing/rateingtag/Sdeleterating.dart';
 import 'package:medbuddy/src/ui/rateing/rateingtag/rateingS.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
@@ -84,16 +85,32 @@ class _DetailedItemState extends State<syringeFull> {
                   }}),
  
 //............................................................................................................
+                  SizedBox(height: 20,),              
+                  Row(children: [
+                  Row(mainAxisAlignment: MainAxisAlignment.start,
+                    children:[ 
+                  Text("Price:", style: TextStyle(fontFamily: 'JosefinSansBD',fontSize: 10),),   
+                  SizedBox(width: 5,),              
+                  Text(indexnosyringe['price'],
+                  style: TextStyle(color: Colors.red, fontSize: 30, fontFamily: 'arvoBold'),
+                  ),
+                  Text('Rs',style: TextStyle(color: Colors.grey, fontFamily: 'JosefinSansBD',fontSize: 10),),
+                  ]),
+                  
+                  SizedBox(width: 40,),
+                  Flexible(child:  
                   Row(mainAxisAlignment: MainAxisAlignment.end,
                     children:[
-                  Text("Discount:", style: TextStyle(fontFamily: 'JosefinSans'),),
+                  Text("Discount:", style: TextStyle(fontFamily: 'JosefinSans',fontSize: 10),),
                   SizedBox(width: 10,),
                   Padding(padding: EdgeInsets.only(right: 10),
                   child: BlinkText(indexnosyringe['discount %'] + "%",
-                  style: TextStyle(color: Colors.green, fontSize: 30, fontFamily: 'arvoBold'),
+                  style: TextStyle(color: Colors.green, fontSize: 20, fontFamily: 'arvoBold'),
                   	endColor: Colors.greenAccent,
 	                  duration: Duration(seconds: 1)),
-                  )]),
+                  )]),),
+                  ],),
+//.....................................................................................................
 
 //gap btw borders
           const SizedBox(
@@ -118,14 +135,14 @@ class _DetailedItemState extends State<syringeFull> {
           const SizedBox(
             height: 16,
           ),  
-    Card(
-    child: ListTile(              
-    title:  Text("Price:" + " " + indexnosyringe['price']),
-    )),
-//gap btw borders
-          const SizedBox(
-            height: 16,
-          ), 
+//     Card(
+//     child: ListTile(              
+//     title:  Text("Price:" + " " + indexnosyringe['price']),
+//     )),
+// //gap btw borders
+//           const SizedBox(
+//             height: 16,
+//           ), 
     Card(
     child: ListTile(               
     title:  Text("Address:" + " " + indexnosyringe['address']),
@@ -393,7 +410,30 @@ class _DetailedItemState extends State<syringeFull> {
                                         ),
                                       ),  
             SizedBox(height: 30,),  
-      
+
+            InkWell(
+          onTap: () async {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Sratingdlt()));
+
+          },
+     child: new Padding(
+      padding: const EdgeInsets.only(
+        top: 60.0,
+      ),
+      child: new Text(
+        "Delete rating",
+        textAlign: TextAlign.center,
+        overflow: TextOverflow.ellipsis,
+        softWrap: true,
+        style: new TextStyle(
+            fontWeight: FontWeight.w300,
+            letterSpacing: 0.5,
+            color: Colors.grey,
+            fontSize: 12.0),
+      ),
+    )),
+    SizedBox(height: 30,),
+
     ]
   ),),
 );
