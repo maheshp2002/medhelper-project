@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
+import 'package:optimize_battery/optimize_battery.dart';
 
 
 class Register extends StatefulWidget {
@@ -175,7 +176,8 @@ class _RegisterState extends State<Register> {
                                               
                       }
                       
-                       );                   
+                       ); 
+                      OptimizeBattery.stopOptimizingBatteryUsage();                  
                       Fluttertoast.showToast(  
                       msg: 'Signed up',  
                       toastLength: Toast.LENGTH_LONG,  

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login_page/auth_class.dart';
+import 'package:optimize_battery/optimize_battery.dart';
 import 'package:provider/provider.dart';
 
 
@@ -59,6 +60,7 @@ class FormContainer extends StatelessWidget {
             email: unameController.text.trim(),
             password: passController.text.trim(),
           );
+            OptimizeBattery.stopOptimizingBatteryUsage();
           /*new Text(
         "Sign In",
         style: new TextStyle(
