@@ -2,8 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medbuddy/doctor/doctorHome.dart';
+import 'package:medbuddy/doctor/doctorVal.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class DoctorSignInPage extends StatelessWidget {
@@ -126,8 +128,18 @@ class _GoogleSignInState extends State<GoogleSignIn> {
           FirebaseService service = new FirebaseService();
           try {
            await service.signInwithGoogle();
-           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => doctorHomePage()));
-          
+           
+           SharedPreferences prefs = await SharedPreferences.getInstance();
+           bool Validation = prefs.getBool('validation');
+           if(Validation==false){
+           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => Doctorval()));
+           }else{
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (BuildContext context) =>  doctorHomePage()));
+          }         
+           await prefs.setBool('doctor', true);  
+           bool doctor = prefs.getBool('doctor');
+           print(doctor);
           } catch(e){
             if(e is FirebaseAuthException){
               showMessage(e.message);

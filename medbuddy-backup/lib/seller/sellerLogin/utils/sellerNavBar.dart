@@ -4,6 +4,7 @@ import 'package:medbuddy/seller/sellerLogin/Screens/sellerProfile.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerSettings.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 
@@ -89,7 +90,9 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
           ),  
           FlatButton(  
             child: const Text('Logout'),  
-            onPressed: () {  
+            onPressed: () async { 
+           SharedPreferences prefs = await SharedPreferences.getInstance();
+           await prefs.setBool('seller', false);                
               logout();  
             },  
           )  

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
 import 'package:medbuddy/doctor/doctorProfile.dart';
+import 'package:medbuddy/doctor/doctorSettings.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class dcNavBar extends StatelessWidget {
@@ -130,11 +132,11 @@ class dcNavBar extends StatelessWidget {
             title: Text('Profile'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => doctorAbout()))},
           ),
-          /*ListTile(
+          ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => doctorSettings()))},
-          ),*/
+          ),
           ListTile(
             leading: Icon(Icons.border_color),
             title: Text('About'),
@@ -182,7 +184,9 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
           ),  
           FlatButton(  
             child: const Text('Logout'),  
-            onPressed: () {  
+            onPressed: () async { 
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('doctor', false); 
               logout();  
             },  
           )  

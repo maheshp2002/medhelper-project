@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
+import 'package:medbuddy/src/ui/medicine_webpages/NMC.dart';
 import 'package:medbuddy/src/ui/prescription/prescTile.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Prescription extends StatefulWidget {
   @override
@@ -42,6 +44,18 @@ Widget build(BuildContext context) {
             );
           },
         ),
+        actions: [
+          new IconButton(
+          icon: new Icon(Icons.domain_verification),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NMC()),
+            );
+          },
+        ),
+
+        ],
         title: Text(
           "Prescription",
           style: TextStyle(
@@ -54,6 +68,23 @@ Widget build(BuildContext context) {
 	body: Container(
     
     child: Column(children: [
+
+          const SizedBox(
+            height: 16,
+          ),
+            Row(children: [
+          Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
+          Text("Note: Since there are chances for fake doctors to send prescription",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),        
+            ]),
+          Text("always verify if the doctor is real using register number.",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
+          Text("Click on verify icon in appbar.",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),             
+            const SizedBox(
+              height: 10,
+            ),
+
     Card(
     child: ListTile(
     title:  Text("Date: " + " " + preindexno['date']),),),//gap btw borders
@@ -70,7 +101,26 @@ Widget build(BuildContext context) {
           ),
     Card(
     child: ListTile(              
+    title:  Text("Register no: " + " " + preindexno['regno']),
+    trailing: Icon(Icons.arrow_forward_ios),
+    onTap: (){
+           Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => NMC()),
+            );
+    },
+    )),
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),          
+    Card(
+    child: ListTile(              
     title:  Text("Doctor email: " + " " + preindexno['email']),
+    trailing: Icon(Icons.arrow_forward_ios),
+    onTap: (){
+      _sendingMails();
+    },
     )),
 //gap btw borders
           const SizedBox(
@@ -95,3 +145,20 @@ Widget build(BuildContext context) {
                         leading: new Icon(Icons.delete),
                         title: new Text('Delete'),
                         onTap: () =>*/
+
+_sendingMails()  {
+String encodeQueryParameters(Map<String, String> params) {
+  return params.entries
+      .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .join('&');
+}
+final Uri emailLaunchUri = Uri(
+  scheme: 'mailto',
+  path: preindexno['email'],
+  query: encodeQueryParameters(<String, String>{
+    'subject': 'medhelper'
+  }),
+);
+
+launchUrl(emailLaunchUri);
+}

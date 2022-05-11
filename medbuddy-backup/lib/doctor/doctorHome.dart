@@ -19,11 +19,11 @@ class _doctorHomePageState extends State<doctorHomePage> {
   String prescription;
   String emailid;
   String date;
-  String name;
+  //String name;
    TextEditingController prescriptionController = TextEditingController();
    TextEditingController emailidController = TextEditingController();
    TextEditingController dateController = TextEditingController();
-   TextEditingController nameController = TextEditingController();
+   //TextEditingController nameController = TextEditingController();
   final collectionReference = FirebaseFirestore.instance;
   @override
   void initState() {
@@ -146,28 +146,28 @@ if(pickedDate != null ){
             maxLines: 30,
           ),),
 
-          SizedBox(
-            height: 16,
-          ),
+          // SizedBox(
+          //   height: 16,
+          // ),
 
-           Flexible(
-              child:TextField(
-              decoration: InputDecoration(
-              hintText: "name",
-              labelText: "Doctor name:",
-              labelStyle: TextStyle(
-                fontSize: 15,
-                color: Colors.black
-              ),
-                border: OutlineInputBorder()
-            ),
-               onChanged: ((value) {
-                  name = value;
-                }),
-            controller: nameController,
-            keyboardType: TextInputType.name,
+          //  Flexible(
+          //     child:TextField(
+          //     decoration: InputDecoration(
+          //     hintText: "name",
+          //     labelText: "Doctor name:",
+          //     labelStyle: TextStyle(
+          //       fontSize: 15,
+          //       color: Colors.black
+          //     ),
+          //       border: OutlineInputBorder()
+          //   ),
+          //      onChanged: ((value) {
+          //         name = value;
+          //       }),
+          //   controller: nameController,
+          //   keyboardType: TextInputType.name,
             
-          ),),
+          // ),),
           SizedBox(
             height: 16,
           ),
@@ -215,17 +215,31 @@ if(pickedDate != null ){
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
-                      textColor: Colors.white  
-                  ); 
-                  
-                      await collectionReference.collection(emailid).add(
+                      textColor: Colors.white 
+                      ); 
+                      //String name;
+                      // reg;
+                      var collection = FirebaseFirestore.instance.collection('DoctorsValidation');
+                        collection.doc(user.email).snapshots().listen((docSnapshot) {
+                          if (docSnapshot.exists) {
+                            Map<String, dynamic> data = docSnapshot.data();
+
+                            String name = data['Doctor name'];
+                            String reg = data['Register no'];
+                       collectionReference.collection(emailid).add(
                         {
                         'prescription':prescription,
                         'date':date,
+                        'email':user.email,
                         'doctor name': name,
-                        'email':user.email
+                        'regno': reg,
                         }, 
                         );
+
+                          }
+                        });
+
+                  
                       
 
                         

@@ -6,6 +6,7 @@ import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/constants.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class SignInPage extends StatelessWidget {
@@ -142,7 +143,8 @@ class _GoogleSignInState extends State<GoogleSignIn> {
           });
           FirebaseService service = new FirebaseService();
           try {
-//sign in....................................................................................            
+//sign in.................................................................................... 
+
            await service.signInwithGoogle();
  //Naigate to next page......................................................................          
            Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => DataFeed()));
@@ -156,10 +158,10 @@ class _GoogleSignInState extends State<GoogleSignIn> {
               if(statuses[Permission.location].isDenied){ //check each permission status after.
                 print("Location permission is denied.");
                 }
-
-              if(statuses[Permission.camera].isDenied){ //check each permission status after.
-                          print("Camera permission is denied.");
-                      }
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+           await prefs.setBool('seller', true);
+           bool seller = prefs.getBool('seller');
+           print(seller);
   //toast..........................................................................                    
                       Fluttertoast.showToast(  
                       msg: 'This Page stores Location,so turn on your location',  

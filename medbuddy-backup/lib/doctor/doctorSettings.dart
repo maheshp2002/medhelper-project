@@ -1,4 +1,5 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:medbuddy/doctor/deleteReg.dart';
 import 'package:medbuddy/doctor/doctorHome.dart';
 
 
@@ -48,14 +49,13 @@ class _SettingsPageState extends State<doctorSettings>{
             Card(
               child: 
                 ListTile(
-                title: Text('Data in cloud'),
+                title: Text('Delete Register data'),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: () async{
-                await user?.delete();
-                _restartApp();
+                    {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DeleteReg()));
 
-                },
-                 ),
+                }
+  }),
 
                 
                 
@@ -67,5 +67,3 @@ class _SettingsPageState extends State<doctorSettings>{
 }
 
 
-
-*/

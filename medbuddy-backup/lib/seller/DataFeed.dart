@@ -109,7 +109,8 @@ Future<String> uploadFile(_image) async {
 //..........................................................................................
 
 //Firebase data write
-          
+        if(id!=null && name!=null && address!=null && storename!=null && emailID!=null && price!=null)
+          {
                 await collectionReference.add(
                         {
                         'ID':id,
@@ -131,6 +132,15 @@ Future<String> uploadFile(_image) async {
            setState(() {
             isLoadingDF = false;
           });
+          }else{
+               return Fluttertoast.showToast(  
+                      msg: 'Please check if all data is entered',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+          }
                 //}
                 //);
               
@@ -448,7 +458,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           SizedBox(
           width: 10,
         ), 
-          Text("Location:",textAlign: TextAlign.left,style: TextStyle(fontSize: 15),),  
+          Text("Store location:",textAlign: TextAlign.left,style: TextStyle(fontSize: 15),),  
           SizedBox(
           width: 5,
         ),           

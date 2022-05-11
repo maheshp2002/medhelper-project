@@ -2,10 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:medbuddy/doctor/doctorHome.dart';
+import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/src/global_bloc.dart';
 import 'package:medbuddy/src/ui/splash_screen/splash.dart';
 import 'package:medbuddy/Login_ui/Screens/Login/index.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 //for notification
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
@@ -24,7 +27,9 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print('A bg message just showed up : ${message.messageId}');
 }
 
+
 Future<void> main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -39,6 +44,7 @@ Future<void> main() async {
     badge: true,
     sound: true,
   );
+
 
   runApp(MyApp2());
 }
@@ -139,10 +145,49 @@ void showNotification(){
           primarySwatch: Colors.green,
           brightness: Brightness.light,
         ),
-        home: //MyApp(),
-            login1(),
+        home: medbuddycheck(),
+            //login1(),
         debugShowCheckedModeBanner: false,
       ),
     );
   }
 }
+class medbuddycheck extends StatelessWidget {
+ //SharedPreferences  prefs1;  
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: validation(),
+    builder: (context, snapshot) {
+      if (snapshot.hasData) {
+        //return validate1();
+        return snapshot.data;
+      }
+      return CircularProgressIndicator(); // or some other widget
+    },
+  );
+    
+}
+validation() async{
+
+    SharedPreferences prefs1 = await SharedPreferences.getInstance(); 
+        
+     bool doctor = prefs1.getBool('doctor');
+
+     bool seller = prefs1.getBool('seller');
+
+
+      if(doctor == true){
+        return doctorHomePage();
+
+      }else if(seller == true){
+        return DataFeed();}
+
+      else{
+        return login1();
+      }
+  
+}
+}
+
