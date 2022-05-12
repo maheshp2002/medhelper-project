@@ -277,7 +277,6 @@ _NewEntryState({this.uid});
                       String medicineName;
                       int dosage;
                       
-                      showNotification();
                       
                       await collectionReference.add(
                         {
@@ -290,6 +289,7 @@ _NewEntryState({this.uid});
                         //SetOptions(merge : true)
                         );
                         //time=TimeOfDay(hour: 0, minute: 0);
+                      
 
                       //--------------------Error Checking------------------------
                       //Had to do error checking in UI
@@ -357,6 +357,7 @@ _NewEntryState({this.uid});
                           },
                         ),
                       );
+                      showNotification();
                       
                     },
                   ),

@@ -142,7 +142,7 @@ void showNotification(){
       value: globalBloc,
       child: MaterialApp(
         theme: ThemeData(
-          primarySwatch: Colors.green,
+          primarySwatch: Colors.deepPurple,
           brightness: Brightness.light,
         ),
         home: medbuddycheck(),

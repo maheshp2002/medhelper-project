@@ -1,10 +1,9 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:medbuddy/main.dart';
 import 'package:medbuddy/src/models/medicine.dart';
-import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/mddeleteSplash.dart';
-import 'package:medbuddy/src/ui/tabpage/tabs.dart';
+import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/meddeleteSplash.dart';
 import 'package:provider/provider.dart';
 
 import '../../global_bloc.dart';
@@ -16,24 +15,7 @@ class MedicineDetails extends StatelessWidget {
   var flutterLocalNotificationsPlugin;
 
   MedicineDetails(this.medicine);
-  void showNotification(){
-  flutterLocalNotificationsPlugin.show(
-    0,
-    "Medicine deleted",
-    "Go back to home screen",
-    NotificationDetails(
-      android: AndroidNotificationDetails(
-        channel.id,
-        channel.name,
-        channel.description,
-        importance: Importance.high,
-        color: Colors.deepPurple,
-        playSound: true,
-        //icon: '@minmap/ic_launcher'
-      )
-    )
-    );
-}
+
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
@@ -172,8 +154,9 @@ class MedicineDetails extends StatelessWidget {
                           
                         
                         
-                        Navigator.of(context).pop();
-                           showNotification();
+                        Navigator.pop(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> MDeleteSplash()));
+                        
                },
                         child: InkWell(
                           child: Container(
