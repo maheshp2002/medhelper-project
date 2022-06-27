@@ -3,31 +3,27 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:medbuddy/global/myColors.dart';
-import 'package:medbuddy/global/myDimens.dart';
+import 'package:medbuddy/src/ui/cart/cartfull.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
-import 'package:medbuddy/src/ui/cart/viewcart.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
-import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/mddeleteSplash.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 
-class cartFull extends StatefulWidget {
+class viewcart extends StatefulWidget {
 
 @override
   _DetailedItemState createState() => _DetailedItemState();
 }
 
-class _DetailedItemState extends State<cartFull> {
+class _DetailedItemState extends State<viewcart> {
    List<String> images = [
   cindexno['images'],
   cindexno['images1'],
   cindexno['images2']
 
  ];
-var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
@@ -38,7 +34,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => cartMap()),
+              MaterialPageRoute(builder: (context) => cartFull()),
             );
           },
         ),
@@ -163,7 +159,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
           ), 
 
    StreamBuilder(
-      stream:  FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).snapshots(),
+      stream:  FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid).snapshots(),
       builder: (context, snapshot) {
          if (!snapshot.hasData) {
           //hasdata = true;
@@ -176,31 +172,73 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
         else{
 //for stock no
           String stock;
-          Color clr;
           try{
-          int stckno = snapshot.data.get('stockno');
-          int stc = int.parse(stckno.toStringAsFixed(0));
-            if(stckno >= 10){
-              stock = "In stock";
-              clr= const Color(0xFF4CAF50);
-            } else if (stckno < 10 && stckno > 0) {
-              stock = "Only $stc left";
-              clr= Color.fromARGB(255, 255, 0, 0);
-            } else {
-               stock = "Out of stock";
-               clr= Color.fromARGB(255, 255, 0, 0);
-            }
+          int stckno = snapshot.data.get('stock');
+          stock = stckno.toStringAsFixed(0);
 
           }catch(e){
-            stock = "Out of stock";
+            stock = "0";
 
           }
                   return Container(
                    padding: EdgeInsets.only(left: 10),
                   child: Row(children:[
-                  Text(stock,
-                  style: TextStyle(color: clr,
-                  fontWeight: FontWeight.w700, fontSize: 15,),),
+                    ElevatedButton(
+                      style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
+                      ),                      
+                      onPressed: (){
+         FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
+         'stockno': FieldValue.increment(1),
+       });
+     
+         FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid).update({
+         'stock': FieldValue.increment(-1),
+       });
+                      Fluttertoast.showToast(  
+                      msg: 'Item removed from cart',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );                       
+                      },
+                     child: Text("-", style: TextStyle(fontSize: 30, color: Colors.black,)) ,
+                     ),
+
+                  ElevatedButton(
+                       style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 252, 249, 249))
+                      ),                   
+                  child: Text(stock,
+                  style: TextStyle(color: Colors.black,
+                  fontWeight: FontWeight.w700, fontSize: 15,),)),
+
+                     ElevatedButton(
+                      style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
+                      ),
+                      onPressed: (){
+         FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
+         'stockno': FieldValue.increment(-1),
+       });
+          FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid).update({
+         'stock': FieldValue.increment(1),     
+       }); 
+
+                       Fluttertoast.showToast(  
+                      msg: 'Item added to cart',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );                       
+                      },
+                     child: Icon(Icons.add, color: Colors.black,),
+                     
+                     ),                 
                   ])
                   );
 
@@ -339,10 +377,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
       fixedSize: MaterialStateProperty.all(Size(150, 50)),
         backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 211, 211, 208))),
       //onPressed: ,
-     onPressed: () { 
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => viewcart()));   
-      },
-     child: Text("View cart", style: TextStyle(color: Colors.black),)),
+     child: Text("View wishlist", style: TextStyle(color: Colors.black),)),
 
    SizedBox(
       width: 30,
@@ -357,77 +392,22 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
       //onPressed: ,
      onPressed: () { 
         FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
-         'stockno': FieldValue.increment(-1),
-       });
-       //for cart item nos
-        FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid).update({
-         'stock': FieldValue.increment(1),
+         'stockno': FieldValue.increment(1),
        });
                        Fluttertoast.showToast(  
-                      msg: 'Item added to cart',  
+                      msg: 'Item removed from cart',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );
-     // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartSucess()));             
+      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartSucess()));             
       },
-     child: Text("Add to cart", style: TextStyle(color: Colors.black),)),
+     child: Text("Removed from cart", style: TextStyle(color: Colors.black),)),
       
       ]),
 
-
-  SizedBox(
-      height: 20,
-    ),
-//button for fav  
-                                OutlineButton(
-                                        onPressed: () async {
-                                          //delete document
-                                          await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
-                                          await myTransaction.delete(cindexno.reference);});
-                                         Fluttertoast.showToast(  
-                                          msg: 'Item removed from cart',  
-                                          toastLength: Toast.LENGTH_LONG,  
-                                          gravity: ToastGravity.BOTTOM,  
-                                          //timeInSecForIosWeb: 1,  
-                                          backgroundColor: Colors.black,  
-                                          textColor: Colors.white  
-                                      );                       
-                                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MDSplash()));
-                                        },
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(
-                                                MyDimens.double_4)),
-                                        borderSide: BorderSide(
-                                            color: MyColors.lighterPink,
-                                            width: MyDimens.double_1),
-                                        color: MyColors.primaryColor,
-                                        child: Padding(
-                                          padding: EdgeInsets.only(
-                                              top: MyDimens.double_15,
-                                              bottom: MyDimens.double_15),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.center,
-                                            children:[
-                                           Text("Remove from WishList",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .subtitle1
-                                                  .copyWith(
-                                                  color:
-                                                  MyColors.lighterPink,
-                                                  //fontFamily:
-                                                 // 'lexenddeca'
-                                                 )),
-                                                const SizedBox(
-                                                  width: 5,
-                                                ),
-                                                Icon(Icons.shopping_cart,color: MyColors.lightPink,),
-                                                 ])
-                                        ),
-                                      ), 
 
   SizedBox(
       height: 10,

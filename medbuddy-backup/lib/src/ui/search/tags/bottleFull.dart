@@ -1,4 +1,5 @@
 import 'package:blinking_text/blinking_text.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -22,6 +23,12 @@ class bottleFull extends StatefulWidget {
 
 class _DetailedItemState extends State<bottleFull> {
 var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
+ List<String> images = [
+  indexnobottle['images'],
+  indexnobottle['images1'],
+  indexnobottle['images2']
+
+ ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
@@ -42,11 +49,49 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
     
     child: ListView(children: [
       Padding(padding: EdgeInsets.all(10),
-     child: Image.network(indexnobottle['images'],
-                height: 300,
-                width: 300,
+    //  child: Image.network(indexnobottle['images'],
+    //             height: 300,
+    //             width: 300,
                 
-         ),),
+    //      ),),
+     child: SizedBox(
+      height: 300,
+   child:  CarouselSlider(
+          options: CarouselOptions(
+            scrollPhysics: const ScrollPhysics(
+              parent: BouncingScrollPhysics(),
+            ),
+            height: double.infinity,
+            enableInfiniteScroll: false,
+            enlargeCenterPage: true,
+            autoPlay: true,
+          ),
+          items: images
+          .map(
+            (e) => Container(
+              alignment: Alignment.topRight,
+              margin: const EdgeInsets.all(12.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 221, 218, 233).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 30.0,
+                    offset: -Offset(0, 3),
+                  ),
+                ],
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(e),
+                ),
+              ),
+            ),
+          )
+          .toList(),
+    )
+
+    ),),   
 //............................................................................................................ 
 
    StreamBuilder(
@@ -67,19 +112,23 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
           }catch(e){
             avg=0.0;
           }
-                  return Container(
-                   padding: EdgeInsets.only(left: 20),
-                  child: Row(children:[
-                  Text("Rating: ", style: TextStyle(fontFamily: 'JosefinSans',fontSize: 20),),
+                  return Row(children: [
+                  SizedBox(width: 10,),
+                  Container( 
+                  height: 40,
+                  color: Color.fromARGB(255, 5, 240, 130),
+                 child: Row(
+                  children:[
                   SizedBox(width: 5,),
-                  Text(avg.toStringAsFixed(1),
-                  style: TextStyle(color: Color.fromARGB(255, 38, 121, 216),
-                  fontFamily: 'JosefinSansBI', fontSize: 50,),),
+                  Text(avg.toStringAsFixed(1), style: TextStyle(
+                    color: Colors.white,fontFamily: 'JosefinSans', fontSize: 20,),),
                   SizedBox(width: 5,),
-                  Text("out of 5", style: TextStyle(fontFamily: 'JosefinSans'),),
+                  Icon(Icons.star,color: Colors.white,size: 20,),
 
+                  SizedBox(width: 5,),
                   ])
-                  );
+                  )
+                  ]);
                   }}),
  
 //............................................................................................................
@@ -111,9 +160,59 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 //.....................................................................................................
 
 //gap btw borders
+         const SizedBox(
+            height: 16,
+          ), 
+
+   StreamBuilder(
+      stream:  FirebaseFirestore.instance.collection("Medicinesell").doc(Bdocid).snapshots(),
+      builder: (context, snapshot) {
+         if (!snapshot.hasData) {
+          //hasdata = true;
+          return Center
+          (child: Text("0.0")
+     );
+        }
+        
+
+        else{
+//for stock no
+          String stock;
+          Color clr;
+          try{
+          int stckno = snapshot.data.get('stockno');
+          int stc = int.parse(stckno.toStringAsFixed(0));
+            if(stckno >= 10){
+              stock = "In stock";
+              clr= const Color(0xFF4CAF50);
+            } else if (stckno < 10 || stckno > 0) {
+              stock = "Only $stc left";
+              clr= Color.fromARGB(255, 255, 0, 0);
+            } else {
+               stock = "Out of stock";
+               clr= Color.fromARGB(255, 255, 0, 0);
+            }
+
+          }catch(e){
+            stock = "Out of stock";
+
+          }
+                  return Container(
+                   padding: EdgeInsets.only(left: 10),
+                  child: Row(children:[
+                  Text(stock,
+                  style: TextStyle(color: clr,
+                  fontWeight: FontWeight.w700, fontSize: 15,),),
+                  ])
+                  );
+
+}}),
+
+//gap btw borders
           const SizedBox(
             height: 16,
           ), 
+
 
     Card(
     child: ListTile(
@@ -220,9 +319,48 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
     }
     )),     
     ),
+
     SizedBox(
-      height: 10,
+      height: 20,
     ),
+
+  //  Row(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //   children: [
+  //   ElevatedButton(
+  //     style: ButtonStyle(
+  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+  //                 borderRadius: BorderRadius.circular(10))),
+  //     fixedSize: MaterialStateProperty.all(Size(150, 50)),
+  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 211, 211, 208))),
+  //     //onPressed: ,
+  //    child: Text("View cart", style: TextStyle(color: Colors.black),)),
+
+  //  SizedBox(
+  //     width: 30,
+  //   ),  
+
+  //   ElevatedButton(
+  //     style: ButtonStyle(
+  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+  //                 borderRadius: BorderRadius.circular(10))),
+  //     fixedSize: MaterialStateProperty.all(Size(150, 50)),
+  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 250, 225, 2))),
+  //     //onPressed: ,
+  //    onPressed: () { 
+  //      FirebaseFirestore.instance.collection("Medicinesell").doc(Bdocid).update({
+  //       'stockno': FieldValue.increment(-1),
+  //      });
+  //     },
+  //    child: Text("Add to cart", style: TextStyle(color: Colors.black),)),
+      
+  //     ]),
+
+
+  // SizedBox(
+  //     height: 20,
+  //   ),
+
 
 //button for fav  
         OutlineButton(
@@ -252,7 +390,10 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                           'discount %': indexnobottle['discount %'],
                           'discount price': indexnobottle['discount price'],
                           'images': indexnobottle['images'],
+                          'images1': indexnobottle['images1'],
+                          'images2': indexnobottle['images2'],
                           'date': indexnobottle['date'],
+                          'expire': indexnobottle['expire'],
 
 
                         });

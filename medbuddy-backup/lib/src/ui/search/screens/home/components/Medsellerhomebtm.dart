@@ -1,48 +1,23 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/tags/bottleFull.dart';
+import 'package:medbuddy/src/ui/search/sellerFull.dart';
 import 'package:medbuddy/src/ui/search/values/colors_palette.dart';
 import 'package:medbuddy/src/ui/search/values/constants.dart';
 
 
-
-
-
-class bottle extends StatefulWidget {
-  @override
-  _sellerMapageState createState() => _sellerMapageState();
-}
-var indexnobottle;
-String Bdocid;
-class _sellerMapageState extends State<bottle>{
-    //final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
+  var indexnobtm;
+  String docidbtm;
+class RecomendsClothesMale extends StatelessWidget {
+  const RecomendsClothesMale({
+    Key key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-return Scaffold(
-  appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        //Color(0xFF3EB16F),
-        //  leading: new IconButton(
-        //    icon: new Icon(Icons.arrow_back),
-        //    onPressed: () {
-        //      Navigator.push(
-        //        context,
-        //        MaterialPageRoute(builder: (context) => sellerMap()),
-        //     );
-        //   },
-        // ),
-        title: Text(
-          "Bottle",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-          ),
-        ),
-        elevation: 0.0,
-  ),
-	body: 
-   StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("Medicinesell").where('ID', isEqualTo: 'bottle').snapshots(),
+    // return SingleChildScrollView(
+    //   scrollDirection: Axis.horizontal,
+    return  StreamBuilder(
+      stream: FirebaseFirestore.instance.collection("Medicinesell")
+          .orderBy("medicine name", descending: false).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {   
           return Center
@@ -82,10 +57,10 @@ return Scaffold(
       //width: size.width * 0.49,
       child:  GestureDetector(
             onTap: (){ 
-              indexnobottle= snapshot.data.docs[index];
-              Bdocid = snapshot.data.docs[index].id;
+              indexnobtm = snapshot.data.docs[index];
+              docidbtm = snapshot.data.docs[index].id;
               Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => bottleFull()));},
+              MaterialPageRoute(builder: (context) => SellerFull()));},
       child: Column(
         children: [
           Flexible(child: 
@@ -153,7 +128,7 @@ return Scaffold(
 });       
   }
   }
-  ));
+  );
   //);
   }
 }

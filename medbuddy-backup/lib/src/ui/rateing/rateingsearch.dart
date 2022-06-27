@@ -4,18 +4,18 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/rateing/rateingsplash.dart';
-import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhomebtm.dart';
+import 'package:medbuddy/src/ui/search/searchfull.dart';
 
 
 
 
-class rateing extends StatefulWidget {
+class ratingsearch extends StatefulWidget {
 
   @override
   _rateingState createState() => _rateingState();
 }
 
-class _rateingState extends State<rateing> {
+class _rateingState extends State<ratingsearch> {
   double rating1;
   String star;
   String emailid;
@@ -111,7 +111,7 @@ class _rateingState extends State<rateing> {
                         await users.get().then((snapshot) {
                               uname = snapshot.get('username');
                             });
-                        await collectionReference.collection(docidbtm + "review").add(
+                        await collectionReference.collection(docidsr + "review").add(
                         {
                         'review':review,
                         'rateing':rating1.toString(),
@@ -120,7 +120,7 @@ class _rateingState extends State<rateing> {
                         }, 
                         );
                         //add rating for avg
-                        await collectionReference.collection('average rating').doc(docidbtm).set(
+                        await collectionReference.collection('average rating').doc(docidsr).set(
                           {
                           'avg': FieldValue.increment(rating1),
                           'length': FieldValue.increment(1)

@@ -1,377 +1,377 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/cart/cartmap.dart';
-import 'package:medbuddy/src/ui/search/sellerFull.dart';
-import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
-import 'package:medbuddy/src/ui/search/tags/Pill.dart';
-import 'package:medbuddy/src/ui/search/tags/Syringe.dart';
-import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
-import 'package:medbuddy/src/ui/tabpage/tabs.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:flutter/material.dart';
+// import 'package:medbuddy/src/ui/cart/cartmap.dart';
+// import 'package:medbuddy/src/ui/search/sellerFull.dart';
+// import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
+// import 'package:medbuddy/src/ui/search/tags/Pill.dart';
+// import 'package:medbuddy/src/ui/search/tags/Syringe.dart';
+// import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
+// import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
-class sellerMap extends StatefulWidget {
-  @override
-  const sellerMap({Key key}) : super(key: key);
-  _sellerMapageState createState() => _sellerMapageState();
-}
-    var indexno;
-    String docid;
+// class sellerMap extends StatefulWidget {
+//   @override
+//   const sellerMap({Key key}) : super(key: key);
+//   _sellerMapageState createState() => _sellerMapageState();
+// }
+//     var indexno;
+//     String docid;
 
 
 
-class _sellerMapageState extends State<sellerMap>{
+// class _sellerMapageState extends State<sellerMap>{
     
-  @override
-  Widget build(BuildContext context) {
-return Scaffold(
-  appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
-        //Color(0xFF3EB16F),
-        // leading: new IconButton(
-        //   icon: new Icon(Icons.arrow_back),
-        //   onPressed: () {
-        //     Navigator.push(
-        //       context,
-        //       MaterialPageRoute(builder: (context) => tab()),
-        //     );
-        //   },
-        // ),
-  leading: IconButton(
-    onPressed: () { 
-      Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => tab()),
-      );},
-    icon: Icon(Icons.arrow_back),
-  ),
-  actions: [
-    IconButton(
-      onPressed: () {
-       Navigator.push(
-       context,
-      MaterialPageRoute(builder: (context) => cartMap()),
-      );
-      },
-      icon: Icon(Icons.shopping_cart),
-    ),
-  ],    
-        title: Text(
-          "Med-Seller",
-          style: TextStyle(
-            color: Color.fromARGB(255, 250, 248, 248),
-            fontSize: 18,
-          ),
-        ),
-        elevation: 0.0,
-  ),
-	body:  StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("Medicinesell")
-          .orderBy("date", descending: true).snapshots(),
-      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-         if (!snapshot.hasData) {   
-          return Center
-          (child: 
-          Image.asset("assets/nothing.gif")
-     );
-        }
+//   @override
+//   Widget build(BuildContext context) {
+// return Scaffold(
+//   appBar: AppBar(
+//         backgroundColor: Colors.deepPurple,
+//         //Color(0xFF3EB16F),
+//         // leading: new IconButton(
+//         //   icon: new Icon(Icons.arrow_back),
+//         //   onPressed: () {
+//         //     Navigator.push(
+//         //       context,
+//         //       MaterialPageRoute(builder: (context) => tab()),
+//         //     );
+//         //   },
+//         // ),
+//   leading: IconButton(
+//     onPressed: () { 
+//       Navigator.push(
+//       context,
+//       MaterialPageRoute(builder: (context) => tab()),
+//       );},
+//     icon: Icon(Icons.arrow_back),
+//   ),
+//   actions: [
+//     IconButton(
+//       onPressed: () {
+//        Navigator.push(
+//        context,
+//       MaterialPageRoute(builder: (context) => cartMap()),
+//       );
+//       },
+//       icon: Icon(Icons.shopping_cart),
+//     ),
+//   ],    
+//         title: Text(
+//           "Med-Seller",
+//           style: TextStyle(
+//             color: Color.fromARGB(255, 250, 248, 248),
+//             fontSize: 18,
+//           ),
+//         ),
+//         elevation: 0.0,
+//   ),
+// 	body:  StreamBuilder(
+//       stream: FirebaseFirestore.instance.collection("Medicinesell")
+//           .orderBy("date", descending: true).snapshots(),
+//       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+//          if (!snapshot.hasData) {   
+//           return Center
+//           (child: 
+//           Image.asset("assets/nothing.gif")
+//      );
+//         }
 
-      else if (snapshot.data?.size == 0) {
-        return Center
-          (child: Image.asset("assets/nothing.gif"));
-        }
-        else{
-//new streambuilder include image
-        return  ListView(
-          children: [
- //.......................................................................................................
- //top bar 
-      Padding(padding: EdgeInsets.only(top: 60, left: 10),  
-     child: Text("Categories:",textAlign: TextAlign.start,
-      style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
-      Divider(
-        indent: 20,
-        endIndent: 20,
-        color: Colors.black,
-    ),      
+//       else if (snapshot.data?.size == 0) {
+//         return Center
+//           (child: Image.asset("assets/nothing.gif"));
+//         }
+//         else{
+// //new streambuilder include image
+//         return  ListView(
+//           children: [
+//  //.......................................................................................................
+//  //top bar 
+//       Padding(padding: EdgeInsets.only(top: 60, left: 10),  
+//      child: Text("Categories:",textAlign: TextAlign.start,
+//       style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
+//       Divider(
+//         indent: 20,
+//         endIndent: 20,
+//         color: Colors.black,
+//     ),      
 
-      Padding(padding: EdgeInsets.all(10),            
-            child: Row( 
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Pill",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ],),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> pill()));
-              }
-              ),
+//       Padding(padding: EdgeInsets.all(10),            
+//             child: Row( 
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//             TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Pill",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ],),
+//               onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> pill()));
+//               }
+//               ),
 
-              SizedBox(width: 5,),
+//               SizedBox(width: 5,),
 
-             TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Syringe",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-                onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> syringe()));
-              }            
-              ),  
+//              TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Syringe",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ]),
+//                 onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> syringe()));
+//               }            
+//               ),  
 
-            SizedBox(width: 5,),
+//             SizedBox(width: 5,),
 
-            TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Tablet",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> tablet()));
-              }          
-              ),
+//             TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Tablet",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ]),
+//               onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> tablet()));
+//               }          
+//               ),
 
-              SizedBox(width: 5,),    
+//               SizedBox(width: 5,),    
 
-             TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Bottle",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> bottle()));
-              }             
-              )
+//              TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Bottle",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ]),
+//                onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> bottle()));
+//               }             
+//               )
                                 
               
-              ]),),
+//               ]),),
 
 
-      Padding(padding: EdgeInsets.only(left: 10, top: 20),  
-     child: Text("Products",textAlign: TextAlign.start,
-      style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
-      Divider(
-        indent: 20,
-        endIndent: 20,
-        color: Colors.black,
-    ),
- //.......................................................................................................
-             GridView.builder(
-                  physics: ScrollPhysics(),
-                  padding: EdgeInsets.all(10),
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemCount: snapshot.data.docs.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 10,
-                  ),
-                  itemBuilder: (BuildContext context, int index) {
-                    return   Material(
-                color: Color.fromARGB(255, 204, 248, 219),
-                elevation: 8,
-                borderRadius: BorderRadius.circular(28),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: InkWell(
-                  splashColor: Colors.black26,
-                  onTap: (){
-                      indexno = snapshot.data.docs[index];
-                      docid = snapshot.data.docs[index].id;
+//       Padding(padding: EdgeInsets.only(left: 10, top: 20),  
+//      child: Text("Products",textAlign: TextAlign.start,
+//       style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
+//       Divider(
+//         indent: 20,
+//         endIndent: 20,
+//         color: Colors.black,
+//     ),
+//  //.......................................................................................................
+//              GridView.builder(
+//                   physics: ScrollPhysics(),
+//                   padding: EdgeInsets.all(10),
+//                   scrollDirection: Axis.vertical,
+//                   shrinkWrap: true,
+//                   itemCount: snapshot.data.docs.length,
+//                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                     crossAxisCount: 2,
+//                     crossAxisSpacing: 10.0,
+//                     mainAxisSpacing: 10,
+//                   ),
+//                   itemBuilder: (BuildContext context, int index) {
+//                     return   Material(
+//                 color: Color.fromARGB(255, 204, 248, 219),
+//                 elevation: 8,
+//                 borderRadius: BorderRadius.circular(28),
+//                 clipBehavior: Clip.antiAliasWithSaveLayer,
+//                 child: InkWell(
+//                   splashColor: Colors.black26,
+//                   onTap: (){
+//                       indexno = snapshot.data.docs[index];
+//                       docid = snapshot.data.docs[index].id;
 
 
-                      // int avg;
-                      // int length;
-                      // double average;
-                      // double dclength;
-                      // String rating;
+//                       // int avg;
+//                       // int length;
+//                       // double average;
+//                       // double dclength;
+//                       // String rating;
 
 
-                      //   FirebaseFirestore.instance.collection("average rating").doc(docid).get().then(
-                      //   (DocumentSnapshot snapShot) {
-                      //       if (snapShot.exists) {
+//                       //   FirebaseFirestore.instance.collection("average rating").doc(docid).get().then(
+//                       //   (DocumentSnapshot snapShot) {
+//                       //       if (snapShot.exists) {
                               
-                      //         //here we retrieve the length and average from firestore and store them in int
-                      //         //then divide them to find average rating
+//                       //         //here we retrieve the length and average from firestore and store them in int
+//                       //         //then divide them to find average rating
                               
-                      //       average = snapShot.get('avg');
-                      //       length = snapShot.get('length');
+//                       //       average = snapShot.get('avg');
+//                       //       length = snapShot.get('length');
 
-                      //         avg = average.toInt();
+//                       //         avg = average.toInt();
                             
 
-                      //         dclength = (avg/length);
-                      //         rating = dclength.toStringAsFixed(1);
-                      //         print(rating);
-                      //       }else{
-                      //         rating="0";
-                      //       }
-                      //         } );
-                      //         print(rating);
+//                       //         dclength = (avg/length);
+//                       //         rating = dclength.toStringAsFixed(1);
+//                       //         print(rating);
+//                       //       }else{
+//                       //         rating="0";
+//                       //       }
+//                       //         } );
+//                       //         print(rating);
                              
 
 
-                      Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => SellerFull()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(child: 
-                      Image.network(snapshot.data.docs[index]['images'],
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
-                      ),
-                      ),
-                      SizedBox(height: 6,),
-                      Flexible(child: 
-                      Text(snapshot.data.docs[index]['medicine name'],textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black38,fontFamily: 'JosefinSans'),
-                      ),),
-                      Flexible(child: 
-                      Text("Discount: " + snapshot.data.docs[index]['discount %'] + "%",textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.green),
-                      ),),                         
-                    ],
-                  ),
-                ),
+//                       Navigator.of(context).push(
+//                       MaterialPageRoute(builder: (context) => SellerFull()));
+//                   },
+//                   child: Column(
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     children: [
+//                       Flexible(child: 
+//                       Image.network(snapshot.data.docs[index]['images'],
+//                         height: 150,
+//                         width: 150,
+//                         fit: BoxFit.cover,
+//                       ),
+//                       ),
+//                       SizedBox(height: 6,),
+//                       Flexible(child: 
+//                       Text(snapshot.data.docs[index]['medicine name'],textAlign: TextAlign.center,
+//                       style: TextStyle(color: Colors.black38,fontFamily: 'JosefinSans'),
+//                       ),),
+//                       Flexible(child: 
+//                       Text("Discount: " + snapshot.data.docs[index]['discount %'] + "%",textAlign: TextAlign.center,
+//                       style: TextStyle(color: Colors.green),
+//                       ),),                         
+//                     ],
+//                   ),
+//                 ),
               
-                      //footer: Text(snapshot.data.docs[index]['medicine name']),
-                      /*Card(
-                      shadowColor: Colors.grey,
-                      elevation: 10,*/
-                     /* TextButton(
-                        onPressed: (){
-                      indexno = snapshot.data.docs[index];
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull())
-                      );
-                    },                    
-                      child: Column(
-                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+//                       //footer: Text(snapshot.data.docs[index]['medicine name']),
+//                       /*Card(
+//                       shadowColor: Colors.grey,
+//                       elevation: 10,*/
+//                      /* TextButton(
+//                         onPressed: (){
+//                       indexno = snapshot.data.docs[index];
+//                       Navigator.push(context,
+//                       MaterialPageRoute(builder: (BuildContext context) => SellerFull())
+//                       );
+//                     },                    
+//                       child: Column(
+//                          mainAxisAlignment: MainAxisAlignment.center,
+//                         children: [
                         
-                        Image.network(snapshot.data.docs[index]['images'],width: 100, height: 100,),
-                       Padding(padding: EdgeInsets.only(top: 5),
-                        child: Text(snapshot.data.docs[index]['medicine name'],
-                          style: TextStyle(color: Colors.white)
-                          ),),
+//                         Image.network(snapshot.data.docs[index]['images'],width: 100, height: 100,),
+//                        Padding(padding: EdgeInsets.only(top: 5),
+//                         child: Text(snapshot.data.docs[index]['medicine name'],
+//                           style: TextStyle(color: Colors.white)
+//                           ),),
                         
-                        //Flexible(child: 
-                          //Text(snapshot.data.docs[index]['email id']),),
+//                         //Flexible(child: 
+//                           //Text(snapshot.data.docs[index]['email id']),),
 
    
-                      ],),*/ 
+//                       ],),*/ 
                       
 
-                    );
+//                     );
                     
-                  },
+//                   },
 
-        ),
+//         ),
 
 
-        ]
-        );
-      }
+//         ]
+//         );
+//       }
 
-      }));
-  }}
+//       }));
+//   }}
        
-//old strembuilder,list view
-//......................................................................................................
-  /*StreamBuilder(stream: collectionReference,
-   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-     if(snapshot.hasData){*/
-      /* return ListView.separated(
-         itemBuilder:(BuildContext context, int index) {
-           return Column(
-              children: snapshot.data.docs.map((doc) {
-                return Card(
-                  child: Column( children: [
-                  Image.network(snapshot.data.docs[index]['image'], width: 100,height: 100,),
-                  Text(snapshot.data.docs[index]['medicine name']),
-                  Text(snapshot.data.docs[index]['store name']),
-                  /*ListTile(
-                    title: Text(snapshot.data.docs[index]['medicine name']),
-                    subtitle:  Image.network(snapshot.data.docs[index]['image']),
-                    //Text(snapshot.data.docs[index]['store name']),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: (){
-                      indexno = snapshot.data.docs[index];
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull())
-                      );
-                    },
-                  ),*/
-                ]));
-              }).toList(),);
+// //old strembuilder,list view
+// //......................................................................................................
+//   /*StreamBuilder(stream: collectionReference,
+//    builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+//      if(snapshot.hasData){*/
+//       /* return ListView.separated(
+//          itemBuilder:(BuildContext context, int index) {
+//            return Column(
+//               children: snapshot.data.docs.map((doc) {
+//                 return Card(
+//                   child: Column( children: [
+//                   Image.network(snapshot.data.docs[index]['image'], width: 100,height: 100,),
+//                   Text(snapshot.data.docs[index]['medicine name']),
+//                   Text(snapshot.data.docs[index]['store name']),
+//                   /*ListTile(
+//                     title: Text(snapshot.data.docs[index]['medicine name']),
+//                     subtitle:  Image.network(snapshot.data.docs[index]['image']),
+//                     //Text(snapshot.data.docs[index]['store name']),
+//                     trailing: Icon(Icons.arrow_forward_ios),
+//                     onTap: (){
+//                       indexno = snapshot.data.docs[index];
+//                       Navigator.push(context,
+//                       MaterialPageRoute(builder: (BuildContext context) => SellerFull())
+//                       );
+//                     },
+//                   ),*/
+//                 ]));
+//               }).toList(),);
               
-              },
-               separatorBuilder: (context, index) {
-           return Divider(
-             color: Colors.grey,
-             thickness: 5,
-             height: 20,
-           );
-          },
-         itemCount: snapshot.data.docs.length,
-       );*/
-//...........................................................................................................
-//............................................................................................................
-//     }
-    /* return Center(child:
-     Text("No medicine found!", style: TextStyle(fontSize: 20,color: Colors.grey),),
-     );
-     },
-     ),
+//               },
+//                separatorBuilder: (context, index) {
+//            return Divider(
+//              color: Colors.grey,
+//              thickness: 5,
+//              height: 20,
+//            );
+//           },
+//          itemCount: snapshot.data.docs.length,
+//        );*/
+// //...........................................................................................................
+// //............................................................................................................
+// //     }
+//     /* return Center(child:
+//      Text("No medicine found!", style: TextStyle(fontSize: 20,color: Colors.grey),),
+//      );
+//      },
+//      ),
 
-  );
+//   );
 	
   
-}));
-}}*/
-//......................................................................................................
-//.......................................................................................
-//  checkbool1() async{
-//  bool docExits = await checkIfDocExists(docid);
-//          if(docExits == true){
-//            docex = true;
+// }));
+// }}*/
+// //......................................................................................................
+// //.......................................................................................
+// //  checkbool1() async{
+// //  bool docExits = await checkIfDocExists(docid);
+// //          if(docExits == true){
+// //            docex = true;
           
-//  }else{
-//    docex = false;
-// return docex;
-//  }
-//  }
-// //.......................................................................................
-// //to check doc id
-//  Future<bool> checkIfDocExists1(String docId) async{
-//   try{
-//     //var collectionRef = FirebaseFirestore.instance.collection(user.email + "cart");
-//     var doc = await collectionCart.doc(docId).get();
-//     return doc.exists;
-//   }catch (e){
-//     print(e);
-//   }
+// //  }else{
+// //    docex = false;
+// // return docex;
+// //  }
+// //  }
+// // //.......................................................................................
+// // //to check doc id
+// //  Future<bool> checkIfDocExists1(String docId) async{
+// //   try{
+// //     //var collectionRef = FirebaseFirestore.instance.collection(user.email + "cart");
+// //     var doc = await collectionCart.doc(docId).get();
+// //     return doc.exists;
+// //   }catch (e){
+// //     print(e);
+// //   }
 
-// } 
-// //use checkifdoc to check a doc exit, if yes remove it, else create a doc in sellercart with name
-// //of sellermap doc, using a seperate function to check if docex is true if true display text
+// // } 
+// // //use checkifdoc to check a doc exit, if yes remove it, else create a doc in sellercart with name
+// // //of sellermap doc, using a seperate function to check if docex is true if true display text
 
-// //.......................................................................................
+// // //.......................................................................................
 
  

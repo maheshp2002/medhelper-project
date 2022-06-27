@@ -7,27 +7,28 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
-import 'package:medbuddy/src/ui/rateing/deleterating.dart';
-import 'package:medbuddy/src/ui/rateing/rateing.dart';
-// import 'package:medbuddy/src/ui/search/SellerMap.dart';
+import 'package:medbuddy/src/ui/rateing/deleteratingsearch.dart';
+import 'package:medbuddy/src/ui/rateing/rateingsearch.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
+import 'package:medbuddy/src/ui/search/screens/home/components/header_with_search.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
-import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhomebtm.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:blinking_text/blinking_text.dart';
 
 var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
-class SellerFull extends StatefulWidget {
+String docidsr;
+String indexnosr;
+class searchfull extends StatefulWidget {
 
 @override
   _DetailedItemState createState() => _DetailedItemState();
 
 }
 
-class _DetailedItemState extends State<SellerFull> {
+class _DetailedItemState extends State<searchfull> {
 
 
 
@@ -38,17 +39,12 @@ class _DetailedItemState extends State<SellerFull> {
 
 // String rating1;
 // SellerFull({this.rating1});
- List<String> images = [
-  indexnobtm['images'],
-  indexnobtm['images1'],
-  indexnobtm['images2']
 
- ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-      title: Text(indexnobtm['medicine name']),
+      title: Text(medname),
       backgroundColor: Colors.deepPurple,
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
@@ -62,7 +58,54 @@ class _DetailedItemState extends State<SellerFull> {
         ),
 ),
   //backgroundColor: Colors.orange[300],
-  body: Container(
+  body: StreamBuilder(
+      stream: FirebaseFirestore.instance.collection("Medicinesell").doc(docidsearch).snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+         if (!snapshot.hasData) {   
+          return Center
+          (child: 
+          Image.asset("assets/nothing.gif")
+     );
+        }
+
+        else{
+
+ _makePhoneCall() async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: snapshot.data['mobile no'],
+    );
+    await launchUrl(launchUri);
+  }
+_sendingMails()  {
+String encodeQueryParameters(Map<String, String> params) {
+  return params.entries
+      .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+      .join('&');
+}
+final Uri emailLaunchUri = Uri(
+  scheme: 'mailto',
+  path: snapshot.data['email id'],
+  query: encodeQueryParameters(<String, String>{
+    'subject': 'medhelper'
+  }),
+);
+
+launchUrl(emailLaunchUri);
+}
+ 
+
+
+
+
+   List<String> images = [
+  snapshot.data['images'],
+  snapshot.data['images1'],
+  snapshot.data['images2']
+
+ ];
+  
+ return Container(
     
     child: ListView(children: [
        Padding(padding: EdgeInsets.all(10),
@@ -112,7 +155,7 @@ class _DetailedItemState extends State<SellerFull> {
 //............................................................................................................ 
 
    StreamBuilder(
-      stream:  FirebaseFirestore.instance.collection("average rating").doc(docidbtm).snapshots(),
+      stream:  FirebaseFirestore.instance.collection("average rating").doc(docidsearch).snapshots(),
       builder: (context, snapshot) {
          if (!snapshot.hasData) {
           //hasdata = true;
@@ -160,7 +203,7 @@ class _DetailedItemState extends State<SellerFull> {
                     children:[ 
                   Text("Price:", style: TextStyle(fontFamily: 'JosefinSansBD',fontSize: 10),),   
                   SizedBox(width: 5,),              
-                  Text(indexnobtm['price'],
+                  Text(snapshot.data['price'],
                   style: TextStyle(color: Colors.red, fontSize: 30, fontFamily: 'arvoBold'),
                   ),
                   Text('Rs',style: TextStyle(color: Colors.grey, fontFamily: 'JosefinSansBD',fontSize: 10),),
@@ -173,7 +216,7 @@ class _DetailedItemState extends State<SellerFull> {
                   Text("Discount:", style: TextStyle(fontFamily: 'JosefinSans',fontSize: 10),),
                   SizedBox(width: 10,),
                   Padding(padding: EdgeInsets.only(right: 10),
-                  child: BlinkText(indexnobtm['discount %'] + "%",
+                  child: BlinkText(snapshot.data['discount %'] + "%",
                   style: TextStyle(color: Colors.green, fontSize: 20, fontFamily: 'arvoBold'),
                   	endColor: Colors.greenAccent,
 	                  duration: Duration(seconds: 1)),
@@ -186,7 +229,7 @@ class _DetailedItemState extends State<SellerFull> {
           ), 
 
    StreamBuilder(
-      stream:  FirebaseFirestore.instance.collection("Medicinesell").doc(docidbtm).snapshots(),
+      stream:  FirebaseFirestore.instance.collection("Medicinesell").doc(docidsearch).snapshots(),
       builder: (context, snapshot) {
          if (!snapshot.hasData) {
           //hasdata = true;
@@ -236,7 +279,7 @@ class _DetailedItemState extends State<SellerFull> {
 
     Card(
     child: ListTile(
-    title:  Text("Actual price:" + " " + indexnobtm['discount price']),
+    title:  Text("Actual price:" + " " + snapshot.data['discount price']),
     )),
 
 //gap btw borders
@@ -246,7 +289,7 @@ class _DetailedItemState extends State<SellerFull> {
  
     Card(
     child: ListTile(
-    title:  Text("Dosage:" + " " + indexnobtm['dosage']),
+    title:  Text("Dosage:" + " " + snapshot.data['dosage']),
     )),
 //gap btw borders
           const SizedBox(
@@ -262,7 +305,7 @@ class _DetailedItemState extends State<SellerFull> {
 //           ), 
     Card(
     child: ListTile(               
-    title:  Text("Address:" + " " + indexnobtm['address']),
+    title:  Text("Address:" + " " + snapshot.data['address']),
     )),
 //gap btw borders
           const SizedBox(
@@ -270,7 +313,7 @@ class _DetailedItemState extends State<SellerFull> {
           ),
     Card(
     child: ListTile(                
-    title:  Text("Mobile no:" + " " + indexnobtm['mobile no']),
+    title:  Text("Mobile no:" + " " + snapshot.data['mobile no']),
     trailing: Icon(Icons.arrow_forward_ios),
     onTap: (){
      _makePhoneCall();
@@ -282,7 +325,7 @@ class _DetailedItemState extends State<SellerFull> {
           ), 
     Card(
     child: ListTile(               
-    title:  Text("Email-id:" + " " + indexnobtm['email id']),
+    title:  Text("Email-id:" + " " + snapshot.data['email id']),
     trailing: Icon(Icons.arrow_forward_ios),
         onTap: (){
      _sendingMails();
@@ -296,7 +339,7 @@ class _DetailedItemState extends State<SellerFull> {
           ),
     Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexnobtm['date']),
+    title:  Text("Date:" + " " + snapshot.data['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -384,7 +427,7 @@ class _DetailedItemState extends State<SellerFull> {
         OutlineButton(
         onPressed: () async {
         
-        bool docExits = await checkIfDocExists(docidbtm);
+        bool docExits = await checkIfDocExists(docidsearch);
         if(docExits == true){
           
          // checkbool1();
@@ -397,24 +440,24 @@ class _DetailedItemState extends State<SellerFull> {
                       textColor: Colors.white  
                   );
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));
-            return collectionCart.doc(docidbtm).delete();
+            return collectionCart.doc(docidsearch).delete();
         } else{
           //checkbool1();
-          collectionCart.doc(docidbtm).set(
+          collectionCart.doc(docidsearch).set(
                         {
-                          'medicine name': indexnobtm['medicine name'],
-                          'email id': indexnobtm['email id'],
-                          'mobile no': indexnobtm['mobile no'],
-                          'address': indexnobtm['address'],
-                          'price': indexnobtm['price'],
-                          'dosage': indexnobtm['dosage'],
-                          'discount %': indexnobtm['discount %'],
-                          'discount price': indexnobtm['discount price'],
-                          'images': indexnobtm['images'],
-                          'images1': indexnobtm['images1'],
-                          'images2': indexnobtm['images2'],
-                          'expire': indexnobtm['expire'],
-                          'date': indexnobtm['date'],
+                          'medicine name': snapshot.data['medicine name'],
+                          'email id': snapshot.data['email id'],
+                          'mobile no': snapshot.data['mobile no'],
+                          'address': snapshot.data['address'],
+                          'price': snapshot.data['price'],
+                          'dosage': snapshot.data['dosage'],
+                          'discount %': snapshot.data['discount %'],
+                          'discount price': snapshot.data['discount price'],
+                          'images': snapshot.data['images'],
+                          'images1': snapshot.data['images1'],
+                          'images2': snapshot.data['images2'],
+                          'expire': snapshot.data['expire'],
+                          'date': snapshot.data['date'],
                             
 
                         });
@@ -488,7 +531,7 @@ class _DetailedItemState extends State<SellerFull> {
 
         SizedBox(height: 30,),
   StreamBuilder(
-      stream: FirebaseFirestore.instance.collection(docidbtm + "review")
+      stream: FirebaseFirestore.instance.collection(docidsearch + "review")
           .orderBy("rateing", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
@@ -558,8 +601,9 @@ class _DetailedItemState extends State<SellerFull> {
   //button for review
                                 OutlineButton(
                                         onPressed: () async {
-                                       
-                             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => rateing()));
+                                         docidsr = snapshot.data.id;
+                                        //indexnosr = snapshot.data;
+                             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ratingsearch()));
                                         },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
@@ -588,7 +632,9 @@ class _DetailedItemState extends State<SellerFull> {
             SizedBox(height: 30,),
             InkWell(
           onTap: () async {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ratingdlt()));
+            docidsr = snapshot.data.id;
+            //indexnosr = snapshot.data;
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> deleteratingsearch()));
 
           },
      child: new Padding(
@@ -610,35 +656,11 @@ class _DetailedItemState extends State<SellerFull> {
     SizedBox(height: 30,),
 
   ]
-  ),),
-);
+  ),);
+  }})
+  );
 }
 
- _makePhoneCall() async {
-    final Uri launchUri = Uri(
-      scheme: 'tel',
-      path: indexnobtm['mobile no'],
-    );
-    await launchUrl(launchUri);
-  }
-_sendingMails()  {
-String encodeQueryParameters(Map<String, String> params) {
-  return params.entries
-      .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-      .join('&');
-}
-final Uri emailLaunchUri = Uri(
-  scheme: 'mailto',
-  path: indexnobtm['email id'],
-  query: encodeQueryParameters(<String, String>{
-    'subject': 'medhelper'
-  }),
-);
-
-launchUrl(emailLaunchUri);
-}
- 
-}
 //  checkbool() async{
 //  bool docExits = await checkIfDocExists(docid);
 //          if(docExits == true){
@@ -666,3 +688,4 @@ launchUrl(emailLaunchUri);
 //of sellermap doc, using a seperate function to check if docex is true if true display text
 
 //.......................................................................................
+}

@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhomebtm.dart';
+import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhometop.dart';
 //import 'package:medbuddy/src/ui/search/SellerMap.dart';
 
 const double ZOOM = 1;
 
-class HomeView extends StatelessWidget {
+class HomeViewtop extends StatelessWidget {
   static GoogleMapController _googleMapController;
   Set<Marker> markers = Set();
 
@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
           print(snapshot);
           if (snapshot.hasData) {
             //Extract the location from document
-            GeoPoint location = indexnobtm['Latitude'];
+            GeoPoint location = indexno['Latitude'];
 
             // Check if location is valid
             if (location == null) {

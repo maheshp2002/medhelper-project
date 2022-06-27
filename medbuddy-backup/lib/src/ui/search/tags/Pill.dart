@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/search/tags/pillFull.dart';
+import 'package:medbuddy/src/ui/search/values/colors_palette.dart';
+import 'package:medbuddy/src/ui/search/values/constants.dart';
 
 
 
@@ -39,88 +41,120 @@ return Scaffold(
         elevation: 0.0,
   ),
 	body: 
-  StreamBuilder(
+   StreamBuilder(
       stream: FirebaseFirestore.instance.collection("Medicinesell").where('ID', isEqualTo: 'pill').snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-         if (!snapshot.hasData) {
+         if (!snapshot.hasData) {   
           return Center
-          (child: Image.asset("assets/nothing.gif")
+          (child: 
+          Image.asset("assets/nothing.gif")
      );
         }
-                else if (snapshot.data?.size == 0) {
 
-          
-            return Center
+      else if (snapshot.data?.size == 0) {
+        return Center
           (child: Image.asset("assets/nothing.gif"));
         }
-
         else{
-
-
 //new streambuilder include image
-        return  ListView(
-          children: [
-             GridView.builder(
+        
+           return GridView.builder(
                   physics: ScrollPhysics(),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   itemCount: snapshot.data.docs.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 10,
-                  ),
+                    crossAxisSpacing: 0,
+                    mainAxisSpacing: 0,
+                    childAspectRatio: MediaQuery.of(context).size.width /
+                    (MediaQuery.of(context).size.height / 1.3),
+                  ),         
                   itemBuilder: (BuildContext context, int index) {
-                    return   Material(
-                color: Color.fromARGB(255, 204, 248, 219),
-                elevation: 8,
-                borderRadius: BorderRadius.circular(28),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: InkWell(
-                  splashColor: Colors.black26,
-                  onTap: (){
-                      indexnopill = snapshot.data.docs[index];
-                      Pdocid = snapshot.data.docs[index].id;
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => pillFull()));
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Flexible(child: 
-                      Image.network(snapshot.data.docs[index]['images'],
-                        height: 150,
-                        width: 150,
-                        fit: BoxFit.cover,
+                    return  Container(
+
+      margin: const EdgeInsets.only(
+        top: kDefaultPadding / 2,
+        left: kDefaultPadding,
+        bottom: kDefaultPadding * 2.5,
+      ),
+      //width: size.width * 0.49,
+      child:  GestureDetector(
+            onTap: (){ 
+              indexnopill = snapshot.data.docs[index];
+              Pdocid = snapshot.data.docs[index].id;
+              Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => pillFull()));},
+      child: Column(
+        children: [
+          Flexible(child: 
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+            child: Image.network(snapshot.data.docs[index]['images'],
+                        height: 300,
+                        width: 300,
+                        fit: BoxFit.fill,
                       ),
-                      ),
-                      SizedBox(height: 6,),
-                      Flexible(child: 
-                      Text(snapshot.data.docs[index]['medicine name'],textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black38,fontFamily: 'JosefinSans'),
-                      ),),
-                      Flexible(child: 
-                      Text("Discount: " + snapshot.data.docs[index]['discount %'] + "%",textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.green),
-                      ),),                         
-                    ],
-                  ),
+          )),
+
+         Container(
+              width: 300,
+              height: 40,
+              padding: const EdgeInsets.all(kDefaultPadding / 2),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(15),
                 ),
-              
-                      
-
-                    );
-                    
-                  },
-
-        )]
-        );
-        }}
-
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, 10),
+                    blurRadius: 50,
+                    color: ColorsPalette.kPrimaryColor.withOpacity(0.23),
+                  )
+                ],
+              ),
+              child: Row(
+                children: [
+                  Flexible(child: 
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: snapshot.data.docs[index]['medicine name'].toUpperCase(),
+                          style: TextStyle(fontSize: 10, color: Colors.black,fontWeight: FontWeight.bold),
+                        ),
+                    //     TextSpan(
+                    //         text: snapshot.data.docs[index]['discount %'].toUpperCase(),
+                    //         style: TextStyle(
+                    //           color:
+                    //               ColorsPalette.kPrimaryColor.withOpacity(0.5),
+                    //         ))
+                       ],
+                     ),
+                  )),
+                  SizedBox(width: 8,),
+                  Text("Price" + " " + 
+                    snapshot.data.docs[index]['price'],
+                    style: TextStyle(fontSize: 10, color: Colors.black,fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            
+          )
+        ],
+      ),
     ));
-  }}
-  
-  
-  
- 
+
+
+});       
+  }
+  }
+  ));
+  //);
+  }
+}
+

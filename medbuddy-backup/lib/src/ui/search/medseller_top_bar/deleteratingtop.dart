@@ -1,15 +1,15 @@
   import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
-import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhomebtm.dart';
+import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhometop.dart';
 //import 'package:medbuddy/src/ui/search/SellerMap.dart';
 
-class ratingdlt extends StatefulWidget {
+class ratingdlttop extends StatefulWidget {
   @override
   _sellerMapageState createState() => _sellerMapageState();
 }
 
-class _sellerMapageState extends State<ratingdlt>{
+class _sellerMapageState extends State<ratingdlttop>{
     
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class _sellerMapageState extends State<ratingdlt>{
       backgroundColor: Colors.deepPurple,),
   
   body: StreamBuilder(
-      stream: FirebaseFirestore.instance.collection(docidbtm + "review")
+      stream: FirebaseFirestore.instance.collection(docid + "review")
           .where('email', isEqualTo: user.email).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
@@ -94,7 +94,7 @@ class _sellerMapageState extends State<ratingdlt>{
                         title: new Text('Delete'),
                         onTap: () async{
                           double rtng= double.parse(snapshot.data.docs[index]['rateing']);
-                          await FirebaseFirestore.instance.collection('average rating').doc(docidbtm).set(
+                          await FirebaseFirestore.instance.collection('average rating').doc(docid).set(
                           {
                           'avg': FieldValue.increment(-rtng),
                           'length': FieldValue.increment(-1)

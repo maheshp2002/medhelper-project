@@ -4,6 +4,7 @@ import 'package:medbuddy/src/ui/cart/cartfull.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
 
 class cartMap extends StatefulWidget {
   @override
@@ -25,7 +26,7 @@ return Scaffold(
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => sellerMap()),
+              MaterialPageRoute(builder: (context) => HomeScreen()),
             );
           },
         ),

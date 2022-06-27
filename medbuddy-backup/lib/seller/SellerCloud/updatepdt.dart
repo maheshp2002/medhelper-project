@@ -2,20 +2,20 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/seller/deletePDT.dart';
+import 'package:medbuddy/seller/SellerCloud/DataFeedupdate.dart';
 
 
 
 
 
 
-class dltSeller extends StatefulWidget {
+class updatepdt extends StatefulWidget {
   @override
   _sellerMapageState createState() => _sellerMapageState();
 }
-var indexnobottle;
-String Bdocid;
-class _sellerMapageState extends State<dltSeller>{
+var updateindexno;
+String updatedocid;
+class _sellerMapageState extends State<updatepdt>{
   String images;
 User user = FirebaseAuth.instance.currentUser;
   @override
@@ -24,7 +24,7 @@ return Scaffold(
   appBar: AppBar(
         backgroundColor: Colors.orange,
         title: Text(
-          "Delete product",
+          "Update product",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -74,32 +74,15 @@ return Scaffold(
                 child: InkWell(
                   splashColor: Colors.black26,
                   onTap: (){
-                  showModalBottomSheet<void>(context: context,
-                  builder: (BuildContext context) {
-                    return Container(
-                    child: new Wrap(
-                    children: <Widget>[
-                        new ListTile(
-                        leading: new Icon(Icons.delete),
-                        title: new Text('Delete'),
-                        onTap: () async{ 
-                         deleteFile(snapshot.data.docs[index]['images']);     
-                         deleteFile(snapshot.data.docs[index]['images1']);  
-                         deleteFile(snapshot.data.docs[index]['images2']);                 
-                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
-                        await myTransaction.delete(snapshot.data.docs[index].reference);}
-                        );
-                        })
-                        ]
-                        )
-                        );}
-                        );  
+                    updatedocid = snapshot.data.docs[index].id;
+                    updateindexno = snapshot.data.docs[index];
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DataFeedupdate()));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Flexible(child: 
-                      Image.network(snapshot.data.docs[index]['images1'],
+                      Image.network(snapshot.data.docs[index]['images'],
                         height: 150,
                         width: 150,
                         fit: BoxFit.cover,
@@ -127,28 +110,7 @@ return Scaffold(
 
         ),
             SizedBox(height: 50,),
-          InkWell(
-          onTap: () async {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DeletePdt()));
 
-          },
-     child: new Padding(
-      padding: const EdgeInsets.only(
-        top: 60.0,
-      ),
-      child: new Text(
-        "Can't delete?...click here...",
-        textAlign: TextAlign.center,
-        overflow: TextOverflow.ellipsis,
-        softWrap: true,
-        style: new TextStyle(
-            fontWeight: FontWeight.w300,
-            letterSpacing: 0.5,
-            color: Colors.grey,
-            fontSize: 12.0),
-      ),
-    )),
-    SizedBox(height: 30,),
         ]
         );
       }}

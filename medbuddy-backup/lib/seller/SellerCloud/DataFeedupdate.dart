@@ -7,22 +7,23 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:medbuddy/seller/SellerCloud/updatepdt.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:medbuddy/seller/splash_screen/sellerSplash.dart';
 
 
 
-class DataFeed extends StatefulWidget {
-  const DataFeed({ Key key}) : super(key: key);
+
+class DataFeedupdate extends StatefulWidget {
+  const DataFeedupdate({ Key key}) : super(key: key);
 
   @override
   DataState createState() => DataState();
 }
 
-class DataState extends State<DataFeed>{
+class DataState extends State<DataFeedupdate>{
 User user = FirebaseAuth.instance.currentUser;
-final collectionReference = FirebaseFirestore.instance.collection("Medicinesell");
+final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").doc(updatedocid);
 
 
 //Controller
@@ -59,28 +60,7 @@ String price;
 String discountvalue;
 bool hasDiscount;
 bool clocation;
-GeoPoint cloc;
 String datenow1 = DateFormat("yyyy-MM-dd").format(DateTime.now());
-
-//...........................................................................................
-//for date
-Datepicker() async {
-DateTime pickedDate = await showDatePicker(
-    context: context, //context of current state
-    initialDate: DateTime.now(),
-    firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
-    lastDate: DateTime(2101)
-);
-
-if(pickedDate != null ){
-    print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
-    String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
-    print(formattedDate); //formatted date output using intl package =>  2021-03-16
-}else{
-    print("Date is not selected");
-}
-}
-//...........................................................................................
 
 //..........................................................................................
 Future<String> uploadFile(_image) async {
@@ -115,8 +95,9 @@ Future<String> uploadFile2(_image2) async {
 //..........................................................................................
 //LOCATION
 //getCurrentLocation() async {
-  Future<void> saveImages(File _image, File _image1, File _image2) async {
+  Future<void> location() async {
   Position position;
+  GeoPoint cloc;
   if(clocation == true){
   position = await Geolocator.getCurrentPosition(
     desiredAccuracy: LocationAccuracy.high);
@@ -125,74 +106,34 @@ Future<String> uploadFile2(_image2) async {
     cloc = GeoPoint(lat, long);
   }
 //....................................................................
+                await collectionReference.update(
+                        { 
+                        'Latitude': cloc,
+                        });
+
+  }
+
+  Future<void> saveImages(File _image, File _image1, File _image2) async {
                
               //_image.forEach((image) async {
               String imageURL = await uploadFile(_image);
               String imageURL1 = await uploadFile(_image1);
               String imageURL2 = await uploadFile(_image2);
                
-//..........................................................................................
-         
-        double oldprice;
-        double discountv;
-        double discount;
-        String DiscountVal;
-        String returnStr;
-        if(hasDiscount == true){
-        oldprice = double.parse(price);
-        discountv = double.parse(discountvalue);
-        discount = 0.0;
-        returnStr = discount.toString();
 
-        discount = (oldprice - discountv)/oldprice*100;
-        returnStr = discount.toStringAsFixed(0);
-        DiscountVal = discountvalue.toString();
-        }
-        else{
-          returnStr = "No discount";
-          DiscountVal = price;
-        }
         String datenow = datenow1;
 //..........................................................................................
 
 //Firebase data write
-        if(id!=null && name!=null && address!=null && storename!=null && emailID!=null && price!=null)
-          {
-                await collectionReference.add(
-                        {
-                        'ID':id,
-                        'medicine name':name,
-                        'dosage':dosage,
-                        'address':address,
-                        'store name':storename,
-                        'price':DiscountVal,
-                        'discount %':returnStr,
-                        'discount price':price,
-                        'mobile no':mobileno,
-                        'email id':emailID,
-                        'Latitude': cloc,
+
+                await collectionReference.update(
+                        {                        
                         'images': imageURL,
                         'images1': imageURL1,
-                        'images2': imageURL2,
+                        'images2': imageURL2,                        
                         'date' : datenow,
-                        'Did':user.email,
-                        'expire': expire,
-                        'stockno': stockno,
                         },
-                        );
-           setState(() {
-            isLoadingDF = false;
-          });
-          }else{
-               return Fluttertoast.showToast(  
-                      msg: 'Please check if all data is entered',  
-                      toastLength: Toast.LENGTH_LONG,  
-                      gravity: ToastGravity.BOTTOM,
-                      backgroundColor: Colors.black,  
-                      textColor: Colors.white  
-                  ); 
-          }
-                //}
+                        );//}
                 //);
               
               
@@ -315,34 +256,21 @@ Future<String> uploadFile2(_image2) async {
        drawer: sellerNavBar(),
         appBar: AppBar(
         automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){Navigator.pop(context);},
+        ),
         backgroundColor: Colors.orange,
-        title:  const Text("Home"),
-        elevation: 16.0,
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon: const Icon(
-                Icons.person,
-                color: Colors.white, 
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            
-            );
-          },
-        ),),
+        title:   Text(updateindexno['medicine name']),
+),
 //page UI.....................................................................................
-      body:  !isLoadingDF? Column(
-    children: [
-      Flexible(
-        child: ListView(
+      body: ListView(
             children: [
-          Padding(padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+          //Padding(padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
 
-     child:  Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
+    //  child:  Column(
+    //   mainAxisAlignment: MainAxisAlignment.center,
+    //     children: <Widget>[
 
 //id.............................................................................................
           TextField(
@@ -362,6 +290,30 @@ Future<String> uploadFile2(_image2) async {
               keyboardType: TextInputType.name,
             maxLength: 10,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                        'ID':id,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _id.clear();    
+
+            }          
+              
+          ),         
+        
 //gap btw borders
           const SizedBox(
             height: 16,
@@ -383,11 +335,37 @@ Future<String> uploadFile2(_image2) async {
             ),
 
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                        'medicine name':name,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _name.clear();    
+
+            }          
+              
+          ),         
+
+         
 //gap btw borders
           const SizedBox(
             height: 16,
           ),
 //dosage.............................................................................................
+
           TextField(
                  onChanged: ((value) {
                   dosage= value;
@@ -406,46 +384,86 @@ Future<String> uploadFile2(_image2) async {
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                          'dosage':dosage,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _dosage.clear();    
+
+            }          
+              
+          ),         
+
+         
 //gap btw borders
           const SizedBox(
             height: 16,
           ),
 //expire.............................................................................................
-              TextField(
-                controller: _expire, //editing controller of this TextField
-                decoration: InputDecoration( 
-                   icon: Icon(Icons.calendar_today), //icon of text field
-                   labelText: "Enter Date" //label text of field
+
+          TextField(
+                 onChanged: ((value) {
+                  expire= value;
+                }),             
+            controller: _expire,
+            decoration: const InputDecoration(
+                hintText: "yyyy-mm-dd",
+                labelText: "Expire:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
                 ),
-                readOnly: true,  //set it true, so that user will not able to edit text
-                onTap: () async {
-                  DateTime pickedDate = await showDatePicker(
-                      context: context, initialDate: DateTime.now(),
-                      firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
-                      lastDate: DateTime(2101)
-                  );
-                  
-                  if(pickedDate != null ){
-                      print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
-                      expire = DateFormat('yyyy-MM-dd').format(pickedDate); 
-                      //print(formattedDate); //formatted date output using intl package =>  2021-03-16
-                        //you can implement different kind of Date Format here according to your requirement
+                border: OutlineInputBorder()
+            ),
 
-                      setState(() {
-                         _expire.text = expire; //set output date to TextField value. 
-                      });
-                  }else{
-                      print("Date is not selected");
-                  }
-                },
-            
+            maxLength: 15,
+            keyboardType: TextInputType.number,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                        'expire': expire,
+                        });
 
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _expire.clear();    
+
+            }          
+              
+          ),         
+
+           
 //gap btw borders
           const SizedBox(
             height: 16,
           ),
 //stock.............................................................................................
+
           TextField(
                  onChanged: ((value) {
                   stockno= int.parse(value);
@@ -464,11 +482,37 @@ Future<String> uploadFile2(_image2) async {
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                        'stockno': stockno,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _stockno.clear();    
+
+            }          
+              
+          ),         
+
+         
 //gap btw borders
           const SizedBox(
             height: 16,
           ),
 //Address............................................................................................
+
           TextField(
                   onChanged: ((value) {
                   address=value;
@@ -486,12 +530,37 @@ Future<String> uploadFile2(_image2) async {
 
             maxLines: 3,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                        'address':address,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _address.clear();    
+
+            }          
+              
+          ),         
+          
 
 //gap btw borders
           const SizedBox(
             height: 16,
           ),
 //Store name.....................................................................................
+
           TextField(
                   onChanged: ((value) {
                   storename=value;
@@ -509,12 +578,37 @@ Future<String> uploadFile2(_image2) async {
 
             maxLines: 3,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                        'store name':storename,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _storename.clear();    
+
+            }          
+              
+          ),         
+         
 
 //gap btw borders
           const SizedBox(
             height: 16,
           ),          
 //price.............................................................................................
+
           TextField(
                   onChanged: ((value) {
                   price= value;
@@ -533,6 +627,32 @@ Future<String> uploadFile2(_image2) async {
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{          
+                  await collectionReference.update(
+                        {
+                        'discount price':price,
+
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _price.clear();    
+
+            }          
+              
+          ),         
+
+ 
 //gap btw borders
           const SizedBox(
             height: 16,
@@ -542,7 +662,7 @@ Future<String> uploadFile2(_image2) async {
 //gap btw borders
             Row(children: [
           Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
-          Text("Note: If no, No need to enter New price.",
+          Text("Note: If no, No need to enter discount value.",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
             ]),
             const SizedBox(
@@ -593,7 +713,8 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           const SizedBox(
             height: 16,
           ),
-//Row(children: [
+
+
           TextField(
                   onChanged: ((value) {
                   discountvalue= value;
@@ -601,7 +722,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             controller: _discount,
             decoration: const InputDecoration(
                 hintText: "new price",
-                labelText: "New price:",
+                labelText: "Discount price:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -612,6 +733,53 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+//..........................................................................................
+         
+        double oldprice;
+        double discountv;
+        double discount;
+        String DiscountVal;
+        String returnStr;
+        if(hasDiscount == true){
+        oldprice = double.parse(price);
+        discountv = double.parse(discountvalue);
+        discount = 0.0;
+        returnStr = discount.toString();
+
+        discount = (oldprice - discountv)/oldprice*100;
+        returnStr = discount.toStringAsFixed(0);
+        DiscountVal = discountvalue.toString();
+        }
+        else{
+          returnStr = "No discount";
+          DiscountVal = price;
+        }            
+                  await collectionReference.update(
+                        {
+                        'price':DiscountVal,
+                        'discount %':returnStr,
+
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _discount.clear();    
+
+            }          
+              
+          ),         
+         
 //location
 Row(mainAxisAlignment: MainAxisAlignment.start,
   children: [
@@ -729,7 +897,35 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           
 //]),
 
+
+         ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+            
+            location();
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _name.clear();    
+
+            }          
+              
+          ), 
+
+          const SizedBox(
+            height: 16,
+          ),  
+
 //mobile no
+
           TextField(
                   onChanged: ((value) {
                   mobileno= value;
@@ -748,11 +944,39 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
+         ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {            
+            
+                        'mobile no':mobileno,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _name.clear();    
+
+            }          
+              
+          ),         
+
+                   
 //gap btw borders
           const SizedBox(
             height: 16,
-          ),
+          ),      
+                     
 //emailID
+
           TextField(
                   onChanged: ((value) {
                   emailID= value;
@@ -769,6 +993,31 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             ),
 
           ),
+          ElevatedButton(
+           
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          child: const Text('Submit', style: TextStyle(color: Colors.white),),
+           onPressed: () async{
+                  await collectionReference.update(
+                        {
+                        'email id':emailID,
+                        });
+
+              Fluttertoast.showToast(  
+                      msg: 'Data updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                
+                  _emailID.clear();    
+
+            }          
+              
+          ),         
+
+            
 
 //gap btw borders
           const SizedBox(
@@ -861,14 +1110,16 @@ SizedBox(width: 10,),
                       ),
               ),
             ),
+
+//..........................................................................................
+
           ]),
 //..........................................................................................
 SizedBox(height: 10,),
-
-        Center(
-            child:  GestureDetector(
-              onTap: () {
-                 getImage2(true);
+Center(child: 
+              GestureDetector(
+              onTap: () {                
+                getImage2(true);
               },
               child: Container(
                 //radius: 55,
@@ -897,9 +1148,8 @@ SizedBox(height: 10,),
                         ),
                       ),
               ),
-            ),),
-//..........................................................................................
-
+            
+            )),
 
 
 //gap btw borders
@@ -910,15 +1160,29 @@ SizedBox(height: 10,),
  
 
 //Submit Button
+   StreamBuilder(
+      stream:  FirebaseFirestore.instance.collection("Medicinesell").doc(updatedocid).snapshots(),
+      builder: (context, snapshot) {
+         if (!snapshot.hasData) {
+          //hasdata = true;
+          return Center
+          (child: Text("0.0")
+     );
+        }
+        
+
+        else{
+          return 
           ElevatedButton(
            
           style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
-           setState(() {
-            isLoadingDF = true;
-          });
-              //uploadFile(_image);
+            try{
+              deleteFile(snapshot.data['images']);     
+              deleteFile(snapshot.data['images1']);  
+              deleteFile(snapshot.data['images2']);           
+  
               await saveImages(_image, _image1, _image2);
 
               Fluttertoast.showToast(  
@@ -928,23 +1192,23 @@ SizedBox(height: 10,),
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   ); 
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> sellerSucess()));
-                
-                
-              
-                 
-                  _id.clear();    
-                  _name.clear();         
-                  _dosage.clear();
-                  _address.clear();
-                  _price.clear();
-                  _discount.clear();
-                  _mobileno.clear();
-                  _emailID.clear();
-                  _storename.clear();
+            }   catch(e){
+             await saveImages(_image, _image1, _image2);
+
+              Fluttertoast.showToast(  
+                      msg: 'Data Added to DataBase',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+
+            }
+
             }          
               
-          ),
+          );
+    }}),        
           //gap btw borders
             const SizedBox(
               height: 10,
@@ -958,37 +1222,12 @@ SizedBox(height: 10,),
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
         ],
       ),
-          ),
-            ],
-        ),
-  ),
-    ],
-      ):Center(
-      
-      child: Image.asset('assets/splash/loading.gif'),),
-
-
-);
+        //   ),
+        //     ],
+        // ),
+  );
   }
 
  
 }
 
-
-
-/*              TextField(
-                decoration: InputDecoration(
-                  hintText: '100',
-                  labelText: 'Original Price',
-                  suffix: Text("\$"),
-                ),
-                onChanged: (value) => originalPrice = double.parse(value),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: '20',
-                  labelText: 'Discount Percentage',
-                  suffix: Text("%"),
-                ),
-                onChanged: (value) => discount = double.parse(value) / 100,
-              ),*/

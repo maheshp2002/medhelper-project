@@ -62,52 +62,12 @@ bool clocation;
 GeoPoint cloc;
 String datenow1 = DateFormat("yyyy-MM-dd").format(DateTime.now());
 
-//...........................................................................................
-//for date
-Datepicker() async {
-DateTime pickedDate = await showDatePicker(
-    context: context, //context of current state
-    initialDate: DateTime.now(),
-    firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
-    lastDate: DateTime(2101)
-);
-
-if(pickedDate != null ){
-    print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
-    String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
-    print(formattedDate); //formatted date output using intl package =>  2021-03-16
-}else{
-    print("Date is not selected");
-}
-}
-//...........................................................................................
-
 //..........................................................................................
 Future<String> uploadFile(_image) async {
 
             FirebaseStorage storage = FirebaseStorage.instance;
-              Reference ref = storage.ref().child(user.email + "1" + DateTime.now().toString());
+              Reference ref = storage.ref().child("image" + DateTime.now().toString());
               await ref.putFile(File(_image.path));
-              String returnURL = await ref.getDownloadURL();
-              return returnURL;
-            }
-
-//..........................................................................................
-Future<String> uploadFile1(_image1) async {
-
-            FirebaseStorage storage = FirebaseStorage.instance;
-              Reference ref = storage.ref().child(user.email + "2" + DateTime.now().toString());
-              await ref.putFile(File(_image1.path));
-              String returnURL = await ref.getDownloadURL();
-              return returnURL;
-            }
-
-//..........................................................................................
-Future<String> uploadFile2(_image2) async {
-
-            FirebaseStorage storage = FirebaseStorage.instance;
-              Reference ref = storage.ref().child(user.email + "3" + DateTime.now().toString());
-              await ref.putFile(File(_image2.path));
               String returnURL = await ref.getDownloadURL();
               return returnURL;
             }
@@ -115,7 +75,7 @@ Future<String> uploadFile2(_image2) async {
 //..........................................................................................
 //LOCATION
 //getCurrentLocation() async {
-  Future<void> saveImages(File _image, File _image1, File _image2) async {
+  Future<void> saveImages(File _image) async {
   Position position;
   if(clocation == true){
   position = await Geolocator.getCurrentPosition(
@@ -128,8 +88,6 @@ Future<String> uploadFile2(_image2) async {
                
               //_image.forEach((image) async {
               String imageURL = await uploadFile(_image);
-              String imageURL1 = await uploadFile(_image1);
-              String imageURL2 = await uploadFile(_image2);
                
 //..........................................................................................
          
@@ -172,8 +130,6 @@ Future<String> uploadFile2(_image2) async {
                         'email id':emailID,
                         'Latitude': cloc,
                         'images': imageURL,
-                        'images1': imageURL1,
-                        'images2': imageURL2,
                         'date' : datenow,
                         'Did':user.email,
                         'expire': expire,
@@ -204,8 +160,6 @@ Future<String> uploadFile2(_image2) async {
 // Image Picker
   //List<File> _images = [];
   File _image; // Used only if you need a single picture
-  File _image1; // Used only if you need a single picture
-  File _image2; // Used only if you need a single picture
 
   Future getImage(bool gallery) async {
     ImagePicker picker = ImagePicker();
@@ -230,57 +184,6 @@ Future<String> uploadFile2(_image2) async {
       }
     });
   }
-//........................................................................................
-
-  Future getImage1(bool gallery) async {
-    ImagePicker picker = ImagePicker();
-    PickedFile pickedFile;
-    // Let user select photo from gallery
-    if(gallery) {
-      pickedFile = await picker.getImage(
-          source: ImageSource.gallery,maxWidth: 150, maxHeight: 150);
-    } 
-    // Otherwise open camera to get new photo
-    else{
-      pickedFile = await picker.getImage(
-          source: ImageSource.camera,);
-    }
-
-    setState(() {
-      if (pickedFile != null) {
-        _image1 = File(pickedFile.path); // Use if you only need a single picture
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
-
-//..........................................................................................
-
-    Future getImage2(bool gallery) async {
-    ImagePicker picker = ImagePicker();
-    PickedFile pickedFile;
-    // Let user select photo from gallery
-    if(gallery) {
-      pickedFile = await picker.getImage(
-          source: ImageSource.gallery,maxWidth: 150, maxHeight: 150);
-    } 
-    // Otherwise open camera to get new photo
-    else{
-      pickedFile = await picker.getImage(
-          source: ImageSource.camera,);
-    }
-
-    setState(() {
-      if (pickedFile != null) {
-        _image2 = File(pickedFile.path); // Use if you only need a single picture
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
-
-
 
 //..........................................................................................
 //   var newPrice = 0.0;
@@ -411,36 +314,24 @@ Future<String> uploadFile2(_image2) async {
             height: 16,
           ),
 //expire.............................................................................................
-              TextField(
-                controller: _expire, //editing controller of this TextField
-                decoration: InputDecoration( 
-                   icon: Icon(Icons.calendar_today), //icon of text field
-                   labelText: "Enter Date" //label text of field
+          TextField(
+                 onChanged: ((value) {
+                  expire= value;
+                }),             
+            controller: _expire,
+            decoration: const InputDecoration(
+                hintText: "Expire data",
+                labelText: "Expire:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
                 ),
-                readOnly: true,  //set it true, so that user will not able to edit text
-                onTap: () async {
-                  DateTime pickedDate = await showDatePicker(
-                      context: context, initialDate: DateTime.now(),
-                      firstDate: DateTime(2000), //DateTime.now() - not to allow to choose before today.
-                      lastDate: DateTime(2101)
-                  );
-                  
-                  if(pickedDate != null ){
-                      print(pickedDate);  //pickedDate output format => 2021-03-10 00:00:00.000
-                      expire = DateFormat('yyyy-MM-dd').format(pickedDate); 
-                      //print(formattedDate); //formatted date output using intl package =>  2021-03-16
-                        //you can implement different kind of Date Format here according to your requirement
+                border: OutlineInputBorder()
+            ),
 
-                      setState(() {
-                         _expire.text = expire; //set output date to TextField value. 
-                      });
-                  }else{
-                      print("Date is not selected");
-                  }
-                },
-            
+            maxLength: 15,
+            keyboardType: TextInputType.number,
           ),
-
 //gap btw borders
           const SizedBox(
             height: 16,
@@ -542,7 +433,7 @@ Future<String> uploadFile2(_image2) async {
 //gap btw borders
             Row(children: [
           Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
-          Text("Note: If no, No need to enter New price.",
+          Text("Note: If no, No need to enter discount value.",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
             ]),
             const SizedBox(
@@ -601,7 +492,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             controller: _discount,
             decoration: const InputDecoration(
                 hintText: "new price",
-                labelText: "New price:",
+                labelText: "Discount price:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -787,13 +678,8 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           padding: EdgeInsets.all(15),
          shape: CircleBorder(),
 ),*/
-//..........................................................................................
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [ 
-
-              GestureDetector(
+          Center(
+            child: GestureDetector(
               onTap: () {
                  getImage(true);
               },
@@ -825,80 +711,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
                       ),
               ),
             ),
-
-//..........................................................................................
-SizedBox(width: 10,),
-
-              GestureDetector(
-              onTap: () {
-                 getImage1(true);
-              },
-              child: Container(
-                //radius: 55,
-              height: 150.0,
-                width: 150.0,
-                color: Colors.grey[200],
-                child: _image1 != null
-                    ? ClipRRect(
-                        //borderRadius: BorderRadius.circular(50),
-                        child: Image.file(
-                          _image1,
-                          width: 150,
-                          height: 150,
-                          fit: BoxFit.fill
-                        ),
-                      )
-                    : Container(
-                        decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(50)),
-                        width: 100,
-                        height: 100,
-                        child: Icon(
-                          Icons.camera_alt,
-                          color: Colors.grey[800],
-                        ),
-                      ),
-              ),
-            ),
-          ]),
-//..........................................................................................
-SizedBox(height: 10,),
-
-        Center(
-            child:  GestureDetector(
-              onTap: () {
-                 getImage2(true);
-              },
-              child: Container(
-                //radius: 55,
-              height: 150.0,
-                width: 150.0,
-                color: Colors.grey[200],
-                child: _image2 != null
-                    ? ClipRRect(
-                        //borderRadius: BorderRadius.circular(50),
-                        child: Image.file(
-                          _image2,
-                          width: 150,
-                          height: 150,
-                          fit: BoxFit.fill
-                        ),
-                      )
-                    : Container(
-                        decoration: BoxDecoration(
-                            color: Colors.grey[200],
-                            borderRadius: BorderRadius.circular(50)),
-                        width: 100,
-                        height: 100,
-                        child: Icon(
-                          Icons.camera_alt,
-                          color: Colors.grey[800],
-                        ),
-                      ),
-              ),
-            ),),
-//..........................................................................................
+          ),
 
 
 
@@ -919,8 +732,7 @@ SizedBox(height: 10,),
             isLoadingDF = true;
           });
               //uploadFile(_image);
-              await saveImages(_image, _image1, _image2);
-
+              await saveImages(_image);
               Fluttertoast.showToast(  
                       msg: 'Data Added to DataBase',  
                       toastLength: Toast.LENGTH_LONG,  

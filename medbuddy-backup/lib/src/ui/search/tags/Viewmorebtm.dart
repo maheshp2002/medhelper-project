@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/tags/bottleFull.dart';
+import 'package:medbuddy/src/ui/search/tags/viewmore/sellerFullvb.dart';
 import 'package:medbuddy/src/ui/search/values/colors_palette.dart';
 import 'package:medbuddy/src/ui/search/values/constants.dart';
 
@@ -8,13 +8,13 @@ import 'package:medbuddy/src/ui/search/values/constants.dart';
 
 
 
-class bottle extends StatefulWidget {
+class viewmorebtm extends StatefulWidget {
   @override
   _sellerMapageState createState() => _sellerMapageState();
 }
-var indexnobottle;
-String Bdocid;
-class _sellerMapageState extends State<bottle>{
+var indexnoviremore;
+String docidviewmore;
+class _sellerMapageState extends State<viewmorebtm>{
     //final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ return Scaffold(
         //   },
         // ),
         title: Text(
-          "Bottle",
+          "Med-Seller",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
@@ -42,7 +42,8 @@ return Scaffold(
   ),
 	body: 
    StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("Medicinesell").where('ID', isEqualTo: 'bottle').snapshots(),
+      stream: FirebaseFirestore.instance.collection("Medicinesell")
+          .orderBy("date", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {   
           return Center
@@ -82,10 +83,10 @@ return Scaffold(
       //width: size.width * 0.49,
       child:  GestureDetector(
             onTap: (){ 
-              indexnobottle= snapshot.data.docs[index];
-              Bdocid = snapshot.data.docs[index].id;
+              indexnoviremore= snapshot.data.docs[index];
+              docidviewmore = snapshot.data.docs[index].id;
               Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => bottleFull()));},
+              MaterialPageRoute(builder: (context) => SellerFullvb()));},
       child: Column(
         children: [
           Flexible(child: 

@@ -7,27 +7,26 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
-import 'package:medbuddy/src/ui/rateing/deleterating.dart';
-import 'package:medbuddy/src/ui/rateing/rateing.dart';
-// import 'package:medbuddy/src/ui/search/SellerMap.dart';
+import 'package:medbuddy/src/ui/rateing/rateingtag/viewmore/deleteratingvbt.dart';
+import 'package:medbuddy/src/ui/rateing/rateingtag/viewmore/rateingvbt.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
-import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhomebtm.dart';
+import 'package:medbuddy/src/ui/search/tags/Viewmorebtm.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:blinking_text/blinking_text.dart';
 
 var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
-class SellerFull extends StatefulWidget {
+class SellerFullvb extends StatefulWidget {
 
 @override
   _DetailedItemState createState() => _DetailedItemState();
 
 }
 
-class _DetailedItemState extends State<SellerFull> {
+class _DetailedItemState extends State<SellerFullvb> {
 
 
 
@@ -39,16 +38,16 @@ class _DetailedItemState extends State<SellerFull> {
 // String rating1;
 // SellerFull({this.rating1});
  List<String> images = [
-  indexnobtm['images'],
-  indexnobtm['images1'],
-  indexnobtm['images2']
+  indexnoviremore['images'],
+  indexnoviremore['images1'],
+  indexnoviremore['images2']
 
  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
-      title: Text(indexnobtm['medicine name']),
+      title: Text(indexnoviremore['medicine name']),
       backgroundColor: Colors.deepPurple,
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
@@ -65,13 +64,13 @@ class _DetailedItemState extends State<SellerFull> {
   body: Container(
     
     child: ListView(children: [
-       Padding(padding: EdgeInsets.all(10),
-    //  child: Image.network(indexnobtm['images'],
+      Padding(padding: EdgeInsets.all(10),
+    //  child: Image.network(indexnoviremore['images'],
     //             height: 300,
     //             width: 300,
                 
-    //      ),
-    child: SizedBox(
+    //      ),),
+     child: SizedBox(
       height: 300,
    child:  CarouselSlider(
           options: CarouselOptions(
@@ -108,11 +107,11 @@ class _DetailedItemState extends State<SellerFull> {
           .toList(),
     )
 
-    ),),
+    ),),   
 //............................................................................................................ 
 
    StreamBuilder(
-      stream:  FirebaseFirestore.instance.collection("average rating").doc(docidbtm).snapshots(),
+      stream:  FirebaseFirestore.instance.collection("average rating").doc(docidviewmore).snapshots(),
       builder: (context, snapshot) {
          if (!snapshot.hasData) {
           //hasdata = true;
@@ -149,9 +148,7 @@ class _DetailedItemState extends State<SellerFull> {
                   ])
                   )
                   ]);
-
                   }}),
-                
  
 //............................................................................................................
                   SizedBox(height: 20,),              
@@ -160,7 +157,7 @@ class _DetailedItemState extends State<SellerFull> {
                     children:[ 
                   Text("Price:", style: TextStyle(fontFamily: 'JosefinSansBD',fontSize: 10),),   
                   SizedBox(width: 5,),              
-                  Text(indexnobtm['price'],
+                  Text(indexnoviremore['price'],
                   style: TextStyle(color: Colors.red, fontSize: 30, fontFamily: 'arvoBold'),
                   ),
                   Text('Rs',style: TextStyle(color: Colors.grey, fontFamily: 'JosefinSansBD',fontSize: 10),),
@@ -173,7 +170,7 @@ class _DetailedItemState extends State<SellerFull> {
                   Text("Discount:", style: TextStyle(fontFamily: 'JosefinSans',fontSize: 10),),
                   SizedBox(width: 10,),
                   Padding(padding: EdgeInsets.only(right: 10),
-                  child: BlinkText(indexnobtm['discount %'] + "%",
+                  child: BlinkText(indexnoviremore['discount %'] + "%",
                   style: TextStyle(color: Colors.green, fontSize: 20, fontFamily: 'arvoBold'),
                   	endColor: Colors.greenAccent,
 	                  duration: Duration(seconds: 1)),
@@ -186,7 +183,7 @@ class _DetailedItemState extends State<SellerFull> {
           ), 
 
    StreamBuilder(
-      stream:  FirebaseFirestore.instance.collection("Medicinesell").doc(docidbtm).snapshots(),
+      stream:  FirebaseFirestore.instance.collection("Medicinesell").doc(docidviewmore).snapshots(),
       builder: (context, snapshot) {
          if (!snapshot.hasData) {
           //hasdata = true;
@@ -236,7 +233,7 @@ class _DetailedItemState extends State<SellerFull> {
 
     Card(
     child: ListTile(
-    title:  Text("Actual price:" + " " + indexnobtm['discount price']),
+    title:  Text("Actual price:" + " " + indexnoviremore['discount price']),
     )),
 
 //gap btw borders
@@ -246,7 +243,7 @@ class _DetailedItemState extends State<SellerFull> {
  
     Card(
     child: ListTile(
-    title:  Text("Dosage:" + " " + indexnobtm['dosage']),
+    title:  Text("Dosage:" + " " + indexnoviremore['dosage']),
     )),
 //gap btw borders
           const SizedBox(
@@ -262,7 +259,7 @@ class _DetailedItemState extends State<SellerFull> {
 //           ), 
     Card(
     child: ListTile(               
-    title:  Text("Address:" + " " + indexnobtm['address']),
+    title:  Text("Address:" + " " + indexnoviremore['address']),
     )),
 //gap btw borders
           const SizedBox(
@@ -270,7 +267,7 @@ class _DetailedItemState extends State<SellerFull> {
           ),
     Card(
     child: ListTile(                
-    title:  Text("Mobile no:" + " " + indexnobtm['mobile no']),
+    title:  Text("Mobile no:" + " " + indexnoviremore['mobile no']),
     trailing: Icon(Icons.arrow_forward_ios),
     onTap: (){
      _makePhoneCall();
@@ -282,7 +279,7 @@ class _DetailedItemState extends State<SellerFull> {
           ), 
     Card(
     child: ListTile(               
-    title:  Text("Email-id:" + " " + indexnobtm['email id']),
+    title:  Text("Email-id:" + " " + indexnoviremore['email id']),
     trailing: Icon(Icons.arrow_forward_ios),
         onTap: (){
      _sendingMails();
@@ -296,7 +293,7 @@ class _DetailedItemState extends State<SellerFull> {
           ),
     Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexnobtm['date']),
+    title:  Text("Date:" + " " + indexnoviremore['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -339,52 +336,15 @@ class _DetailedItemState extends State<SellerFull> {
     )),     
     ),
 
-
     SizedBox(
-      height: 20,
+      height: 10,
     ),
 
-  //  Row(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //   children: [
-  //   ElevatedButton(
-  //     style: ButtonStyle(
-  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-  //                 borderRadius: BorderRadius.circular(10))),
-  //     fixedSize: MaterialStateProperty.all(Size(150, 50)),
-  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 211, 211, 208))),
-  //     //onPressed: ,
-  //    child: Text("View cart", style: TextStyle(color: Colors.black),)),
-
-  //  SizedBox(
-  //     width: 30,
-  //   ),  
-
-  //   ElevatedButton(
-  //     style: ButtonStyle(
-  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-  //                 borderRadius: BorderRadius.circular(10))),
-  //     fixedSize: MaterialStateProperty.all(Size(150, 50)),
-  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 250, 225, 2))),
-  //     //onPressed: ,
-  //    onPressed: () { 
-  //      FirebaseFirestore.instance.collection("Medicinesell").doc(docidbtm).update({
-  //       'stockno': FieldValue.increment(-1),
-  //      });
-  //     },
-  //    child: Text("Add to cart", style: TextStyle(color: Colors.black),)),
-      
-  //     ]),
-
-
-  // SizedBox(
-  //     height: 20,
-  //   ),
 //button for fav  
         OutlineButton(
         onPressed: () async {
         
-        bool docExits = await checkIfDocExists(docidbtm);
+        bool docExits = await checkIfDocExists(docidviewmore);
         if(docExits == true){
           
          // checkbool1();
@@ -397,24 +357,24 @@ class _DetailedItemState extends State<SellerFull> {
                       textColor: Colors.white  
                   );
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));
-            return collectionCart.doc(docidbtm).delete();
+            return collectionCart.doc(docidviewmore).delete();
         } else{
           //checkbool1();
-          collectionCart.doc(docidbtm).set(
+          collectionCart.doc(docidviewmore).set(
                         {
-                          'medicine name': indexnobtm['medicine name'],
-                          'email id': indexnobtm['email id'],
-                          'mobile no': indexnobtm['mobile no'],
-                          'address': indexnobtm['address'],
-                          'price': indexnobtm['price'],
-                          'dosage': indexnobtm['dosage'],
-                          'discount %': indexnobtm['discount %'],
-                          'discount price': indexnobtm['discount price'],
-                          'images': indexnobtm['images'],
-                          'images1': indexnobtm['images1'],
-                          'images2': indexnobtm['images2'],
-                          'expire': indexnobtm['expire'],
-                          'date': indexnobtm['date'],
+                          'medicine name': indexnoviremore['medicine name'],
+                          'email id': indexnoviremore['email id'],
+                          'mobile no': indexnoviremore['mobile no'],
+                          'address': indexnoviremore['address'],
+                          'price': indexnoviremore['price'],
+                          'dosage': indexnoviremore['dosage'],
+                          'discount %': indexnoviremore['discount %'],
+                          'discount price': indexnoviremore['discount price'],
+                          'images': indexnoviremore['images'],
+                          'images1': indexnoviremore['images1'],
+                          'images2': indexnoviremore['images2'],
+                          'expire': indexnoviremore['expire'],
+                          'date': indexnoviremore['date'],
                             
 
                         });
@@ -488,7 +448,7 @@ class _DetailedItemState extends State<SellerFull> {
 
         SizedBox(height: 30,),
   StreamBuilder(
-      stream: FirebaseFirestore.instance.collection(docidbtm + "review")
+      stream: FirebaseFirestore.instance.collection(docidviewmore + "review")
           .orderBy("rateing", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
@@ -559,7 +519,7 @@ class _DetailedItemState extends State<SellerFull> {
                                 OutlineButton(
                                         onPressed: () async {
                                        
-                             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => rateing()));
+                             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => rateingvbt()));
                                         },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
@@ -588,7 +548,7 @@ class _DetailedItemState extends State<SellerFull> {
             SizedBox(height: 30,),
             InkWell(
           onTap: () async {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ratingdlt()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ratingdltvbt()));
 
           },
      child: new Padding(
@@ -617,7 +577,7 @@ class _DetailedItemState extends State<SellerFull> {
  _makePhoneCall() async {
     final Uri launchUri = Uri(
       scheme: 'tel',
-      path: indexnobtm['mobile no'],
+      path: indexnoviremore['mobile no'],
     );
     await launchUrl(launchUri);
   }
@@ -629,7 +589,7 @@ String encodeQueryParameters(Map<String, String> params) {
 }
 final Uri emailLaunchUri = Uri(
   scheme: 'mailto',
-  path: indexnobtm['email id'],
+  path: indexnoviremore['email id'],
   query: encodeQueryParameters(<String, String>{
     'subject': 'medhelper'
   }),
