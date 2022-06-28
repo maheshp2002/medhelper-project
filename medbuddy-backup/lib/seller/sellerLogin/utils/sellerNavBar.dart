@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
+import 'package:medbuddy/seller/orders/ordermap.dart';
 import 'package:medbuddy/seller/sellerLogin/Screens/sellerProfile.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerSettings.dart';
@@ -38,6 +39,11 @@ class sellerNavBar extends StatelessWidget {
             title: const Text('Profile'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: ((context) => SellerAbout())))}
           ),
+          ListTile(
+            leading: const Icon(Icons.shopping_bag),
+            title: const Text('Orders'),
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: ((context) => ordermap())))}
+          ),         
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),

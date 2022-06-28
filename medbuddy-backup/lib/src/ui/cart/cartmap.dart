@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/cart/cartfull.dart';
+import 'package:medbuddy/src/ui/cart/pdtcheck/Buymap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -21,6 +22,18 @@ return Scaffold(
   appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
+          actions: [
+          new IconButton(
+          icon: new Icon(Icons.domain_verification),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => buyMap()),
+            );
+          },
+        ),
+
+        ],
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {

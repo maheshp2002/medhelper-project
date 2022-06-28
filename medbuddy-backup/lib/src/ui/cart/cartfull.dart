@@ -9,7 +9,6 @@ import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/cart/viewcart.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/medicine_details/mddelete_splash/mddeleteSplash.dart';
-import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -21,6 +20,8 @@ class cartFull extends StatefulWidget {
 }
 
 class _DetailedItemState extends State<cartFull> {
+  final isstockempty = FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid);
+
    List<String> images = [
   cindexno['images'],
   cindexno['images1'],
@@ -355,7 +356,14 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
       fixedSize: MaterialStateProperty.all(Size(150, 50)),
         backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 250, 225, 2))),
       //onPressed: ,
-     onPressed: () { 
+     onPressed: () async { 
+        int cartempty;
+
+          await isstockempty.get().then((snapshot) {
+           cartempty = snapshot.get('stockno');
+        });
+
+        if (cartempty != 0){
         FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
          'stockno': FieldValue.increment(-1),
        });
@@ -371,6 +379,18 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );
+                  }  else {
+
+                      Fluttertoast.showToast(  
+                      msg: 'Out of stock',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white); 
+
+                  } 
+
      // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartSucess()));             
       },
      child: Text("Add to cart", style: TextStyle(color: Colors.black),)),
@@ -432,44 +452,6 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
   SizedBox(
       height: 10,
     ),
-
- /*           Padding(
-            padding: EdgeInsets.only(top: 10),
-                child: Card(
-                  color: Colors.grey[300],
-                 child: TextButton(                  
-                child: Row (
-                 //mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-               
-                  Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text("Remove from cart", textAlign: TextAlign.left,
-                  style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                        ),
-                ),
-                  ),
-
-         const SizedBox(
-            width: 10,
-          ),
-                  Icon(Icons.shopping_cart, color: Colors.grey),
-           const SizedBox(
-            width: 150,
-          ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black),
-                ],
-                ),
-     onPressed: () async{
-            return cindexno.delete();
-
-    }
-    )),     
-    ),
-*/
       
     ]
   ),),

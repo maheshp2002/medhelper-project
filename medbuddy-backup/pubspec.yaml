@@ -109,8 +109,8 @@ flutter:
     - assets/tick.png
     - assets/
     - assets/images/
+    - assets/ads/
     - assets/creatorspic/
-    - assets/icons/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

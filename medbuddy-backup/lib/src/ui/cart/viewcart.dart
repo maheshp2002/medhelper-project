@@ -3,10 +3,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:medbuddy/src/ui/cart/Buyproduct.dart';
 import 'package:medbuddy/src/ui/cart/cartfull.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
-import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -18,6 +18,10 @@ class viewcart extends StatefulWidget {
 }
 
 class _DetailedItemState extends State<viewcart> {
+  final isstockempty = FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid);
+  final iscartempty = FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid);
+
+
    List<String> images = [
   cindexno['images'],
   cindexno['images1'],
@@ -172,8 +176,10 @@ class _DetailedItemState extends State<viewcart> {
         else{
 //for stock no
           String stock;
+           int stckno;
           try{
-          int stckno = snapshot.data.get('stock');
+
+          stckno = snapshot.data.get('stock');
           stock = stckno.toStringAsFixed(0);
 
           }catch(e){
@@ -188,6 +194,7 @@ class _DetailedItemState extends State<viewcart> {
                       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
                       ),                      
                       onPressed: (){
+          if(stckno != 0){
          FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
          'stockno': FieldValue.increment(1),
        });
@@ -201,8 +208,18 @@ class _DetailedItemState extends State<viewcart> {
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
-                      textColor: Colors.white  
-                  );                       
+                      textColor: Colors.white); 
+                 } else {
+
+                      Fluttertoast.showToast(  
+                      msg: 'Cart empty',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white);                 
+                  }
+
                       },
                      child: Text("-", style: TextStyle(fontSize: 30, color: Colors.black,)) ,
                      ),
@@ -215,11 +232,18 @@ class _DetailedItemState extends State<viewcart> {
                   style: TextStyle(color: Colors.black,
                   fontWeight: FontWeight.w700, fontSize: 15,),)),
 
-                     ElevatedButton(
+                   ElevatedButton(
                       style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
                       ),
-                      onPressed: (){
+                      onPressed: () async{
+                       int cartempty;
+           await isstockempty.get().then((snapshot) {
+           cartempty = snapshot.get('stockno');
+        });
+
+        if (cartempty != 0){
+                        
          FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
          'stockno': FieldValue.increment(-1),
        });
@@ -233,8 +257,18 @@ class _DetailedItemState extends State<viewcart> {
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
-                      textColor: Colors.white  
-                  );                       
+                      textColor: Colors.white);  
+                  }  else {
+
+                      Fluttertoast.showToast(  
+                      msg: 'Out of stock',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white); 
+
+                  }                     
                       },
                      child: Icon(Icons.add, color: Colors.black,),
                      
@@ -363,93 +397,101 @@ class _DetailedItemState extends State<viewcart> {
     }
     )),     
     ),
-    SizedBox(
-      height: 10,
-    ),
+  //   SizedBox(
+  //     height: 10,
+  //   ),
 
-    Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-    ElevatedButton(
-      style: ButtonStyle(
-       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
-      fixedSize: MaterialStateProperty.all(Size(150, 50)),
-        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 211, 211, 208))),
-      //onPressed: ,
-     child: Text("View wishlist", style: TextStyle(color: Colors.black),)),
+  //   Row(
+  //     mainAxisAlignment: MainAxisAlignment.center,
+  //   children: [
+  //   ElevatedButton(
+  //     style: ButtonStyle(
+  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+  //                 borderRadius: BorderRadius.circular(10))),
+  //     fixedSize: MaterialStateProperty.all(Size(150, 50)),
+  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 211, 211, 208))),
+  //     //onPressed: ,
+  //    child: Text("View wishlist", style: TextStyle(color: Colors.black),)),
 
-   SizedBox(
-      width: 30,
-    ),  
+  //  SizedBox(
+  //     width: 20,
+  //   ),  
 
-    ElevatedButton(
-      style: ButtonStyle(
-       shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10))),
-      fixedSize: MaterialStateProperty.all(Size(150, 50)),
-        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 250, 225, 2))),
-      //onPressed: ,
-     onPressed: () { 
-        FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
-         'stockno': FieldValue.increment(1),
-       });
-                       Fluttertoast.showToast(  
-                      msg: 'Item removed from cart',  
-                      toastLength: Toast.LENGTH_LONG,  
-                      gravity: ToastGravity.BOTTOM,  
-                      //timeInSecForIosWeb: 1,  
-                      backgroundColor: Colors.black,  
-                      textColor: Colors.white  
-                  );
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartSucess()));             
-      },
-     child: Text("Removed from cart", style: TextStyle(color: Colors.black),)),
+  //   ElevatedButton(
+  //     style: ButtonStyle(
+  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+  //                 borderRadius: BorderRadius.circular(10))),
+  //     fixedSize: MaterialStateProperty.all(Size(170, 50)),
+  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 250, 225, 2))),
+  //     //onPressed: ,
+  //    onPressed: () { 
+  //       FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
+  //        'stockno': FieldValue.increment(1),
+  //      });
+  //                      Fluttertoast.showToast(  
+  //                     msg: 'Item removed from cart',  
+  //                     toastLength: Toast.LENGTH_LONG,  
+  //                     gravity: ToastGravity.BOTTOM,  
+  //                     //timeInSecForIosWeb: 1,  
+  //                     backgroundColor: Colors.black,  
+  //                     textColor: Colors.white  
+  //                 );
+  //     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartSucess()));             
+  //     },
+  //    child: Text("Remove from cart", style: TextStyle(color: Colors.black),)),
       
-      ]),
+  //     ]),
 
 
   SizedBox(
       height: 10,
     ),
 
- /*           Padding(
-            padding: EdgeInsets.only(top: 10),
-                child: Card(
-                  color: Colors.grey[300],
-                 child: TextButton(                  
-                child: Row (
-                 //mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-               
-                  Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text("Remove from cart", textAlign: TextAlign.left,
-                  style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                        ),
-                ),
-                  ),
+  StreamBuilder(
+      stream:  FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid).snapshots(),
+      builder: (context, snapshot) {
+         if (!snapshot.hasData) {
+          //hasdata = true;
+          return Center
+          (child: Text("0.0")
+     );
+        }
+        
 
-         const SizedBox(
-            width: 10,
-          ),
-                  Icon(Icons.shopping_cart, color: Colors.grey),
-           const SizedBox(
-            width: 150,
-          ),
-                  Icon(Icons.arrow_forward_ios, color: Colors.black),
-                ],
-                ),
-     onPressed: () async{
-            return cindexno.delete();
+        else{
+     return ElevatedButton(
+      style: ButtonStyle(
+       shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+      //fixedSize: MaterialStateProperty.all(Size(170, 50)),
+        backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 250, 225, 2))),
+      //onPressed: ,
+     onPressed: () async { 
+      //stckno = snapshot.data.get('stock').toString();
+          int cartempty;
+           await iscartempty.get().then((snapshot) {
+           cartempty = snapshot.get('stock');
+        });
 
-    }
-    )),     
+        if (cartempty != 0){
+      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Buyproduct())); 
+      } else {
+                     Fluttertoast.showToast(  
+                      msg: 'Cart empty',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white); 
+                  }            
+      },
+     child: Text("Buy Product", style: TextStyle(color: Colors.black),));  
+
+}}),
+
+  SizedBox(
+      height: 10,
     ),
-*/
       
     ]
   ),),

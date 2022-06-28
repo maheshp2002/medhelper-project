@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/search/tags/viewmore/sellerFullvb.dart';
@@ -14,7 +15,14 @@ class viewmorebtm extends StatefulWidget {
 }
 var indexnoviremore;
 String docidviewmore;
+
 class _sellerMapageState extends State<viewmorebtm>{
+     List<String> images = [
+'assets/ads/Picsart_22-06-27_15-16-10-382.png',
+'assets/ads/Picsart_22-06-27_17-30-44-638.png',
+'assets/ads/Picsart_22-06-27_17-33-52-733.png'
+
+ ];
     //final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
   @override
   Widget build(BuildContext context) {
@@ -59,7 +67,50 @@ return Scaffold(
         else{
 //new streambuilder include image
         
-           return GridView.builder(
+           return ListView(
+           children: [
+   SizedBox(
+      height: 300,
+   child:  CarouselSlider(
+          options: CarouselOptions(
+            scrollPhysics: const ScrollPhysics(
+              parent: BouncingScrollPhysics(),
+            ),
+            height: 200,
+            enableInfiniteScroll: false,
+            enlargeCenterPage: true,
+            autoPlay: true,
+          ),
+          items: images
+          .map(
+            (e) => Container(
+              alignment: Alignment.topRight,
+              margin: const EdgeInsets.all(12.0),
+              decoration: BoxDecoration(
+                //borderRadius: BorderRadius.circular(20.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 221, 218, 233).withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 30.0,
+                    offset: -Offset(0, 3),
+                  ),
+                ],
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(e),
+                ),
+              ),
+            ),
+          )
+          .toList(),
+    )
+
+    ),         
+            
+            
+            
+            GridView.builder(
                   physics: ScrollPhysics(),
                   padding: EdgeInsets.all(5),
                   scrollDirection: Axis.vertical,
@@ -151,7 +202,7 @@ return Scaffold(
     ));
 
 
-});       
+})]);       
   }
   }
   ));
