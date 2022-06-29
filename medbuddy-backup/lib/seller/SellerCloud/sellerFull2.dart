@@ -17,7 +17,7 @@ class _DetailedItemState extends State<SellerFull2> {
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
       title: Text(sindexno['medicine name']),
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.deepPurple,
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {

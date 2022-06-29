@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/seller/orders/Updatestatus.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 
@@ -22,7 +23,7 @@ User user = FirebaseAuth.instance.currentUser;
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         title: Text(
           "Product orders",
           style: TextStyle(
@@ -63,6 +64,35 @@ return Scaffold(
                   itemBuilder: (BuildContext context, int index) {
                     return Card(
                     child: ListTile(
+                     onLongPress: () {
+                      
+        showModalBottomSheet<void>(context: context,
+            builder: (BuildContext context) {
+                return Container(
+                    child: new Wrap(
+                    children: <Widget>[
+                        new ListTile(
+                        leading: new Icon(Icons.delete),
+                        title: new Text('Remove'),
+                        onTap: () async{
+                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
+                        await myTransaction.delete(snapshot.data.docs[index].reference);
+                          Fluttertoast.showToast(  
+                          msg: 'Item removed from orders',  
+                          toastLength: Toast.LENGTH_LONG,  
+                          gravity: ToastGravity.BOTTOM,  
+                          //timeInSecForIosWeb: 1,  
+                          backgroundColor: Colors.black,  
+                          textColor: Colors.white  
+                      );                       
+                        }
+                        );
+                        })
+                        ]
+                        )
+                        );}
+                        );
+                    },                      
                       onTap: (){
                       orderdocid = snapshot.data.docs[index].id;
                       orderindexno = snapshot.data.docs[index];

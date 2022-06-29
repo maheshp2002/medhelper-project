@@ -91,12 +91,12 @@ return Scaffold(
                     children: <Widget>[
                         new ListTile(
                         leading: new Icon(Icons.delete),
-                        title: new Text('Cancel delivery'),
+                        title: new Text('Remove'),
                         onTap: () async{
                         await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
                         await myTransaction.delete(snapshot.data.docs[index].reference);
                           Fluttertoast.showToast(  
-                          msg: 'Item canceled',  
+                          msg: 'Item removed',  
                           toastLength: Toast.LENGTH_LONG,  
                           gravity: ToastGravity.BOTTOM,  
                           //timeInSecForIosWeb: 1,  

@@ -53,7 +53,7 @@ if(pickedDate != null ){
       drawer: dcNavBar(),
         appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.deepPurple,
         title: Text("Home"),
         elevation: 16.0,
         leading: Builder(
@@ -196,7 +196,7 @@ if(pickedDate != null ){
                   width: 220,
                   height: 70,
                   child: FlatButton(
-                    color: Colors.blue,
+                    color: Colors.deepPurple,
                     shape: StadiumBorder(),
                     child: Center(
                       child: Text(

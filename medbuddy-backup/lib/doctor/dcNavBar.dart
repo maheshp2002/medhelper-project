@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
 import 'package:medbuddy/doctor/doctorProfile.dart';
 import 'package:medbuddy/doctor/doctorSettings.dart';
+import 'package:medbuddy/doctor/doctorconsult/consultprofile.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -55,7 +56,7 @@ class dcNavBar extends StatelessWidget {
                             width: MediaQuery.of(context).size.width / 2.743,
                             padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
                             decoration: BoxDecoration(
-                              color: Colors.orange,
+                              color: Colors.deepPurple,
                               //Color(0xFF3EB16F),
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(30.0),
@@ -132,6 +133,11 @@ class dcNavBar extends StatelessWidget {
             title: Text('Profile'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => doctorAbout()))},
           ),
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('Public profile'),
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => consult()))},
+          ),          
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),

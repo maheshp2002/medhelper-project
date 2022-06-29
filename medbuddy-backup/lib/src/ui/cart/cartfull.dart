@@ -230,14 +230,6 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
           const SizedBox(
             height: 16,
           ),  
-    Card(
-    child: ListTile(              
-    title:  Text("Price:" + " " + cindexno['price']),
-    )),
-//gap btw borders
-          const SizedBox(
-            height: 16,
-          ), 
 //     Card(
 //     child: ListTile(              
 //     title:  Text("Expire date:" + " " + indexnobtm['expire']),

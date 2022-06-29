@@ -16,7 +16,7 @@ class DeleteState extends State<DeletePdt>{
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
         title: Text(
           "Delete Product",

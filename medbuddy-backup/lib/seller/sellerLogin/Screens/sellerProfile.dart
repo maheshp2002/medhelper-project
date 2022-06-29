@@ -22,7 +22,7 @@ class _HomePageState extends State<SellerAbout> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         title: Text("About"),
         elevation: 16.0,
          leading: new IconButton(

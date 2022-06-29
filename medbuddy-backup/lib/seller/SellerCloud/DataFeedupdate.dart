@@ -260,7 +260,7 @@ Future<String> uploadFile2(_image2) async {
           icon: Icon(Icons.arrow_back),
           onPressed: (){Navigator.pop(context);},
         ),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         title:   Text(updateindexno['medicine name']),
 ),
 //page UI.....................................................................................
@@ -292,7 +292,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -337,7 +337,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -386,7 +386,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -435,7 +435,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -484,7 +484,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -532,7 +532,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -580,7 +580,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -629,7 +629,7 @@ Future<String> uploadFile2(_image2) async {
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{          
                   await collectionReference.update(
@@ -735,7 +735,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
 //..........................................................................................
@@ -900,7 +900,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
 
          ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
             
@@ -946,7 +946,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           ),
          ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -995,7 +995,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           ),
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
                   await collectionReference.update(
@@ -1175,7 +1175,7 @@ Center(child:
           return 
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
             try{

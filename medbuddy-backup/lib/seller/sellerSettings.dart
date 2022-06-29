@@ -16,7 +16,7 @@ class _SettingsPageState extends State<sellerSettings>{
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
           leading: new IconButton(
           icon: new Icon(Icons.arrow_back),

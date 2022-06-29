@@ -18,7 +18,7 @@ class _sellerMapageState extends State<sellerMap2>{
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         //Color(0xFF3EB16F),
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
@@ -59,93 +59,6 @@ return Scaffold(
 //new streambuilder include image
         return  ListView(
           children: [
- //.......................................................................................................
- //top bar 
-  /*    Padding(padding: EdgeInsets.only(top: 60, left: 10),  
-     child: Text("Categories:",textAlign: TextAlign.start,
-      style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
-      Divider(
-        indent: 20,
-        endIndent: 20,
-        color: Colors.black,
-    ),      
-
-      Padding(padding: EdgeInsets.all(10),            
-            child: Row( 
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Pill",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ],),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> pill()));
-              }
-              ),
-
-              SizedBox(width: 5,),
-
-             TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Syringe",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-                onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> syringe()));
-              }            
-              ),  
-
-            SizedBox(width: 5,),
-
-            TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Tablet",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> tablet()));
-              }          
-              ),
-
-              SizedBox(width: 5,),    
-
-             TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Bottle",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> bottle()));
-              }             
-              )
-                                
-              
-              ]),),
-
-
-      Padding(padding: EdgeInsets.only(left: 10, top: 20),  
-     child: Text("Products",textAlign: TextAlign.start,
-      style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
-      Divider(
-        indent: 20,
-        endIndent: 20,
-        color: Colors.black,
-    ),
- //.......................................................................................................
- */
              GridView.builder(
                   physics: ScrollPhysics(),
                   padding: EdgeInsets.all(10),
@@ -210,49 +123,3 @@ return Scaffold(
        
   
   
-  //....................................................................................................
-  
-  /*StreamBuilder(stream: collectionReference,
-   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-     if(snapshot.hasData){
-       return ListView.separated(
-         itemBuilder:(BuildContext context, int index) {
-           return Column(
-              children: snapshot.data.docs.map((doc) {
-                return Card(
-                  child: ListTile(
-                    title: Text(snapshot.data.docs[index]['medicine name']),
-                    subtitle:  Text(snapshot.data.docs[index]['store name']),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: (){
-                      sindexno = snapshot.data.docs[index];
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull2())
-                      );
-                    },
-                  ),
-                );
-              }).toList(),);
-              
-              },
-               separatorBuilder: (context, index) {
-           return Divider(
-             color: Colors.grey,
-             thickness: 5,
-             height: 20,             
-           );
-          },
-              itemCount: snapshot.data.docs.length,
-       );
-     }
-     return Center(child:
-     Text("No medicine found!", style: TextStyle(fontSize: 20,color: Colors.grey),),
-     );
-     },),
-
-  );
-	
-  
-}
-}*/
-//......................................................................................................

@@ -22,7 +22,7 @@ User user = FirebaseAuth.instance.currentUser;
   Widget build(BuildContext context) {
 return Scaffold(
   appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         title: Text(
           "Update product",
           style: TextStyle(

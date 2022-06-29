@@ -315,7 +315,7 @@ Future<String> uploadFile2(_image2) async {
        drawer: sellerNavBar(),
         appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.deepPurple,
         title:  const Text("Home"),
         elevation: 16.0,
         leading: Builder(
@@ -912,7 +912,7 @@ SizedBox(height: 10,),
 //Submit Button
           ElevatedButton(
            
-          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+          style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
           child: const Text('Submit', style: TextStyle(color: Colors.white),),
            onPressed: () async{
            setState(() {
