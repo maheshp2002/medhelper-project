@@ -87,6 +87,7 @@ String pointC;
                     Text("Packed:", style: TextStyle(fontSize: 20),),
                     SizedBox(width: 10,),
                     ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'packed': "Packed. Out to delivery",
@@ -115,6 +116,7 @@ String pointC;
                   
                   SizedBox(height: 10,),
                     ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'reachedA': "Reached" + " " + pointA,
@@ -144,6 +146,7 @@ String pointC;
                   
                   SizedBox(height: 10,),
                     ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'reachedB': "Reached" + " " + pointB,
@@ -173,6 +176,7 @@ String pointC;
                   
                   SizedBox(height: 10,),
                     ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'arrival': "Arrive at" + " " + pointC,
@@ -188,6 +192,7 @@ String pointC;
                     Text("Delivered:", style: TextStyle(fontSize: 20),),
                     SizedBox(width: 10,),
                      ElevatedButton(
+                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'delivered': "delivered",

@@ -24,7 +24,7 @@ class reset extends StatelessWidget {
         style: new TextStyle(
             fontWeight: FontWeight.w300,
             letterSpacing: 0.5,
-            color: Colors.white,
+            color: Colors.grey,
             fontSize: 12.0),
       ),
     ));

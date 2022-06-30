@@ -1,0 +1,96 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/consult/doctorsr.dart';
+
+class Specialization extends StatefulWidget {
+  const Specialization({ Key key}) : super(key: key);
+
+  @override
+  DataState createState() => DataState();
+}
+
+class DataState extends State<Specialization>{
+
+User user = FirebaseAuth.instance.currentUser;
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+         appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        title:  const Text("Specialization"),
+        elevation: 16.0,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.white, 
+              ),
+              onPressed: () {
+               Navigator.pop(context);
+              },            
+            );
+          },
+        ),
+        ),     
+      body: ListView(children: [
+
+          Column(children: [
+          Card(child:         
+          ListTile(
+          leading: Text("Dermatologist", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),
+          trailing: Icon(Icons.arrow_forward_ios)
+          ),),
+
+          SizedBox(height: 10,),
+
+          Card(child:
+          ListTile(leading:
+          Text("Neurologist", textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
+          trailing: Icon(Icons.arrow_forward_ios)
+          ),),
+
+          SizedBox(height: 10,),
+
+          Card(child:
+          ListTile(leading: 
+          Text("Gastroenterologist", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),
+          trailing: Icon(Icons.arrow_forward_ios)
+          ),),
+
+          SizedBox(height: 10,),
+
+          Card(child:
+          ListTile(leading: 
+          Text("Pediatritian", textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),
+          trailing: Icon(Icons.arrow_forward_ios)
+          ),),
+
+          SizedBox(height: 10,),
+
+          Card(child:
+          ListTile(leading:
+          Text("Orthologist", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),
+          trailing: Icon(Icons.arrow_forward_ios)
+          ),),  
+
+           SizedBox(height: 10,),
+
+          Card(child:
+          ListTile(leading:
+          Text("Other", textAlign: TextAlign.left, style: TextStyle(fontSize: 20),),
+          trailing: Icon(Icons.arrow_forward_ios),
+          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> Home()));},
+          ),),           
+
+          ]),
+          //),                           
+
+        ],),
+ 
+    );
+  }
+
+}

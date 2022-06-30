@@ -272,7 +272,7 @@ class _DetailedItemState extends State<pillFull> {
     )),
         Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexnopill['date']),
+    title:  Text("Expire date:" + " " + indexnopill['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -440,7 +440,7 @@ class _DetailedItemState extends State<pillFull> {
                                       ),           
         SizedBox(height: 40,),
 
-        Text("Coustomer Review:",
+        Text("Customer Review:",
         style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
         ),
 
@@ -458,7 +458,7 @@ class _DetailedItemState extends State<pillFull> {
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No coustomer rateing")
+          (child: Text("No customer rating")
      );
         }
         
@@ -466,7 +466,7 @@ class _DetailedItemState extends State<pillFull> {
 
           
             return Center
-          (child: Text("No coustomer rateing",
+          (child: Text("No customer rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

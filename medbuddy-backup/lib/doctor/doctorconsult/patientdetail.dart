@@ -1,17 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/doctor/doctorconsult/patients.dart';
 
-class publicprofileview extends StatefulWidget {
-  const publicprofileview({ Key key}) : super(key: key);
+class patientdetail extends StatefulWidget {
+  const patientdetail({ Key key}) : super(key: key);
 
   @override
   DataState createState() => DataState();
 }
 
-class DataState extends State<publicprofileview>{
+class DataState extends State<patientdetail>{
 
-User user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ User user = FirebaseAuth.instance.currentUser;
     return Scaffold(
          appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title:  const Text("Public profile"),
+        title:  const Text("Patient profile"),
         elevation: 16.0,
         leading: Builder(
           builder: (BuildContext context) {
@@ -35,11 +34,9 @@ User user = FirebaseAuth.instance.currentUser;
           },
         ),),     
       body: StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("consultDoctors")
-     // .where('Did',isEqualTo: user.email)
-     .doc(user.email).snapshots(),
+      stream: FirebaseFirestore.instance.collection("UserpublicID").doc(docidpatients).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        try{
+
          if (!snapshot.hasData) {
           return Center
           (child:Image.asset("assets/nothing.gif")
@@ -64,19 +61,15 @@ User user = FirebaseAuth.instance.currentUser;
           // child: 
           Column(children: [
           ListTile(
-          leading: Text("Doctor name:" + " " + snapshot.data['doctor name'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20),)),
+          leading: Text("User name:" + " " + snapshot.data['User name'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20),)),
 
           SizedBox(height: 10,),
 
           ListTile(leading:
-          Text("Reg no:" + " " + snapshot.data['regno'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),),
+          Text("Age:" + " " + snapshot.data['age'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),),
 
           SizedBox(height: 10,),
 
-          ListTile(leading: 
-          Text("Specialization:" + " " + snapshot.data['specialization'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20),)),
-
-          SizedBox(height: 10,),
 
           ListTile(leading:
           Text("Mobile no:" + " " + snapshot.data['mobile no'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20),)),   
@@ -87,7 +80,7 @@ User user = FirebaseAuth.instance.currentUser;
           Card(child: Row(mainAxisAlignment: MainAxisAlignment.start,
           children: [
           SizedBox(width: 10,),
-          Text("Consult time:" + "\n\n" + snapshot.data['consultTime'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),],)),
+          Text("Health issues:" + "\n\n" + snapshot.data['issue'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),],)),
           
           SizedBox(height: 20,),
 
@@ -96,11 +89,6 @@ User user = FirebaseAuth.instance.currentUser;
 
         ],);
 
-  }
-  } catch(e){
-          return Center
-          (child: Image.asset("assets/nothing.gif")
-     );
   }
 
      }),

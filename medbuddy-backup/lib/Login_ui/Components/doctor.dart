@@ -28,7 +28,7 @@ class Doctor extends StatelessWidget {
         style: new TextStyle(
             fontWeight: FontWeight.w500,
             letterSpacing: 0.5,
-            color: Colors.white60,
+            color: Colors.grey,
             fontSize: 15),
       ),
     ));

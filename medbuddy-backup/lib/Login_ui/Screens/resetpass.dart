@@ -115,7 +115,7 @@ class _reserpassState extends State<resetpass> {
                                         borderSide: BorderSide(
                                             color: MyColors.lighterPink,
                                             width: MyDimens.double_1),
-                                        color: MyColors.primaryColor,
+                                        color: Color.fromARGB(255, 245, 241, 241),
                                         child: Padding(
                                           padding: EdgeInsets.only(
                                               top: MyDimens.double_15,

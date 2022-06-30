@@ -53,7 +53,7 @@ class FormContainer extends StatelessWidget {
               ),
               Padding(padding: EdgeInsets.only(top: 20),
                child: RaisedButton(
-                 color: Colors.pinkAccent,
+                 color: Colors.deepPurple,
                  child: Text("Sign In", style: TextStyle(color: Colors.white),),
         onPressed: (){
           context.read<AuthenticationService>().signIn(

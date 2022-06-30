@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/1mg.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/netmeds.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/pharmeasy.dart';
-import 'package:medbuddy/src/ui/search/SellerMap.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 

@@ -271,7 +271,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
     )),
         Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + cindexno['date']),
+    title:  Text("Expire date:" + " " + cindexno['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -444,7 +444,20 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
   SizedBox(
       height: 10,
     ),
-      
+        Text(
+                "Note:- Please delete all cart items before \nremoving from wishlist.",
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
+                style: new TextStyle(
+                    fontWeight: FontWeight.w300,
+                    letterSpacing: 0.5,
+                    color: Colors.grey,
+                    fontSize: 12.0),
+              ),    
+   SizedBox(
+      height: 10,
+    ),     
     ]
   ),),
 );

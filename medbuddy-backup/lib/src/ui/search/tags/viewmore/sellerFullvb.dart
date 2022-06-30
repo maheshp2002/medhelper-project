@@ -293,7 +293,7 @@ class _DetailedItemState extends State<SellerFullvb> {
           ),
     Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexnoviremore['date']),
+    title:  Text("Expire date:" + " " + indexnoviremore['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -436,7 +436,7 @@ class _DetailedItemState extends State<SellerFullvb> {
  
         SizedBox(height: 40,),
 
-        Text("Coustomer Review:",
+        Text("Customer Review:",
         style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
         ),
 
@@ -454,7 +454,7 @@ class _DetailedItemState extends State<SellerFullvb> {
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No coustomer rating")
+          (child: Text("No customer rating")
      );
         }
         
@@ -462,7 +462,7 @@ class _DetailedItemState extends State<SellerFullvb> {
 
           
             return Center
-          (child: Text("No coustomer rateing",
+          (child: Text("No customer rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

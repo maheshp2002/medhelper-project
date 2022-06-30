@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
 import 'package:medbuddy/doctor/doctorProfile.dart';
 import 'package:medbuddy/doctor/doctorSettings.dart';
+import 'package:medbuddy/doctor/doctorconsult/channelInput.dart';
 import 'package:medbuddy/doctor/doctorconsult/consultprofile.dart';
 import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
@@ -137,7 +138,12 @@ class dcNavBar extends StatelessWidget {
             leading: Icon(Icons.person),
             title: Text('Public profile'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => consult()))},
-          ),          
+          ),  
+          ListTile(
+            leading: Icon(Icons.person_add),
+            title: Text('Consult'),
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Dvideocall()))},
+          ),                  
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),

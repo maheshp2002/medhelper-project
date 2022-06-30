@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/doctor/dcNavBar.dart';
 import 'package:medbuddy/global/myColors.dart';
@@ -16,6 +17,7 @@ class DeleteReg extends StatefulWidget {
 
 class DeleteState extends State<DeleteReg>{
   User user1 = FirebaseAuth.instance.currentUser;
+  var collectionreference = FirebaseFirestore.instance.collection("consultDoctors");
   @override
   Widget build(BuildContext context) {
 return Scaffold(
@@ -63,24 +65,35 @@ return Scaffold(
           ), 
                 
         Text("- This will log you out",style: TextStyle(fontFamily: 'JosefinSans',fontSize: 15),),      
-           
+
            const SizedBox(
             height: 20,
           ), 
+ Row(mainAxisAlignment: MainAxisAlignment.center,
+  children: [  
+                              OutlineButton( 
+                                onPressed: () async {
+                                        showModalBottomSheet<void>(context: context,
+                                        builder: (BuildContext context) {
+                                        return Container(
+                                        child: new Wrap(
+                                        children: <Widget>[
+                                        new ListTile(
+                                        leading: new Icon(Icons.delete),
+                                        title: new Text('Delete'),
+                                          onTap: () async{                                        
 
-                                     OutlineButton(
-                                        onPressed: () async {
-                                          SharedPreferences prefs = await SharedPreferences.getInstance();
+                                          await FirebaseFirestore.instance.collection("DoctorsValidation").doc(user1.email).delete();    
+                                            SharedPreferences prefs = await SharedPreferences.getInstance();
                                           await prefs.setBool('validation', false);  
                                           await prefs.setBool('doctor', false); 
-                                          await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
-                                          await myTransaction.delete(
-                                            FirebaseFirestore.instance.collection("DoctorsValidation").doc(user1.email));   
-                                      });                                         
 
-                                          logout();
-                                            
-                                        },
+                                          logout();                                          
+                                          },
+                                        ),
+                                                    ])
+                                                    ); 
+                                                    });  },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
                                                 MyDimens.double_4)),
@@ -92,7 +105,7 @@ return Scaffold(
                                           padding: EdgeInsets.only(
                                               top: MyDimens.double_15,
                                               bottom: MyDimens.double_15),
-                                          child: Text("Delete",
+                                          child: Text("Delete account",
                                               style: Theme.of(context)
                                                   .textTheme
                                                   .subtitle1
@@ -104,6 +117,83 @@ return Scaffold(
                                                  )),
                                         ),
                                       ),  
+  
+
+              const SizedBox(
+            width: 20,
+          ),          
+            StreamBuilder(
+                stream: FirebaseFirestore.instance.collection("consultDoctors")
+              // .where('Did',isEqualTo: user.email)
+              .doc(user1.email).snapshots(),
+                builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+
+        
+
+                                    return OutlineButton(
+                                        onPressed: () async {
+                                         showModalBottomSheet<void>(context: context,
+                                        builder: (BuildContext context) {
+                                        return Container(
+                                        child: new Wrap(
+                                        children: <Widget>[
+                                        new ListTile(
+                                        leading: new Icon(Icons.delete),
+                                        title: new Text('Delete'),
+                                          onTap: () async{                                            
+                                          deleteFile(snapshot.data['images']);
+
+                                          await FirebaseFirestore.instance.collection("consultDoctors").doc(user1.email).delete();   
+                                          await FirebaseFirestore.instance.collection("DoctorsValidation").doc(user1.email).delete();          
+                                          
+                                          SharedPreferences prefs = await SharedPreferences.getInstance();
+                                          await prefs.setBool('validation', false);  
+                                          await prefs.setBool('doctor', false); 
+                                          logout();
+                                          try{
+                                          await FirebaseFirestore.instance.collection(user1.email + "review").snapshots().forEach((element) {
+                                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                                            snapshot.reference.delete();
+                                          }});   }
+                                          catch(e){
+                                            print(e);
+                                          } 
+                                          
+                                          
+                                  
+ 
+                                        },
+                                                                                ),
+                                      ])
+                                       ); 
+                                       });  },
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                                MyDimens.double_4)),
+                                        borderSide: BorderSide(
+                                            color: MyColors.lighterPink,
+                                            width: MyDimens.double_1),
+                                        color: MyColors.primaryColor,
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              top: MyDimens.double_15,
+                                              bottom: MyDimens.double_15),
+                                          child: Text("Delete public profile",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .subtitle1
+                                                  .copyWith(
+                                                  color:
+                                                  MyColors.lighterPink,
+                                                  //fontFamily:
+                                                 // 'lexenddeca'
+                                                 )),
+                                        ),
+                                      );  
+  
+                                        }),
+  
+ ]),
             const SizedBox(
             height: 20,
           ),     
@@ -112,4 +202,11 @@ return Scaffold(
    ]),
 ));
   }
+    Future<void> deleteFile(String url) async {
+  try {
+    await FirebaseStorage.instance.refFromURL(url).delete();
+  } catch (e) {
+    print("Error deleting db from cloud: $e");
+  }
+}
 }

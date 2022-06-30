@@ -415,7 +415,7 @@ Future<String> uploadFile2(_image2) async {
                 controller: _expire, //editing controller of this TextField
                 decoration: InputDecoration( 
                    icon: Icon(Icons.calendar_today), //icon of text field
-                   labelText: "Enter Date" //label text of field
+                   labelText: "Expire date" //label text of field
                 ),
                 readOnly: true,  //set it true, so that user will not able to edit text
                 onTap: () async {

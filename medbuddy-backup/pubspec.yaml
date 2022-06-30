@@ -45,7 +45,7 @@ dependencies:
   firebase_messaging: ^11.2.12
   rxdart: ^0.22.0
   provider: ^6.0.2
-  permission_handler: ^6.1.1
+  permission_handler: ^9.2.0
   path_provider: ^2.0.9
   shared_preferences: ^2.0.13
   curved_navigation_bar: ^1.0.3
@@ -62,7 +62,11 @@ dependencies:
   blinking_text: ^1.0.2
   carousel_slider: ^4.1.1
   firestore_search: ^0.1.9
-  agora_rtc_engine: ^4.2.2
+  #agora_rtc_engine: ^4.2.2
+  agora_uikit: ^1.0.2
+  pay: ^0.0.1
+  get: ^4.6.5
+
   # flutter_svg: 
   flutter_local_notifications:
   # flare_flutter:

@@ -273,7 +273,7 @@ class _DetailedItemState extends State<tabletFull> {
     )),
         Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexnotablet['date']),
+    title:  Text("Expire date:" + " " + indexnotablet['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -441,7 +441,7 @@ class _DetailedItemState extends State<tabletFull> {
                                       ),           
         SizedBox(height: 40,),
 
-        Text("Coustomer Review:",
+        Text("Customer Review:",
         style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
         ),
 
@@ -459,7 +459,7 @@ class _DetailedItemState extends State<tabletFull> {
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No coustomer rateing")
+          (child: Text("No customer rating")
      );
         }
         
@@ -467,7 +467,7 @@ class _DetailedItemState extends State<tabletFull> {
 
           
             return Center
-          (child: Text("No coustomer rateing",
+          (child: Text("No customer rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

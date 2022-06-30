@@ -339,7 +339,7 @@ launchUrl(emailLaunchUri);
           ),
     Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + snapshot.data['date']),
+    title:  Text("Expire date:" + " " + snapshot.data['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -519,7 +519,7 @@ launchUrl(emailLaunchUri);
  
         SizedBox(height: 40,),
 
-        Text("Coustomer Review:",
+        Text("Customer Review:",
         style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
         ),
 
@@ -537,7 +537,7 @@ launchUrl(emailLaunchUri);
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No coustomer rating")
+          (child: Text("No customer rating")
      );
         }
         
@@ -545,7 +545,7 @@ launchUrl(emailLaunchUri);
 
           
             return Center
-          (child: Text("No coustomer rateing",
+          (child: Text("No customer rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

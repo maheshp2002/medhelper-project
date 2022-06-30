@@ -272,7 +272,7 @@ class _DetailedItemState extends State<syringeFull> {
     )),
         Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexnosyringe['date']),
+    title:  Text("Expire date:" + " " + indexnosyringe['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -439,7 +439,7 @@ class _DetailedItemState extends State<syringeFull> {
                                       ),           
         SizedBox(height: 40,),
 
-        Text("Coustomer Review:",
+        Text("Customer Review:",
         style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
         ),
 
@@ -457,7 +457,7 @@ class _DetailedItemState extends State<syringeFull> {
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No coustomer rateing")
+          (child: Text("No customer rating")
      );
         }
         
@@ -465,7 +465,7 @@ class _DetailedItemState extends State<syringeFull> {
 
           
             return Center
-          (child: Text("No coustomer rateing",
+          (child: Text("No customer rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

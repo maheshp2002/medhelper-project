@@ -6,6 +6,6 @@ DecorationImage backgroundImage = new DecorationImage(
 );
 
 DecorationImage tick = new DecorationImage(
-  image: new ExactAssetImage('assets/medicine.png'),
+  image: new ExactAssetImage('assets/logo/MH_logo.png', scale: 2),
   
 );

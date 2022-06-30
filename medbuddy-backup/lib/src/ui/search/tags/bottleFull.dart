@@ -272,7 +272,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
     )),
       Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexnobottle['date']),
+    title:  Text("Expire date:" + " " + indexnobottle['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -441,7 +441,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
                                       ),           
         SizedBox(height: 40,),
 
-        Text("Coustomer Review:",
+        Text("Customer Review:",
         style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
         ),
 
@@ -459,7 +459,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No coustomer rateing")
+          (child: Text("No customer rating")
      );
         }
         
@@ -467,7 +467,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
 
           
             return Center
-          (child: Text("No coustomer rateing",
+          (child: Text("No customer rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

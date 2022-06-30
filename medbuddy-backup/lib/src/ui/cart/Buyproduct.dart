@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:medbuddy/doctor/splash_screen/publicprsucess.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 
@@ -90,7 +91,7 @@ String mobileno;
           const SizedBox(
             height: 10,
           ), 
-  Text("Date:" + " " + cindexno['date']),
+  Text("Expire date:" + " " + cindexno['date']),
 
 //gap btw borders
           const SizedBox(
@@ -419,7 +420,7 @@ Container(
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );
-      //Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartSucess()));             
+      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => profilesucess()));             
       
       } else {
                      Fluttertoast.showToast(  

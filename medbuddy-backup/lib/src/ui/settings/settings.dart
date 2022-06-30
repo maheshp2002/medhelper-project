@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_restart/flutter_restart.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -70,8 +71,11 @@ class _SettingsPageState extends State<Settings>{
 
                         }),),
 
-
-             Card(
+StreamBuilder(
+stream: FirebaseFirestore.instance.collection("UserpublicID").doc(user.email).snapshots(),
+builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+if (!snapshot.hasData) {
+              return Card(
               child: 
                 ListTile(
                 title: Text('Delete User Account'),
@@ -107,13 +111,77 @@ class _SettingsPageState extends State<Settings>{
                         );
                 },
                  ),
+                  );                   
 
-                
-                
+             } else{  
+             return Card(
+              child: 
+                ListTile(
+                title: Text('Delete User Account'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: (){
+        showModalBottomSheet<void>(context: context,
+            builder: (BuildContext context) {
+                return Container(
+                    child: new Wrap(
+                    children: <Widget>[
+                        new ListTile(
+                        leading: new Icon(Icons.delete),
+                        title: new Text('Delete'),
+                        onTap: () async{
+                          await user?.delete();
+                          collectionReference.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }});
+                          collectionCart.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }});
+                          FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
 
-    )])) ));
+                          deleteFile(snapshot.data['images']);       
+
+                          await FirebaseFirestore.instance.collection("UserpublicID").doc(user.email).delete();   
+                         
+                         
+                            _restartApp();
+
+                        })
+                        ]
+                        )
+                        );}
+                        );
+                },
+                 ),
+
+    );
+    }
+    }),
+    SizedBox(height: 100),
+
+            Text(
+                "Note:- Please delete all order details before deleting account.",
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
+                style: new TextStyle(
+                    fontWeight: FontWeight.w300,
+                    letterSpacing: 0.5,
+                    color: Colors.grey,
+                    fontSize: 12.0),
+              ),
+    
+    ])) ));
   }
 
+    Future<void> deleteFile(String url) async {
+  try {
+    await FirebaseStorage.instance.refFromURL(url).delete();
+  } catch (e) {
+    print("Error deleting db from cloud: $e");
+  }
+}
 }
 
 

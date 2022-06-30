@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/about.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
+import 'package:medbuddy/src/ui/consult/doctorsr.dart';
 import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 import 'package:medbuddy/src/ui/settings/patientAbout.dart';
+import 'package:medbuddy/src/ui/settings/publicprofile/userprofile.dart';
 import 'package:medbuddy/src/ui/settings/settings.dart';
 import 'package:provider/provider.dart';
 
@@ -26,11 +28,6 @@ class NavDrawer extends StatelessWidget {
                     fit: BoxFit.fill,
                     image: AssetImage("assets/mnav.png"))),
           ),
-     /*     ListTile(
-            leading: Icon(Icons.input),
-            title: Text('Welcome'),
-            onTap: () => {},
-          ),*/
           ListTile(
             leading: Icon(Icons.verified_user),
             title: Text('Profile'),
@@ -41,9 +38,19 @@ class NavDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.shopping_cart),
-            title: Text('wishList'),
+            title: Text('WishList'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartMap()))},
-          ),          
+          ), 
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text('Public profile'),
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => userprofile()))},
+          ),              
+          ListTile(
+            leading: Icon(Icons.person_add),
+            title: Text('Consult'),
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Home()))},
+          ),                  
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),

@@ -28,7 +28,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return  Material(
               child: Scaffold(
-                backgroundColor: MyColors.primaryColor,
+                backgroundColor: Color.fromARGB(255, 253, 251, 251),
                 body: SafeArea(
                   child: SingleChildScrollView(
                     child: Container(
@@ -55,7 +55,7 @@ class _RegisterState extends State<Register> {
                                       vertical: MyDimens.double_30),
                                   child: Image(
                                     image: AssetImage(
-                                        'assets/medicine.png'),
+                                        'assets/logo/MH_logo.png'),
                                     fit: BoxFit.cover,
                                   )),
                               Container(
@@ -68,7 +68,7 @@ class _RegisterState extends State<Register> {
                                           .textTheme
                                           .bodyText2
                                           .copyWith(
-                                          color: MyColors.white,
+                                          color: MyColors.grey,
                                           //fontFamily: 'lexenddeca'
                                           )),
                                 ),

@@ -350,7 +350,7 @@ class _DetailedItemState extends State<viewcart> {
     )),
         Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + cindexno['date']),
+    title:  Text("Expire date:" + " " + cindexno['date']),
     )),
 //gap btw borders
           const SizedBox(

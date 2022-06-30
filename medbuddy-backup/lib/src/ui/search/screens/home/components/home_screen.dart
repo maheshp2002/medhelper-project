@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/body.dart';
-import 'package:medbuddy/src/ui/search/screens/home/components/my_bottom_nav_bar.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
@@ -25,7 +24,7 @@ class HomeScreen extends StatelessWidget {
           },
         ),
 ),
-      body: const Body(),
+      body:  Body(),
       //bottomNavigationBar: const MyBottomNavBar(),
     );
   }

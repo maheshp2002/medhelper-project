@@ -43,7 +43,6 @@ return Scaffold(
         }
         else if (snapshot.data?.size == 0) {
             
-
           
             return Center
           (child: Image.asset("assets/nothing.gif"));
@@ -83,12 +82,26 @@ return Scaffold(
                         leading: new Icon(Icons.delete),
                         title: new Text('Delete'),
                         onTap: () async{ 
+                         try{                 
                          deleteFile(snapshot.data.docs[index]['images']);     
                          deleteFile(snapshot.data.docs[index]['images1']);  
                          deleteFile(snapshot.data.docs[index]['images2']);                 
                         await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
                         await myTransaction.delete(snapshot.data.docs[index].reference);}
                         );
+                        
+                         await FirebaseFirestore.instance.collection(snapshot.data.docs[index].id + "review").snapshots().forEach((element) {
+                         for (QueryDocumentSnapshot snapshot in element.docs) {
+                         snapshot.reference.delete();
+                         }});  }
+                         catch(e){
+                         deleteFile(snapshot.data.docs[index]['images']);     
+                         deleteFile(snapshot.data.docs[index]['images1']);  
+                         deleteFile(snapshot.data.docs[index]['images2']);                 
+                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
+                        await myTransaction.delete(snapshot.data.docs[index].reference);}
+                        );
+                         }
                         })
                         ]
                         )
@@ -127,6 +140,20 @@ return Scaffold(
 
         ),
             SizedBox(height: 50,),
+
+        Text(
+                "Note:- Please delete all order details before deleting product.",
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
+                style: new TextStyle(
+                    fontWeight: FontWeight.w300,
+                    letterSpacing: 0.5,
+                    color: Colors.grey,
+                    fontSize: 12.0),
+              ),
+            SizedBox(height: 30,), 
+
           InkWell(
           onTap: () async {
             Navigator.of(context).push(MaterialPageRoute(builder: (context)=> DeletePdt()));

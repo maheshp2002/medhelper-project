@@ -1,39 +1,36 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:medbuddy/doctor/splash_screen/publicprsucess.dart';
+import 'package:medbuddy/src/ui/login_page/register.dart';
+import 'package:medbuddy/src/ui/settings/userpublicprsucess.dart';
 
 
 
-class publicprofile extends StatefulWidget {
-  const publicprofile({ Key key}) : super(key: key);
+class userpublicid extends StatefulWidget {
+  const userpublicid({ Key key}) : super(key: key);
 
   @override
   DataState createState() => DataState();
 }
 
-class DataState extends State<publicprofile>{
-User user = FirebaseAuth.instance.currentUser;
-final collectionReference = FirebaseFirestore.instance.collection("consultDoctors");
-final dccollection = FirebaseFirestore.instance.collection("DoctorsValidation");
+class DataState extends State<userpublicid>{
+final collectionReference = FirebaseFirestore.instance.collection("UserpublicID");
 
 
 
 //Controller
 final TextEditingController _name = TextEditingController();
-final TextEditingController _specialization = TextEditingController();
-final TextEditingController _consultTime = TextEditingController();
+final TextEditingController _age = TextEditingController();
+final TextEditingController _issue = TextEditingController();
 final TextEditingController _mobileno = TextEditingController();
 
 
 String name;
-String specialization;
-String consultTime;
+String age;
+String issue;
 String mobileno;
 bool isLoadingDF = false;
 
@@ -42,7 +39,7 @@ bool isLoadingDF = false;
 Future<String> uploadFile(_image) async {
 
             FirebaseStorage storage = FirebaseStorage.instance;
-              Reference ref = storage.ref().child(user.email + "doctor" + DateTime.now().toString());
+              Reference ref = storage.ref().child(user.email + "user" + DateTime.now().toString());
               await ref.putFile(File(_image.path));
               String returnURL = await ref.getDownloadURL();
               return returnURL;
@@ -58,29 +55,20 @@ Future<String> uploadFile(_image) async {
 
             String imageURL = await uploadFile(_image);
 
-            String regno;
 
-           await dccollection.doc(user.email).get().then((snapshot) {
-           regno = snapshot.get('Register no');
-        });
                
 //..........................................................................................
 
 //Firebase data write
                    await collectionReference.doc(user.email).set(
                         {
-                        'specialization':specialization,
-                        'doctor name':name,
+                        'age':age,
+                        'User name':name,
                         'mobile no':mobileno,
                         'images': imageURL,
                         'Did':user.email,
-                        'regno': regno,
-                        'consultTime': consultTime,
+                        'issue': issue,
                         'token': 0,
-                        'nextpt': 0,
-                        'reviewtotal': 0,
-                        'reviewadd': 0,
-                        'limit': 0,
                         },
                         );
            setState(() {
@@ -175,18 +163,19 @@ Future<String> uploadFile(_image) async {
 //specialization............................................................................................
           TextField(
                  onChanged: ((value) {
-                  specialization= value;
+                  age= value;
                 }),              
-            controller: _specialization,
+            controller: _age,
             decoration: const InputDecoration(
-              hintText: "In small letters eg:-ortho, pedia, derma...",
-              labelText: "Specialization in short:",
+              hintText: "age",
+              labelText: "Age:",
               labelStyle: TextStyle(
                 fontSize: 15,
                 color: Colors.black
               ),
                 border: OutlineInputBorder()
             ),
+            keyboardType: TextInputType.number,
 
           ),
 //gap btw borders
@@ -219,12 +208,12 @@ Future<String> uploadFile(_image) async {
 
           TextField(
                   onChanged: ((value) {
-                  consultTime=value;
+                  issue=value;
                 }),            
-            controller: _consultTime,
+            controller: _issue,
             decoration: const InputDecoration(
-                hintText: "consultTime",
-                labelText: "Consult time:",
+                hintText: "Health issues",
+                labelText: "Health issues:",
                 labelStyle: TextStyle(
                     fontSize: 15,
                     color: Colors.black
@@ -300,15 +289,15 @@ Future<String> uploadFile(_image) async {
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   ); 
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> profilesucess()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> userpublicprsucess()));
                 
                 
               
                  
                   _name.clear();         
                   _mobileno.clear();
-                  _consultTime.clear();  
-                  _specialization.clear();  
+                  _age.clear();  
+                  _issue.clear();  
             }          
               
           ),

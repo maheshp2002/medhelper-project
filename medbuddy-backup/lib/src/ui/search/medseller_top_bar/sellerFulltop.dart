@@ -291,7 +291,7 @@ class _DetailedItemState extends State<SellerFulltop> {
           ),
     Card(
     child: ListTile(              
-    title:  Text("Date:" + " " + indexno['date']),
+    title:  Text("Expire date:" + " " + indexno['date']),
     )),
 //gap btw borders
           const SizedBox(
@@ -470,7 +470,7 @@ class _DetailedItemState extends State<SellerFulltop> {
  
         SizedBox(height: 40,),
 
-        Text("Coustomer Review:",
+        Text("Customer Review:",
         style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
         ),
 
@@ -488,7 +488,7 @@ class _DetailedItemState extends State<SellerFulltop> {
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No coustomer rateing")
+          (child: Text("No customer rating")
      );
         }
         
@@ -496,7 +496,7 @@ class _DetailedItemState extends State<SellerFulltop> {
 
           
             return Center
-          (child: Text("No coustomer rating",
+          (child: Text("No customer rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }
