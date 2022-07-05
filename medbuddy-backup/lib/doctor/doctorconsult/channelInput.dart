@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_share/flutter_share.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/doctor/doctorconsult/doctorvideocall.dart';
 import 'package:medbuddy/doctor/doctorconsult/patients.dart';
@@ -34,7 +35,7 @@ class _doctorHomePageState extends State<Dvideocall> {
   @override
   void initState() {
     var uuid = Uuid();
-    String _meetingcode = uuid.v1().substring(0, 8);
+    _meetingcode = uuid.v1().substring(0, 8);
     super.initState();
   }
 
@@ -88,13 +89,22 @@ class _doctorHomePageState extends State<Dvideocall> {
           Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25),),
             child: ListTile(
+              leading: Icon(Icons.link, color: Colors.grey,),
               title: SelectableText(
                 _meetingcode,
-                style: TextStyle(fontWeight: FontWeight.w300),
+                style: TextStyle(fontWeight: FontWeight.w300, color: Colors.grey),
               ),
               trailing: Icon(Icons.copy),
               onTap: (){
                 Clipboard.setData(ClipboardData(text: _meetingcode));
+                     Fluttertoast.showToast(  
+                      msg: 'copied',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );  
               }
             )
           ),
@@ -142,7 +152,7 @@ class _doctorHomePageState extends State<Dvideocall> {
                     ),
                     onPressed: () async{
 
-                      Dchannelid = channel;
+                      Dchannelid = _meetingcode;
                       //Dusername = uname;
                       //Clipboard.setData(ClipboardData(text: "your text"));
                         
@@ -163,7 +173,11 @@ class _doctorHomePageState extends State<Dvideocall> {
                     color: Colors.deepPurple,
                     shape: StadiumBorder(),
                     child: Center(
-                      child: Text(
+                      child: Row(
+                        children: [
+                          Icon(Icons.share, color: Colors.grey),
+                          SizedBox(width: 10,),
+                          Text(
                         "share meeting code",
                         style: TextStyle(
                           color: Colors.grey,
@@ -171,17 +185,9 @@ class _doctorHomePageState extends State<Dvideocall> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
+                        ]),
                     ),
-                    onPressed: () async{
-
-                      //Dchannelid = channel;
-                      //Dusername = uname;
-                      
-                        
-                      //Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
-                        //channelController.clear();
-                        //unameController.clear();
-                        }
+                    onPressed: share,
                         
                         )
                         )),),
@@ -330,5 +336,13 @@ class _doctorHomePageState extends State<Dvideocall> {
                   ],)
           ],
         )));
+  }
+    Future<void> share() async {
+    await FlutterShare.share(
+        title: 'Here is your channel code for doctor consult VC',
+        text: _meetingcode,
+        //linkUrl: 'https://flutter.dev/',
+        //chooserTitle: 'Example Chooser Title'
+        );
   }
 }
