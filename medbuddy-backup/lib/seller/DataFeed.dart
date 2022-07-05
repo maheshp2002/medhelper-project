@@ -54,7 +54,8 @@ String storename;
 String expire;
 bool isLoadingDF = false;
 
-//String stock;
+bool disc;
+bool lc;
 String price;
 String discountvalue;
 bool hasDiscount;
@@ -565,6 +566,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             onChanged: (value) {
               setState(() {
                 hasDiscount = value;
+                disc = true;
                 print(hasDiscount);
               });
             },
@@ -582,6 +584,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             onChanged: (value) {
               setState(() {
                 hasDiscount = value;
+                disc = true;
                 print(hasDiscount);
               });
             },
@@ -595,6 +598,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           ),
 //Row(children: [
           TextField(
+            enabled: disc,
                   onChanged: ((value) {
                   discountvalue= value;
                 }),            
@@ -630,6 +634,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             onChanged: (value) {
               setState(() {
                 clocation = value;
+                lc = false;
                 //print(hasDiscount);
               });
             },
@@ -647,6 +652,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             onChanged: (value) {
               setState(() {
                 clocation = value;
+                lc = true;
                 //print(hasDiscount);
               });
             },
@@ -668,6 +674,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             ),
 //lat
           TextField(
+            enabled: lc,
                   onChanged: ((value) {
                   lat= double.parse(value);
                 }),            
@@ -691,6 +698,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           ),
  //long         
           TextField(
+                  enabled: clocation,
                   onChanged: ((value) {
                   long= double.parse(value);
                 }),            

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/search/SellerMap.dart';
 
 class rateingSucess extends StatefulWidget {
 
@@ -22,7 +21,7 @@ class rateingSucess extends StatefulWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.white,
+        color: Color(0xFFfd3769),
         //Color(0xFF3EB16F),
         child: Center(
         child: Column(
@@ -31,7 +30,7 @@ class rateingSucess extends StatefulWidget {
         children: [
           Container(
 
-        child: Image.asset('assets/review.gif', width:500,height:500),
+        child: Image.asset('assets/splash/smileloading.gif', width:500,height:500),
         ),
       ],
         ),

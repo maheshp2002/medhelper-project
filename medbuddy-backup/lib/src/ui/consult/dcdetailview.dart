@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myDimens.dart';
 import 'package:medbuddy/src/ui/consult/doctorsr.dart';
+import 'package:medbuddy/src/ui/consult/patientvideocall/ptchannelInput.dart';
 import 'package:medbuddy/src/ui/consult/rating/dcdeleterating.dart';
 import 'package:medbuddy/src/ui/consult/rating/dcrateing.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
@@ -26,6 +27,18 @@ var collectionReference = FirebaseFirestore.instance.collection("consultDoctors"
         backgroundColor: Colors.deepPurple,
         title:  const Text("Doctor details"),
         elevation: 16.0,
+        actions: [
+          new IconButton(
+          icon: new Icon(Icons.video_call_outlined),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Pvideocall()),
+            );
+          },
+        ),
+
+        ],
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(

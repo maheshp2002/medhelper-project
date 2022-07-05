@@ -320,10 +320,12 @@ Future<String> uploadFile(_image) async {
   ),
     ],
       ):Container(
-        color: Color(0xFFfd3769),
+        //color: Color(0xFFfd3769),
+        //color: Color(0xFF34d3e3),
+        color: Colors.white,
       child: Center(
       
-      child: Image.asset('assets/splash/smileloading.gif'),),)
+      child: Image.asset('assets/splash/pendulamloading.gif'),),)
 
 );
   }

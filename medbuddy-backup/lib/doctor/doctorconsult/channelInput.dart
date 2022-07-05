@@ -1,13 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/doctor/doctorconsult/doctorvideocall.dart';
 import 'package:medbuddy/doctor/doctorconsult/patients.dart';
+import 'package:uuid/uuid.dart';
 
 
 String Dchannelid;
-String Dusername;
+//String Dusername;
 
 class Dvideocall extends StatefulWidget {
   Dvideocall({Key key}) : super(key: key);
@@ -24,36 +26,37 @@ class _doctorHomePageState extends State<Dvideocall> {
   String uname;
   String limit;
   String channel;
+  String _meetingcode = "abcdefqw";
 
   //String name;
    TextEditingController channelController = TextEditingController();
-   TextEditingController unameController = TextEditingController();
+   //TextEditingController unameController = TextEditingController();
   @override
   void initState() {
+    var uuid = Uuid();
+    String _meetingcode = uuid.v1().substring(0, 8);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         title: Text("Consult"),
         elevation: 16.0,
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
+        leading: IconButton(
               icon: const Icon(
-                Icons.person,
+                Icons.arrow_back,
                 color: Colors.white, 
               ),
               onPressed: () {
                 Navigator.pop(context);
               },
-            
-            );
-          },
-        ),),
+              
+        ),
+        ),
 
         body:  Padding(
         padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
@@ -61,48 +64,64 @@ class _doctorHomePageState extends State<Dvideocall> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
 
+          SizedBox(
+            height: 16,
+          ),
 
-            Flexible(
-              child:TextField(
-              decoration: InputDecoration(
-              hintText: "channel name",
-              labelText: "Channel name:",
-              labelStyle: TextStyle(
-                fontSize: 15,
-                color: Colors.black
+          //   TextField(
+          //    
+          //     decoration: InputDecoration(
+          //     hintText: "channel name",
+          //     labelText: "Channel name:",
+          //     labelStyle: TextStyle(
+          //       fontSize: 15,
+          //       color: Colors.black
+          //     ),
+          //       border: OutlineInputBorder()
+          //   ),
+          //      onChanged: ((value) {
+          //         channel = value;
+          //       }),
+          //   controller: channelController,
+          //   keyboardType: TextInputType.multiline,
+          // ),
+          Card(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25),),
+            child: ListTile(
+              title: SelectableText(
+                _meetingcode,
+                style: TextStyle(fontWeight: FontWeight.w300),
               ),
-                border: OutlineInputBorder()
-            ),
-               onChanged: ((value) {
-                  channel = value;
-                }),
-            controller: channelController,
-            keyboardType: TextInputType.multiline,
-          ),),
+              trailing: Icon(Icons.copy),
+              onTap: (){
+                Clipboard.setData(ClipboardData(text: _meetingcode));
+              }
+            )
+          ),
 
  
           SizedBox(
             height: 16,
           ),
 
-            Flexible(
-              child:TextField(
-              decoration: InputDecoration(
-              hintText: "username",
-              labelText: "Username:",
-              labelStyle: TextStyle(
-                fontSize: 15,
-                color: Colors.black
-              ),
-                border: OutlineInputBorder()
-            ),
-               onChanged: ((value) {
-                  uname = value;
-                }),
-            controller: unameController,
-            keyboardType: TextInputType.emailAddress,
+          //   Flexible(
+          //     child:TextField(
+          //     decoration: InputDecoration(
+          //     hintText: "username",
+          //     labelText: "Username:",
+          //     labelStyle: TextStyle(
+          //       fontSize: 15,
+          //       color: Colors.black
+          //     ),
+          //       border: OutlineInputBorder()
+          //   ),
+          //      onChanged: ((value) {
+          //         uname = value;
+          //       }),
+          //   controller: unameController,
+          //   keyboardType: TextInputType.emailAddress,
             
-          ),),
+          // ),),
           Flexible(child: Padding(
             padding: EdgeInsets.all(20),
             child: Container(
@@ -113,10 +132,10 @@ class _doctorHomePageState extends State<Dvideocall> {
                     shape: StadiumBorder(),
                     child: Center(
                       child: Text(
-                        "Enter",
+                        "+ New meeting",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 28,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -124,17 +143,50 @@ class _doctorHomePageState extends State<Dvideocall> {
                     onPressed: () async{
 
                       Dchannelid = channel;
-                      Dusername = uname;
+                      //Dusername = uname;
+                      //Clipboard.setData(ClipboardData(text: "your text"));
                         
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
                         channelController.clear();
-                        unameController.clear();
+                        //unameController.clear();
                         }
                         
                         )
                         )),),
 
-                  SizedBox(height: 10,),
+          Flexible(child: Padding(
+            padding: EdgeInsets.all(20),
+            child: Container(
+                  width: 270,
+                  height: 50,
+                  child: OutlineButton(
+                    color: Colors.deepPurple,
+                    shape: StadiumBorder(),
+                    child: Center(
+                      child: Text(
+                        "share meeting code",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    onPressed: () async{
+
+                      //Dchannelid = channel;
+                      //Dusername = uname;
+                      
+                        
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
+                        //channelController.clear();
+                        //unameController.clear();
+                        }
+                        
+                        )
+                        )),),
+
+                  SizedBox(height: 10,),                  
 
                   Card(child:
                   ListTile(

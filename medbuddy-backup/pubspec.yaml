@@ -15,7 +15,7 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: ">=2.5.0 <3.0.0"
 
 dependencies:
   
@@ -64,8 +64,9 @@ dependencies:
   firestore_search: ^0.1.9
   #agora_rtc_engine: ^4.2.2
   agora_uikit: ^1.0.2
-  pay: ^0.0.1
+  # pay: ^0.0.1
   get: ^4.6.5
+  uuid: ^2.2.2
 
   # flutter_svg: 
   flutter_local_notifications:
@@ -107,10 +108,7 @@ flutter:
     - assets/sound/
     - assets/splash/
     - assets/logo/
-    - assets/login.jpg
     - assets/images/login.png
-    - assets/home.jpeg
-    - assets/tick.png
     - assets/
     - assets/images/
     - assets/ads/
