@@ -81,6 +81,7 @@ Future<String> uploadFile(_image) async {
                         'reviewtotal': 0,
                         'reviewadd': 0,
                         'limit': 0,
+                        'vccode': "abcd",
                         },
                         );
            setState(() {

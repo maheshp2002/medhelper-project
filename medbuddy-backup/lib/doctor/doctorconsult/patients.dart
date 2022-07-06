@@ -86,7 +86,7 @@ return Scaffold(
               docidpatients = snapshot.data.docs[index].id;
               Navigator.push(context,
               MaterialPageRoute(builder: (context) => patientdetail()));},
-
+                //leading: Image.network(snapshot.data.docs[index]['images'], width: 100, height: 100,),
 
               title: Text("Email ID:" + " " + 
                     snapshot.data.docs[index]['email'],

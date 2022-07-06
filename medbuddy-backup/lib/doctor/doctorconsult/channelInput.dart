@@ -10,7 +10,7 @@ import 'package:uuid/uuid.dart';
 
 
 String Dchannelid;
-//String Dusername;
+int nexttoken;
 
 class Dvideocall extends StatefulWidget {
   Dvideocall({Key key}) : super(key: key);
@@ -132,7 +132,17 @@ class _doctorHomePageState extends State<Dvideocall> {
           //   keyboardType: TextInputType.emailAddress,
             
           // ),),
-          Flexible(child: Padding(
+           StreamBuilder(
+                            stream: FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).snapshots(),
+                            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                              if (!snapshot.hasData) {
+                                return Center
+                                (child:Image.asset("assets/nothing.gif")
+                          );
+                              }
+
+                              else{        
+          return Flexible(child: Padding(
             padding: EdgeInsets.all(20),
             child: Container(
                   width: 220,
@@ -153,16 +163,24 @@ class _doctorHomePageState extends State<Dvideocall> {
                     onPressed: () async{
 
                       Dchannelid = _meetingcode;
-                      //Dusername = uname;
-                      //Clipboard.setData(ClipboardData(text: "your text"));
+
+                      FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
+                      "nextpt": FieldValue.increment(1),
+                      });
+                      nexttoken = snapshot.data['nextpt'] + 1;
                         
+                      FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
+                      "vccode": _meetingcode,
+                      });                   
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
                         channelController.clear();
                         //unameController.clear();
                         }
                         
                         )
-                        )),),
+                        )),
+                        );
+           }}),
 
           Flexible(child: Padding(
             padding: EdgeInsets.all(20),
@@ -346,3 +364,4 @@ class _doctorHomePageState extends State<Dvideocall> {
         );
   }
 }
+
