@@ -16,11 +16,11 @@ class DoctorSignInPage extends StatelessWidget {
         borderSide: BorderSide(color: Constants.kBorderColor, width: 3.0));
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Constants.kPrimaryColor,
+        backgroundColor: Color(0xFFeefafc),
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset("assets/images/login.png", width: 200,height: 200),
+          Image.asset("assets/splash/doctorlogin.gif", width: 300,height: 300),
           RichText(
               textAlign: TextAlign.center,
               text: TextSpan(children: <TextSpan>[

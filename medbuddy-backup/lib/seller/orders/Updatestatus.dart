@@ -2,6 +2,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/seller/orders/ordermap.dart';
 
 
@@ -24,6 +25,13 @@ final TextEditingController _pointC = TextEditingController();
 String pointA;
 String pointB;
 String pointC;
+
+int ar;
+int pk;
+int A;
+int B;
+int C;
+int D;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +60,12 @@ String pointC;
         }
 
         else{
+          ar = snapshot.data['ar'];
+          pk = snapshot.data['pk'];
+          A = snapshot.data['pointA'];
+          B = snapshot.data['pointB'];
+          C = snapshot.data['pointC'];
+          D = snapshot.data['pointD'];
     
     return ListView(children: [
 
@@ -89,9 +103,21 @@ String pointC;
                     ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
+                      if(pk == 0){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'packed': "Packed. Out to delivery",
+                        'pk': 1
                       });
+                      } else{
+
+                      Fluttertoast.showToast(  
+                      msg: 'Already updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                      }
                     },
                      child: Text("Yes"))
                   ],),
@@ -118,10 +144,22 @@ String pointC;
                     ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
+                      if(A==0){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'reachedA': "Reached" + " " + pointA,
                         'pointA': 1
                       });
+                      } else{
+
+                      Fluttertoast.showToast(  
+                      msg: 'Already updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                      }
+
                     },
                      child: Text("Update")),  
 
@@ -148,10 +186,21 @@ String pointC;
                     ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
+                      if(B==0){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'reachedB': "Reached" + " " + pointB,
                         'pointB': 1
                       });
+                      } else{
+
+                      Fluttertoast.showToast(  
+                      msg: 'Already updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                      }                      
                     },
                      child: Text("Update")),  
 
@@ -178,10 +227,21 @@ String pointC;
                     ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
+                      if(C==0){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'arrival': "Arrive at" + " " + pointC,
                         'pointC': 1
                       });
+                      } else{
+
+                      Fluttertoast.showToast(  
+                      msg: 'Already updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                      }                      
                     },
                      child: Text("Update")),  
 
@@ -194,10 +254,21 @@ String pointC;
                      ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)),
                     onPressed: (){
+                      if(D == 0){
                     FirebaseFirestore.instance.collection(orderindexno["email"] + "Productbuy").doc(orderindexno["docid"]).update({
                         'delivered': "delivered",
                         'pointD': 1,
                       });
+                      } else{
+
+                      Fluttertoast.showToast(  
+                      msg: 'Already updated',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  ); 
+                      }                      
                     },
                      child: Text("Update")), ]), 
 

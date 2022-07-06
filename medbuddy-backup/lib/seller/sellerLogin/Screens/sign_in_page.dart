@@ -21,7 +21,7 @@ class SignInPage extends StatelessWidget {
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset("assets/sign-in.png", width: 300,height: 300),
+          Image.asset("assets/food_delivery.gif", width: 300,height: 300),
           RichText(
               textAlign: TextAlign.center,
               text: TextSpan(children: <TextSpan>[

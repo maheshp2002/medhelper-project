@@ -332,10 +332,10 @@ Future<String> uploadFile(_image) async {
   ),
     ],
       ):Container(
-        color: Color(0xFFfd3769),
+        color: Colors.white,
       child: Center(
       
-      child: Image.asset('assets/splash/pendulamloading.gif'),),)
+      child: Image.asset('assets/splash/plaster.gif', width: 300,height: 300),))
 
 );
   }

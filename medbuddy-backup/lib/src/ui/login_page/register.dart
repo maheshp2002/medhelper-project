@@ -55,7 +55,7 @@ class _RegisterState extends State<Register> {
                                       vertical: MyDimens.double_30),
                                   child: Image(
                                     image: AssetImage(
-                                        'assets/logo/MH_logo.png'),
+                                        'assets/signup.gif'),
                                     fit: BoxFit.cover,
                                   )),
                               Container(

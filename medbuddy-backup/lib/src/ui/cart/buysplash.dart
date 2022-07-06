@@ -21,7 +21,7 @@ class buySucess extends StatefulWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xFF34d3e3),
+        color: Colors.white,
         //Color(0xFF3EB16F),
         child: Center(
         child: Column(
@@ -30,7 +30,7 @@ class buySucess extends StatefulWidget {
         children: [
           Container(
 
-        child: Image.asset('assets/splash/cartbag.gif', width:500,height:500),
+        child: Image.asset('assets/splash/successsmile.gif', width:500,height:500),
         ),
       ],
         ),

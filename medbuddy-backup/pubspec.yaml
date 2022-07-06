@@ -115,6 +115,8 @@ flutter:
     - assets/images/
     - assets/ads/
     - assets/creatorspic/
+    - assets/signup.gif
+    - assets/food_delivery.gif
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

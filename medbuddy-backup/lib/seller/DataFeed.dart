@@ -47,7 +47,7 @@ int stockno;
 double long;
 String name;
 String dosage;
-String emailID;
+//String emailID;
 String address;
 String mobileno;
 String storename;
@@ -157,7 +157,7 @@ Future<String> uploadFile2(_image2) async {
 //..........................................................................................
 
 //Firebase data write
-        if(id!=null && name!=null && address!=null && storename!=null && emailID!=null && price!=null)
+        if(id!=null && name!=null && address!=null && storename!=null  && price!=null)
           {
                 await collectionReference.add(
                         {
@@ -170,7 +170,7 @@ Future<String> uploadFile2(_image2) async {
                         'discount %':returnStr,
                         'discount price':price,
                         'mobile no':mobileno,
-                        'email id':emailID,
+                        'email id':user.email,
                         'Latitude': cloc,
                         'images': imageURL,
                         'images1': imageURL1,
@@ -584,7 +584,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
             onChanged: (value) {
               setState(() {
                 hasDiscount = value;
-                disc = true;
+                disc = false;
                 print(hasDiscount);
               });
             },
@@ -698,7 +698,7 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           ),
  //long         
           TextField(
-                  enabled: clocation,
+                  enabled: lc,
                   onChanged: ((value) {
                   long= double.parse(value);
                 }),            
@@ -760,28 +760,28 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           const SizedBox(
             height: 16,
           ),
-//emailID
-          TextField(
-                  onChanged: ((value) {
-                  emailID= value;
-                }),            
-            controller: _emailID,
-            decoration: const InputDecoration(
-                hintText: "email ID",
-                labelText: "Email-ID:",
-                labelStyle: TextStyle(
-                    fontSize: 15,
-                    color: Colors.black
-                ),
-                border: OutlineInputBorder()
-            ),
+// //emailID
+//           TextField(
+//                   onChanged: ((value) {
+//                   emailID= value;
+//                 }),            
+//             controller: _emailID,
+//             decoration: const InputDecoration(
+//                 hintText: "email ID",
+//                 labelText: "Email-ID:",
+//                 labelStyle: TextStyle(
+//                     fontSize: 15,
+//                     color: Colors.black
+//                 ),
+//                 border: OutlineInputBorder()
+//             ),
 
-          ),
+//           ),
 
-//gap btw borders
-          const SizedBox(
-            height: 16,
-          ),
+// //gap btw borders
+//           const SizedBox(
+//             height: 16,
+//           ),
 
  //Image selection
 /*RawMaterialButton(

@@ -325,7 +325,7 @@ Future<String> uploadFile(_image) async {
         color: Colors.white,
       child: Center(
       
-      child: Image.asset('assets/splash/pendulamloading.gif'),),)
+      child: Image.asset('assets/splash/runloading.gif'),),)
 
 );
   }
