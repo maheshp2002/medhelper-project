@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/seller/SellerCloud/sellerFull2.dart';
 import 'package:medbuddy/seller/sellerSettings.dart';
@@ -10,10 +11,11 @@ class sellerMap2 extends StatefulWidget {
   _sellerMapageState createState() => _sellerMapageState();
 }
 var sindexno;
+String sdocid;
 
 
 class _sellerMapageState extends State<sellerMap2>{
-    //final collectionReference = FirebaseFirestore.instance.collection("Medicinesell").snapshots();
+User user = FirebaseAuth.instance.currentUser;
   @override
   Widget build(BuildContext context) {
 return Scaffold(
@@ -39,7 +41,7 @@ return Scaffold(
         elevation: 0.0,
   ),
 	body:  StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("Medicinesell")
+      stream: FirebaseFirestore.instance.collection("Medicinesell").where('Did', isEqualTo: user.email)
           .orderBy("date", descending: true).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
@@ -80,6 +82,7 @@ return Scaffold(
                   splashColor: Colors.black26,
                   onTap: (){
                       sindexno = snapshot.data.docs[index];
+                      sdocid = snapshot.data.docs[index].id;
                       Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) => SellerFull2()));
                   },

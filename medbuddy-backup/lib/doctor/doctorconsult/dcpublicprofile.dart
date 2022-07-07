@@ -91,8 +91,90 @@ User user = FirebaseAuth.instance.currentUser;
           
           SizedBox(height: 20,),
 
+
           ]),
           //),                           
+        SizedBox(height: 40,),
+
+        Text("Patients Review:",
+        style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
+        ),
+
+        Divider(
+        indent: 5,
+        endIndent: 5,
+        color: Colors.black,
+    ), 
+
+        SizedBox(height: 30,),
+    StreamBuilder(
+      stream: FirebaseFirestore.instance.collection(user.email + "review")
+          .orderBy("rating", descending: true).snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+         if (!snapshot.hasData) {
+          //hasdata = true;
+          return Center
+          (child: Text("No rating")
+     );
+        }
+        
+        else if (snapshot.data?.size == 0) {
+
+          
+            return Center
+          (child: Text("No rating",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
+          );
+        }
+
+        else{
+                 return ListView.builder(
+                  physics: ScrollPhysics(),
+                  padding: EdgeInsets.all(10),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: snapshot.data.docs.length,
+
+                  itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                  child: Column(
+                  children: [
+                  SizedBox(height: 10,),
+                    Row(children:[
+                  SizedBox(width: 10,),
+                  Container(
+                  color: Colors.green,
+                  child: Row(children: [
+                  SizedBox(width: 5,),
+                  Text(snapshot.data.docs[index]['rating'],
+                  style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans', fontSize: 20,)),
+                  SizedBox(width: 5,),
+                  Icon(Icons.star,color: Colors.white,size: 15,),
+                  SizedBox(width: 5,),
+                     ],) ),]),
+
+                  SizedBox(height: 10,),
+                  Row(children:[
+                  SizedBox(width: 10,),
+                  Text("Name:" + " "),
+                  Text(snapshot.data.docs[index]['name']),]),
+
+                  SizedBox(height: 30,),
+                  Row(children:[
+                  SizedBox(width: 10,),
+                  Text('Review:'),]),  
+                  SizedBox(height: 10,),
+                  Container(  alignment: Alignment.topLeft,              
+                  child:  Padding(
+                    padding: EdgeInsets.all(20), 
+                    child:
+                  Text(snapshot.data.docs[index]['review']),),)
+                  ]),
+
+          
+            );
+                  });}}),
+                              SizedBox(height: 30),         
 
         ],);
 

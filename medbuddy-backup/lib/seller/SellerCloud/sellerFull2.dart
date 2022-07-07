@@ -1,4 +1,5 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/seller/SellerCloud/SellerMap2.dart';
 import 'package:medbuddy/seller/SellerCloud/googleMap2.dart';
@@ -144,9 +145,90 @@ class _DetailedItemState extends State<SellerFull2> {
      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SellerHomeView()));
     }
     )),     
-    )
+    ),
     
-      
+ 
+        SizedBox(height: 40,),
+
+        Text("Customer Review:",
+        style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)
+        ),
+
+        Divider(
+        indent: 5,
+        endIndent: 5,
+        color: Colors.black,
+    ), 
+
+        SizedBox(height: 30,),
+  StreamBuilder(
+      stream: FirebaseFirestore.instance.collection(sdocid + "review")
+          .orderBy("rateing", descending: true).snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+         if (!snapshot.hasData) {
+          //hasdata = true;
+          return Center
+          (child: Text("No customer rating")
+     );
+        }
+        
+        else if (snapshot.data?.size == 0) {
+
+          
+            return Center
+          (child: Text("No customer rating",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
+          );
+        }
+
+        else{
+                 return ListView.builder(
+                  physics: ScrollPhysics(),
+                  padding: EdgeInsets.all(10),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: snapshot.data.docs.length,
+
+                  itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                  child: Column(
+                  children: [
+                  SizedBox(height: 10,),
+                    Row(children:[
+                  SizedBox(width: 10,),
+                  Container(
+                  color: Colors.green,
+                  child: Row(children: [
+                  SizedBox(width: 5,),
+                  Text(snapshot.data.docs[index]['rateing'],
+                  style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans', fontSize: 20,)),
+                  SizedBox(width: 5,),
+                  Icon(Icons.star,color: Colors.white,size: 15,),
+                  SizedBox(width: 5,),
+                     ],) ),]),
+
+                  SizedBox(height: 10,),
+                  Row(children:[
+                  SizedBox(width: 10,),
+                  Text("Name:" + " "),
+                  Text(snapshot.data.docs[index]['name']),]),
+
+                  SizedBox(height: 30,),
+                  Row(children:[
+                  SizedBox(width: 10,),
+                  Text('Review:'),]),  
+                  SizedBox(height: 10,),
+                  Container(  alignment: Alignment.topLeft,              
+                  child:  Padding(
+                    padding: EdgeInsets.all(20), 
+                    child:
+                  Text(snapshot.data.docs[index]['review']),),)
+                  ]),
+
+          
+            );
+                  });}}),
+                              SizedBox(height: 30),       
     ]
   ),),
 );
