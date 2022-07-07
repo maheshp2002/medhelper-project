@@ -119,34 +119,34 @@ var collectionReference = FirebaseFirestore.instance.collection("consultDoctors"
           ),
           
           // tokencheck == mytoken ? Navigator.push(context, MaterialPageRoute(builder: (context)=> patientvideocall())) : 
-          Flexible(child: Padding(
-            padding: EdgeInsets.all(20),
-            child: Container(
-                  width: 220,
-                  height: 70,
-                  child: FlatButton(
-                    color: Colors.deepPurple,
-                    shape: StadiumBorder(),
-                    child: Center(
-                      child: Text(
-                        "Enter",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    onPressed: () async{
+          // Flexible(child: Padding(
+          //   padding: EdgeInsets.all(20),
+          //   child: Container(
+          //         width: 220,
+          //         height: 70,
+          //         child: FlatButton(
+          //           color: Colors.deepPurple,
+          //           shape: StadiumBorder(),
+          //           child: Center(
+          //             child: Text(
+          //               "Enter",
+          //               style: TextStyle(
+          //                 color: Colors.white,
+          //                 fontSize: 28,
+          //                 fontWeight: FontWeight.w700,
+          //               ),
+          //             ),
+          //           ),
+          //           onPressed: () async{
 
-                      Pchannelid = Pvccode;
+          //             Pchannelid = Pvccode;
                         
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> patientvideocall()));
-                        channelController.clear();
-                        }
+          //             Navigator.push(context, MaterialPageRoute(builder: (context)=> patientvideocall()));
+          //               channelController.clear();
+          //               }
                         
-                        )
-                        )),),
+          //               )
+          //               )),),
 
                   Row(mainAxisAlignment: MainAxisAlignment.center, 
                   children: [

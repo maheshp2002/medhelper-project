@@ -201,7 +201,11 @@ Builder(
                 color: Colors.grey,
               ),
             ),
-            IconButton(
+                       StreamBuilder(
+                            stream: FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).snapshots(),
+                            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                              if (!snapshot.hasData) {
+            return IconButton(
               onPressed: () async{
                       FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
                       "nextpt": FieldValue.increment(1),
@@ -212,7 +216,32 @@ Builder(
                 Icons.add,
                 color: Colors.grey,
               ),
-            ),
+            );
+                              }
+
+                              else{           
+            return IconButton(
+              onPressed: () async{
+                      FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
+                      "nextpt": FieldValue.increment(1),
+                      });
+                                    Fluttertoast.showToast(  
+                                      msg: snapshot.data['limit'].toString(),  
+                                      toastLength: Toast.LENGTH_LONG,  
+                                      gravity: ToastGravity.BOTTOM,  
+                                      //timeInSecForIosWeb: 1,  
+                                      backgroundColor: Colors.black,  
+                                      textColor: Colors.white  
+                                  );                       
+
+                      nexttoken++;
+              },
+              icon: const Icon(
+                Icons.add,
+                color: Colors.grey,
+              ),
+            );
+                              }}),
 
           ],
         ),

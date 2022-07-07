@@ -93,8 +93,31 @@ Future<void> gettoken() async{
             children: [
               AgoraVideoViewer(
                 client: client,
-               // layoutType: Layout.floating,
-               // enableHostControls: true, // Add this to enable host controls
+                disabledVideoWidget: 
+                Container(color: Colors.black,
+                  child:
+                Center(child:
+                Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Image.asset("assets/logo/MH_logo.png"),
+                  SizedBox(height: 20,),
+                  Container(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 1),
+                  child: Text('MedHelper',
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                      fontFamily: "JosefinSans",
+                      fontSize: 44,
+                      color: Colors.white,
+                    ),)
+                  )
+                ),
+                  ]))
+                ),
+                layoutType: Layout.floating,
+                enableHostControls: true, // Add this to enable host controls
               ),
               AgoraVideoButtons(
                 client: client,

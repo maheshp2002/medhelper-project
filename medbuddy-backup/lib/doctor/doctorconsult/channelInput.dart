@@ -25,7 +25,7 @@ class _doctorHomePageState extends State<Dvideocall> {
   User user = FirebaseAuth.instance.currentUser;
 
   String uname;
-  String limit;
+  int limit;
   String channel;
   String _meetingcode = "abcdefqw";
 
@@ -306,7 +306,7 @@ class _doctorHomePageState extends State<Dvideocall> {
                                     width: 30.0,
                                     child: TextField(
                                     onChanged: ((value) {
-                                      limit = value;
+                                      limit = int.parse(value);
                                     }),            
                                     controller: _limit,
                                     decoration: InputDecoration(
