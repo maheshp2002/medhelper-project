@@ -37,10 +37,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => cartMap()),
-            );
+            Navigator.pop(context);
           },
         ),
 ),

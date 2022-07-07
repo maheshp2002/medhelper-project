@@ -36,10 +36,7 @@ class _DetailedItemState extends State<viewcart> {
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => cartFull()),
-            );
+            Navigator.pop(context);
           },
         ),
 ),

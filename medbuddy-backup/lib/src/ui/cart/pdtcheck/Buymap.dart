@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/cart/pdtcheck/Buyfull.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -23,10 +22,7 @@ return Scaffold(
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => cartMap()),
-            );
+            Navigator.pop(context);
           },
         ),
         title: Text(

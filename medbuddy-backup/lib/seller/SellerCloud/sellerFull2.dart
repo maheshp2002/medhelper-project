@@ -22,10 +22,7 @@ class _DetailedItemState extends State<SellerFull2> {
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => sellerMap2()),
-            );
+            Navigator.pop(context);
           },
         ),
 ),
@@ -71,7 +68,7 @@ class _DetailedItemState extends State<SellerFull2> {
           ),  
     Card(
     child: ListTile(              
-    title:  Text("Price:" + " " + sindexno['price']),
+    title:  Text("Discount price:" + " " + sindexno['price']),
     )),
 //gap btw borders
           const SizedBox(
@@ -104,7 +101,7 @@ class _DetailedItemState extends State<SellerFull2> {
           ), 
     Card(
     child: ListTile(               
-    title:  Text("Date:" + " " + sindexno['date']),
+    title:  Text("Expire date:" + " " + sindexno['expire']),
     )),
 //gap btw borders
 

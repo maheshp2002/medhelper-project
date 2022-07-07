@@ -22,10 +22,7 @@ class _DetailedItemState extends State<buyFull> {
               leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => buyMap()),
-            );
+            Navigator.pop(context);
           },
         ),
 ),

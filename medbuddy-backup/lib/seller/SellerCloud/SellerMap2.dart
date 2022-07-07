@@ -25,10 +25,7 @@ return Scaffold(
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => sellerSettings()),
-            );
+            Navigator.pop(context);
           },
         ),
         title: Text(
@@ -42,19 +39,19 @@ return Scaffold(
   ),
 	body:  StreamBuilder(
       stream: FirebaseFirestore.instance.collection("Medicinesell").where('Did', isEqualTo: user.email)
-          .orderBy("date", descending: true).snapshots(),
+          .snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {
           return Center
           (child: Image.asset("assets/nothing.gif")
      );
         }
-        else if (snapshot.data?.size == 0) {
+        // else if (snapshot.data?.size == 0) {
 
           
-            return Center
-          (child: Image.asset("assets/nothing.gif"));
-        }
+        //     return Center
+        //   (child: Image.asset("assets/nothing.gif"));
+        // }
 
         else{
 
