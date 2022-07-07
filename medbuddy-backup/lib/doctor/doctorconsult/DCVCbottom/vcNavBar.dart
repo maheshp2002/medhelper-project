@@ -112,14 +112,17 @@ class slidedownbar extends  StatelessWidget {
 
         else{
      return ListView(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.only(top: 100),
         children: <Widget>[
           DrawerHeader(
+            //child: Text(snapshot.data['User name']),
             decoration: BoxDecoration(
-                color: Color(0xFF3EB16F),
+                color: Colors.deepPurple,
                 image: DecorationImage(
                     fit: BoxFit.fill,
-                    image: NetworkImage(snapshot.data['images']))),
+                    image: NetworkImage(snapshot.data['images'],)
+                   )
+                    ),
           ),
 
           ListTile(

@@ -92,9 +92,48 @@ Future<void> gettoken() async{
               ),
     
           backgroundColor: Colors.deepPurple,
-          title: const Text('Video call'),
+          title: const Text('MedHelper'),
         ),
-        body: SlidingUpPanel(
+
+      body:  SafeArea(
+          child: _loading ? Center(
+      
+      child: Image.asset('assets/splash/pendulamloading.gif'),) :
+          Stack(
+            children: [
+              AgoraVideoViewer(
+                client: client,
+                disabledVideoWidget: 
+                Container(color: Colors.black,
+                  child:
+                Center(child:
+                Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Image.asset("assets/logo/MH_logo.png"),
+                  SizedBox(height: 20,),
+                  Container(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 1),
+                  child: Text('MedHelper',
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                      fontFamily: "JosefinSans",
+                      fontSize: 44,
+                      color: Colors.white,
+                    ),)
+                  )
+                ),
+                  ]))
+                ),
+                layoutType: Layout.floating,
+                enableHostControls: true, // Add this to enable host controls
+              ),
+              AgoraVideoButtons(
+                client: client,
+              ),
+        //body: 
+        SlidingUpPanel(
           controller: _pc1,
       boxShadow: const <BoxShadow>[BoxShadow(blurRadius: 8.0, color: Color.fromARGB(62, 20, 20, 20))],
        borderRadius: BorderRadius.only(
@@ -104,24 +143,10 @@ Future<void> gettoken() async{
         minHeight: 0,
         maxHeight: 500,
         color: Color.fromARGB(255, 250, 248, 248),
-      panel: slideupbar(),
-      body:  SafeArea(
-          child: _loading ? Center(
-      
-      child: Image.asset('assets/splash/pendulamloading.gif'),) :
-          Stack(
-            children: [
-              AgoraVideoViewer(
-                client: client,
-               // layoutType: Layout.floating,
-               // enableHostControls: true, // Add this to enable host controls
-              ),
-              AgoraVideoButtons(
-                client: client,
-              ),
+      panel: slideupbar(),)              
             ],
           ),
-        ),
+        //),
       ),
       ),
     );
