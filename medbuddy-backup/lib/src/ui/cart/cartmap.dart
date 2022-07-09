@@ -24,7 +24,7 @@ return Scaffold(
           new IconButton(
           icon: new Icon(Icons.domain_verification),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
           },
         ),
 

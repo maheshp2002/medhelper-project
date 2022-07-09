@@ -13,7 +13,7 @@ class rateingSucess extends StatefulWidget {
   }
 
   _navigatetoHome()async{
-    await Future.delayed(Duration(milliseconds: 2000), () {});
+    await Future.delayed(Duration(milliseconds: 7000), () {});
     Navigator.of(context).pop();
   }
 

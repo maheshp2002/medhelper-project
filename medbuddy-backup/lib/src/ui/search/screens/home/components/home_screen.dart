@@ -17,10 +17,7 @@ class HomeScreen extends StatelessWidget {
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
            // checkbool1();
-            Navigator.pop(
-              context,
-              MaterialPageRoute(builder: (context) => tab()),
-            );
+            Navigator.pop(context);
           },
         ),
 ),

@@ -16,6 +16,7 @@ class MedicineDetails extends StatelessWidget {
 
   MedicineDetails(this.medicine);
 
+
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);

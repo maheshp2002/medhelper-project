@@ -284,7 +284,9 @@ class _doctorHomePageState extends State<Dvideocall> {
 
                                   ]),
                                   SizedBox(height: 10,),
-
+                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
                                   ElevatedButton(
                                     style: ButtonStyle(
                                     backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
@@ -293,6 +295,24 @@ class _doctorHomePageState extends State<Dvideocall> {
                                      style: TextStyle(color: Colors.black),),
                                     ),
 
+                                    SizedBox(width: 10,),
+
+                                  ElevatedButton(
+                                    style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)
+                                    ),  
+                                    onPressed: () async{
+
+                                      FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
+                                        "token": 0,
+                                      });
+
+                                    },                                                                      
+                                    child: Text("Reset",
+                                     style: TextStyle(color: Colors.white),),
+                                    ),                                    
+
+                                    ],),
                                   SizedBox(height: 10,),
 
                                  Row(
