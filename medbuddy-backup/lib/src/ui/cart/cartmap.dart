@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/cart/cartfull.dart';
+import 'package:medbuddy/src/ui/cart/pdtcheck/Buymap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
@@ -24,7 +25,7 @@ return Scaffold(
           new IconButton(
           icon: new Icon(Icons.domain_verification),
           onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> buyMap()));
           },
         ),
 
