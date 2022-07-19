@@ -258,7 +258,9 @@ class slideupbar extends  StatefulWidget {
 
 class _slideupbarState extends State<slideupbar> {
 
-    User user = FirebaseAuth.instance.currentUser;
+  User user = FirebaseAuth.instance.currentUser;
+  var collectionref = FirebaseFirestore.instance.collection('consultDoctors');
+
   String prescription;
   String emailid;
   String date;
@@ -287,6 +289,7 @@ if(pickedDate != null ){
 }
 }
 //...........................................................................................
+
   @override
   Widget build(BuildContext context) {
 
@@ -398,6 +401,14 @@ if(pickedDate != null ){
                       ),]),
                     ),
                     onPressed: () async{
+
+                      String sign;
+
+                    await collectionReference.doc(user.email).get()
+                    .then((snapshot) {
+                              sign = snapshot.get('sign');
+                            });
+                    
                       Fluttertoast.showToast(  
                       msg: 'Prescription Added',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -406,6 +417,7 @@ if(pickedDate != null ){
                       backgroundColor: Colors.black,  
                       textColor: Colors.white 
                       ); 
+
                       //String name;
                       // reg;
                       var collection = FirebaseFirestore.instance.collection('DoctorsValidation');
@@ -422,6 +434,7 @@ if(pickedDate != null ){
                         'email':user.email,
                         'doctor name': name,
                         'regno': reg,
+                        'sign': sign,
                         }, 
                         );
 

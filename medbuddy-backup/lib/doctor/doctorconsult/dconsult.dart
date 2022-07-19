@@ -47,16 +47,27 @@ Future<String> uploadFile(_image) async {
               String returnURL = await ref.getDownloadURL();
               return returnURL;
             }
+//..........................................................................................
+Future<String> uploadFile1(_image1) async {
 
+            FirebaseStorage storage = FirebaseStorage.instance;
+              Reference ref = storage.ref().child(user.email + "doctor_sign" + DateTime.now().toString());
+              await ref.putFile(File(_image1.path));
+              String returnURL = await ref.getDownloadURL();
+              return returnURL;
+            }
+
+//..........................................................................................
 //LOCATION
 //getCurrentLocation() async {
-  Future<void> saveImages(File _image) async {
+  Future<void> saveImages(File _image, File _image1) async {
 
                
               //_image.forEach((image) async {
             
 
             String imageURL = await uploadFile(_image);
+            String imageURL1 = await uploadFile(_image1);
 
             String regno;
 
@@ -82,6 +93,7 @@ Future<String> uploadFile(_image) async {
                         'reviewadd': 0,
                         'limit': 0,
                         'vccode': "abcd",
+                        'sign': _image1,
                         },
                         );
            setState(() {
@@ -94,6 +106,7 @@ Future<String> uploadFile(_image) async {
 // Image Picker
   //List<File> _images = [];
   File _image; // Used only if you need a single picture
+  File _image1; // Used only if you need a single picture
 
   Future getImage(bool gallery) async {
     ImagePicker picker = ImagePicker();
@@ -118,6 +131,32 @@ Future<String> uploadFile(_image) async {
       }
     });
   }
+//........................................................................................
+
+  Future getImage1(bool gallery) async {
+    ImagePicker picker = ImagePicker();
+    PickedFile pickedFile;
+    // Let user select photo from gallery
+    if(gallery) {
+      pickedFile = await picker.getImage(
+          source: ImageSource.gallery,maxWidth: 150, maxHeight: 150);
+    } 
+    // Otherwise open camera to get new photo
+    else{
+      pickedFile = await picker.getImage(
+          source: ImageSource.camera,);
+    }
+
+    setState(() {
+      if (pickedFile != null) {
+        _image1 = File(pickedFile.path); // Use if you only need a single picture
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
+//..........................................................................................
 
   @override
   Widget build(BuildContext context) {
@@ -240,6 +279,7 @@ Future<String> uploadFile(_image) async {
           const SizedBox(
             height: 16,
           ),
+//dp
 
               GestureDetector(
               onTap: () {
@@ -280,6 +320,57 @@ Future<String> uploadFile(_image) async {
               height: 16,
             ),
 
+//signature...................................................
+
+            Row(children: [
+          // Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
+          Text("Digital Signature",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
+            ]),
+
+            const SizedBox(
+              height: 10,
+            ),
+
+//sign
+              GestureDetector(
+              onTap: () {
+                 getImage1(true);
+              },
+              child: Container(
+                //radius: 55,
+              height: 150.0,
+                width: 150.0,
+                color: Colors.grey[200],
+                child: _image1 != null
+                    ? ClipRRect(
+                        //borderRadius: BorderRadius.circular(50),
+                        child: Image.file(
+                          _image1,
+                          width: 150,
+                          height: 150,
+                          fit: BoxFit.fill
+                        ),
+                      )
+                    : Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(50)),
+                        width: 100,
+                        height: 100,
+                        child: Icon(
+                          Icons.camera_alt,
+                          color: Colors.grey[800],
+                        ),
+                      ),
+              ),
+            ),
+
+
+//gap btw borders
+            const SizedBox(
+              height: 16,
+            ),
  
 
 //Submit Button
@@ -292,7 +383,7 @@ Future<String> uploadFile(_image) async {
             isLoadingDF = true;
           });
               //uploadFile(_image);
-              await saveImages(_image);
+              await saveImages(_image, _image1);
 
               Fluttertoast.showToast(  
                       msg: 'Public profile created',  

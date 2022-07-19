@@ -7,6 +7,7 @@ import 'package:medbuddy/doctor/splash_screen/doctorSplash.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
+
 class doctorHomePage extends StatefulWidget {
   doctorHomePage({Key key}) : super(key: key);
 
@@ -16,10 +17,12 @@ class doctorHomePage extends StatefulWidget {
 
 class _doctorHomePageState extends State<doctorHomePage> {
   User user = FirebaseAuth.instance.currentUser;
+  
+  var collectionref = FirebaseFirestore.instance.collection('consultDoctors');
   String prescription;
   String emailid;
   String date;
-  //String name;
+
    TextEditingController prescriptionController = TextEditingController();
    TextEditingController emailidController = TextEditingController();
    TextEditingController dateController = TextEditingController();
@@ -210,6 +213,16 @@ if(pickedDate != null ){
                       ),
                     ),
                     onPressed: () async{
+
+                    String sign;
+
+                    await collectionReference.doc(user.email).get()
+                    .then((snapshot) {
+                              sign = snapshot.get('sign');
+                            });
+
+
+
                       Fluttertoast.showToast(  
                       msg: 'Prescription Added',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -234,6 +247,7 @@ if(pickedDate != null ){
                         'email':user.email,
                         'doctor name': name,
                         'regno': reg,
+                        'sign': sign,
                         }, 
                         );
 
@@ -255,4 +269,40 @@ if(pickedDate != null ){
           ],
         )));
   }
+
+// Future<Uint8List> makePdf(Invoice invoice) async {
+// //final imageLogo = MemoryImage((await rootBundle.load('assets/technical_logo.png')).buffer.asUint8List());
+//   final pdf = Document();
+//   pdf.addPage(
+//     Page(
+//     build: (Context context) {
+//       return Column(
+//         children: [
+//           Row(
+//             mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+//             children: [
+//               Column(
+//                 children: [
+//                   Text("Attention to: ${invoice.customer}"),
+//                   Text(invoice.address),
+//                 ],
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//               ),
+//               Container(
+//                 height: 150,
+//                 width: 150,
+//               )
+//             ],
+//           ),          
+//         ]);
+
+//       }
+//     )
+//     );
+// }
+
+
+
 }
+
+

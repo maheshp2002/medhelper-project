@@ -127,7 +127,7 @@ _NewEntryState({this.uid});
         ),
         centerTitle: true,
         title: Text(
-          "Add New Mediminder",
+          "Add New Medicine",
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -483,7 +483,7 @@ _NewEntryState({this.uid});
       }
       await flutterLocalNotificationsPlugin.showDailyAtTime(
           int.parse(medicine.notificationIDs[i]),
-          'Mediminder: ${medicine.medicineName}',
+          'MedHelper: ${medicine.medicineName}',
           medicine.medicineType.toString() != MedicineType.None.toString()
               ? 'It is time to take your ${medicine.medicineType.toLowerCase()}, according to schedule'
               : 'It is time to take your medicine, according to schedule',

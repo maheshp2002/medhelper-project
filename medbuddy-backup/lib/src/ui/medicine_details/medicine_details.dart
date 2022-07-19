@@ -31,7 +31,7 @@ class MedicineDetails extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-          "Mediminder Details",
+          "Medicine Details",
           style: TextStyle(
             color: Colors.black,
             fontSize: 18,
