@@ -1,4 +1,4 @@
-  import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/Medsellerhomebtm.dart';
@@ -25,7 +25,7 @@ class _sellerMapageState extends State<ratingdlt>{
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No rateing")
+          (child: Text("No rating")
      );
         }
         
@@ -33,7 +33,7 @@ class _sellerMapageState extends State<ratingdlt>{
 
           
             return Center
-          (child: Text("No rateing",
+          (child: Text("No rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

@@ -24,7 +24,7 @@ class _sellerMapageState extends State<Tratingdlt>{
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No rateing")
+          (child: Text("No rating")
      );
         }
         
@@ -32,7 +32,7 @@ class _sellerMapageState extends State<Tratingdlt>{
 
           
             return Center
-          (child: Text("No rateing",
+          (child: Text("No rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

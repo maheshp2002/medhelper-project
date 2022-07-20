@@ -25,7 +25,7 @@ class _sellerMapageState extends State<deleteratingsearch>{
          if (!snapshot.hasData) {
           //hasdata = true;
           return Center
-          (child: Text("No rateing")
+          (child: Text("No rating")
      );
         }
         
@@ -33,7 +33,7 @@ class _sellerMapageState extends State<deleteratingsearch>{
 
           
             return Center
-          (child: Text("No rateing",
+          (child: Text("No rating",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans', fontSize: 20,))
           );
         }

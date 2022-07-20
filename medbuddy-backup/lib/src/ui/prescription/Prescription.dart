@@ -162,6 +162,7 @@ Widget build(BuildContext context) {
   Future<void> _createPDF() async {
     PdfDocument document = PdfDocument();
     final page = document.pages.add();
+    document.pageSettings.size = PdfPageSize.a4;
 
 // final PdfLayoutResult layoutResult = PdfTextElement(
 //         text: dcname,
@@ -223,13 +224,14 @@ Widget build(BuildContext context) {
         PdfPen(PdfColor(142, 170, 219), dashStyle: PdfDashStyle.custom);
     linePen.dashPattern = <double>[3, 3];
     //Draw line
-    page.graphics.drawLine(linePen, Offset(0, pageSize.height - 100),
-        Offset(pageSize.width, pageSize.height - 100));
+    page.graphics.drawLine(linePen, 
+        Offset(0, pageSize.height - 80),
+        Offset(pageSize.width, pageSize.height - 80));
 
     //draw image
     page.graphics.drawImage(
         PdfBitmap(await _readImageData(sign)),
-        Rect.fromLTWH(280, 700, pageSize.width - 150, 100));
+        Rect.fromLTWH(300, 680, 220, 100));
 
 //............................................................................
 //save

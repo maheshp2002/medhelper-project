@@ -93,7 +93,7 @@ Future<String> uploadFile1(_image1) async {
                         'reviewadd': 0,
                         'limit': 0,
                         'vccode': "abcd",
-                        'sign': _image1,
+                        'sign': imageURL1,
                         },
                         );
            setState(() {
@@ -206,7 +206,7 @@ Future<String> uploadFile1(_image1) async {
                 border: OutlineInputBorder()
               ),
               keyboardType: TextInputType.name,
-            maxLength: 10,
+            maxLength: 30,
           ),
 //gap btw borders
           const SizedBox(
@@ -314,23 +314,24 @@ Future<String> uploadFile1(_image1) async {
               ),
             ),
 
+            const SizedBox(
+              height: 10,
+            ),            
+
+//signature...................................................
+
+            Center(child:
+          // Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
+          Text("Profile picture",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
+            ),
 
 //gap btw borders
             const SizedBox(
               height: 16,
             ),
 
-//signature...................................................
 
-            Row(children: [
-          // Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
-          Text("Digital Signature",
-          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
-            ]),
-
-            const SizedBox(
-              height: 10,
-            ),
 
 //sign
               GestureDetector(
@@ -364,6 +365,18 @@ Future<String> uploadFile1(_image1) async {
                         ),
                       ),
               ),
+            ),
+
+            const SizedBox(
+              height: 10,
+            ),            
+
+//signature...................................................
+
+            Center(child:
+          // Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
+          Text("Digital Signature",
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
             ),
 
 

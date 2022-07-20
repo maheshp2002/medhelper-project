@@ -137,7 +137,8 @@ class _doctorHomePageState extends State<Dvideocall> {
                             builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                               if (!snapshot.hasData) {
                                 return Center
-                                (child:Image.asset("assets/nothing.gif")
+                                (child: CircularProgressIndicator(color: Colors.deepPurple)
+                                //Image.asset("assets/nothing.gif")
                           );
                               }
 
@@ -230,7 +231,8 @@ class _doctorHomePageState extends State<Dvideocall> {
                             builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                               if (!snapshot.hasData) {
                                 return Center
-                                (child:Image.asset("assets/nothing.gif")
+                                (child: CircularProgressIndicator(color: Colors.deepPurple)
+                                //Image.asset("assets/nothing.gif")
                           );
                               }
 

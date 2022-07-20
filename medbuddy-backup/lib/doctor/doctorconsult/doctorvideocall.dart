@@ -389,8 +389,6 @@ if(pickedDate != null ){
                     child: Center(
                       child: Row(mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                      Icon(Icons.send, color: Colors.white),
-                      SizedBox(width: 10,),
                       Text(
                         "Send",
                         style: TextStyle(
@@ -398,13 +396,17 @@ if(pickedDate != null ){
                           fontSize: 28,
                           fontWeight: FontWeight.w700,
                         ),
-                      ),]),
-                    ),
+                      ),
+
+                      SizedBox(width: 10,),
+
+                      Icon(Icons.send, color: Colors.white),
+                    ]),),
                     onPressed: () async{
 
                       String sign;
 
-                    await collectionReference.doc(user.email).get()
+                    await collectionReference.collection("consultDoctors").doc(user.email).get()
                     .then((snapshot) {
                               sign = snapshot.get('sign');
                             });

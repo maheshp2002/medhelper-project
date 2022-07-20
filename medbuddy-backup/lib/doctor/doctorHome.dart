@@ -203,20 +203,27 @@ if(pickedDate != null ){
                     color: Colors.deepPurple,
                     shape: StadiumBorder(),
                     child: Center(
-                      child: Text(
-                        "Confirm",
+                      child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                      Text(
+                        "Send",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 28,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                    ),
+
+                      SizedBox(width: 10,),
+                      
+                      Icon(Icons.send, color: Colors.white),
+
+                    ]),),
                     onPressed: () async{
 
                     String sign;
 
-                    await collectionReference.doc(user.email).get()
+                    await collectionReference.collection("consultDoctors").doc(user.email).get()
                     .then((snapshot) {
                               sign = snapshot.get('sign');
                             });

@@ -154,7 +154,7 @@ Future<String> uploadFile(_image) async {
                 border: OutlineInputBorder()
               ),
               keyboardType: TextInputType.name,
-            maxLength: 10,
+            maxLength: 30,
           ),
 //gap btw borders
           const SizedBox(

@@ -45,7 +45,9 @@ User user = FirebaseAuth.instance.currentUser;
          if (!snapshot.hasData) {   
         return Drawer(
        child: Center
-          (child: Image.asset("assets/nothing.gif")));
+          (child: CircularProgressIndicator(color: Colors.deepPurple)
+          //Image.asset("assets/nothing.gif")));
+          ));
         }
 
         else{
@@ -107,7 +109,8 @@ class slidedownbar extends  StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {   
              return Center
-          (child: Image.asset("assets/nothing.gif"));
+          (child: CircularProgressIndicator(color: Colors.deepPurple));
+          //Image.asset("assets/nothing.gif"));
         }
 
         else{
