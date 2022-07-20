@@ -215,7 +215,7 @@ Widget build(BuildContext context) {
     page.graphics.drawString(
         prescription, PdfStandardFont(PdfFontFamily.helvetica, 20),
         brush: PdfBrushes.black,
-        bounds: Rect.fromLTWH(25, 280, pageSize.width - 280, 520),
+        bounds: Rect.fromLTWH(25, 280, pageSize.width - 50, 520),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));   
 
 //............................................................................
