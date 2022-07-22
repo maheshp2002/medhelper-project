@@ -26,7 +26,13 @@
             }
           ],
           "merchantInfo": {
-            "merchantName": "Example Merchant"
+            "merchantId": "BCR2DN4TXT547DCW",
+            "merchantName": "Medseller"
           },
+          "transactionInfo": {
+            "countryCode": "US",
+            "currencyCode": "USD"
+          }        
+
     }
 }

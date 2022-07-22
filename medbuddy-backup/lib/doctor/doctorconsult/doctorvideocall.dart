@@ -80,6 +80,9 @@ Future<void> gettoken() async{
         bottomNavigationBar: bottombar(),
         appBar: AppBar(
           elevation: 16.0,
+          actions: [
+            Text(nexttoken.toString())
+          ],
           leading: IconButton(
                 icon: const Icon(
                   Icons.arrow_back,
@@ -225,8 +228,9 @@ Builder(
                       FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
                       "nextpt": FieldValue.increment(1),
                       });
+                      nexttoken++;
                                     Fluttertoast.showToast(  
-                                      msg: snapshot.data['nextpt'].toString(),  
+                                      msg: nexttoken.toString(),  
                                       toastLength: Toast.LENGTH_LONG,  
                                       gravity: ToastGravity.BOTTOM,  
                                       //timeInSecForIosWeb: 1,  
@@ -234,7 +238,6 @@ Builder(
                                       textColor: Colors.white  
                                   );                       
 
-                      nexttoken++;
               },
               icon: const Icon(
                 Icons.add,

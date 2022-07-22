@@ -168,6 +168,8 @@ class _doctorHomePageState extends State<Dvideocall> {
                       FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
                       "nextpt": FieldValue.increment(1),
                       });
+                      //int tokens = ;
+                      
                       nexttoken = snapshot.data['nextpt'] + 1;
                         
                       FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({

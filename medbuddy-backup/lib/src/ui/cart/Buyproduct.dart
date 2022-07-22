@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/ui/cart/buysplash.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
+import 'package:pay/pay.dart';
 
 
 class Buyproduct extends StatefulWidget {
@@ -37,8 +38,22 @@ String mobileno;
   cindexno['images2']
 
  ];
+ 
+// var _paymentItems = [
+//   PaymentItem(
+//     label: 'Total',
+//     amount: '99.99',
+//     status: PaymentItemStatus.final_price,
+//   )
+// ];
+final _paymentItems = <PaymentItem>[];
+
   @override
   Widget build(BuildContext context) {
+
+    //payment item
+    _paymentItems.add(PaymentItem(amount: cindexno['price'], label: cindexno['medicine name']));
+    
     return Scaffold(appBar: AppBar(
       title: Text(cindexno['medicine name']),
       backgroundColor: Colors.deepPurple,
@@ -340,7 +355,8 @@ Container(
     ]
   )
 ),
-
+Row(mainAxisAlignment: MainAxisAlignment.center,
+  children: [
      ElevatedButton(
       style: ButtonStyle(
        shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -434,6 +450,28 @@ Container(
                   }  },     
      child: Text("Buy Product", style: TextStyle(color: Colors.black),)),   
 
+    SizedBox(
+      width: 10,
+    ),
+
+//gpay....................................................................................    
+      GooglePayButton(
+        paymentConfigurationAsset: 'gpay.json',
+        paymentItems: _paymentItems,
+        width: 150,
+        height: 40,
+        style: GooglePayButtonStyle.white,
+        type: GooglePayButtonType.pay,
+        margin: const EdgeInsets.only(top: 0.0),
+        onPaymentResult: (data) {
+          print(data);
+        },
+        loadingIndicator: const Center(
+          child: CircularProgressIndicator(color: Colors.deepPurple,),
+        ),
+      ),
+
+    ]),
   SizedBox(
       height: 10,
     ),
