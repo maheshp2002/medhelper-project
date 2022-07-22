@@ -1,8 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_restart/flutter_restart.dart';
 import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/seller/SellerCloud/SellerMap2.dart';
 import 'package:medbuddy/seller/SellerCloud/dltSeller.dart';
 import 'package:medbuddy/seller/SellerCloud/updatepdt.dart';
+import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 
@@ -12,6 +16,16 @@ class sellerSettings extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<sellerSettings>{
+  
+void _restartApp() async {
+  await FlutterRestart.restartApp();
+}
+  logout() async {
+    FirebaseService service = new FirebaseService();
+    await service.signOutFromGoogle();
+    _restartApp();
+  
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +96,66 @@ class _SettingsPageState extends State<sellerSettings>{
                  ),
                 
                 
-            )
+            ),
+
+             Card(
+              child: 
+                ListTile(
+                title: Text('Delete account'),
+                trailing: Icon(Icons.arrow_forward_ios),
+                onTap: () async{
+                                        showModalBottomSheet<void>(context: context,
+                                        builder: (BuildContext context) {
+                                        return Container(
+                                        child: new Wrap(
+                                        children: <Widget>[
+                                        new ListTile(
+                                        leading: new Icon(Icons.delete),
+                                        title: new Text('Delete'),
+                                          onTap: () async{                   
+                                        try {
+                                          await FirebaseAuth.instance.currentUser.delete();
+                                        } catch (e) {
+                                          if (e.code == 'requires-recent-login') {
+                                            print('The user must reauthenticate before this operation can be executed.');
+                                          }
+                                        }                                            
+                                        SharedPreferences prefs = await SharedPreferences.getInstance();
+                                        await prefs.setBool('seller', false);  
+                                          
+                                        logout();   
+                                          
+  
+                                          })
+                                          ])
+                                          ); 
+                                          }
+                                          );
+
+                },
+                 ),
+                
+                
+            ),
+
+            Column(mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(children: [
+                Icon(Icons.warning_amber_outlined,color: Colors.grey, size: 12),
+                SizedBox(width: 10),
+                Text(
+                "Note:- Please delete all order details, products etc.\nbefore deleting account.",
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                softWrap: true,
+                style: new TextStyle(
+                    fontWeight: FontWeight.w300,
+                    letterSpacing: 0.5,
+                    color: Colors.grey,
+                    fontSize: 12.0),
+              ),
+              ]),
+            ])           
 
 
          ])) ));

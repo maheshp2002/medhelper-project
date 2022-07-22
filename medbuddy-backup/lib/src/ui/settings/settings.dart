@@ -15,6 +15,9 @@ class Settings extends StatefulWidget {
 class _SettingsPageState extends State<Settings>{
   final collectionReference = FirebaseFirestore.instance.collection(user.uid);
   var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
+  var collectionpdtbuy = FirebaseFirestore.instance.collection(user.email + "Productbuy");
+
+  
    
   @override
   Widget build(BuildContext context) {
@@ -91,18 +94,39 @@ if (!snapshot.hasData) {
                         title: new Text('Delete'),
                         onTap: () async{
                           await user?.delete();
+                          FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
+
+                          try{
                           collectionReference.snapshots().forEach((element) {
                           for (QueryDocumentSnapshot snapshot in element.docs) {
                             snapshot.reference.delete();
                           }});
+                          } catch(e){
+                            print(e);
+                          }
+
+                            _restartApp();
+
+
+                          try{
                           collectionCart.snapshots().forEach((element) {
                           for (QueryDocumentSnapshot snapshot in element.docs) {
                             snapshot.reference.delete();
                           }});
-                          FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
+                          } catch(e){
+                            print(e);
+                          }
+
+                          try{
+                          collectionpdtbuy.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }});
+                          } catch(e){
+                            print(e);
+                          }
                          
                          
-                            _restartApp();
 
                         })
                         ]
@@ -129,23 +153,81 @@ if (!snapshot.hasData) {
                         leading: new Icon(Icons.delete),
                         title: new Text('Delete'),
                         onTap: () async{
-                          await user?.delete();
+                          try{
+                          FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
+                           await user?.delete();
+
+                          try{
                           collectionReference.snapshots().forEach((element) {
                           for (QueryDocumentSnapshot snapshot in element.docs) {
                             snapshot.reference.delete();
                           }});
+                          } catch(e){
+                            print(e);
+                          }
+
+
+
+                          try{
                           collectionCart.snapshots().forEach((element) {
                           for (QueryDocumentSnapshot snapshot in element.docs) {
                             snapshot.reference.delete();
                           }});
+                          } catch(e){
+                            print(e);
+                          }
+
+                          try{
+                          collectionpdtbuy.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }});
+                          } catch(e){
+                            print(e);
+                          }
+                         
+                            _restartApp();
+                         
+                           
+                          } catch(e){
+
                           FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
 
                           deleteFile(snapshot.data['images']);       
 
                           await FirebaseFirestore.instance.collection("UserpublicID").doc(user.email).delete();   
-                         
-                         
-                            _restartApp();
+                        
+                          try{
+                          collectionReference.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }});
+                          } catch(e){
+                            print(e);
+                          }
+
+                          try{
+                          collectionCart.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }});
+                          } catch(e){
+                            print(e);
+                          }
+
+                           try{
+                          collectionpdtbuy.snapshots().forEach((element) {
+                          for (QueryDocumentSnapshot snapshot in element.docs) {
+                            snapshot.reference.delete();
+                          }});
+                          } catch(e){
+                            print(e);
+                          } 
+                          await user?.delete();
+                          _restartApp();
+
+                                                  
+                          }
 
                         })
                         ]

@@ -88,6 +88,14 @@ return Scaffold(
                                           await prefs.setBool('validation', false);  
                                           await prefs.setBool('doctor', false); 
 
+                                        try {
+                                          await FirebaseAuth.instance.currentUser.delete();
+                                        } catch (e) {
+                                          if (e.code == 'requires-recent-login') {
+                                            print('The user must reauthenticate before this operation can be executed.');
+                                          }
+                                        }                                            
+
                                           logout();                                          
                                           },
                                         ),
@@ -142,6 +150,7 @@ return Scaffold(
                                         title: new Text('Delete'),
                                           onTap: () async{                                            
                                           deleteFile(snapshot.data['images']);
+                                          deleteFile(snapshot.data['sign']);
 
                                           await FirebaseFirestore.instance.collection("consultDoctors").doc(user1.email).delete();   
                                           await FirebaseFirestore.instance.collection("DoctorsValidation").doc(user1.email).delete();          
@@ -149,7 +158,6 @@ return Scaffold(
                                           SharedPreferences prefs = await SharedPreferences.getInstance();
                                           await prefs.setBool('validation', false);  
                                           await prefs.setBool('doctor', false); 
-                                          logout();
                                           try{
                                           await FirebaseFirestore.instance.collection(user1.email + "review").snapshots().forEach((element) {
                                           for (QueryDocumentSnapshot snapshot in element.docs) {
@@ -158,9 +166,17 @@ return Scaffold(
                                           catch(e){
                                             print(e);
                                           } 
-                                          
+
+                                        try {
+                                          await FirebaseAuth.instance.currentUser.delete();
+                                        } catch (e) {
+                                          if (e.code == 'requires-recent-login') {
+                                            print('The user must reauthenticate before this operation can be executed.');
+                                          }
+                                        }                                          
                                           
                                   
+                                          logout();
  
                                         },
                                                                                 ),

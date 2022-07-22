@@ -46,7 +46,7 @@ Widget build(BuildContext context) {
           (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
 
         if (snapshot.hasError) {
-          return Text("Something went wrong");
+          return Center(child: Text("Something went wrong"));
         }
 
         if (snapshot.hasData && !snapshot.data.exists) {
@@ -64,7 +64,7 @@ Widget build(BuildContext context) {
           ],));
         }
 
-        return Text("loading");
+        return Center(child: CircularProgressIndicator(color: Colors.deepPurple));
       },
     )
     );
