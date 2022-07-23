@@ -28,7 +28,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return  Material(
               child: Scaffold(
-                backgroundColor: Color.fromARGB(255, 253, 251, 251),
+                backgroundColor: Colors.white,
                 body: SafeArea(
                   child: SingleChildScrollView(
                     child: Container(
