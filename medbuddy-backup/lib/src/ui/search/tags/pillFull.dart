@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
+import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/rateing/rateing.dart';
 import 'package:medbuddy/src/ui/rateing/rateingtag/Pdeleterating.dart';
@@ -368,15 +369,16 @@ class _DetailedItemState extends State<pillFull> {
         bool docExits = await checkIfDocExists(Pdocid);
         if(docExits == true){
                       Fluttertoast.showToast(  
-                      msg: 'Item removed from WishList',  
+                      msg: 'Item already in WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));                  
-            return collectionCart.doc(Pdocid).delete();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => cartMap()));
+            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));
+            // return collectionCart.doc(docidsearch).delete();
         } else{
           collectionCart.doc(Pdocid).set(
                         {

@@ -52,7 +52,7 @@ final _paymentItems = <PaymentItem>[];
   Widget build(BuildContext context) {
 
     //payment item
-    _paymentItems.add(PaymentItem(amount: cindexno['price'], label: cindexno['medicine name']));
+    _paymentItems.add(PaymentItem(amount: cindexno['price'], label: cindexno['medicine name'], status: PaymentItemStatus.final_price,));
     
     return Scaffold(appBar: AppBar(
       title: Text(cindexno['medicine name']),
@@ -463,8 +463,103 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
         style: GooglePayButtonStyle.white,
         type: GooglePayButtonType.pay,
         margin: const EdgeInsets.only(top: 0.0),
-        onPaymentResult: (data) {
-          print(data);
+        // onPressed: () async{
+          
+
+        // },
+        onPaymentResult: (data) async{
+                    print(data);
+                     Fluttertoast.showToast(  
+                      msg: data.toString(),  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white); 
+ //........................................................................................                      
+          String uname1;
+           await users.get().then((snapshot) {
+           uname1 = snapshot.get('username');
+        });
+
+        int cartempty1;
+           await iscartempty.get().then((snapshot) {
+           cartempty1 = snapshot.get('stock');
+        });
+
+        if (cartempty1 != 0){
+
+
+        FirebaseFirestore.instance.collection("ProductSeller").add({
+          'images': cindexno['images'],
+          'medicine name': cindexno['medicine name'],
+          'price': cindexno['price'],
+          'date': cindexno['date'],
+          'dosage': cindexno['dosage'],
+          'nopdt': stocks,
+          'address': address,
+          'address2': address2,
+          'name': uname1,
+          'pin': pin,
+          'mobileno': mobileno,
+          'email': user.email,
+          'Did': cindexno['email id'],
+          'docid': cdocid
+        });
+
+        FirebaseFirestore.instance.collection(user.email + "Productbuy").doc(cdocid).set({
+          'images': cindexno['images'],
+          'medicine name': cindexno['medicine name'],
+          'price': cindexno['price'],
+          'date': cindexno['date'],
+          'dosage': cindexno['dosage'],
+          'nopdt': stocks,
+          'address': address,
+          'address2': address2,
+          'name': uname1,
+          'pin': pin,
+          'mobileno': mobileno,
+          'email': cindexno['email id'],
+          'packed': "Not yet packed",
+          'reachedA': "Product on it's way",
+          'reachedB': "Product on it's way",
+          'arrival': "Product on it's way",
+          'delivered': "Product on it's way",
+          'pointA': 0,
+          'pointB': 0,
+          'pointC': 0,
+          'pointD': 0,
+          'pk': 0,
+        });
+
+
+
+        FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
+         'stockno': FieldValue.increment(-1),
+       });
+       FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid).update({
+        'stock': FieldValue.increment(-1),
+       });
+                       Fluttertoast.showToast(  
+                      msg: 'Item purchased',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white  
+                  );
+      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => buySucess()));             
+      
+      } else {
+                     Fluttertoast.showToast(  
+                      msg: 'Cart empty',  
+                      toastLength: Toast.LENGTH_LONG,  
+                      gravity: ToastGravity.BOTTOM,  
+                      //timeInSecForIosWeb: 1,  
+                      backgroundColor: Colors.black,  
+                      textColor: Colors.white); 
+                  } 
+//................................................................................
         },
         loadingIndicator: const Center(
           child: CircularProgressIndicator(color: Colors.deepPurple,),

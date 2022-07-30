@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
+import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/rateing/deleterating.dart';
 import 'package:medbuddy/src/ui/rateing/rateing.dart';
@@ -389,15 +390,16 @@ class _DetailedItemState extends State<SellerFull> {
           
          // checkbool1();
                       Fluttertoast.showToast(  
-                      msg: 'Item removed from WishList',  
+                      msg: 'Item already in WishList',  
                       toastLength: Toast.LENGTH_LONG,  
                       gravity: ToastGravity.BOTTOM,  
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
                       textColor: Colors.white  
                   );
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));
-            return collectionCart.doc(docidbtm).delete();
+                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => cartMap())); 
+            // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DSplash()));
+            // return collectionCart.doc(docidsearch).delete();
         } else{
           //checkbool1();
           collectionCart.doc(docidbtm).set(

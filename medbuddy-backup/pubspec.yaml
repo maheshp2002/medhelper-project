@@ -120,7 +120,6 @@ flutter:
     - assets/creatorspic/
     - assets/signup.gif
     - assets/food_delivery.gif
-    - assets/gpay.json
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

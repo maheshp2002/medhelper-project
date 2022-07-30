@@ -201,14 +201,14 @@ Widget build(BuildContext context) {
     page.graphics.drawString(
         'Date: ' + date, PdfStandardFont(PdfFontFamily.helvetica, 20),
         brush: PdfBrushes.black,
-        bounds: Rect.fromLTWH(25, 0, pageSize.width - 115, 400),
+        bounds: Rect.fromLTWH(25, 0, pageSize.width - 115, 300),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));
 
      //Draw string
     page.graphics.drawString(
-        'Prescription: ', PdfStandardFont(PdfFontFamily.helvetica, 30),
+        'Prescription: ', PdfStandardFont(PdfFontFamily.helvetica, 20),
         brush: PdfBrushes.black,
-        bounds: Rect.fromLTWH(25, 10, pageSize.width - 115, 480),
+        bounds: Rect.fromLTWH(25, 10, pageSize.width - 115, 350),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));       
 
      //Draw string
