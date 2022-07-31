@@ -125,12 +125,18 @@ var collectionReference = FirebaseFirestore.instance.collection("consultDoctors"
           Text("Mobile no:" + " " + snapshot.data['mobile no'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20),)),   
 
           SizedBox(height: 10,),
+
+          Card(child: Row(mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+          SizedBox(width: 10,),
+          Text("Hospital address:" + "\n\n" + snapshot.data['Haddress'] + "\n\n" + "", textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),],)),
           
+          SizedBox(height: 10,),            
           
           Card(child: Row(mainAxisAlignment: MainAxisAlignment.start,
           children: [
           SizedBox(width: 10,),
-          Text("Consult time:" + "\n\n" + snapshot.data['consultTime'], textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),],)),
+          Text("Consult time:" + "\n\n" + snapshot.data['consultTime'] + "\n\n" + "", textAlign: TextAlign.left, style: TextStyle(fontSize: 20)),],)),
           
           SizedBox(height: 20,),
 

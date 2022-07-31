@@ -19,14 +19,19 @@ class _doctorHomePageState extends State<doctorHomePage> {
   User user = FirebaseAuth.instance.currentUser;
   
   var collectionref = FirebaseFirestore.instance.collection('consultDoctors');
-  String prescription;
-  String emailid;
+  
+  String age;
   String date;
+  String name;
+  String emailid;
+  String prescription;
 
-   TextEditingController prescriptionController = TextEditingController();
-   TextEditingController emailidController = TextEditingController();
+   TextEditingController ageController = TextEditingController(); 
+   TextEditingController nameController = TextEditingController();
    TextEditingController dateController = TextEditingController();
-   //TextEditingController nameController = TextEditingController();
+   TextEditingController emailidController = TextEditingController();
+   TextEditingController prescriptionController = TextEditingController();
+
   final collectionReference = FirebaseFirestore.instance;
   @override
   void initState() {
@@ -77,8 +82,8 @@ if(pickedDate != null ){
 
         body:  Padding(
         padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: ListView(
+          //mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
            Flexible(
               child:TextField(
@@ -126,29 +131,6 @@ if(pickedDate != null ){
             
           ),
           ),
-          SizedBox(
-            height: 16,
-          ),
-
-
-            Flexible(
-              child:TextField(
-              decoration: InputDecoration(
-              hintText: "Enter prescription here",
-              labelText: "Prescription:",
-              labelStyle: TextStyle(
-                fontSize: 15,
-                color: Colors.black
-              ),
-                border: OutlineInputBorder()
-            ),
-               onChanged: ((value) {
-                  prescription = value;
-                }),
-            controller: prescriptionController,
-            keyboardType: TextInputType.multiline,
-            maxLines: 30,
-          ),),
 
           // SizedBox(
           //   height: 16,
@@ -179,6 +161,52 @@ if(pickedDate != null ){
             Flexible(
               child:TextField(
               decoration: InputDecoration(
+              hintText: "Enter patient name",
+              labelText: "Patient name:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  name = value;
+                }),
+            controller: nameController,
+            keyboardType: TextInputType.name,
+            
+          ),),
+
+          SizedBox(
+            height: 16,
+          ),
+
+            Flexible(
+              child:TextField(
+              decoration: InputDecoration(
+              hintText: "Enter patient age",
+              labelText: "Patient age:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  age = value;
+                }),
+            controller: ageController,
+            keyboardType: TextInputType.name,
+            
+          ),),                    
+
+          SizedBox(
+            height: 16,
+          ),
+
+            Flexible(
+              child:TextField(
+              decoration: InputDecoration(
               hintText: "Enter email ID of patient",
               labelText: "Patient EmailID:",
               labelStyle: TextStyle(
@@ -194,6 +222,32 @@ if(pickedDate != null ){
             keyboardType: TextInputType.emailAddress,
             
           ),),
+
+          SizedBox(
+            height: 16,
+          ),
+
+
+            Flexible(
+              child:
+              TextField(
+              decoration: InputDecoration(
+              hintText: "Enter prescription here",
+              labelText: "Prescription:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  prescription = value;
+                }),
+            controller: prescriptionController,
+            keyboardType: TextInputType.multiline,
+            maxLines: 30,
+          ),),
+
           Flexible(child: Padding(
             padding: EdgeInsets.all(20),
             child: Container(
@@ -255,6 +309,8 @@ if(pickedDate != null ){
                         'doctor name': name,
                         'regno': reg,
                         'sign': sign,
+                        'patientname': name,
+                        'patientage': age                        
                         }, 
                         );
 
@@ -271,8 +327,11 @@ if(pickedDate != null ){
                         dateController.clear();
                         }
                         
-                        )
+                        ),
                         )),),
+            SizedBox(
+            height: 16,
+          ),
           ],
         )));
   }

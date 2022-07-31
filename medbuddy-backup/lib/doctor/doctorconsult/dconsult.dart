@@ -29,12 +29,14 @@ final TextEditingController _name = TextEditingController();
 final TextEditingController _specialization = TextEditingController();
 final TextEditingController _consultTime = TextEditingController();
 final TextEditingController _mobileno = TextEditingController();
+final TextEditingController _address = TextEditingController();
 
 
 String name;
 String specialization;
 String consultTime;
 String mobileno;
+String address;
 bool isLoadingDF = false;
 
 
@@ -94,6 +96,7 @@ Future<String> uploadFile1(_image1) async {
                         'limit': 0,
                         'vccode': "abcd",
                         'sign': imageURL1,
+                        'Haddress': address,
                         },
                         );
            setState(() {
@@ -252,10 +255,37 @@ Future<String> uploadFile1(_image1) async {
             maxLength: 15,
             keyboardType: TextInputType.number,
           ),
+
 //gap btw borders
           const SizedBox(
             height: 16,
           ),
+//address.............................................................................................
+
+          TextField(
+                  onChanged: ((value) {
+                  address=value;
+                }),            
+            controller: _address,
+            decoration: const InputDecoration(
+                hintText: "hospital address",
+                labelText: "Hospital address:",
+                labelStyle: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black
+                ),
+                border: UnderlineInputBorder()
+            ),
+
+            maxLines: 3,
+          ),
+
+//gap btw borders
+          const SizedBox(
+            height: 16,
+          ),
+
+//consulttime.............................................................................................
 
           TextField(
                   onChanged: ((value) {
@@ -410,7 +440,8 @@ Future<String> uploadFile1(_image1) async {
                 
               
                  
-                  _name.clear();         
+                  _name.clear();  
+                  _address.clear();       
                   _mobileno.clear();
                   _consultTime.clear();  
                   _specialization.clear();  

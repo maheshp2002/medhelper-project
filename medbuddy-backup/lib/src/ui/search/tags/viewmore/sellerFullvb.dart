@@ -11,7 +11,6 @@ import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/rateing/rateingtag/viewmore/deleteratingvbt.dart';
 import 'package:medbuddy/src/ui/rateing/rateingtag/viewmore/rateingvbt.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
-import 'package:medbuddy/src/ui/search/delete_splash/deleteSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
 import 'package:medbuddy/src/ui/search/tags/Viewmorebtm.dart';

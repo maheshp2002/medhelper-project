@@ -156,43 +156,7 @@ if (!snapshot.hasData) {
                         leading: new Icon(Icons.delete),
                         title: new Text('Delete'),
                         onTap: () async{
-                          // try{
-                          // FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
-                          //  await user?.delete();
 
-                          // try{
-                          // collectionReference.snapshots().forEach((element) {
-                          // for (QueryDocumentSnapshot snapshot in element.docs) {
-                          //   snapshot.reference.delete();
-                          // }});
-                          // } catch(e){
-                          //   print(e);
-                          // }
-
-
-
-                          // try{
-                          // collectionCart.snapshots().forEach((element) {
-                          // for (QueryDocumentSnapshot snapshot in element.docs) {
-                          //   snapshot.reference.delete();
-                          // }});
-                          // } catch(e){
-                          //   print(e);
-                          // }
-
-                          // try{
-                          // collectionpdtbuy.snapshots().forEach((element) {
-                          // for (QueryDocumentSnapshot snapshot in element.docs) {
-                          //   snapshot.reference.delete();
-                          // }});
-                          // } catch(e){
-                          //   print(e);
-                          // }
-                         
-                          //   _restartApp();
-                         
-                           
-                          // } catch(e){
                           FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
 
                           try{

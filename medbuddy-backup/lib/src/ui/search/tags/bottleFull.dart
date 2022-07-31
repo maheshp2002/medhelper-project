@@ -325,42 +325,7 @@ var collectionCart = FirebaseFirestore.instance.collection(user.email + "cart");
       height: 20,
     ),
 
-  //  Row(
-  //     mainAxisAlignment: MainAxisAlignment.center,
-  //   children: [
-  //   ElevatedButton(
-  //     style: ButtonStyle(
-  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-  //                 borderRadius: BorderRadius.circular(10))),
-  //     fixedSize: MaterialStateProperty.all(Size(150, 50)),
-  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 211, 211, 208))),
-  //     //onPressed: ,
-  //    child: Text("View cart", style: TextStyle(color: Colors.black),)),
-
-  //  SizedBox(
-  //     width: 30,
-  //   ),  
-
-  //   ElevatedButton(
-  //     style: ButtonStyle(
-  //      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-  //                 borderRadius: BorderRadius.circular(10))),
-  //     fixedSize: MaterialStateProperty.all(Size(150, 50)),
-  //       backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 250, 225, 2))),
-  //     //onPressed: ,
-  //    onPressed: () { 
-  //      FirebaseFirestore.instance.collection("Medicinesell").doc(Bdocid).update({
-  //       'stockno': FieldValue.increment(-1),
-  //      });
-  //     },
-  //    child: Text("Add to cart", style: TextStyle(color: Colors.black),)),
-      
-  //     ]),
-
-
-  // SizedBox(
-  //     height: 20,
-  //   ),
+ 
 
 
 //button for fav  

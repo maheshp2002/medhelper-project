@@ -81,55 +81,15 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-//google fonts
-/*TextStyle get subHeadingStyle{
-  return GoogleFonts.lato(
-    textStyle: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold
-    )
-  );
-}*/
-
 
 class TopContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalBloc globalBloc = Provider.of<GlobalBloc>(context);
-    return /*Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.elliptical(50, 27),
-          bottomRight: Radius.elliptical(50, 27),
-        ),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 5,
-            color: Colors.grey[400],
-            offset: Offset(0, 3.5),
-          )
-        ],
-        color: Color(0xFF3EB16F),
-      ),
-      width: double.infinity,
-      child: */
+    return 
       Column(
         children: <Widget>[
-          /*Flexible(child: 
-          Padding(
-            padding: EdgeInsets.only(
-              bottom: 10,
-            ),
-            child: Text(
-              "Medbuddy",
-              style: TextStyle(
-                fontFamily: "Angel",
-                fontSize: 44,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          ),*/
+
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
            alignment: Alignment.topLeft,
@@ -157,6 +117,7 @@ class TopContainer extends StatelessWidget {
           DateTime.now(),
           height: 100,
           width: 80,
+          //onDateChange: ,
           initialSelectedDate: DateTime.now(),
           selectionColor: Colors.deepPurple,
           //Colors.green,
@@ -168,66 +129,6 @@ class TopContainer extends StatelessWidget {
         ),
       ),
       ),
-         /* Divider(
-            color: Color(0xFFB0F3CB),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 12.0),
-            child: Center(
-              child: Text(
-                "Number of reminders",
-                style: TextStyle(
-                  fontSize: 17,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-//...................................................................
-//for firebase
-   /* StreamBuilder(
-		stream: FirebaseFirestore.instance.collection('medicine_name').snapshots(),
-		builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-		if (!snapshot.hasData) {
-			return Center(
-			child: CircularProgressIndicator(),
-			);
-		}
-        return Padding(
-          padding: EdgeInsets.only(top: 16.0, bottom: 5 ),
-		  child: Column(
-			children: snapshot.data.docs.map((document) {
-			return Container(
-				child: Center(child: Text(document['medicine_name'])),
-			);
-			}).toList(),
-      ),
-		);
-		},
-	),*/
-
-
-//...................................................................
-
-          StreamBuilder<List<Medicine>>(
-            stream: globalBloc.medicineList$,
-            builder: (context, snapshot) {
-              return Padding(
-                padding: EdgeInsets.only(top: 16.0, bottom: 5 ),
-                child: Center(
-                  child: Text(
-                    !snapshot.hasData ? '0' : snapshot.data.length.toString(),
-                    style: TextStyle(
-                      fontFamily: "Neu",
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),*/
         ],
     );
   }
@@ -282,19 +183,6 @@ class BottomContainer extends StatelessWidget {
               },
              
             ));
-          // ): Container(
-          //   color: Color(0xFFF6F8FC),
-          //   child: Center(
-          //     child: Text(
-          //       "Press + to add a reminder",
-          //       textAlign: TextAlign.center,
-          //       style: TextStyle(
-          //           fontSize: 24,
-          //           color: Color(0xFFC9C9C9),
-          //           fontWeight: FontWeight.bold),
-          //     ),
-          //   ),
-          // );
         }
       },
     );

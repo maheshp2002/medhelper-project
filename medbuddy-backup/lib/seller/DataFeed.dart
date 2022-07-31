@@ -760,42 +760,6 @@ Row(mainAxisAlignment: MainAxisAlignment.start,
           const SizedBox(
             height: 16,
           ),
-// //emailID
-//           TextField(
-//                   onChanged: ((value) {
-//                   emailID= value;
-//                 }),            
-//             controller: _emailID,
-//             decoration: const InputDecoration(
-//                 hintText: "email ID",
-//                 labelText: "Email-ID:",
-//                 labelStyle: TextStyle(
-//                     fontSize: 15,
-//                     color: Colors.black
-//                 ),
-//                 border: OutlineInputBorder()
-//             ),
-
-//           ),
-
-// //gap btw borders
-//           const SizedBox(
-//             height: 16,
-//           ),
-
- //Image selection
-/*RawMaterialButton(
-          fillColor: Theme.of(context).accentColor,
-          child: Icon(Icons.add_photo_alternate_rounded,
-          color: Colors.white,),
-          elevation: 8,
-          onPressed: () {
-            getImage(true);
-          },
-          padding: EdgeInsets.all(15),
-         shape: CircleBorder(),
-),*/
-//..........................................................................................
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -982,21 +946,3 @@ SizedBox(height: 10,),
  
 }
 
-
-
-/*              TextField(
-                decoration: InputDecoration(
-                  hintText: '100',
-                  labelText: 'Original Price',
-                  suffix: Text("\$"),
-                ),
-                onChanged: (value) => originalPrice = double.parse(value),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  hintText: '20',
-                  labelText: 'Discount Percentage',
-                  suffix: Text("%"),
-                ),
-                onChanged: (value) => discount = double.parse(value) / 100,
-              ),*/

@@ -82,12 +82,6 @@ return Scaffold(
                         leading: new Icon(Icons.delete),
                         title: new Text('Delete'),
                         onTap: () async{ 
-                         try{     
-
-                         await FirebaseFirestore.instance.collection(snapshot.data.docs[index].id + "review").snapshots().forEach((element) {
-                         for (QueryDocumentSnapshot snapshot in element.docs) {
-                         snapshot.reference.delete();
-                         }});  
 
                          deleteFile(snapshot.data.docs[index]['images']);     
                          deleteFile(snapshot.data.docs[index]['images1']);  
@@ -97,18 +91,27 @@ return Scaffold(
                         await myTransaction.delete(snapshot.data.docs[index].reference);}
                         );
                         
+                         try{     
+
+                         await FirebaseFirestore.instance.collection(snapshot.data.docs[index].id + "review").snapshots().forEach((element) {
+                         for (QueryDocumentSnapshot snapshot in element.docs) {
+                         snapshot.reference.delete();
+                         }});  
+                        }
+
+                         catch(e){ 
+                          print(e);
                          }
 
-                         catch(e){
 
-                         deleteFile(snapshot.data.docs[index]['images']);     
-                         deleteFile(snapshot.data.docs[index]['images1']);  
-                         deleteFile(snapshot.data.docs[index]['images2']);   
+                        //  deleteFile(snapshot.data.docs[index]['images']);     
+                        //  deleteFile(snapshot.data.docs[index]['images1']);  
+                        //  deleteFile(snapshot.data.docs[index]['images2']);   
                                        
-                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
-                        await myTransaction.delete(snapshot.data.docs[index].reference);}
-                        );
-                         }
+                        // await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
+                        // await myTransaction.delete(snapshot.data.docs[index].reference);}
+                        // );
+                         
                         })
                         ]
                         )

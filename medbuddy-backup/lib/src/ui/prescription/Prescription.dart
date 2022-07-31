@@ -41,6 +41,8 @@ class AddData extends StatelessWidget {
   String regno = preindexno['regno'];
   String email = preindexno['email'];
   String sign = preindexno['sign'];
+  String name = preindexno['patientname'];
+  String age = preindexno['patientage'];
 
  @override
 Widget build(BuildContext context) {
@@ -199,14 +201,20 @@ Widget build(BuildContext context) {
        
     //Draw string
     page.graphics.drawString(
-        'Date: ' + date, PdfStandardFont(PdfFontFamily.helvetica, 20),
+        'Name: ' + name, PdfStandardFont(PdfFontFamily.helvetica, 20),
         brush: PdfBrushes.black,
         bounds: Rect.fromLTWH(25, 0, pageSize.width - 115, 300),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));
 
+    page.graphics.drawString(
+        date, PdfStandardFont(PdfFontFamily.helvetica, 20),
+        brush: PdfBrushes.black,
+        bounds: Rect.fromLTWH(380, 0, pageSize.width - 115, 300),
+        format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));
+
      //Draw string
     page.graphics.drawString(
-        'Prescription: ', PdfStandardFont(PdfFontFamily.helvetica, 20),
+        'Age: ' + age, PdfStandardFont(PdfFontFamily.helvetica, 20),
         brush: PdfBrushes.black,
         bounds: Rect.fromLTWH(25, 10, pageSize.width - 115, 350),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));       
@@ -215,7 +223,7 @@ Widget build(BuildContext context) {
     page.graphics.drawString(
         prescription, PdfStandardFont(PdfFontFamily.helvetica, 20),
         brush: PdfBrushes.black,
-        bounds: Rect.fromLTWH(25, 280, pageSize.width - 50, 520),
+        bounds: Rect.fromLTWH(25, 50, pageSize.width - 50, 580),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));   
 
 //............................................................................
@@ -228,10 +236,14 @@ Widget build(BuildContext context) {
         Offset(0, pageSize.height - 80),
         Offset(pageSize.width, pageSize.height - 80));
 
-    //draw image
+    //draw image signature
     page.graphics.drawImage(
         PdfBitmap(await _readImageData(sign)),
-        Rect.fromLTWH(300, 680, 220, 100));
+        Rect.fromLTWH(330, 680, 180, 80));
+    //draw image Rx
+    page.graphics.drawImage(
+        PdfBitmap(await _readImageData2()),
+        Rect.fromLTWH(25, 700, 30, 40));
 
 //............................................................................
 //save
@@ -250,7 +262,7 @@ Widget build(BuildContext context) {
         
     //Draw string
     page.graphics.drawString(
-        dcname, PdfStandardFont(PdfFontFamily.helvetica, 20),
+        "Dr." + dcname, PdfStandardFont(PdfFontFamily.helvetica, 20),
         brush: PdfBrushes.white,
         bounds: Rect.fromLTWH(25, 0, pageSize.width - 115, 90),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));
@@ -264,59 +276,14 @@ Widget build(BuildContext context) {
 
      //Draw string
     page.graphics.drawString(
-        'Email-ID: ' + email, PdfStandardFont(PdfFontFamily.helvetica, 15),
+        email, PdfStandardFont(PdfFontFamily.helvetica, 15),
         brush: PdfBrushes.white,
         bounds: Rect.fromLTWH(25, 40, pageSize.width - 115, 90),
         format: PdfStringFormat(lineAlignment: PdfVerticalAlignment.middle));         
 
-    // page.graphics.drawRectangle(
-    //     bounds: Rect.fromLTWH(400, 0, pageSize.width - 400, 110),
-    //     brush: PdfBrushes.purple);
 
-    // page.graphics.drawString('Medhelper',
-    //     PdfStandardFont(PdfFontFamily.helvetica, 18),
-    //     bounds: Rect.fromLTWH(400, 0, pageSize.width - 400, 100),
-    //     brush: PdfBrushes.white,
-    //     format: PdfStringFormat(
-    //         alignment: PdfTextAlignment.center,
-    //         lineAlignment: PdfVerticalAlignment.middle));
-    // page.graphics.drawImage(
-    //     PdfBitmap(await _readImageData('Pdf_Succinctly.jpg')),
-    //     Rect.fromLTWH(0, 100, 440, 550));
   }
 
-  //Create PDF grid and return
-  // PdfGrid getGrid() {
-  //   //Create a PDF grid
-  //   final PdfGrid grid = PdfGrid();
-  //   //Secify the columns count to the grid.
-  //   grid.columns.add(count: 5);
-  //   //Create the header row of the grid.
-  //   final PdfGridRow headerRow = grid.headers.add(1)[0];
-  //   //Set style
-  //   headerRow.style.backgroundBrush = PdfSolidBrush(PdfColor(68, 114, 196));
-  //   headerRow.style.textBrush = PdfBrushes.white;
-
-  //   grid.applyBuiltInStyle(PdfGridBuiltInStyle.listTable4Accent5);
-  //   //Set gird columns width
-  //   grid.columns[1].width = 200;
-  //   // for (int i = 0; i < headerRow.cells.count; i++) {
-  //   //   headerRow.cells[i].style.cellPadding =
-  //   //       PdfPaddings(bottom: 5, left: 5, right: 5, top: 5);
-  //   // }
-  //   // for (int i = 0; i < grid.rows.count; i++) {
-  //   //   final PdfGridRow row = grid.rows[i];
-  //   //   for (int j = 0; j < row.cells.count; j++) {
-  //   //     final PdfGridCell cell = row.cells[j];
-  //   //     if (j == 0) {
-  //   //       cell.stringFormat.alignment = PdfTextAlignment.center;
-  //   //     }
-  //   //     cell.style.cellPadding =
-  //   //         PdfPaddings(bottom: 5, left: 5, right: 5, top: 5);
-  //   //   }
-  //   // }
-  //   return grid;
-  // }
 
 }
 //........................................................................
@@ -345,17 +312,17 @@ Uint8List bytes = (await NetworkAssetBundle(Uri.parse(imageUrl))
   return bytes;
 }
 //...........................................................................     
-/*
+Future<Uint8List> _readImageData2() async {
+String imageUrl2 = "https://firebasestorage.googleapis.com/v0/b/medhelper-500f0.appspot.com/o/rx%2Frx.png?alt=media&token=af88c99b-9c13-45c2-91fc-ae7570a38462";
 
-        showModalBottomSheet<void>(context: context,
-            builder: (BuildContext context) {
-                return Container(
-                    child: new Wrap(
-                    children: <Widget>[
-                        new ListTile(
-                        leading: new Icon(Icons.delete),
-                        title: new Text('Delete'),
-                        onTap: () =>*/
+Uint8List bytes = (await NetworkAssetBundle(Uri.parse(imageUrl2))
+            .load(imageUrl2))
+            .buffer
+            .asUint8List();
+  return bytes;
+}
+//........................................................................... 
+
 
 _sendingMails()  {
 String encodeQueryParameters(Map<String, String> params) {

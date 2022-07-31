@@ -264,14 +264,18 @@ class _slideupbarState extends State<slideupbar> {
   User user = FirebaseAuth.instance.currentUser;
   var collectionref = FirebaseFirestore.instance.collection('consultDoctors');
 
-  String prescription;
-  String emailid;
+  String age;
   String date;
-  //String name;
-   TextEditingController prescriptionController = TextEditingController();
-   TextEditingController emailidController = TextEditingController();
+  String name;
+  String emailid;
+  String prescription;
+
+   TextEditingController ageController = TextEditingController();
+   TextEditingController nameController = TextEditingController();
    TextEditingController dateController = TextEditingController();
-   //TextEditingController nameController = TextEditingController();
+   TextEditingController emailidController = TextEditingController();
+   TextEditingController prescriptionController = TextEditingController();
+
   final collectionReference = FirebaseFirestore.instance;
 
 //...........................................................................................
@@ -298,8 +302,8 @@ if(pickedDate != null ){
 
     return  Padding(
         padding: EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: ListView(
+          //mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
            IconButton(icon: Icon(Icons.arrow_drop_down),
            onPressed: ()=> _pc1.close(),
@@ -335,6 +339,76 @@ if(pickedDate != null ){
             
           ),
           ),
+
+          SizedBox(
+            height: 16,
+          ),
+
+            Flexible(
+              child:TextField(
+              decoration: InputDecoration(
+              hintText: "Enter patient name",
+              labelText: "Patient name:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  name = value;
+                }),
+            controller: nameController,
+            keyboardType: TextInputType.name,
+            
+          ),),
+
+          SizedBox(
+            height: 16,
+          ),
+
+            Flexible(
+              child:TextField(
+              decoration: InputDecoration(
+              hintText: "Enter patient age",
+              labelText: "Patient age:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  age = value;
+                }),
+            controller: ageController,
+            keyboardType: TextInputType.name,
+            
+          ),),                    
+
+          SizedBox(
+            height: 16,
+          ),
+
+            Flexible(
+              child:TextField(
+              decoration: InputDecoration(
+              hintText: "Enter email ID of patient",
+              labelText: "Patient EmailID:",
+              labelStyle: TextStyle(
+                fontSize: 15,
+                color: Colors.black
+              ),
+                border: OutlineInputBorder()
+            ),
+               onChanged: ((value) {
+                  emailid = value;
+                }),
+            controller: emailidController,
+            keyboardType: TextInputType.emailAddress,
+            
+          ),),
+
           SizedBox(
             height: 16,
           ),
@@ -359,28 +433,6 @@ if(pickedDate != null ){
             maxLines: 30,
           ),),
 
-          SizedBox(
-            height: 16,
-          ),
-
-            Flexible(
-              child:TextField(
-              decoration: InputDecoration(
-              hintText: "Enter email ID of patient",
-              labelText: "Patient EmailID:",
-              labelStyle: TextStyle(
-                fontSize: 15,
-                color: Colors.black
-              ),
-                border: OutlineInputBorder()
-            ),
-               onChanged: ((value) {
-                  emailid = value;
-                }),
-            controller: emailidController,
-            keyboardType: TextInputType.emailAddress,
-            
-          ),),
           Flexible(child: Padding(
             padding: EdgeInsets.all(20),
             child: Container(
@@ -440,6 +492,8 @@ if(pickedDate != null ){
                         'doctor name': name,
                         'regno': reg,
                         'sign': sign,
+                        'patientname': name,
+                        'patientage': age
                         }, 
                         );
 
