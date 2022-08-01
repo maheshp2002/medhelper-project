@@ -153,7 +153,7 @@ if (!snapshot.hasData) {
                                     builder: (BuildContext context) {  
                                       return AlertDialog( 
                                         backgroundColor: Colors.grey[200], 
-                                        title: Text('Do you want to delete register data?',style: TextStyle(fontFamily: 'JosefinSans')),    
+                                        title: Text('Do you want to delete user account?',style: TextStyle(fontFamily: 'JosefinSans')),    
                                         actions: <Widget>[  
                                           FlatButton(  
                                             child: const Text('Cancel',style: TextStyle(fontFamily: 'JosefinSans')),  

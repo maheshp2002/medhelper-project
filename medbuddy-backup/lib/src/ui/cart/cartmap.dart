@@ -4,7 +4,6 @@ import 'package:medbuddy/src/ui/cart/cartfull.dart';
 import 'package:medbuddy/src/ui/cart/pdtcheck/Buymap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
 
 class cartMap extends StatefulWidget {
   @override
@@ -25,7 +24,7 @@ return Scaffold(
           new IconButton(
           icon: new Icon(Icons.domain_verification),
           onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> buyMap()));
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=> buyMap()));
           },
         ),
 
@@ -33,10 +32,7 @@ return Scaffold(
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomeScreen()),
-            );
+            Navigator.of(context).pop();
           },
         ),
         title: Text(
@@ -144,32 +140,7 @@ return Scaffold(
                   ),
                 ),
               
-                      //footer: Text(snapshot.data.docs[index]['medicine name']),
-                      /*Card(
-                      shadowColor: Colors.grey,
-                      elevation: 10,*/
-                     /* TextButton(
-                        onPressed: (){
-                      indexno = snapshot.data.docs[index];
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull())
-                      );
-                    },                    
-                      child: Column(
-                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                        
-                        Image.network(snapshot.data.docs[index]['images'],width: 100, height: 100,),
-                       Padding(padding: EdgeInsets.only(top: 5),
-                        child: Text(snapshot.data.docs[index]['medicine name'],
-                          style: TextStyle(color: Colors.white)
-                          ),),
-                        
-                        //Flexible(child: 
-                          //Text(snapshot.data.docs[index]['email id']),),
 
-   
-                      ],),*/ 
                       
 
                     );
@@ -183,57 +154,3 @@ return Scaffold(
       }));
   }}
        
-//old strembuilder,list view
-//......................................................................................................
-  /*StreamBuilder(stream: collectionReference,
-   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-     if(snapshot.hasData){*/
-      /* return ListView.separated(
-         itemBuilder:(BuildContext context, int index) {
-           return Column(
-              children: snapshot.data.docs.map((doc) {
-                return Card(
-                  child: Column( children: [
-                  Image.network(snapshot.data.docs[index]['image'], width: 100,height: 100,),
-                  Text(snapshot.data.docs[index]['medicine name']),
-                  Text(snapshot.data.docs[index]['store name']),
-                  /*ListTile(
-                    title: Text(snapshot.data.docs[index]['medicine name']),
-                    subtitle:  Image.network(snapshot.data.docs[index]['image']),
-                    //Text(snapshot.data.docs[index]['store name']),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: (){
-                      indexno = snapshot.data.docs[index];
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => SellerFull())
-                      );
-                    },
-                  ),*/
-                ]));
-              }).toList(),);
-              
-              },
-               separatorBuilder: (context, index) {
-           return Divider(
-             color: Colors.grey,
-             thickness: 5,
-             height: 20,
-           );
-          },
-         itemCount: snapshot.data.docs.length,
-       );*/
-//...........................................................................................................
-//............................................................................................................
-//     }
-    /* return Center(child:
-     Text("No medicine found!", style: TextStyle(fontSize: 20,color: Colors.grey),),
-     );
-     },
-     ),
-
-  );
-	
-  
-}));
-}}*/
-//......................................................................................................
