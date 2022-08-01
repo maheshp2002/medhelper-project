@@ -147,15 +147,23 @@ if (!snapshot.hasData) {
                 title: Text('Delete User Account'),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: (){
-        showModalBottomSheet<void>(context: context,
-            builder: (BuildContext context) {
-                return Container(
-                    child: new Wrap(
-                    children: <Widget>[
-                        new ListTile(
-                        leading: new Icon(Icons.delete),
-                        title: new Text('Delete'),
-                        onTap: () async{
+                                showDialog(  
+                                    context: context,  
+                                    barrierDismissible: false, // user must tap button for close dialog!  
+                                    builder: (BuildContext context) {  
+                                      return AlertDialog( 
+                                        backgroundColor: Colors.grey[200], 
+                                        title: Text('Do you want to delete register data?',style: TextStyle(fontFamily: 'JosefinSans')),    
+                                        actions: <Widget>[  
+                                          FlatButton(  
+                                            child: const Text('Cancel',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () {  
+                                              Navigator.of(context).pop(context);  
+                                            },  
+                                          ),  
+                                          FlatButton(  
+                                            child: const Text('Delete',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () async { 
 
                           FirebaseFirestore.instance.collection('username').doc(user.uid).delete();
 
@@ -201,11 +209,12 @@ if (!snapshot.hasData) {
                                                   
                           //}
 
-                        })
-                        ]
-                        )
-                        );}
-                        );
+                              },  
+                            )  
+                          ],  
+                        );  
+                      },  
+                    ); 
                 },
                  ),
 
@@ -219,7 +228,7 @@ if (!snapshot.hasData) {
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 softWrap: true,
-                style: new TextStyle(
+                style: new TextStyle(fontFamily: 'JosefinSans',
                     fontWeight: FontWeight.w300,
                     letterSpacing: 0.5,
                     color: Colors.grey,

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -467,10 +468,44 @@ Future<String> uploadFile1(_image1) async {
   ),
     ],
       ):Container(
-        color: Colors.white,
+        color: Color(0xFFf3c0fd),
       child: Center(
       
-      child: Image.asset('assets/splash/plaster.gif', width: 300,height: 300),))
+      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+      Image.asset('assets/splash/doctorrun.gif', width: 300,height: 300),
+
+      //SizedBox(height: 10),
+          Container(width:100, height: 50,
+          alignment: Alignment.center,
+            child:
+            AnimatedTextKit(
+                  animatedTexts: [
+                    WavyAnimatedText('Loading...',
+                        textStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                        textAlign: TextAlign.center,
+                        speed: const Duration(milliseconds: 600)
+                        ),
+                    WavyAnimatedText('Please wait...',
+                        textStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                        speed: const Duration(milliseconds: 600)
+                        ),
+                  ],
+                  isRepeatingAnimation: true,
+                  repeatForever: true,
+                 // onTap: () {
+                   // print("Tap Event");
+                  //},
+                ),),
+
+      ])
+      ))
 
 );
   }

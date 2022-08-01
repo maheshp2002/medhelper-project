@@ -14,101 +14,101 @@ class dcNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
 
 
-  openAlertBox() {
-    return showDialog(
-        builder: (BuildContext context) {
-          return AlertDialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(30.0),
-              ),
-            ),
-            contentPadding: EdgeInsets.only(top: 10.0),
-            content: Container(
-              width: 300.0,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(18),
-                    child: Center(
-                      child: Text(
-                        "Do you want to logout?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Flexible(child: 
-                      GestureDetector(
-                        onTap: () {
-                          logout();
+  // openAlertBox() {
+  //   return showDialog(
+  //       builder: (BuildContext context) {
+  //         return AlertDialog(
+  //           shape: RoundedRectangleBorder(
+  //             borderRadius: BorderRadius.all(
+  //               Radius.circular(30.0),
+  //             ),
+  //           ),
+  //           contentPadding: EdgeInsets.only(top: 10.0),
+  //           content: Container(
+  //             width: 300.0,
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.start,
+  //               crossAxisAlignment: CrossAxisAlignment.stretch,
+  //               mainAxisSize: MainAxisSize.min,
+  //               children: <Widget>[
+  //                 Padding(
+  //                   padding: EdgeInsets.all(18),
+  //                   child: Center(
+  //                     child: Text(
+  //                       "Do you want to logout?",
+  //                       textAlign: TextAlign.center,
+  //                       style: TextStyle(
+  //                           fontSize: 16, fontWeight: FontWeight.bold),
+  //                     ),
+  //                   ),
+  //                 ),
+  //                 Row(
+  //                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  //                   children: <Widget>[
+  //                     Flexible(child: 
+  //                     GestureDetector(
+  //                       onTap: () {
+  //                         logout();
                        
 
-               },
-                        child: InkWell(
-                          child: Container(
-                            width: MediaQuery.of(context).size.width / 2.743,
-                            padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-                            decoration: BoxDecoration(
-                              color: Colors.deepPurple,
-                              //Color(0xFF3EB16F),
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(30.0),
-                              ),
-                            ),
-                            child: Text(
-                              "Yes",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                      ),
-                      ),
-                      Flexible(child: 
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: InkWell(
-                          child: Container(
-                            width: MediaQuery.of(context).size.width / 2.743,
-                            padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
-                            decoration: BoxDecoration(
-                              color: Colors.red[700],
-                              borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(30.0)),
-                            ),
-                            child: Text(
-                              "No",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                      ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          );
-        }, context: null);
-  }
+  //              },
+  //                       child: InkWell(
+  //                         child: Container(
+  //                           width: MediaQuery.of(context).size.width / 2.743,
+  //                           padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+  //                           decoration: BoxDecoration(
+  //                             color: Colors.deepPurple,
+  //                             //Color(0xFF3EB16F),
+  //                             borderRadius: BorderRadius.only(
+  //                               bottomLeft: Radius.circular(30.0),
+  //                             ),
+  //                           ),
+  //                           child: Text(
+  //                             "Yes",
+  //                             style: TextStyle(
+  //                               color: Colors.white,
+  //                               fontWeight: FontWeight.bold,
+  //                             ),
+  //                             textAlign: TextAlign.center,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                     ),
+  //                     ),
+  //                     Flexible(child: 
+  //                     GestureDetector(
+  //                       onTap: () {
+  //                         Navigator.of(context).pop();
+  //                       },
+  //                       child: InkWell(
+  //                         child: Container(
+  //                           width: MediaQuery.of(context).size.width / 2.743,
+  //                           padding: EdgeInsets.only(top: 15.0, bottom: 15.0),
+  //                           decoration: BoxDecoration(
+  //                             color: Colors.red[700],
+  //                             borderRadius: BorderRadius.only(
+  //                                 bottomRight: Radius.circular(30.0)),
+  //                           ),
+  //                           child: Text(
+  //                             "No",
+  //                             style: TextStyle(
+  //                               color: Colors.white,
+  //                               fontWeight: FontWeight.bold,
+  //                             ),
+  //                             textAlign: TextAlign.center,
+  //                           ),
+  //                         ),
+  //                       ),
+  //                     ),
+  //                     ),
+  //                   ],
+  //                 )
+  //               ],
+  //             ),
+  //           ),
+  //         );
+  //       }, context: null);
+  // }
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -185,17 +185,17 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
     barrierDismissible: false, // user must tap button for close dialog!  
     builder: (BuildContext context) {  
       return AlertDialog( 
-        backgroundColor: Colors.grey, 
-        title: Text('Do you want to logout?'),    
+        backgroundColor: Colors.grey[200], 
+        title: Text('Do you want to logout?',style: TextStyle(fontFamily: 'JosefinSans')),    
         actions: <Widget>[  
           FlatButton(  
-            child: const Text('Cancel'),  
+            child: const Text('Cancel',style: TextStyle(fontFamily: 'JosefinSans')),  
             onPressed: () {  
               Navigator.of(context).pop(ConfirmAction.Cancel);  
             },  
           ),  
           FlatButton(  
-            child: const Text('Logout'),  
+            child: const Text('Logout',style: TextStyle(fontFamily: 'JosefinSans')),  
             onPressed: () async { 
               SharedPreferences prefs = await SharedPreferences.getInstance();
               await prefs.setBool('doctor', false); 

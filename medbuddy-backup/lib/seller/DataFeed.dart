@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -935,9 +936,45 @@ SizedBox(height: 10,),
         ),
   ),
     ],
-      ):Center(
+      ):Container(
+        child:
+      Center(
       
-      child: Image.asset('assets/splash/loading.gif'),),
+      child: 
+      Column(mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+      
+      Image.asset('assets/splash/loading.gif'),
+      //SizedBox(height: 10),
+          Container(width:100, height: 50,
+          alignment: Alignment.center,
+            child:
+            AnimatedTextKit(
+                  animatedTexts: [
+                    WavyAnimatedText('Loading...',
+                        textStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                        textAlign: TextAlign.center,
+                        speed: const Duration(milliseconds: 600)
+                        ),
+                    WavyAnimatedText('Please wait...',
+                        textStyle: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15,
+                        ),
+                        speed: const Duration(milliseconds: 600)
+                        ),
+                  ],
+                  isRepeatingAnimation: true,
+                  repeatForever: true,
+                 // onTap: () {
+                   // print("Tap Event");
+                  //},
+                ),),
+                ]),
+                ),),
 
 
 );

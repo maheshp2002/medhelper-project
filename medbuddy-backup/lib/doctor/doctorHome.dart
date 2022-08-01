@@ -80,13 +80,18 @@ if(pickedDate != null ){
         ),
         ),
 
-        body:  Padding(
+        body:  
+        Padding(
         padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
         child: ListView(
-          //mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-           Flexible(
-              child:TextField(
+          children: [
+       // child: 
+       // Column(
+         // mainAxisAlignment: MainAxisAlignment.start,
+          //children: <Widget>[
+           //Flexible(
+              //child:
+              TextField(
                 controller: dateController, //editing controller of this TextField
                 decoration: InputDecoration( 
                    icon: Icon(Icons.calendar_today), //icon of text field
@@ -130,7 +135,7 @@ if(pickedDate != null ){
             keyboardType: TextInputType.datetime,*/
             
           ),
-          ),
+          //),
 
           // SizedBox(
           //   height: 16,
@@ -158,8 +163,9 @@ if(pickedDate != null ){
             height: 16,
           ),
 
-            Flexible(
-              child:TextField(
+           // Flexible(
+              //child:
+              TextField(
               decoration: InputDecoration(
               hintText: "Enter patient name",
               labelText: "Patient name:",
@@ -175,14 +181,15 @@ if(pickedDate != null ){
             controller: nameController,
             keyboardType: TextInputType.name,
             
-          ),),
+          ),//),
 
           SizedBox(
             height: 16,
           ),
 
-            Flexible(
-              child:TextField(
+            //Flexible(
+              //child:
+              TextField(
               decoration: InputDecoration(
               hintText: "Enter patient age",
               labelText: "Patient age:",
@@ -198,14 +205,14 @@ if(pickedDate != null ){
             controller: ageController,
             keyboardType: TextInputType.name,
             
-          ),),                    
+          ),//),                    
 
           SizedBox(
             height: 16,
           ),
 
-            Flexible(
-              child:TextField(
+            //Flexible(child:
+              TextField(
               decoration: InputDecoration(
               hintText: "Enter email ID of patient",
               labelText: "Patient EmailID:",
@@ -221,15 +228,15 @@ if(pickedDate != null ){
             controller: emailidController,
             keyboardType: TextInputType.emailAddress,
             
-          ),),
+          ),//),
 
           SizedBox(
             height: 16,
           ),
 
 
-            Flexible(
-              child:
+           // Flexible(child:
+              
               TextField(
               decoration: InputDecoration(
               hintText: "Enter prescription here",
@@ -246,9 +253,10 @@ if(pickedDate != null ){
             controller: prescriptionController,
             keyboardType: TextInputType.multiline,
             maxLines: 30,
-          ),),
+          ),//),
 
-          Flexible(child: Padding(
+          //Flexible(child: 
+          Padding(
             padding: EdgeInsets.all(20),
             child: Container(
                   width: 220,
@@ -328,12 +336,16 @@ if(pickedDate != null ){
                         }
                         
                         ),
-                        )),),
+                        )),
+                        //),
             SizedBox(
             height: 16,
           ),
-          ],
-        )));
+          //],
+       // )
+        //)
+        ]),
+        ));
   }
 
 // Future<Uint8List> makePdf(Invoice invoice) async {

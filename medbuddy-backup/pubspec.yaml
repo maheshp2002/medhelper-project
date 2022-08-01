@@ -72,6 +72,7 @@ dependencies:
   #pdf: ^2.1.0
   open_file: ^3.0.3
   syncfusion_flutter_pdf: ^18.4.48-beta
+  animated_text_kit: ^3.1.2
 
   # flutter_svg: 
   flutter_local_notifications:

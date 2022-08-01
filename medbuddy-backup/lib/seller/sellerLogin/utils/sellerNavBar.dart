@@ -85,17 +85,17 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
     barrierDismissible: false, // user must tap button for close dialog!  
     builder: (BuildContext context) {  
       return AlertDialog( 
-        backgroundColor: Colors.grey, 
-        title: Text('Do you want to logout?'),    
+        backgroundColor: Colors.grey[200], 
+        title: Text('Do you want to logout?',style: TextStyle(fontFamily: 'JosefinSans')),    
         actions: <Widget>[  
           FlatButton(  
-            child: const Text('Cancel'),  
+            child: const Text('Cancel',style: TextStyle(fontFamily: 'JosefinSans')),  
             onPressed: () {  
               Navigator.of(context).pop(ConfirmAction.Cancel);  
             },  
           ),  
           FlatButton(  
-            child: const Text('Logout'),  
+            child: const Text('Logout',style: TextStyle(fontFamily: 'JosefinSans')),  
             onPressed: () async { 
            SharedPreferences prefs = await SharedPreferences.getInstance();
            await prefs.setBool('seller', false);                

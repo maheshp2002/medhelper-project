@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/doctor/dcNavBar.dart';
 import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/global/myDimens.dart';
@@ -64,7 +65,7 @@ return Scaffold(
             height: 20,
           ), 
                 
-        Text("- This will log you out",style: TextStyle(fontFamily: 'JosefinSans',fontSize: 15),),      
+        Text("- This will log you out",style: TextStyle(fontFamily: 'JosefinSans',fontSize: 15),), 
 
            const SizedBox(
             height: 20,
@@ -73,20 +74,46 @@ return Scaffold(
   children: [  
                               OutlineButton( 
                                 onPressed: () async {
-                                        showModalBottomSheet<void>(context: context,
-                                        builder: (BuildContext context) {
-                                        return Container(
-                                        child: new Wrap(
-                                        children: <Widget>[
-                                        new ListTile(
-                                        leading: new Icon(Icons.delete),
-                                        title: new Text('Delete'),
-                                          onTap: () async{                                        
+                                        // showModalBottomSheet<void>(context: context,
+                                        // builder: (BuildContext context) {
+                                        // return Container(
+                                        // child: new Wrap(
+                                        // children: <Widget>[
+                                        // new ListTile(
+                                        // leading: new Icon(Icons.delete),
+                                        // title: new Text('Delete'),
+                                        //   onTap: () async{                                        
 
+                                showDialog(  
+                                    context: context,  
+                                    barrierDismissible: false, // user must tap button for close dialog!  
+                                    builder: (BuildContext context) {  
+                                      return AlertDialog( 
+                                        backgroundColor: Colors.grey[200], 
+                                        title: Text('Do you want to delete register data?',style: TextStyle(fontFamily: 'JosefinSans')),    
+                                        actions: <Widget>[  
+                                          FlatButton(  
+                                            child: const Text('Cancel',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () {  
+                                              Navigator.of(context).pop(context);  
+                                            },  
+                                          ),  
+                                          FlatButton(  
+                                            child: const Text('Delete',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () async { 
                                           await FirebaseFirestore.instance.collection("DoctorsValidation").doc(user1.email).delete();    
                                             SharedPreferences prefs = await SharedPreferences.getInstance();
                                           await prefs.setBool('validation', false);  
                                           await prefs.setBool('doctor', false); 
+
+                                          Fluttertoast.showToast(  
+                                          msg: 'Register data deleted',  
+                                          toastLength: Toast.LENGTH_LONG,  
+                                          gravity: ToastGravity.BOTTOM,  
+                                          //timeInSecForIosWeb: 1,  
+                                          backgroundColor: Colors.black,  
+                                          textColor: Colors.white 
+                                          );                                          
 
                                         try {
                                           await FirebaseAuth.instance.currentUser.delete();
@@ -95,13 +122,20 @@ return Scaffold(
                                             print('The user must reauthenticate before this operation can be executed.');
                                           }
                                         }                                            
-
                                           logout();                                          
-                                          },
-                                        ),
-                                                    ])
-                                                    ); 
-                                                    });  },
+                                          },  
+                                        )  
+                                      ],  
+                                    );  
+                                  },  
+                                ); 
+                                        //   },
+                                        // ),
+                                        //             ])
+                                        //             ); 
+                                        //             }); 
+                                                    
+                                                     },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
                                                 MyDimens.double_4)),
@@ -140,15 +174,23 @@ return Scaffold(
 
                                     return OutlineButton(
                                         onPressed: () async {
-                                         showModalBottomSheet<void>(context: context,
-                                        builder: (BuildContext context) {
-                                        return Container(
-                                        child: new Wrap(
-                                        children: <Widget>[
-                                        new ListTile(
-                                        leading: new Icon(Icons.delete),
-                                        title: new Text('Delete'),
-                                          onTap: () async{                                            
+                                showDialog(  
+                                    context: context,  
+                                    barrierDismissible: false, // user must tap button for close dialog!  
+                                    builder: (BuildContext context) {  
+                                      return AlertDialog( 
+                                        backgroundColor: Colors.grey[200], 
+                                        title: Text('Do you want to delete public profile?',style: TextStyle(fontFamily: 'JosefinSans')),    
+                                        actions: <Widget>[  
+                                          FlatButton(  
+                                            child: const Text('Cancel',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () {  
+                                              Navigator.of(context).pop(context);  
+                                            },  
+                                          ),  
+                                          FlatButton(  
+                                            child: const Text('Delete',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () async {                                           
                                           deleteFile(snapshot.data['images']);
                                           deleteFile(snapshot.data['sign']);
 
@@ -158,14 +200,34 @@ return Scaffold(
                                           SharedPreferences prefs = await SharedPreferences.getInstance();
                                           await prefs.setBool('validation', false);  
                                           await prefs.setBool('doctor', false); 
+
+                                          Fluttertoast.showToast(  
+                                          msg: 'Profile deleted',  
+                                          toastLength: Toast.LENGTH_LONG,  
+                                          gravity: ToastGravity.BOTTOM,  
+                                          //timeInSecForIosWeb: 1,  
+                                          backgroundColor: Colors.black,  
+                                          textColor: Colors.white 
+                                          ); 
+
+                                          Fluttertoast.showToast(  
+                                          msg: "If you didn't logout, just click on delete account button",  
+                                          toastLength: Toast.LENGTH_LONG,  
+                                          gravity: ToastGravity.BOTTOM,  
+                                          //timeInSecForIosWeb: 1,  
+                                          backgroundColor: Colors.black,  
+                                          textColor: Colors.white 
+                                          ); 
+                                          
                                           try{
                                           await FirebaseFirestore.instance.collection(user1.email + "review").snapshots().forEach((element) {
                                           for (QueryDocumentSnapshot snapshot in element.docs) {
                                             snapshot.reference.delete();
-                                          }});   }
+                                          }});  }
                                           catch(e){
                                             print(e);
                                           } 
+
 
                                         try {
                                           await FirebaseAuth.instance.currentUser.delete();
@@ -174,15 +236,15 @@ return Scaffold(
                                             print('The user must reauthenticate before this operation can be executed.');
                                           }
                                         }                                          
-                                          
-                                  
                                           logout();
  
+                                                  },  
+                                                )  
+                                              ],  
+                                            );  
+                                          },  
+                                        );
                                         },
-                                                                                ),
-                                      ])
-                                       ); 
-                                       });  },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
                                                 MyDimens.double_4)),
@@ -210,6 +272,17 @@ return Scaffold(
                                         }),
   
  ]),
+         const SizedBox(
+            height: 10,
+          ), 
+        Row(mainAxisAlignment: MainAxisAlignment.center,
+          children:[
+          Icon(Icons.warning_amber_outlined, color: Colors.grey, size: 15,),
+
+          SizedBox(width: 5,),
+
+        Text("If you have created a public profile, then delete it first.",style: TextStyle(fontFamily: 'JosefinSans',fontSize: 10, color: Colors.grey),),        
+        ]),
             const SizedBox(
             height: 20,
           ),     
@@ -218,6 +291,10 @@ return Scaffold(
    ]),
 ));
   }
+//    void _restartApp() async {
+//   await FlutterRestart.restartApp();
+// }
+
     Future<void> deleteFile(String url) async {
   try {
     await FirebaseStorage.instance.refFromURL(url).delete();
