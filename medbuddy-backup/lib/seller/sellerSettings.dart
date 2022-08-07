@@ -104,15 +104,23 @@ void _restartApp() async {
                 title: Text('Delete account'),
                 trailing: Icon(Icons.arrow_forward_ios),
                 onTap: () async{
-                                        showModalBottomSheet<void>(context: context,
-                                        builder: (BuildContext context) {
-                                        return Container(
-                                        child: new Wrap(
-                                        children: <Widget>[
-                                        new ListTile(
-                                        leading: new Icon(Icons.delete),
-                                        title: new Text('Delete'),
-                                          onTap: () async{                   
+                                showDialog(  
+                                    context: context,  
+                                    barrierDismissible: false, // user must tap button for close dialog!  
+                                    builder: (BuildContext context) {  
+                                      return AlertDialog( 
+                                        backgroundColor: Colors.grey[200], 
+                                        title: Text('Do you want to delete account?',style: TextStyle(fontFamily: 'JosefinSans')),    
+                                        actions: <Widget>[  
+                                          FlatButton(  
+                                            child: const Text('Cancel',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () {  
+                                              Navigator.of(context).pop(context);  
+                                            },  
+                                          ),  
+                                          FlatButton(  
+                                            child: const Text('Delete',style: TextStyle(fontFamily: 'JosefinSans')),  
+                                            onPressed: () async {                 
                                         try {
                                           await FirebaseAuth.instance.currentUser.delete();
                                         } catch (e) {
@@ -126,11 +134,12 @@ void _restartApp() async {
                                         logout();   
                                           
   
-                                          })
-                                          ])
-                                          ); 
-                                          }
-                                          );
+                                                  },  
+                                                )  
+                                              ],  
+                                            );  
+                                          },  
+                                        );
 
                 },
                  ),

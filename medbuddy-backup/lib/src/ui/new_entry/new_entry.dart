@@ -219,17 +219,17 @@ _NewEntryState({this.uid});
                                 ? true
                                 : false),
                         MedicineTypeColumn(
-                            type: MedicineType.Syringe,
-                            name: "Syringe",
-                            iconValue: 0xe902,
-                            isSelected: snapshot.data == MedicineType.Syringe
-                                ? true
-                                : false),
-                        MedicineTypeColumn(
                             type: MedicineType.Tablet,
                             name: "Tablet",
                             iconValue: 0xe903,
                             isSelected: snapshot.data == MedicineType.Tablet
+                                ? true
+                                : false),
+                        MedicineTypeColumn(
+                            type: MedicineType.Other,
+                            name: "Others",
+                            iconValue: 0xe902,
+                            isSelected: snapshot.data == MedicineType.Other
                                 ? true
                                 : false),
                       ],
@@ -462,7 +462,7 @@ _NewEntryState({this.uid});
       'repeatDailyAtTime channel name',
       'repeatDailyAtTime description',
       importance: Importance.max,
-      //sound: alarmAudioPath,
+      sound: RawResourceAndroidNotificationSound("sound"),
       priority: Priority.high,
       ledColor: Colors.deepPurple,
       enableVibration: true,
@@ -502,6 +502,7 @@ class IntervalSelection extends StatefulWidget {
 
 class _IntervalSelectionState extends State<IntervalSelection> {
   var _intervals = [
+    3,
     6,
     8,
     12,
