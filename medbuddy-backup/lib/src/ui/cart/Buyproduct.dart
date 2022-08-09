@@ -1,5 +1,9 @@
+//import 'dart:convert';
+//import 'package:http/http.dart' as http;
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+//import 'package:flutter_stripe/flutter_stripe.dart' hide Card;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/ui/cart/buysplash.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
@@ -30,14 +34,15 @@ String address;
 String address2;
 String pin;
 String mobileno;
+Map<String, dynamic> paymentIntentData;
 
 
-   List<String> images = [
-  cindexno['images'],
-  cindexno['images1'],
-  cindexno['images2']
+List<String> images = [
+cindexno['images'],
+cindexno['images1'],
+cindexno['images2']
 
- ];
+];
  
 // var _paymentItems = [
 //   PaymentItem(
@@ -448,12 +453,34 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
                       backgroundColor: Colors.black,  
                       textColor: Colors.white); 
                   }  },     
-     child: Text("Buy Product", style: TextStyle(color: Colors.black),)),   
+     child: Row(children: [
+      Text("Cash on Delivery", style: TextStyle(color: Colors.black),),
+      SizedBox(width: 5,),
+      Icon(Icons.local_shipping, color: Colors.black,)
+     ]),
+     
+     ),   
 
     SizedBox(
       width: 10,
     ),
+//Stripe button....................................................................................    
 
+    //  ElevatedButton(
+    //   style: ButtonStyle(
+    //    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+    //               borderRadius: BorderRadius.circular(10))),
+    //   //fixedSize: MaterialStateProperty.all(Size(170, 50)),
+    //     backgroundColor: MaterialStateProperty.all<Color>(Colors.white)),
+    //  child: Row(children: [
+    //   Text("Online Payment", style: TextStyle(color: Colors.black),),
+    //   SizedBox(width: 5,),
+    //   Icon(Icons.payment, color: Colors.black,)
+    //  ]),
+    //  onPressed: () async { 
+    //   await makePayment();
+    //  }
+    //  ),
 //gpay....................................................................................    
       GooglePayButton(
         paymentConfigurationAsset: 'gpay.json',
@@ -476,7 +503,7 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
                       //timeInSecForIosWeb: 1,  
                       backgroundColor: Colors.black,  
                       textColor: Colors.white); 
- //........................................................................................                      
+//........................................................................................                      
           String uname1;
            await users.get().then((snapshot) {
            uname1 = snapshot.get('username');
@@ -575,5 +602,183 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
   ])
     ));
 }
+//stripe..............................................................................................................
+//  Future<void> makePayment() async {
+//     try {
+
+//       paymentIntentData =
+//       await createPaymentIntent(cindexno['price'], 'USD'); //json.decode(response.body);
+//       // print('Response body==>${response.body.toString()}');
+//       await Stripe.instance.initPaymentSheet(
+//           paymentSheetParameters: SetupPaymentSheetParameters(
+//               paymentIntentClientSecret: paymentIntentData['client_secret'],
+//               applePay: true,
+//               googlePay: true,
+//               testEnv: true,
+//               style: ThemeMode.dark,
+//               merchantCountryCode: 'US',
+//               merchantDisplayName: 'ANNIE')).then((value){
+//       });
+
+
+//       ///now finally display payment sheeet
+//       displayPaymentSheet();
+//     } catch (e, s) {
+//       print('exception:$e$s');
+//     }
+//   }
+
+//   displayPaymentSheet() async {
+
+//     try {
+//       await Stripe.instance.presentPaymentSheet(
+//           parameters: PresentPaymentSheetParameters(
+//             clientSecret: paymentIntentData['client_secret'],
+//             confirmPayment: true,
+//           )).then((newValue) async{
+
+
+//         print('payment intent'+paymentIntentData['id'].toString());
+//         print('payment intent'+paymentIntentData['client_secret'].toString());
+//         print('payment intent'+paymentIntentData['amount'].toString());
+//         print('payment intent'+paymentIntentData.toString());
+//         //orderPlaceApi(paymentIntentData!['id'].toString());
+//         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("paid successfully")));
+
+// //........................................................................................................  
+//  //........................................................................................                      
+//           String uname1;
+//            await users.get().then((snapshot) {
+//            uname1 = snapshot.get('username');
+//         });
+
+//         int cartempty1;
+//            await iscartempty.get().then((snapshot) {
+//            cartempty1 = snapshot.get('stock');
+//         });
+
+//         if (cartempty1 != 0){
+
+
+//         FirebaseFirestore.instance.collection("ProductSeller").add({
+//           'images': cindexno['images'],
+//           'medicine name': cindexno['medicine name'],
+//           'price': cindexno['price'],
+//           'date': cindexno['date'],
+//           'dosage': cindexno['dosage'],
+//           'nopdt': stocks,
+//           'address': address,
+//           'address2': address2,
+//           'name': uname1,
+//           'pin': pin,
+//           'mobileno': mobileno,
+//           'email': user.email,
+//           'Did': cindexno['email id'],
+//           'docid': cdocid
+//         });
+
+//         FirebaseFirestore.instance.collection(user.email + "Productbuy").doc(cdocid).set({
+//           'images': cindexno['images'],
+//           'medicine name': cindexno['medicine name'],
+//           'price': cindexno['price'],
+//           'date': cindexno['date'],
+//           'dosage': cindexno['dosage'],
+//           'nopdt': stocks,
+//           'address': address,
+//           'address2': address2,
+//           'name': uname1,
+//           'pin': pin,
+//           'mobileno': mobileno,
+//           'email': cindexno['email id'],
+//           'packed': "Not yet packed",
+//           'reachedA': "Product on it's way",
+//           'reachedB': "Product on it's way",
+//           'arrival': "Product on it's way",
+//           'delivered': "Product on it's way",
+//           'pointA': 0,
+//           'pointB': 0,
+//           'pointC': 0,
+//           'pointD': 0,
+//           'pk': 0,
+//         });
+
+
+
+//         FirebaseFirestore.instance.collection("Medicinesell").doc(cdocid).update({
+//          'stockno': FieldValue.increment(-1),
+//        });
+//        FirebaseFirestore.instance.collection(user.email + "cart").doc(cdocid).update({
+//         'stock': FieldValue.increment(-1),
+//        });
+//                        Fluttertoast.showToast(  
+//                       msg: 'Item purchased',  
+//                       toastLength: Toast.LENGTH_LONG,  
+//                       gravity: ToastGravity.BOTTOM,  
+//                       //timeInSecForIosWeb: 1,  
+//                       backgroundColor: Colors.black,  
+//                       textColor: Colors.white  
+//                   );
+//       Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => buySucess()));             
+      
+//       } else {
+//                      Fluttertoast.showToast(  
+//                       msg: 'Cart empty',  
+//                       toastLength: Toast.LENGTH_LONG,  
+//                       gravity: ToastGravity.BOTTOM,  
+//                       //timeInSecForIosWeb: 1,  
+//                       backgroundColor: Colors.black,  
+//                       textColor: Colors.white); 
+//                   } 
+// //................................................................................     
+// //........................................................................................................
+//         paymentIntentData = null;
+
+//       }).onError((error, stackTrace){
+//         print('Exception/DISPLAYPAYMENTSHEET==> $error $stackTrace');
+//       });
+
+
+//     } on StripeException catch (e) {
+//       print('Exception/DISPLAYPAYMENTSHEET==> $e');
+//       showDialog(
+//           context: context,
+//           builder: (_) => AlertDialog(
+//             content: Text("Cancelled "),
+//           ));
+//     } catch (e) {
+//       print('$e');
+//     }
+//   }
+
+//   //  Future<Map<String, dynamic>>
+//   createPaymentIntent(String amount, String currency) async {
+//     try {
+//       Map<String, dynamic> body = {
+//         'amount': calculateAmount(cindexno['price']),
+//         'currency': currency,
+//         'payment_method_types[]': 'card'
+//       };
+//       print(body);
+//       var response = await http.post(
+//           Uri.parse('https://api.stripe.com/v1/payment_intents'),
+//           body: body,
+//           headers: {
+//             'Authorization':
+//             'Bearer your token',
+//             'Content-Type': 'application/x-www-form-urlencoded'
+//           });
+//       print('Create Intent reponse ===> ${response.body.toString()}');
+//       return jsonDecode(response.body);
+//     } catch (err) {
+//       print('err charging user: ${err.toString()}');
+//     }
+//   }
+
+//   calculateAmount(String amount) {
+//     final a = (int.parse(amount)) * 100 ;
+//     return a.toString();
+//   }
+
+
 
 }

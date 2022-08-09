@@ -1,13 +1,12 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/main.dart';
 import 'package:medbuddy/src/common/convert_time.dart';
 import 'package:medbuddy/src/global_bloc.dart';
 import 'package:medbuddy/src/models/errors.dart';
 import 'package:medbuddy/src/models/medicine.dart';
 import 'package:medbuddy/src/models/medicine_type.dart';
-import 'package:medbuddy/src/ui/homepage/homepage.dart';
+import 'package:medbuddy/src/ui/homepage/calender.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry_bloc.dart';
 import 'package:medbuddy/src/ui/success_screen/success_screen.dart';
@@ -18,13 +17,14 @@ class NewEntry extends StatefulWidget {
   @override
   _NewEntryState createState() => _NewEntryState();
 }
-  String _selectedTime;
+String medsname;
+
+String _selectedTime;
 //for firebase
 int intervalT;
 TimeOfDay picked ;
 //TimeOfDay time;
 //final firebaseUser =  FirebaseAuth.instance.currentUser;
-
 
 
 
@@ -87,33 +87,31 @@ _NewEntryState({this.uid});
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     _scaffoldKey = GlobalKey<ScaffoldState>();
     initializeNotifications();
+
     initializeErrorListen();
   }
-
-  void showNotification(){
-  flutterLocalNotificationsPlugin.show(
-    0,
-    "New Medicine Added",
-    "Check home screen",
-    NotificationDetails(
-      android: AndroidNotificationDetails(
-        channel.id,
-        channel.name,
-        channel.description,
-        importance: Importance.high,
-        color: Colors.deepPurple,
-        playSound: true,
-        //icon: '@minmap/ic_launcher'
-      )
-    )
-    );
-}
 
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
-
-
+//   void showNotification(){
+//   flutterLocalNotificationsPlugin.show(
+//     0,
+//     "New Medicine Added",
+//     "Check home screen",
+//     NotificationDetails(
+//       android: AndroidNotificationDetails(
+//         channel.id,
+//         channel.name,
+//         channel.description,
+//         importance: Importance.high,
+//         color: Colors.deepPurple,
+//         playSound: true,
+//         //icon: '@minmap/ic_launcher'
+//       )
+//     )
+//     );
+// }
 
     return Scaffold(
       key: _scaffoldKey,
@@ -156,7 +154,7 @@ _NewEntryState({this.uid});
                 }),
               //.........................
 
-                maxLength: 20,
+                maxLength: 30,
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -194,46 +192,73 @@ _NewEntryState({this.uid});
                 title: "Medicine Type",
                 isRequired: false,
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 10.0),
-                child: StreamBuilder<MedicineType>(
+              //Padding(
+                //padding: EdgeInsets.only(top: 10.0),
+                //child: 
+                SizedBox(height: 150,child:
+                StreamBuilder<MedicineType>(
                   stream: _newEntryBloc.selectedMedicineType,
                   builder: (context, snapshot) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Flexible(child: 
+                    return ListView(scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                    //Row(
+                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //scrollDirection: Axis.horizontal,
+                      //children: <Widget>[
+                        //Flexible(child: 
                         MedicineTypeColumn(
                             type: MedicineType.Bottle,
                             name: "Bottle",
-                            iconValue: 0xe900,
+                            iconValue: 0xec38,
                             isSelected: snapshot.data == MedicineType.Bottle
                                 ? true
                                 : false),
-                        ),
+                       // ),
                         MedicineTypeColumn(
                             type: MedicineType.Pill,
                             name: "Pill",
-                            iconValue: 0xe901,
+                            iconValue: 0xec12,
                             isSelected: snapshot.data == MedicineType.Pill
                                 ? true
                                 : false),
                         MedicineTypeColumn(
                             type: MedicineType.Tablet,
                             name: "Tablet",
-                            iconValue: 0xe903,
+                            iconValue: 0xec1b,
                             isSelected: snapshot.data == MedicineType.Tablet
                                 ? true
                                 : false),
                         MedicineTypeColumn(
-                            type: MedicineType.Other,
-                            name: "Others",
-                            iconValue: 0xe902,
-                            isSelected: snapshot.data == MedicineType.Other
+                            type: MedicineType.Syringe,
+                            name: "Syringe",
+                            iconValue: 0xec24,
+                            isSelected: snapshot.data == MedicineType.Syringe
                                 ? true
                                 : false),
-                      ],
-                    );
+                        MedicineTypeColumn(
+                            type: MedicineType.Drops,
+                            name: "Drops",
+                            iconValue: 0xec0d,
+                            isSelected: snapshot.data == MedicineType.Drops
+                                ? true
+                                : false),
+                        MedicineTypeColumn(
+                            type: MedicineType.Oinment,
+                            name: "Oinment",
+                            iconValue: 0xec27,
+                            isSelected: snapshot.data == MedicineType.Oinment
+                                ? true
+                                : false),
+                        MedicineTypeColumn(
+                            type: MedicineType.Other,
+                            name: "Other",
+                            iconValue: 0xec1c,
+                            isSelected: snapshot.data == MedicineType.Other
+                                ? true
+                                : false),                                
+                      //],
+                   // ),
+                    ]);
                   },
                 ),
               ),
@@ -357,7 +382,7 @@ _NewEntryState({this.uid});
                           },
                         ),
                       );
-                      showNotification();
+                      //showNotification();
                       
                     },
                   ),
@@ -440,17 +465,28 @@ _NewEntryState({this.uid});
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onSelectNotification: onSelectNotification);
+    // final NotificationAppLaunchDetails notificationAppLaunchDetails =
+    // await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+    // String payload = notificationAppLaunchDetails.payload;
   }
 
+  //Medicine med;
+
   Future onSelectNotification(String payload) async {
+
     if (payload != null) {
       debugPrint('notification payload: ' + payload);
+      medsname = payload;
+      istrue = true;
     }
     await Navigator.push(
       context,
-      new MaterialPageRoute(builder: (context) => HomePage()),
+      MaterialPageRoute(builder: (context) => Calender()),
     );
-  }
+    //print(medsname);
+
+
+}
 
   Future<void> scheduleNotification(Medicine medicine) async {
     var hour = int.parse(medicine.startTime[0] + medicine.startTime[1]);
@@ -488,7 +524,9 @@ _NewEntryState({this.uid});
               ? 'It is time to take your ${medicine.medicineType.toLowerCase()}, according to schedule'
               : 'It is time to take your medicine, according to schedule',
           Time(hour, minute, 0),
-          platformChannelSpecifics);
+          platformChannelSpecifics,
+          payload: medicine.medicineName,
+          );
       hour = ogValue;
     }
     //await flutterLocalNotificationsPlugin.cancelAll();
@@ -686,7 +724,7 @@ class MedicineTypeColumn extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(top: 14.0),
                 child: Icon(
-                  IconData(iconValue, fontFamily: "Ic"),
+                  IconData(iconValue, fontFamily: "Icmed"),
                   size: 75,
                   color: isSelected ? Colors.white : Colors.deepPurple,
                   //Color(0xFF3EB16F),
@@ -752,6 +790,9 @@ class PanelTitle extends StatelessWidget {
         ]),
       ),
     );
+
   }
+
 }
+
 

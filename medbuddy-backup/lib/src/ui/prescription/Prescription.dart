@@ -89,15 +89,20 @@ Widget build(BuildContext context) {
           const SizedBox(
             height: 16,
           ),
-            Row(children: [
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
           Icon(Icons.warning_amber_outlined,color: Colors.grey,size: 10,),
           Text("Note: Since there are chances for fake doctors to send prescription",
           style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),        
             ]),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
           Text("always verify if the doctor is real using register number.",
-          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),]),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
           Text("Click on verify icon in appbar.",
-          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),             
+          style: TextStyle(color: Colors.grey,fontFamily: 'JosefinSans',fontSize: 10),),]),             
             const SizedBox(
               height: 10,
             ),

@@ -9,6 +9,7 @@ import 'package:medbuddy/src/ui/splash_screen/splash.dart';
 import 'package:medbuddy/Login_ui/Screens/Login/index.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:flutter_stripe/flutter_stripe.dart';
 
 //for notification
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
@@ -45,10 +46,13 @@ Future<void> main() async {
     sound: true,
   );
 
+  //Stripe.publishableKey = 'your publish key';
+
+  //await Stripe.instance.applySettings();
+
 
   runApp(MyApp2());
 }
-
 class medbuddy extends StatefulWidget {
   @override
   _medbuddy createState() => _medbuddy();
@@ -110,6 +114,7 @@ class _medbuddy extends State<medbuddy> {
                 )),
               );
             });
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> Tab()));
       }
     });
   }

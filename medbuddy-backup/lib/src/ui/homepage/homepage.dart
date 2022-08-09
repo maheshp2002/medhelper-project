@@ -5,6 +5,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:intl/intl.dart';
 import 'package:medbuddy/src/global_bloc.dart';
 import 'package:medbuddy/src/models/medicine.dart';
+import 'package:medbuddy/src/ui/homepage/calender.dart';
 import 'package:medbuddy/src/ui/homepage/navBar.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/medicine_details/medicine_details.dart';
@@ -96,12 +97,18 @@ class TopContainer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                
+                Row(children: [
               Text(DateFormat.yMMMMd().format(DateTime.now()),
               style: TextStyle(
                 fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: "Ic"
                 ),
               ),
+              SizedBox(width: 110,),
+              InkWell( child: Icon(Icons.calendar_today, color: Colors.grey,),
+                onTap: (){
+                  istrue = false;
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Calender()));}),
+              ],),
              
               Text("Today",
                style: TextStyle(
@@ -113,11 +120,12 @@ class TopContainer extends StatelessWidget {
           ),
         Container(
         margin: const EdgeInsets.only(top: 20, left: 20),
+        
         child: DatePicker(
           DateTime.now(),
           height: 100,
           width: 80,
-          //onDateChange: ,
+          //onDateChange: Navigator.push(context, MaterialPageRoute(builder: (context)=> Calender())),
           initialSelectedDate: DateTime.now(),
           selectionColor: Colors.deepPurple,
           //Colors.green,
@@ -128,7 +136,8 @@ class TopContainer extends StatelessWidget {
             color: Colors.grey
         ),
       ),
-      ),
+        ),
+      //),
         ],
     );
   }
@@ -199,7 +208,7 @@ class MedicineCard extends StatelessWidget {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe900, fontFamily: "Ic"),
+          IconData(0xec38, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
           size: size,
@@ -209,7 +218,7 @@ class MedicineCard extends StatelessWidget {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe901, fontFamily: "Ic"),
+          IconData(0xec12, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
           size: size,
@@ -219,7 +228,7 @@ class MedicineCard extends StatelessWidget {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe902, fontFamily: "Ic"),
+          IconData(0xec24, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
           size: size,
@@ -229,7 +238,37 @@ class MedicineCard extends StatelessWidget {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe903, fontFamily: "Ic"),
+          IconData(0xec1b, fontFamily: "Icmed"),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
+          size: size,
+        ),
+      );
+    }else if (medicine.medicineType == "Drops") {
+      return Hero(
+        tag: medicine.medicineName + medicine.medicineType,
+        child: Icon(
+          IconData(0xec0d, fontFamily: "Icmed"),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
+          size: size,
+        ),
+      );
+    } else if (medicine.medicineType == "Oinment") {
+      return Hero(
+        tag: medicine.medicineName + medicine.medicineType,
+        child: Icon(
+          IconData(0xec27, fontFamily: "Icmed"),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
+          size: size,
+        ),
+      );
+    } else if (medicine.medicineType == "Other") {
+      return Hero(
+        tag: medicine.medicineName + medicine.medicineType,
+        child: Icon(
+          IconData(0xec1c, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
           size: size,

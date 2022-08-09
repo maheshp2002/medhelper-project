@@ -138,8 +138,8 @@ Future<String> uploadFile2(_image2) async {
         double oldprice;
         double discountv;
         double discount;
-        String DiscountVal;
         String returnStr;
+        String DiscountVal;
         if(hasDiscount == true){
         oldprice = double.parse(price);
         discountv = double.parse(discountvalue);

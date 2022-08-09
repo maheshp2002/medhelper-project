@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/models/medicine.dart';
@@ -20,6 +18,7 @@ class MedicineDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final GlobalBloc _globalBloc = Provider.of<GlobalBloc>(context);
+    
     return Scaffold(
 
       backgroundColor: Colors.white,
@@ -215,7 +214,9 @@ class MedicineDetails extends StatelessWidget {
             ),
           );
         });
+        
   }
+  
 }
 // _globalBloc.removeMedicine(medicine);
 //                        Navigator.of(context).pop()
@@ -233,17 +234,17 @@ class MainSection extends StatelessWidget {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe900, fontFamily: "Ic"),
+          IconData(0xec38, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
-          size: 100,
+          size: 50,
         ),
       );
     } else if (medicine.medicineType == "Pill") {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe901, fontFamily: "Ic"),
+          IconData(0xec12, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
           size: size,
@@ -253,20 +254,50 @@ class MainSection extends StatelessWidget {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe902, fontFamily: "Ic"),
+          IconData(0xec24, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
-          size: 100,
+          size: 50,
         ),
       );
     } else if (medicine.medicineType == "Tablet") {
       return Hero(
         tag: medicine.medicineName + medicine.medicineType,
         child: Icon(
-          IconData(0xe903, fontFamily: "Ic"),
+          IconData(0xec1b, fontFamily: "Icmed"),
           color: Colors.deepPurple,
           //Color(0xFF3EB16F),
-          size: 100,
+          size: 50,
+        ),
+      );
+    } else if (medicine.medicineType == "Drops") {
+      return Hero(
+        tag: medicine.medicineName + medicine.medicineType,
+        child: Icon(
+          IconData(0xec0d, fontFamily: "Icmed"),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
+          size: size,
+        ),
+      );
+    } else if (medicine.medicineType == "Oinment") {
+      return Hero(
+        tag: medicine.medicineName + medicine.medicineType,
+        child: Icon(
+          IconData(0xec27, fontFamily: "Icmed"),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
+          size: 50,
+        ),
+      );
+    } else if (medicine.medicineType == "Other") {
+      return Hero(
+        tag: medicine.medicineName + medicine.medicineType,
+        child: Icon(
+          IconData(0xec1c, fontFamily: "Icmed"),
+          color: Colors.deepPurple,
+          //Color(0xFF3EB16F),
+          size: 50,
         ),
       );
     }
@@ -276,7 +307,7 @@ class MainSection extends StatelessWidget {
         Icons.local_hospital,
         color: Colors.deepPurple,
         //Color(0xFF3EB16F),
-        size: 100,
+        size: 50,
       ),
     );
   }
@@ -287,7 +318,7 @@ class MainSection extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Flexible(child: 
-          makeIcon(175),
+          makeIcon(100),
           ),
           Flexible(child:
           SizedBox(
@@ -447,3 +478,4 @@ class ExtendedInfoTab extends StatelessWidget {
     );
   }
 }
+
