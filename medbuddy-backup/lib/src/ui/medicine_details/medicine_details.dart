@@ -31,7 +31,7 @@ class MedicineDetails extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "Medicine Details",
-          style: TextStyle(
+          style: TextStyle(fontFamily: 'JosefinSansBI',
             color: Colors.black,
             fontSize: 18,
           ),
@@ -76,7 +76,7 @@ class MedicineDetails extends StatelessWidget {
                         
                         "Delete reminder",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: TextStyle(fontFamily: 'JosefinSansBI',
                           color: Colors.white,
                           fontSize: 22,
                           fontWeight: FontWeight.w700,
@@ -117,7 +117,7 @@ class MedicineDetails extends StatelessWidget {
                       child: Text(
                         "Delete the reminder?",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: TextStyle(fontFamily: 'JosefinSansBI',
                             fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -171,7 +171,7 @@ class MedicineDetails extends StatelessWidget {
                             ),
                             child: Text(
                               "Yes",
-                              style: TextStyle(
+                              style: TextStyle(fontFamily: 'JosefinSansBI',
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -197,7 +197,7 @@ class MedicineDetails extends StatelessWidget {
                             ),
                             child: Text(
                               "No",
-                              style: TextStyle(
+                              style: TextStyle(fontFamily: 'JosefinSansBI',
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -333,24 +333,38 @@ class MainSection extends StatelessWidget {
                 child:
               Hero(
                 tag: medicine.medicineName,
-                child: Material(
+                child: Container(
+                  width: 200,
+                  height: 60,
                   color: Colors.transparent,
-                  child: MainInfoTab(
-                    fieldTitle: "Medicine Name",
-                    fieldInfo: medicine.medicineName,
-                  ),
+                  child: ListTile(title: Text("Medicine Name", style: TextStyle(fontSize: 15, color: Colors.grey, fontFamily: "JosefinSans"),),
+                  subtitle: Text(medicine.medicineName,style: TextStyle(fontSize: 25, color: Colors.deepPurple, fontFamily: "JosefinSansBI")),)
+                  //MainInfoTab(
+                    //fieldTitle: "Medicine Name",
+                    //fieldInfo: medicine.medicineName,
+                  //),
                 ),
               ),
               ),
               ),
               Expanded(child: Padding(
-              padding: EdgeInsets.only(left: 58.0, right: 3), 
-              child: MainInfoTab(
-                fieldTitle: "Dosage",
-                fieldInfo: medicine.dosage == 0
-                    ? "Not Specified"
-                    : medicine.dosage.toString() + " mg",
-              )
+              padding: EdgeInsets.only(left: 50.0, right: 3), 
+              child: Container(
+                  width: 200,
+                  height: 60,
+                  color: Colors.transparent,
+                  child: ListTile(title: Text("Dosage", style: TextStyle(fontSize: 15, color: Colors.grey, fontFamily: "JosefinSans"),),
+                  subtitle: Text(medicine.dosage == 0
+                     ? "Not Specified"
+                     : medicine.dosage.toString() + " mg",style: TextStyle(fontSize: 25, color: Colors.deepPurple, fontFamily: "JosefinSansBI")),) 
+
+              // MainInfoTab(
+              //   fieldTitle: "Dosage",
+              //   fieldInfo: medicine.dosage == 0
+              //       ? "Not Specified"
+              //       : medicine.dosage.toString() + " mg",
+              // )
+              ),
               ),
               ),
             ],
@@ -407,30 +421,51 @@ class ExtendedSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding( 
-      padding: EdgeInsets.only(left: 18.0, right: 18.0, ),
+      padding: EdgeInsets.only(left: 0.0, right: 0.0, ),
       child: ListView(
         shrinkWrap: true,
         children: <Widget>[
-          ExtendedInfoTab(
-            fieldTitle: "Medicine Type",
-            fieldInfo: medicine.medicineType == "None"
-                ? "Not Specified"
-                : medicine.medicineType,
-          ),
-          ExtendedInfoTab(
-            fieldTitle: "Dose Interval",
-            fieldInfo: "Every " +
-                medicine.interval.toString() +
-                " hours  | " +
-                " ${medicine.interval == 24 ? "One time a day" : (24 / medicine.interval).floor().toString() + " times a day"}",
-          ),
-          ExtendedInfoTab(
-              fieldTitle: "Start Time",
-              fieldInfo: medicine.startTime[0] +
-                  medicine.startTime[1] +
-                  ":" +
-                  medicine.startTime[2] +
-                  medicine.startTime[3]),
+
+          ListTile(title: Text("Medicine Type", style: TextStyle(fontSize: 15, color: Colors.grey, fontFamily: "JosefinSans"),),
+            subtitle: Text( medicine.medicineType == "None"
+            ? "Not Specified"
+            : medicine.medicineType, style: TextStyle(fontSize: 25, color: Colors.black, fontFamily: "JosefinSansBI")),),
+
+          ListTile(title: Text("Dose Interval", style: TextStyle(fontSize: 15, color: Colors.grey, fontFamily: "JosefinSans"),),
+            subtitle: Text( "Every " +
+                 medicine.interval.toString() +
+                 " hours  | " +
+                 " ${medicine.interval == 24 ? "One time a day" : (24 / medicine.interval).floor().toString() + " times a day"}",
+                  style: TextStyle(fontSize: 18, color: Colors.black, fontFamily: "JosefinSansBI")),),
+
+          ListTile(title: Text("Start Time", style: TextStyle(fontSize: 15, color: Colors.grey, fontFamily: "JosefinSans"),),
+            subtitle: Text( medicine.startTime[0] +
+                   medicine.startTime[1] +
+                   ":" +
+                   medicine.startTime[2] +
+                   medicine.startTime[3], style: TextStyle(fontSize: 25, color: Colors.black, fontFamily: "JosefinSansBI")),),          
+          
+          
+          // ExtendedInfoTab(
+          //   fieldTitle: "Medicine Type",
+          //   fieldInfo: medicine.medicineType == "None"
+          //       ? "Not Specified"
+          //       : medicine.medicineType,
+          // ),
+          // ExtendedInfoTab(
+          //   fieldTitle: "Dose Interval",
+          //   fieldInfo: "Every " +
+          //       medicine.interval.toString() +
+          //       " hours  | " +
+          //       " ${medicine.interval == 24 ? "One time a day" : (24 / medicine.interval).floor().toString() + " times a day"}",
+          // ),
+          // ExtendedInfoTab(
+          //     fieldTitle: "Start Time",
+          //     fieldInfo: medicine.startTime[0] +
+          //         medicine.startTime[1] +
+          //         ":" +
+          //         medicine.startTime[2] +
+          //         medicine.startTime[3]),
         ],
       ),
       ),

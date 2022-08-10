@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/about/contact.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Anurag.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Dillsith.dart';
-import 'package:medbuddy/src/ui/about/detail_about/Sarath.dart';
 import 'package:medbuddy/src/ui/about/detail_about/Suma.dart';
 import 'package:medbuddy/src/ui/about/detail_about/mahesh.dart';
 
@@ -191,40 +190,7 @@ return Scaffold(
     }
     )),     
     ),
-
-//Sarath          
-            Padding(
-            padding: EdgeInsets.only(top: 10),
-                child: Card(
-                  color: Colors.grey[300],
-                 child: TextButton(                  
-                child: Row (
-                  children: [
-               
-                  Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text("Sarath", textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontFamily: 'JosefinSans',
-                          color: Colors.black,
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                        ),
-                ),
-                  ),
-
-
-           const SizedBox(
-            width: 170,
-          ),
-                 Image.asset("assets/creatorspic/boy4.png", width: 70),
-                ],
-                ),
-     onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: ((context) => Sarath())));
-    }
-    )),     
-    ),
+SizedBox(height: 70,),
  
 Container(alignment: Alignment.bottomCenter,
 child: contact()

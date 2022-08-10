@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/doctor/deleteReg.dart';
 import 'package:medbuddy/doctor/doctorHome.dart';
+import 'package:medbuddy/doctor/doctorconsult/dconsult.dart';
 
 
 
@@ -46,20 +47,30 @@ class _SettingsPageState extends State<doctorSettings>{
         child: Column(
          
           children: <Widget>[  
-            Card(
-              child: 
+            //Card(
+              //child: 
                 ListTile(
-                title: Text('Delete Register data'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                title: Text('Create public Profile',style: TextStyle(fontFamily: 'JosefinSansBI')),
+                leading: Icon(Icons.delete_sweep, color: Colors.black,),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
+                onTap: () async{
+                    {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => publicprofile()));
+
+                }
+  }),
+  
+                ListTile(
+                title: Text('Delete Register data',style: TextStyle(fontFamily: 'JosefinSansBI')),
+                leading: Icon(Icons.delete_sweep, color: Colors.black,),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: () async{
                     {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DeleteReg()));
 
                 }
   }),
-
                 
                 
-            )
+            //)
 
          ])) ));
   }

@@ -38,40 +38,42 @@ class AddData extends StatelessWidget {
 ),
   //backgroundColor: Colors.orange[300],
   body: Container(
-    
-    child: Column(children: [
+    color: Colors.white,
+    child: Column(mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset("assets/creatorspic/cloud2.png"),
 //name      
-    Card(
-    child: ListTile(               
-    title:  Text("Name:" + " " + DTindexno['medicine_name']),
-    )),
+    ListTile(               
+    title:  Text("Name:" + " " + DTindexno['medicine_name'],
+     style: TextStyle(color: Colors.black, fontFamily: 'JosefinSansBI')),
+    ),
 //gap btw borders
 
           const SizedBox(
-            height: 16,
+            height: 5,
           ), 
  
 //dosage
-    Card(
-    child: ListTile(
-    title:  Text("Dosage:" + " " + DTindexno['dosage']),
-    )),
+    ListTile(
+    title:  Text("Dosage:" + " " + DTindexno['dosage'],
+    style: TextStyle(color: Colors.black, fontFamily: 'JosefinSansBI')),
+    ),
 //gap btw borders
           const SizedBox(
-            height: 16,
+            height: 5,
           ),  
-    Card(
-    child: ListTile(              
-    title:  Text("Interval:" + " " + DTindexno['interval']),
-    )),
+     ListTile(              
+    title:  Text("Interval:" + " " + DTindexno['interval'],
+    style: TextStyle(color: Colors.black, fontFamily: 'JosefinSansBI')),
+    ),
 //gap btw borders
           const SizedBox(
-            height: 16,
+            height: 5,
           ), 
-    Card(
-    child: ListTile(               
-    title:  Text("time:" + " " + DTindexno['time']),
-    )),
+    ListTile(               
+    title:  Text("Time:" + " " + DTindexno['time'],
+    style: TextStyle(color: Colors.black, fontFamily: 'JosefinSansBI')),
+    ),
 
 
       

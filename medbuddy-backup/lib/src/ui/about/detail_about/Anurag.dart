@@ -46,7 +46,7 @@ return Scaffold(
           const SizedBox(
             height: 30,
           ),  
-        Text("- Developer\n\n- Programmer\n\n- Designer",style: TextStyle(fontFamily: 'JosefinSans',),),     
+        Text("- UI designer\n\n- Front-end developer\n\n- Software tester",style: TextStyle(fontFamily: 'JosefinSans',),),     
       ],) 
 
     ),

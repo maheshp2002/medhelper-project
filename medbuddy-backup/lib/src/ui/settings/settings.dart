@@ -38,6 +38,7 @@ class _SettingsPageState extends State<Settings>{
       backgroundColor: Colors.grey[300],
 
       body: Container(
+        color: Colors.white,
         alignment: Alignment.topLeft,
         child: Padding(
           padding: EdgeInsets.only(top: 20),
@@ -45,25 +46,27 @@ class _SettingsPageState extends State<Settings>{
         child: Column(
          
           children: <Widget>[  
-            Card(
-              child: 
+            //card(
+              //child: 
                 ListTile(
-                title: Text('User backup data'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: Icon(Icons.cloud_done, color: Colors.black,),
+                title: Text('User backup data', style: TextStyle(fontFamily: 'JosefinSansBI'),),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => UserInformation()));
                 },
                  ),
-            ),
+            //),
 
-             Card(
-              child: 
+            // Card(
+              //child: 
                 ListTile(
-                title: Text('Send Verification mail'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: Icon(Icons.mark_email_read, color: Colors.black,),
+                title: Text('Send Verification mail',style: TextStyle(fontFamily: 'JosefinSansBI'),),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: (){
 
-                          user.sendEmailVerification();
+                      user.sendEmailVerification();
                       Fluttertoast.showToast(  
                       msg: 'Check out your email inbox',  
                       toastLength: Toast.LENGTH_LONG,  
@@ -72,17 +75,20 @@ class _SettingsPageState extends State<Settings>{
                       textColor: Colors.white  
                   ); 
 
-                        }),),
+                        }),
+                        //),
 
 StreamBuilder(
 stream: FirebaseFirestore.instance.collection("UserpublicID").doc(user.email).snapshots(),
 builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
 if (!snapshot.hasData) {
-              return Card(
-              child: 
+              return 
+              //Card(
+              //child: 
                 ListTile(
-                title: Text('Delete User Account'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: Icon(Icons.delete_forever, color: Colors.black,),
+                title: Text('Delete User Account', style: TextStyle(fontFamily: 'JosefinSansBI')),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: (){
         showModalBottomSheet<void>(context: context,
             builder: (BuildContext context) {
@@ -137,15 +143,17 @@ if (!snapshot.hasData) {
                         );}
                         );
                 },
-                 ),
+                 //),
                   );                   
 
              } else{  
-             return Card(
-              child: 
+             return 
+            // Card(
+              //child: 
                 ListTile(
-                title: Text('Delete User Account'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: Icon(Icons.delete_sweep, color: Colors.black,),
+                title: Text('Delete User Account', style: TextStyle(fontFamily: 'JosefinSansBI')),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: (){
                                 showDialog(  
                                     context: context,  
@@ -216,23 +224,20 @@ if (!snapshot.hasData) {
                       },  
                     ); 
                 },
-                 ),
+                // ),
 
     );
     }
     }),
-    SizedBox(height: 100),
-
+    SizedBox(height: 20),
             Text(
-                "Note:- Please delete all order details before deleting account.",
+                "Note:- Please delete all order details in MedSeller before deleting account.",
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 softWrap: true,
-                style: new TextStyle(fontFamily: 'JosefinSans',
-                    fontWeight: FontWeight.w300,
-                    letterSpacing: 0.5,
+                style: new TextStyle(fontFamily: 'JosefinSansBI',
                     color: Colors.grey,
-                    fontSize: 12.0),
+                    fontSize: 10.0),
               ),
     
     ])) ));

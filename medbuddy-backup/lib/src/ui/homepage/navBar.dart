@@ -3,6 +3,9 @@ import 'package:medbuddy/src/ui/about/about.dart';
 import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/consult/doctorsr.dart';
 import 'package:medbuddy/src/ui/login_page/auth_class.dart';
+import 'package:medbuddy/src/ui/maintenance/consultmaint.dart';
+import 'package:medbuddy/src/ui/maintenance/maint.dart';
+import 'package:medbuddy/src/ui/maintenance/medsellermaint.dart';
 import 'package:medbuddy/src/ui/settings/patientAbout.dart';
 import 'package:medbuddy/src/ui/settings/publicprofile/userprofile.dart';
 import 'package:medbuddy/src/ui/settings/settings.dart';
@@ -39,17 +42,21 @@ class NavDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.shopping_cart),
             title: Text('WishList'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => cartMap()))},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => medsellermaint()))},
           ), 
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Public profile'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => userprofile()))},
+            // onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => userprofile()))},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => maint()))},
+
           ),              
           ListTile(
             leading: Icon(Icons.person_add),
             title: Text('Consult'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Home()))},
+            // onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Home()))},
+            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => consultmaint()))},
+
           ),                  
           ListTile(
             leading: Icon(Icons.settings),

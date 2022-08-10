@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/maintenance/medsellermaint.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/1mg.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/netmeds.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/pharmeasy.dart';
@@ -167,7 +168,8 @@ class _searchPageState extends State<search>{
                     splashColor: Colors.purpleAccent,
                     onTap: (){
                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return HomeScreen();
+                      //return HomeScreen();
+                      return medsellermaint();
                     }));                     
                     },
                     child: Column(

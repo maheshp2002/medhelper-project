@@ -25,7 +25,7 @@ var collectionReference = FirebaseFirestore.instance.collection("consultDoctors"
     return Scaffold(
          appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title:  const Text("Doctor details"),
+        title:  const Text("Doctor details", style: TextStyle(),),
         elevation: 16.0,
         actions: [
           new IconButton(

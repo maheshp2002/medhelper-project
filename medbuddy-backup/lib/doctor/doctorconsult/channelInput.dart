@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:medbuddy/doctor/doctorconsult/doctorvideocall.dart';
+//import 'package:medbuddy/doctor/doctorconsult/doctorvideocall.dart';
 import 'package:medbuddy/doctor/doctorconsult/patients.dart';
 import 'package:uuid/uuid.dart';
 
@@ -175,7 +175,7 @@ class _doctorHomePageState extends State<Dvideocall> {
                       FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
                       "vccode": _meetingcode,
                       });                   
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
                         channelController.clear();
                         //unameController.clear();
                         }

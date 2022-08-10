@@ -103,11 +103,13 @@ class TopContainer extends StatelessWidget {
                 fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: "Ic"
                 ),
               ),
-              SizedBox(width: 110,),
-              InkWell( child: Icon(Icons.calendar_today, color: Colors.grey,),
+              //SizedBox(width: 100,),
+              Container(alignment: Alignment.topRight,child: 
+              InkWell(splashColor: Colors.grey,
+                 child: Icon(Icons.calendar_today_rounded, color: Colors.grey,),
                 onTap: (){
                   istrue = false;
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Calender()));}),
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Calender()));})),
               ],),
              
               Text("Today",
@@ -121,7 +123,12 @@ class TopContainer extends StatelessWidget {
         Container(
         margin: const EdgeInsets.only(top: 20, left: 20),
         
-        child: DatePicker(
+        child: InkWell(
+                 onDoubleTap: (){
+                  istrue = false;
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Calender()));},         
+          child: 
+        DatePicker(
           DateTime.now(),
           height: 100,
           width: 80,
@@ -135,7 +142,7 @@ class TopContainer extends StatelessWidget {
             fontWeight: FontWeight.w600,
             color: Colors.grey
         ),
-      ),
+      ),)
         ),
       //),
         ],
@@ -179,8 +186,6 @@ class BottomContainer extends StatelessWidget {
             child: //GridView
             ListView.builder(
               padding: EdgeInsets.only(top: 12),
-              //gridDelegate:
-                  //SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
               itemCount: snapshot.data.length,
               itemBuilder: (context, index) {
                 return  AnimationConfiguration.staggeredList(
@@ -312,15 +317,22 @@ class MedicineCard extends StatelessWidget {
           //   ),
           // );
         },
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-          ),
+        child: Card(
+              margin: EdgeInsets.all(15),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              elevation: 5,          
+        //Container(
+          // decoration: BoxDecoration(
+          //   color: Colors.white,
+          //   borderRadius: BorderRadius.circular(15),
+          // ),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
+                SizedBox(height: 10,),
                 makeIcon(50.0),
                 Hero(
                   tag: medicine.medicineName,
@@ -344,7 +356,8 @@ class MedicineCard extends StatelessWidget {
                       fontSize: 16,
                       color: Color(0xFFC9C9C9),
                       fontWeight: FontWeight.w400),
-                )
+                ),
+                SizedBox(height: 10,),
               ],
             ),
           ),

@@ -46,7 +46,7 @@ Widget build(BuildContext context) {
         ),
         title: Text(
           "Data Retrival",
-          style: TextStyle(
+          style: TextStyle(fontFamily: 'JosefinSansBI',
             color: Colors.white,
             fontSize: 18,
           ),
@@ -85,8 +85,10 @@ Widget build(BuildContext context) {
                   return Card(
                   child: ListTile(
                     
-                  title: Text(snapshot.data.docs[index]['medicine_name']),
-                  subtitle: Text(snapshot.data.docs[index]['time']),
+                  title: Text(snapshot.data.docs[index]['medicine_name'],
+                  style: TextStyle(fontSize: 20, fontFamily: 'JosefinSansBI')),
+                  subtitle: Text(snapshot.data.docs[index]['time'],
+                  style: TextStyle(fontSize: 15, fontFamily: 'JosefinSans')),
                   trailing: Icon(Icons.arrow_forward_ios),
                    onTap: (){
                       DTindexno = snapshot.data.docs[index];
@@ -127,64 +129,3 @@ Widget build(BuildContext context) {
         }
 
   
-  
-  //........................................................................................................
-  /*StreamBuilder(stream: collectionReference,
-   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-     if(snapshot.hasData){
-       return ListView.separated(
-         itemBuilder:(BuildContext context, int index) {
-           return Column(
-              children: snapshot.data.docs.map((doc) {
-                return Card(
-                  child: ListTile(
-                    title: Text(snapshot.data.docs[index]['medicine_name']),
-                    subtitle:  Text(snapshot.data.docs[index]['time']),
-                    trailing: Icon(Icons.arrow_forward_ios),
-                    onTap: (){
-                      DTindexno = snapshot.data.docs[index];
-                      Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) => dbfull())
-                      );
-                    },
-                  onLongPress: () {
-                      
-                  showModalBottomSheet<void>(context: context,
-                    builder: (BuildContext context) {
-                    return Container(
-                    child: new Wrap(
-                    children: <Widget>[
-                        new ListTile(
-                        leading: new Icon(Icons.delete),
-                        title: new Text('Delete'),
-                        onTap: () async{
-                        await FirebaseFirestore.instance.runTransaction((Transaction myTransaction) async {
-                        await myTransaction.delete(snapshot.data.docs[index].reference);}
-                        );
-                        })
-                        ]
-                        )
-                        );}
-                        );
-                      })
-                  );
-              }).toList(),);
-              
-              },
-               separatorBuilder: (context, index) {
-           return Divider();
-          },
-              itemCount: snapshot.data.docs.length,
-       );
-     }
-     return Center(child:
-     Text("No Data found!", style: TextStyle(fontSize: 20,color: Colors.grey),),
-     );
-     },),
-
-  );
-	
-  
-}
-}
-*/

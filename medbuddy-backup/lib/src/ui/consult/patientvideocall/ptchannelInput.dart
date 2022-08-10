@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:medbuddy/src/ui/consult/doctorsr.dart';
-import 'package:medbuddy/src/ui/consult/patientvideocall/patientvideocall.dart';
+//import 'package:medbuddy/src/ui/consult/patientvideocall/patientvideocall.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 
 
@@ -166,12 +166,12 @@ var collectionReference = FirebaseFirestore.instance.collection("consultDoctors"
                                   //vccode = snapshot.data['vccode'];
                                   if(mytoken == snapshot.data['nextpt']){
                                     Pchannelid = Pvccode;
-                                    Future.delayed(Duration.zero, () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> patientvideocall()));});
+                                    //Future.delayed(Duration.zero, () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> patientvideocall()));});
                                   }
                                    Future.delayed(Duration(seconds: 3), () {
                                    if(mytoken == snapshot.data['nextpt']){
                                     Pchannelid = Pvccode;
-                                    Future.delayed(Duration.zero, () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> patientvideocall()));});
+                                    //Future.delayed(Duration.zero, () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> patientvideocall()));});
                                   }                                   
 
                                    });

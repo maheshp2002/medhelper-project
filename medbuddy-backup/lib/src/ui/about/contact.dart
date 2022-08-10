@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class contact extends StatelessWidget {
@@ -6,8 +7,28 @@ class contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new InkWell(
-          onTap: () async {
-            _sendingMails();
+          onTap: ()  {
+         showModalBottomSheet<void>(context: context,
+            builder: (BuildContext context) {
+                return Container(
+                    child: new Wrap(
+                    children: <Widget>[
+                        new ListTile(
+                        leading: new Icon(Icons.mail, color: Colors.black,),
+                        title: new Text('E-mail', style: TextStyle(fontFamily: 'JosefinSansBI')),
+                        onTap: () async{
+                        _sendingMails();         
+                        }),
+                        new ListTile(
+                        leading: new Icon(Icons.web, color: Colors.black,),
+                        title: new Text('Website', style: TextStyle(fontFamily: 'JosefinSansBI')),
+                        onTap: () async{
+                          launchURL();
+                        })                        
+                        ]
+                        )
+                        );}
+                        );           
 
           },
      child: new Padding(
@@ -27,14 +48,24 @@ class contact extends StatelessWidget {
       ),
     ));
   }
+launchURL() async{
+
+  var url = Uri.parse("https://maheshp7304.wixsite.com/maheshp");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+            Fluttertoast.showToast(  
+            msg: 'Could not launch $url',  
+            toastLength: Toast.LENGTH_LONG,  
+            gravity: ToastGravity.BOTTOM,
+            backgroundColor: Colors.black,  
+            textColor: Colors.white  
+            ); 
+  }
+}
+
 _sendingMails()  {
-//   const url = 'mailto:maheshp7304@gmail.com';
-//   if (await canLaunch(url)) {
-//     await launch(url);
-//   } else {
-//     throw 'Could not launch $url';
-//   }
-// }
+
 String encodeQueryParameters(Map<String, String> params) {
   return params.entries
       .map((e) => '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')

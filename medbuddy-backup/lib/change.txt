@@ -1,0 +1,27 @@
+Patient section 
+{
+patientvideocall -> .txt
+
+ptchannelInput.dart -> {
+
+line 6 - comment
+line 169 - comment
+line 174 - comment
+}
+}
+
+
+//doctor section
+
+{
+doctorvideocall.dart -> .txt
+
+channelInput -> {
+
+line 7 - comment
+line 178 - comment
+
+
+}
+
+}

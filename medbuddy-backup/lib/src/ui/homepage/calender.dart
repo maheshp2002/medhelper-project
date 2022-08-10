@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:medbuddy/main.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -178,7 +177,7 @@ class _DynamicEventState extends State<Calender> {
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
             FlatButton(
-              child: Text("Yes",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
+              child: Text("Yes",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
               onPressed: () {
                 //if (medicinename == null) return;
                 setState(() {
@@ -201,7 +200,7 @@ class _DynamicEventState extends State<Calender> {
             SizedBox(width: 10,),
 
             FlatButton(
-              child: Text("no",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
+              child: Text("no",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
               onPressed: () {
                 if (medicinename == null) return;
                 setState(() {
@@ -238,7 +237,7 @@ class _DynamicEventState extends State<Calender> {
           ),
           actions: <Widget>[
             FlatButton(
-              child: Text("Yes",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
+              child: Text("Yes",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
               onPressed: () {
                 if (_eventController.text.isEmpty) return;
                 setState(() {
@@ -261,7 +260,7 @@ class _DynamicEventState extends State<Calender> {
             SizedBox(width: 10,),
 
             FlatButton(
-              child: Text("no",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
+              child: Text("no",style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),),
               onPressed: () {
                 if (_eventController.text.isEmpty) return;
                 setState(() {

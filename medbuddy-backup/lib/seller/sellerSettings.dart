@@ -61,48 +61,52 @@ void _restartApp() async {
         child: Column(
          
           children: <Widget>[  
-            Card(
-              child: 
+            //Card(
+              //child: 
                 ListTile(
-                title: Text('Data in cloud'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                title: Text('Data in cloud',style: TextStyle(fontFamily: 'JosefinSansBI')),
+                leading: Icon(Icons.cloud_done, color: Colors.black,),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => sellerMap2()));
                 },
-                 ),
+                 //),
 
                 
                 
             ),
 
-            Card(
-              child: 
+            //Card(
+              //child: 
                 ListTile(
-                title: Text('Update product'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                title: Text('Update product',style: TextStyle(fontFamily: 'JosefinSansBI')),
+                leading: Icon(Icons.update, color: Colors.black,),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => updatepdt()));
                 },
-                 ),
+                 //),
             ),
-            Card(
-              child: 
+            //Card(
+              //child: 
                 ListTile(
-                title: Text('Delete a product'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                title: Text('Delete a product',style: TextStyle(fontFamily: 'JosefinSansBI')),
+                leading: Icon(Icons.delete_forever, color: Colors.black,),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => dltSeller()));
                 },
-                 ),
+                 //),
                 
                 
             ),
 
-             Card(
-              child: 
+            // Card(
+              //child: 
                 ListTile(
-                title: Text('Delete account'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                title: Text('Delete account',style: TextStyle(fontFamily: 'JosefinSansBI')),
+                leading: Icon(Icons.delete_sweep, color: Colors.black,),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
                 onTap: () async{
                                 showDialog(  
                                     context: context,  
@@ -142,7 +146,7 @@ void _restartApp() async {
                                         );
 
                 },
-                 ),
+                 //),
                 
                 
             ),

@@ -456,7 +456,6 @@ _NewEntryState({this.uid});
     }
     return ids;
   }
-
   initializeNotifications() async {
     var initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/launcher_icon');
@@ -465,9 +464,10 @@ _NewEntryState({this.uid});
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
         onSelectNotification: onSelectNotification);
-    // final NotificationAppLaunchDetails notificationAppLaunchDetails =
-    // await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
-    // String payload = notificationAppLaunchDetails.payload;
+
+    final NotificationAppLaunchDetails notificationAppLaunchDetails =
+    await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+    String payload = notificationAppLaunchDetails.payload;
   }
 
   //Medicine med;
