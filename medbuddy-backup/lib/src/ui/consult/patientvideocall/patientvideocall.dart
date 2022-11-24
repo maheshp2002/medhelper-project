@@ -32,7 +32,7 @@ class _MyAppState extends State<patientvideocall> {
 
 Future<void> gettoken() async{
   
-  String link = "https://agora-node-tokenserver.pmahesh2002.repl.co/access_token?channelName=$Pchannelid";
+  String link = "https://Agora-Node-TokenServer.pmahesh2002.repl.co/access_token?channelName=$Pchannelid";
   Response _response = await get(Uri.parse(link));
   Map data = jsonDecode(_response.body);
   //print(data["token"]);

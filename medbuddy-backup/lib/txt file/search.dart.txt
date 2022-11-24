@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medbuddy/src/ui/maintenance/medsellermaint.dart';
+//import 'package:medbuddy/src/ui/maintenance/medsellermaint.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/1mg.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/netmeds.dart';
 import 'package:medbuddy/src/ui/medicine_webpages/pharmeasy.dart';
@@ -8,12 +8,27 @@ import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 class search extends StatefulWidget {
   @override
-  _searchPageState createState() => _searchPageState();
+  searchPageState createState() => searchPageState();
 }
 
-class _searchPageState extends State<search>{
+class searchPageState extends State<search>{
+
+
+  //  @override
+  // void initState() {
+  //   super.initState();
+  //   //NewEntryState().initializeNotifications;// call below localNotification() here.
+  //   }
+  // returnpage() async{
+  //       await Navigator.push(
+  //     context,
+  //     MaterialPageRoute(builder: (context) => Calender()),
+  //   );
+  // }
+  
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
                 leading: new IconButton(
@@ -27,7 +42,7 @@ class _searchPageState extends State<search>{
         ),
       backgroundColor: Colors.deepPurple,
       //Color(0xFF3EB16F),
-      elevation: 0.0,
+      elevation: 10.0,
       title: Text(
           "Search",
           style: TextStyle(
@@ -168,8 +183,8 @@ class _searchPageState extends State<search>{
                     splashColor: Colors.purpleAccent,
                     onTap: (){
                      Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      //return HomeScreen();
-                      return medsellermaint();
+                      return HomeScreen();
+                      //return medsellermaint();
                     }));                     
                     },
                     child: Column(

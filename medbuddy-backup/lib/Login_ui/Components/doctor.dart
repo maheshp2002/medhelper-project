@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/doctor/signin/doctorSignin.dart';
-import 'package:medbuddy/src/ui/maintenance/consultmaint.dart';
+//import 'package:medbuddy/src/ui/maintenance/consultmaint.dart';
 
 
 
@@ -13,8 +13,8 @@ class Doctor extends StatelessWidget {
             Navigator.push(
               context, MaterialPageRoute(
                 builder: (BuildContext context) =>  
-                //DoctorSignInPage()
-                consultmaint()
+                DoctorSignInPage()
+                //consultmaint()
                 ));
           },
      child: new Padding(

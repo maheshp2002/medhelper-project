@@ -9,6 +9,8 @@ import 'package:medbuddy/src/ui/homepage/calender.dart';
 import 'package:medbuddy/src/ui/homepage/navBar.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/medicine_details/medicine_details.dart';
+import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 import 'package:provider/provider.dart';
 
 
@@ -22,9 +24,26 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   void initState() {
+    NewEntryState().initializeNotifications();
     super.initState();
   }
 
+//listen to notification..........................................................................................
+void listenNotifications() =>
+    NewEntryState.onNotifications.stream.listen(onClickedNotification);
+
+void onClickedNotification(String payload) async{
+    if (payload != null) {
+      debugPrint('notification payload: ' + payload);
+      medsname = payload;
+      print(medsname);
+      istrue = true;
+    }
+    await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Calender()),
+    );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -120,15 +139,16 @@ class TopContainer extends StatelessWidget {
               
             ]),
           ),
+        FadeAnimation(
+        delay: 0.8,
+        child:
         Container(
-        margin: const EdgeInsets.only(top: 20, left: 20),
-        
+        margin: const EdgeInsets.only(top: 20, left: 20),  
         child: InkWell(
-                 onDoubleTap: (){
-                  istrue = false;
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Calender()));},         
-          child: 
-        DatePicker(
+          onDoubleTap: (){
+          istrue = false;
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> Calender()));},         
+        child: DatePicker(
           DateTime.now(),
           height: 100,
           width: 80,
@@ -144,8 +164,8 @@ class TopContainer extends StatelessWidget {
         ),
       ),)
         ),
-      //),
-        ],
+      ),
+      ],
     );
   }
 }
@@ -317,7 +337,10 @@ class MedicineCard extends StatelessWidget {
           //   ),
           // );
         },
-        child: Card(
+        child: FadeAnimation(
+        delay: 0.8,
+        child:
+        Card(
               margin: EdgeInsets.all(15),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -363,6 +386,6 @@ class MedicineCard extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ));
   }
 }

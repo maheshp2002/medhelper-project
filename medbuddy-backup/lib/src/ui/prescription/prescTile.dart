@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/prescription/Prescription.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 
 
@@ -63,8 +64,11 @@ return Scaffold(
         else{
           return ListView(
           children: [
-             ListView.builder(
-                  physics: ScrollPhysics(),
+            FadeAnimation(
+            delay: 0.8,
+            child:
+            ListView.builder(
+                  physics: BouncingScrollPhysics(),
                   padding: EdgeInsets.all(10),
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
@@ -107,7 +111,7 @@ return Scaffold(
           
             );
                   })
-                  ],
+          )],
 
         );
       }

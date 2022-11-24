@@ -166,9 +166,9 @@ Future<String> uploadFile1(_image1) async {
   Widget build(BuildContext context) {
   return Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: isLoadingDF ? Color(0xFFf3c0fd) : Colors.deepPurple,
         title:  const Text("Add profile"),
-        elevation: 16.0,
+        elevation: isLoadingDF ? 0 : 16.0,
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
@@ -437,10 +437,7 @@ Future<String> uploadFile1(_image1) async {
                       textColor: Colors.white  
                   ); 
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> profilesucess()));
-                
-                
-              
-                 
+                                               
                   _name.clear();  
                   _address.clear();       
                   _mobileno.clear();
@@ -465,9 +462,10 @@ Future<String> uploadFile1(_image1) async {
           ),
             ],
         ),
-  ),
-    ],
-      ):Container(
+      ),
+      ],)
+      
+      : Container(
         color: Color(0xFFf3c0fd),
       child: Center(
       
@@ -483,7 +481,7 @@ Future<String> uploadFile1(_image1) async {
                   animatedTexts: [
                     WavyAnimatedText('Loading...',
                         textStyle: TextStyle(
-                          color: Colors.grey,
+                          color: Colors.white,
                           fontSize: 15,
                         ),
                         textAlign: TextAlign.center,
@@ -491,7 +489,7 @@ Future<String> uploadFile1(_image1) async {
                         ),
                     WavyAnimatedText('Please wait...',
                         textStyle: TextStyle(
-                          color: Colors.grey,
+                          color: Colors.white,
                           fontSize: 15,
                         ),
                         speed: const Duration(milliseconds: 600)

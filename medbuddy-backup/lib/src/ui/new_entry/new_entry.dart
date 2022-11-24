@@ -9,13 +9,15 @@ import 'package:medbuddy/src/models/medicine_type.dart';
 import 'package:medbuddy/src/ui/homepage/calender.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry_bloc.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 import 'package:medbuddy/src/ui/success_screen/success_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:rxdart/rxdart.dart';
 
 class NewEntry extends StatefulWidget {
   @override
-  _NewEntryState createState() => _NewEntryState();
+  NewEntryState createState() => NewEntryState();
 }
 String medsname;
 
@@ -46,12 +48,10 @@ TimeOfDay firebaseToTimeOfDay(Map data){
 
 //var myTimeOfDayObject= time;
 
-class _NewEntryState extends State<NewEntry> {
-
-//collection names
-  //CollectionReference users = FirebaseFirestore.instance.collection('users');
-  //CollectionReference
+class NewEntryState extends State<NewEntry> {
+  final usernamecollection = FirebaseFirestore.instance.collection("username").doc(user.uid);
    final collectionReference = FirebaseFirestore.instance.collection(user.uid);
+   static final onNotifications = BehaviorSubject<String>();
    //.doc(user.uid);
 
 //string for firebase
@@ -59,7 +59,7 @@ String medname;
 String dos;
 
 final String uid;
-_NewEntryState({this.uid});
+NewEntryState({this.uid});
 
 
 
@@ -87,9 +87,10 @@ _NewEntryState({this.uid});
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     _scaffoldKey = GlobalKey<ScaffoldState>();
     initializeNotifications();
-
     initializeErrorListen();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +134,10 @@ _NewEntryState({this.uid});
         ),
         elevation: 0.0,
       ),
-      body: Container(
+      body: FadeAnimation(
+      delay: 0.8,
+      child: 
+      Container(
         child: Provider<NewEntryBloc>.value(
           value: _newEntryBloc,
           child: ListView(
@@ -199,7 +203,9 @@ _NewEntryState({this.uid});
                 StreamBuilder<MedicineType>(
                   stream: _newEntryBloc.selectedMedicineType,
                   builder: (context, snapshot) {
-                    return ListView(scrollDirection: Axis.horizontal,
+                    return ListView(
+                    physics: BouncingScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
                     children: <Widget>[
                     //Row(
                       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -301,7 +307,12 @@ _NewEntryState({this.uid});
                     onPressed: () async{
                       String medicineName;
                       int dosage;
-                      
+                      String username;
+                        await usernamecollection.get().then((snapshot) {
+                          setState(() {
+                        username = snapshot.get('username');             
+                          });
+                      });
                       
                       await collectionReference.add(
                         {
@@ -368,6 +379,7 @@ _NewEntryState({this.uid});
                         interval: interval,
                         startTime: startTime,
                         id: user.email,
+                        uname: username,
                        
                       );
 
@@ -410,7 +422,7 @@ _NewEntryState({this.uid});
           ),
         ),
       ),
-    );
+    ));
   }
 
   void initializeErrorListen() {
@@ -456,6 +468,9 @@ _NewEntryState({this.uid});
     }
     return ids;
   }
+
+
+
   initializeNotifications() async {
     var initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/launcher_icon');
@@ -463,30 +478,47 @@ _NewEntryState({this.uid});
     var initializationSettings = InitializationSettings(
         android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
-        onSelectNotification: onSelectNotification);
+      onSelectNotification: (payload) async {
+        onNotifications.add(payload); 
+      }
+    );
 
-    final NotificationAppLaunchDetails notificationAppLaunchDetails =
-    await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
-    String payload = notificationAppLaunchDetails.payload;
-  }
+  final details = await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+  if (details != null && details.didNotificationLaunchApp) {
+    onNotifications.add(details.payload);
 
-  //Medicine med;
-
-  Future onSelectNotification(String payload) async {
-
-    if (payload != null) {
-      debugPrint('notification payload: ' + payload);
-      medsname = payload;
+    if (details.payload != null) {
+      debugPrint('notification payload: ' + details.payload);
+      medsname = details.payload;
+      print(medsname);
       istrue = true;
     }
     await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Calender()),
     );
-    //print(medsname);
+    
+  }
+
+  }
 
 
-}
+//   Future onSelectNotification(String payload) async {
+
+
+//     if (payload != null) {
+//       debugPrint('notification payload: ' + payload);
+//       medsname = payload;
+//       print(medsname);
+//       istrue = true;
+//     }
+//     await Navigator.push(
+//       context,
+//       MaterialPageRoute(builder: (context) => Calender()),
+//     );
+
+// }
+
 
   Future<void> scheduleNotification(Medicine medicine) async {
     var hour = int.parse(medicine.startTime[0] + medicine.startTime[1]);
@@ -521,7 +553,7 @@ _NewEntryState({this.uid});
           int.parse(medicine.notificationIDs[i]),
           'MedHelper: ${medicine.medicineName}',
           medicine.medicineType.toString() != MedicineType.None.toString()
-              ? 'It is time to take your ${medicine.medicineType.toLowerCase()}, according to schedule'
+              ? ' Hi ${medicine.uname}. It is time to take your ${medicine.medicineType.toLowerCase()}, according to schedule'
               : 'It is time to take your medicine, according to schedule',
           Time(hour, minute, 0),
           platformChannelSpecifics,
@@ -533,6 +565,7 @@ _NewEntryState({this.uid});
   }
 }
 
+
 class IntervalSelection extends StatefulWidget {
   @override
   _IntervalSelectionState createState() => _IntervalSelectionState();
@@ -540,9 +573,17 @@ class IntervalSelection extends StatefulWidget {
 
 class _IntervalSelectionState extends State<IntervalSelection> {
   var _intervals = [
+    1,
+    2,
     3,
+    4,
+    5,
     6,
+    7,
     8,
+    9,
+    10,
+    11,
     12,
     24,
   ];
@@ -795,4 +836,23 @@ class PanelTitle extends StatelessWidget {
 
 }
 
+class navigate {
+    @override
+  Widget build(BuildContext context) {
+    return MaterialApp( title: "Calender",
+      home: Calender());
 
+  }
+}
+//  runWhileAppIsTerminated() async {
+//     var details = await _NewEntryState().flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails();
+    
+//     if (details.didNotificationLaunchApp) {
+
+//         medsname = details.payload;
+//         istrue = true;
+    
+//       return Calender();        
+
+//     }
+// }

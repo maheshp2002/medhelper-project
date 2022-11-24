@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/homepage/homepage.dart';
 import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
 import 'package:medbuddy/src/ui/prescription/prescTile.dart';
-import 'package:medbuddy/src/ui/search/search.dart';
+import 'package:medbuddy/src/ui/tabpage/searchRedirect.dart';
+// import 'package:medbuddy/src/ui/search/search.dart';
 
 
 class tab extends StatefulWidget {
@@ -19,7 +20,7 @@ class _TabPageState extends State<tab>{
   Widget build(BuildContext context) {
   
     //for screens
-    final screen = [prescTile(), HomePage(), search(), NewEntry()];
+    final screen = [prescTile(), HomePage(), /* search() */ searchRedirect() , NewEntry()];
  
     //for tabs icon
     final items = <Widget>[

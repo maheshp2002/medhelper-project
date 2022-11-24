@@ -5,6 +5,8 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:medbuddy/doctor/doctorHome.dart';
 import 'package:medbuddy/seller/DataFeed.dart';
 import 'package:medbuddy/src/global_bloc.dart';
+import 'package:medbuddy/src/ui/homepage/calender.dart';
+import 'package:medbuddy/src/ui/new_entry/new_entry.dart';
 import 'package:medbuddy/src/ui/splash_screen/splash.dart';
 import 'package:medbuddy/Login_ui/Screens/Login/index.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +32,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 
 Future<void> main() async {
-  
+  //runWhileAppIsTerminated();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
@@ -59,6 +61,7 @@ class medbuddy extends StatefulWidget {
 }
 
 class MyApp2 extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -71,12 +74,16 @@ class MyApp2 extends StatelessWidget {
   }
 }
 
+
+
+
 class _medbuddy extends State<medbuddy> {
   GlobalBloc globalBloc;
 
   void initState() {
     globalBloc = GlobalBloc();
     super.initState();
+
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification notification = message.notification;
       AndroidNotification android = message.notification?.android;
@@ -141,11 +148,18 @@ void showNotification(){
     );
 }*/
 
+  // final GlobalKey<NavigatorState> navigatorKey =
+  //     GlobalKey(debugLabel: "Main Navigator"); //
+
   @override
   Widget build(BuildContext context) {
     return Provider<GlobalBloc>.value(
       value: globalBloc,
       child: MaterialApp(
+      routes: <String, WidgetBuilder> {
+      '/a': (BuildContext context) => Calender(),
+
+    },
         theme: ThemeData(
           primarySwatch: Colors.deepPurple,
           brightness: Brightness.light,

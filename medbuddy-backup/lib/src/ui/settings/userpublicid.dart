@@ -318,9 +318,10 @@ Future<String> uploadFile(_image) async {
           ),
             ],
         ),
-  ),
-    ],
-      ):Container(
+        ),
+          ],)
+      
+      : Container(
 
       color: Colors.white,
       child: Center(

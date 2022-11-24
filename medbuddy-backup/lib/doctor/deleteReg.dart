@@ -73,17 +73,14 @@ return Scaffold(
  Row(mainAxisAlignment: MainAxisAlignment.center,
   children: [  
                               OutlineButton( 
-                                onPressed: () async {
-                                        // showModalBottomSheet<void>(context: context,
-                                        // builder: (BuildContext context) {
-                                        // return Container(
-                                        // child: new Wrap(
-                                        // children: <Widget>[
-                                        // new ListTile(
-                                        // leading: new Icon(Icons.delete),
-                                        // title: new Text('Delete'),
-                                        //   onTap: () async{                                        
-
+                                onPressed: () async {                                 
+                                Fluttertoast.showToast(  
+                                msg: 'If you have created a public profile, then delete it first..!',  
+                                toastLength: Toast.LENGTH_LONG,  
+                                gravity: ToastGravity.BOTTOM,  
+                                backgroundColor: Colors.black,  
+                                textColor: Colors.white  
+                                );  
                                 showDialog(  
                                     context: context,  
                                     barrierDismissible: false, // user must tap button for close dialog!  
@@ -100,7 +97,8 @@ return Scaffold(
                                           ),  
                                           FlatButton(  
                                             child: const Text('Delete',style: TextStyle(fontFamily: 'JosefinSans')),  
-                                            onPressed: () async { 
+                                          onPressed: () async { 
+                                          try{
                                           await FirebaseFirestore.instance.collection("DoctorsValidation").doc(user1.email).delete();    
                                             SharedPreferences prefs = await SharedPreferences.getInstance();
                                           await prefs.setBool('validation', false);  
@@ -121,21 +119,36 @@ return Scaffold(
                                           if (e.code == 'requires-recent-login') {
                                             print('The user must reauthenticate before this operation can be executed.');
                                           }
-                                        }                                            
-                                          logout();                                          
+                                        }                                              
+                                          Fluttertoast.showToast(  
+                                          msg: 'Account deleted successfully!',  
+                                          toastLength: Toast.LENGTH_LONG,  
+                                          gravity: ToastGravity.BOTTOM,  
+                                          backgroundColor: Colors.black,  
+                                          textColor: Colors.white  
+                                        );                                                                                   
+                                        logout();   
+
+                                        } catch(e) {
+                                           Navigator.of(context).pop();
+
+                                            Fluttertoast.showToast(  
+                                            msg: 'Unable to delete your account',  
+                                            toastLength: Toast.LENGTH_LONG,  
+                                            gravity: ToastGravity.BOTTOM,  
+                                            //timeInSecForIosWeb: 1,  
+                                            backgroundColor: Colors.black,  
+                                            textColor: Colors.white  
+                                            );  
+                                          }                                       
                                           },  
                                         )  
                                       ],  
                                     );  
                                   },  
                                 ); 
-                                        //   },
-                                        // ),
-                                        //             ])
-                                        //             ); 
-                                        //             }); 
                                                     
-                                                     },
+                                },
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(
                                                 MyDimens.double_4)),
@@ -190,7 +203,8 @@ return Scaffold(
                                           ),  
                                           FlatButton(  
                                             child: const Text('Delete',style: TextStyle(fontFamily: 'JosefinSans')),  
-                                            onPressed: () async {                                           
+                                            onPressed: () async {     
+                                          try{                                      
                                           deleteFile(snapshot.data['images']);
                                           deleteFile(snapshot.data['sign']);
 
@@ -235,10 +249,30 @@ return Scaffold(
                                           if (e.code == 'requires-recent-login') {
                                             print('The user must reauthenticate before this operation can be executed.');
                                           }
-                                        }                                          
+                                        }     
+                                        Fluttertoast.showToast(  
+                                            msg: 'Public profile deleted successfully',  
+                                            toastLength: Toast.LENGTH_LONG,  
+                                            gravity: ToastGravity.BOTTOM,  
+                                            //timeInSecForIosWeb: 1,  
+                                            backgroundColor: Colors.black,  
+                                            textColor: Colors.white  
+                                        );                                      
                                           logout();
+                                          } catch(e){
+                                            Navigator.of(context).pop();
+
+                                            Fluttertoast.showToast(  
+                                            msg: 'No public profile',  
+                                            toastLength: Toast.LENGTH_LONG,  
+                                            gravity: ToastGravity.BOTTOM,  
+                                            //timeInSecForIosWeb: 1,  
+                                            backgroundColor: Colors.black,  
+                                            textColor: Colors.white  
+                                        );  
+                                        }
  
-                                                  },  
+                                        },  
                                                 )  
                                               ],  
                                             );  

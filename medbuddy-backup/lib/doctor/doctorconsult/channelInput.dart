@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-//import 'package:medbuddy/doctor/doctorconsult/doctorvideocall.dart';
+import 'package:medbuddy/doctor/doctorconsult/doctorvideocall.dart';
 import 'package:medbuddy/doctor/doctorconsult/patients.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:uuid/uuid.dart';
 
 
@@ -69,23 +70,16 @@ class _doctorHomePageState extends State<Dvideocall> {
             height: 16,
           ),
 
-          //   TextField(
-          //    
-          //     decoration: InputDecoration(
-          //     hintText: "channel name",
-          //     labelText: "Channel name:",
-          //     labelStyle: TextStyle(
-          //       fontSize: 15,
-          //       color: Colors.black
-          //     ),
-          //       border: OutlineInputBorder()
-          //   ),
-          //      onChanged: ((value) {
-          //         channel = value;
-          //       }),
-          //   controller: channelController,
-          //   keyboardType: TextInputType.multiline,
-          // ),
+          Row(mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(width: 10,),
+            Text("Meeting code:", textAlign: TextAlign.start, style: TextStyle(color: Colors.grey[400], fontSize: 15),)
+          ]),
+
+          SizedBox(
+            height: 5,
+          ),
+
           Card(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25),),
             child: ListTile(
@@ -114,35 +108,16 @@ class _doctorHomePageState extends State<Dvideocall> {
             height: 16,
           ),
 
-          //   Flexible(
-          //     child:TextField(
-          //     decoration: InputDecoration(
-          //     hintText: "username",
-          //     labelText: "Username:",
-          //     labelStyle: TextStyle(
-          //       fontSize: 15,
-          //       color: Colors.black
-          //     ),
-          //       border: OutlineInputBorder()
-          //   ),
-          //      onChanged: ((value) {
-          //         uname = value;
-          //       }),
-          //   controller: unameController,
-          //   keyboardType: TextInputType.emailAddress,
-            
-          // ),),
            StreamBuilder(
-                            stream: FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).snapshots(),
-                            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-                              if (!snapshot.hasData) {
-                                return Center
-                                (child: CircularProgressIndicator(color: Colors.deepPurple)
-                                //Image.asset("assets/nothing.gif")
-                          );
-                              }
+            stream: FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).snapshots(),
+            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+              if (!snapshot.hasData) {
+                return Center
+                (child: CircularProgressIndicator(color: Colors.deepPurple)
+                //Image.asset("assets/nothing.gif")
+            );
+          } else{        
 
-                              else{        
           return Flexible(child: Padding(
             padding: EdgeInsets.all(20),
             child: Container(
@@ -152,15 +127,23 @@ class _doctorHomePageState extends State<Dvideocall> {
                     color: Colors.deepPurple,
                     shape: StadiumBorder(),
                     child: Center(
-                      child: Text(
-                        "+ New meeting",
+                      child: Row(mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+
+                      Text(
+                        "New meeting",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                    ),
+
+                      SizedBox(width: 20,),
+
+                      Icon(FontAwesomeIcons.video , color: Colors.white,),
+
+                    ],)),
                     onPressed: () async{
 
                       Dchannelid = _meetingcode;
@@ -175,7 +158,7 @@ class _doctorHomePageState extends State<Dvideocall> {
                       FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
                       "vccode": _meetingcode,
                       });                   
-                      //Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> doctorvideocall()));
                         channelController.clear();
                         //unameController.clear();
                         }
@@ -213,17 +196,6 @@ class _doctorHomePageState extends State<Dvideocall> {
                         )
                         )),),
 
-                  SizedBox(height: 10,),                  
-
-                  Card(child:
-                  ListTile(
-                    title: Text('Patients'),
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> patients()));
-                    },
-                    trailing: Icon(Icons.arrow_forward_ios),
-                  ),),
-
                   SizedBox(height: 10,),
 
                   Column(mainAxisAlignment: MainAxisAlignment.end, 
@@ -240,26 +212,46 @@ class _doctorHomePageState extends State<Dvideocall> {
 
                               else{
                                 try{
-                                return Column(mainAxisAlignment: MainAxisAlignment.end,
+                                return Padding(padding: EdgeInsets.all(2),
+                                child: Material(
+                                type: MaterialType.card,
+                                shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: BorderSide(color: Colors.grey[300], width: 1),
+                                ),
+                                // borderRadius: BorderRadius.circular(10),
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                elevation: 2,
+                                color: Colors.grey[50],
+                                child: Padding(padding: EdgeInsets.all(3),
+                                child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
+
+                                SizedBox(height: 10,),
+
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                  Text("Next patient:"),
+
+                                  SizedBox(width: 5,), 
+
+                                  Text("Next patient:", style: TextStyle(color: Colors.grey[600]),),
 
                                   SizedBox(width: 5,),
 
                                   ElevatedButton(
                                     style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all<double>(0),
                                     backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
                                     ),                                      
-                                    child: Text(snapshot.data['nextpt'].toString(), style: TextStyle(color: Colors.black),),),
+                                    child: Text(snapshot.data['nextpt'].toString(), style: TextStyle(color: Colors.grey[600]),),),
                                     
                                   ElevatedButton(
                                     style: ButtonStyle(
                                     backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
                                     ),                                      
-                                    child: Icon(Icons.add, color: Colors.black,),
+                                    child: Icon(Icons.add, color: Colors.grey[600],),
                                     onPressed: () async{
 
                                       FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
@@ -269,11 +261,11 @@ class _doctorHomePageState extends State<Dvideocall> {
                                     },
                                     ),
 
-                                    SizedBox(width: 10,),
+                                  SizedBox(width: 10,),
 
                                   ElevatedButton(
                                     style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)
+                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey)
                                     ),  
                                     onPressed: () async{
 
@@ -286,43 +278,17 @@ class _doctorHomePageState extends State<Dvideocall> {
                                      style: TextStyle(color: Colors.white),),
                                     ),
 
-                                  ]),
-                                  SizedBox(height: 10,),
-                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                  ElevatedButton(
-                                    style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
-                                    ),                                    
-                                    child: Text("No. of token:" + " " + snapshot.data["token"].toString(),
-                                     style: TextStyle(color: Colors.black),),
-                                    ),
+                                ]),
 
-                                    SizedBox(width: 10,),
-
-                                  ElevatedButton(
-                                    style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)
-                                    ),  
-                                    onPressed: () async{
-
-                                      FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
-                                        "token": 0,
-                                      });
-
-                                    },                                                                      
-                                    child: Text("Reset",
-                                     style: TextStyle(color: Colors.white),),
-                                    ),                                    
-
-                                    ],),
-                                  SizedBox(height: 10,),
+                                SizedBox(height: 30,),
 
                                  Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                  Text("Token limit:"),
+
+                                  SizedBox(width: 5,), 
+
+                                  Text("Token limit: ", style: TextStyle(color: Colors.grey[600]),),
 
                                   SizedBox(width: 5,), 
 
@@ -344,7 +310,7 @@ class _doctorHomePageState extends State<Dvideocall> {
 
                                   ElevatedButton(
                                     style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple)
+                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey)
                                     ), 
                                     onPressed: () async{
 
@@ -362,20 +328,69 @@ class _doctorHomePageState extends State<Dvideocall> {
                                   _limit.clear();
 
                                     },                                                                          
-                                    child: Text("Enter",
-                                     style: TextStyle(color: Colors.black),),
+                                    child: Text("Set",
+                                     style: TextStyle(color: Colors.white),),
                                     ), 
-                                  ]),                                   
-                                ],);
+                                  ]), 
+
+                                SizedBox(height: 10,),
+
+                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                  
+                                  SizedBox(width: 5,), 
+
+                                  // ElevatedButton(
+                                  //   style: ButtonStyle(
+                                  //   backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 224, 224, 224))
+                                  //   ),                                    
+                                  //   child: 
+                                    Text("Total number of token: " + snapshot.data["token"].toString(),
+                                     style: TextStyle(color: Colors.grey[600]),),
+                                    // ),
+
+                                  SizedBox(width: 10,),
+
+                                  ElevatedButton(
+                                    style: ButtonStyle(
+                                    backgroundColor: MaterialStateProperty.all<Color>(Colors.grey)
+                                    ),  
+                                    onPressed: () async{
+
+                                      FirebaseFirestore.instance.collection("consultDoctors").doc(user.email).update({
+                                        "token": 0,
+                                      });
+
+                                    },                                                                      
+                                    child: Text("Reset",
+                                     style: TextStyle(color: Colors.white),),
+                                    ),  
+
+                              ],),
+                                  
+
+                  SizedBox(height: 10,),                  
+
+                  Card(child:
+                  ListTile(
+                    title: Text('Patients', style: TextStyle(color: Colors.grey[600]),),
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> patients()));
+                    },
+                    trailing: Icon(Icons.arrow_forward_ios),
+                  ),),
+
+                  SizedBox(height: 10,),
+
+                  ],))));
                                 
+                } catch(e) {
+                  return Center(child: Text("No public profile", style: TextStyle(color: Colors.grey[600])));
+                }}
 
-                            }
-                      catch(e) {
-                      return Text("No public profile", style: TextStyle(color: Colors.grey));
-                    }}
-
-                              }),
-                  ],)
+              }),
+            ],)
           ],
         )));
   }

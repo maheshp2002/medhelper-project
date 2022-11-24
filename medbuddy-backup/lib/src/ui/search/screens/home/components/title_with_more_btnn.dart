@@ -30,8 +30,8 @@ class TitleWithMoreBtn extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
                 primary: Color.fromARGB(255, 11, 24, 19)),
-            child: Text(
-              "View More",
+            child: Text(title == 'Products' ? "View All"
+              : "View More",
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => viewmorebtm()));},

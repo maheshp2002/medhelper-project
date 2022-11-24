@@ -10,6 +10,7 @@ import 'package:medbuddy/src/ui/cart/cartmap.dart';
 import 'package:medbuddy/src/ui/login_page/register.dart';
 import 'package:medbuddy/src/ui/rateing/rateingtag/viewmore/deleteratingvbt.dart';
 import 'package:medbuddy/src/ui/rateing/rateingtag/viewmore/rateingvbt.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 import 'package:medbuddy/src/ui/search/cartsplash/cartSplash.dart';
 import 'package:medbuddy/src/ui/search/googleMap.dart';
 import 'package:medbuddy/src/ui/search/screens/home/components/home_screen.dart';
@@ -469,8 +470,10 @@ class _DetailedItemState extends State<SellerFullvb> {
         }
 
         else{
-                 return ListView.builder(
-                  physics: ScrollPhysics(),
+                 return FadeAnimation(
+                  delay: 0.8,
+                  child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
                   padding: EdgeInsets.all(10),
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
@@ -514,7 +517,7 @@ class _DetailedItemState extends State<SellerFullvb> {
 
           
             );
-                  });}}),
+                  }));}}),
                               SizedBox(height: 30),         
   //button for review
                                 OutlineButton(

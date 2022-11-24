@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medbuddy/seller/sellerLogin/Screens/sign_in_page.dart';
-import 'package:medbuddy/src/ui/maintenance/maint.dart';
+// import 'package:medbuddy/src/ui/maintenance/maint.dart';
 
 
 class Seller extends StatelessWidget {
@@ -12,8 +12,8 @@ class Seller extends StatelessWidget {
             Navigator.push(
               context, MaterialPageRoute(
                 builder: (BuildContext context) =>  
-                //SignInPage()
-                maint()
+                SignInPage()
+               // maint()
                 ));
           },
      child: new Padding(

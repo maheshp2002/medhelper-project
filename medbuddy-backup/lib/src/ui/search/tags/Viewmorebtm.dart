@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 import 'package:medbuddy/src/ui/search/tags/viewmore/sellerFullvb.dart';
 import 'package:medbuddy/src/ui/search/values/colors_palette.dart';
 import 'package:medbuddy/src/ui/search/values/constants.dart';
@@ -63,9 +64,10 @@ return Scaffold(
         
            return ListView(
            children: [
-          
-            GridView.builder(
-                  physics: ScrollPhysics(),
+            FadeAnimation(
+            delay: 0.8,
+            child: GridView.builder(
+                  physics: BouncingScrollPhysics(),
                   padding: EdgeInsets.all(5),
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
@@ -156,7 +158,7 @@ return Scaffold(
     ));
 
 
-})]);       
+}))]);       
   }
   }
   ));

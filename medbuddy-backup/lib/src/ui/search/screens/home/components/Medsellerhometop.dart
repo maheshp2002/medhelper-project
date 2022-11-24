@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medbuddy/src/ui/search/medseller_top_bar/sellerFulltop.dart';
-import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
-import 'package:medbuddy/src/ui/search/tags/Pill.dart';
-import 'package:medbuddy/src/ui/search/tags/Syringe.dart';
-import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
 import 'package:medbuddy/src/ui/search/values/colors_palette.dart';
 import 'package:medbuddy/src/ui/search/values/constants.dart';
+// import 'package:medbuddy/src/ui/search/tags/Bottle.dart';
+// import 'package:medbuddy/src/ui/search/tags/Pill.dart';
+// import 'package:medbuddy/src/ui/search/tags/Syringe.dart';
+// import 'package:medbuddy/src/ui/search/tags/Tablet.dart';
 
 
 var indexno;
@@ -40,7 +40,7 @@ class Medsellertop extends StatelessWidget {
            return 
            
            ListView.builder(
-                  physics: ScrollPhysics(),
+                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   itemCount: 5,  
@@ -133,117 +133,117 @@ class Medsellertop extends StatelessWidget {
   }
 }
 
-class topbar extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("Medicinesell")
-          .orderBy("date", descending: true).snapshots(),
-      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-         if (!snapshot.hasData) {   
-          return Center
-          (child: 
-          Image.asset("assets/nothing.gif")
-     );
-        }
+// class topbar extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     return StreamBuilder(
+//       stream: FirebaseFirestore.instance.collection("Medicinesell")
+//           .orderBy("date", descending: true).snapshots(),
+//       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+//          if (!snapshot.hasData) {   
+//           return Center
+//           (child: 
+//           Image.asset("assets/nothing.gif")
+//      );
+//         }
 
-      else if (snapshot.data?.size == 0) {
-        return Center
-          (child: Image.asset("assets/nothing.gif"));
-        }
-        else{
-//new streambuilder include image
-        return  ListView(
-          children: [
- //.......................................................................................................
- //top bar 
-      Padding(padding: EdgeInsets.only(top: 0, left: 10),  
-     child: Text("Categories:",textAlign: TextAlign.start,
-      style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
-      Divider(
-        indent: 20,
-        endIndent: 20,
-        color: Colors.black,
-    ),      
+//       else if (snapshot.data?.size == 0) {
+//         return Center
+//           (child: Image.asset("assets/nothing.gif"));
+//         }
+//         else{
+// //new streambuilder include image
+//         return  ListView(
+//           children: [
+//  //.......................................................................................................
+//  //top bar 
+//       Padding(padding: EdgeInsets.only(top: 0, left: 10),  
+//      child: Text("Categories:",textAlign: TextAlign.start,
+//       style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
+//       Divider(
+//         indent: 20,
+//         endIndent: 20,
+//         color: Colors.black,
+//     ),      
 
-      Padding(padding: EdgeInsets.all(10),            
-            child: Row( 
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Pill",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ],),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> pill()));
-              }
-              ),
+//       Padding(padding: EdgeInsets.all(10),            
+//             child: Row( 
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//             TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Pill",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ],),
+//               onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> pill()));
+//               }
+//               ),
 
-              SizedBox(width: 5,),
+//               SizedBox(width: 5,),
 
-             TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Syringe",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-                onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> syringe()));
-              }            
-              ),  
+//              TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Syringe",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ]),
+//                 onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> syringe()));
+//               }            
+//               ),  
 
-            SizedBox(width: 5,),
+//             SizedBox(width: 5,),
 
-            TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Tablet",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> tablet()));
-              }          
-              ),
+//             TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Tablet",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ]),
+//               onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> tablet()));
+//               }          
+//               ),
 
-              SizedBox(width: 5,),    
+//               SizedBox(width: 5,),    
 
-             TextButton(
-              style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
-              child: Row(children: [
-              Text("Bottle",textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
-              SizedBox(width: 5,),
-              Icon(Icons.bookmark,color: Colors.white),
-              ]),
-               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> bottle()));
-              }             
-              )
+//              TextButton(
+//               style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
+//               child: Row(children: [
+//               Text("Bottle",textAlign: TextAlign.center,
+//               style: TextStyle(color: Colors.white,fontFamily: 'JosefinSans')),
+//               SizedBox(width: 5,),
+//               Icon(Icons.bookmark,color: Colors.white),
+//               ]),
+//                onPressed: (){
+//                 Navigator.push(context, MaterialPageRoute(builder: (context)=> bottle()));
+//               }             
+//               )
                                 
               
-              ]),),
+//               ]),),
 
 
-    //   Padding(padding: EdgeInsets.only(left: 10, top: 10),  
-    //  child: Text("Products",textAlign: TextAlign.start,
-    //   style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
-      Divider(
-        indent: 20,
-        endIndent: 20,
-        color: Colors.black,
-    )]);
- //.......................................................................................................
-  }
+//     //   Padding(padding: EdgeInsets.only(left: 10, top: 10),  
+//     //  child: Text("Products",textAlign: TextAlign.start,
+//     //   style: TextStyle(color: Colors.black,fontFamily: 'JosefinSans', fontSize: 30,)),),
+//       Divider(
+//         indent: 20,
+//         endIndent: 20,
+//         color: Colors.black,
+//     )]);
+//  //.......................................................................................................
+//   }
  
- });
+//  });
  
-  }
-  }
+//   }
+//   }

@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:medbuddy/doctor/dcNavBar.dart';
 import 'package:medbuddy/doctor/splash_screen/doctorSplash.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 
 
 
@@ -80,7 +81,9 @@ if(pickedDate != null ){
         ),
         ),
 
-        body:  
+        body: FadeAnimation(
+        delay: 0.8,
+        child: 
         Padding(
         padding: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
         child: ListView(
@@ -345,7 +348,7 @@ if(pickedDate != null ){
        // )
         //)
         ]),
-        ));
+        )));
   }
 
 // Future<Uint8List> makePdf(Invoice invoice) async {

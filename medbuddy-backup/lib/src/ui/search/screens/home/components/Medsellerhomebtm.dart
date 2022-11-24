@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 import 'package:medbuddy/src/ui/search/sellerFull.dart';
 import 'package:medbuddy/src/ui/search/values/colors_palette.dart';
 import 'package:medbuddy/src/ui/search/values/constants.dart';
@@ -7,17 +8,26 @@ import 'package:medbuddy/src/ui/search/values/constants.dart';
 
   var indexnobtm;
   String docidbtm;
-class RecomendsClothesMale extends StatelessWidget {
-  const RecomendsClothesMale({
-    Key key,
-  }) : super(key: key);
+class Medsellerbottom extends StatefulWidget {
+  String category;
+  Medsellerbottom({Key key, this.category}) : super(key: key);
+
+  @override
+  _MedsellerbottomState createState() => _MedsellerbottomState();
+}
+
+class _MedsellerbottomState extends State<Medsellerbottom>{
+  
   @override
   Widget build(BuildContext context) {
     // return SingleChildScrollView(
     //   scrollDirection: Axis.horizontal,
     return  StreamBuilder(
-      stream: FirebaseFirestore.instance.collection("Medicinesell")
-          .orderBy("medicine name", descending: false).snapshots(),
+      stream: widget.category == 'all'
+      ? FirebaseFirestore.instance.collection("Medicinesell")
+          .orderBy("medicine name", descending: false).snapshots()
+      : FirebaseFirestore.instance.collection("Medicinesell")
+          .where('ID', isEqualTo: widget.category).snapshots(),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
          if (!snapshot.hasData) {   
           return Center
@@ -33,8 +43,10 @@ class RecomendsClothesMale extends StatelessWidget {
         else{
 //new streambuilder include image
         
-           return GridView.builder(
-                  physics: ScrollPhysics(),
+           return FadeAnimation(
+           delay: .4,
+           child: GridView.builder(
+                  physics: BouncingScrollPhysics(),
                   padding: EdgeInsets.all(5),
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
@@ -125,11 +137,11 @@ class RecomendsClothesMale extends StatelessWidget {
     ));
 
 
-});       
+}));       
   }
   }
   );
-  //);
+
   }
 }
 

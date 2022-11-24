@@ -140,62 +140,6 @@ class DataModel {
     }).toList();
   }
 }
-// productSearch() {
-//  FirestoreSearchScaffold(
-//       firestoreCollectionName: 'Medicinesell',
-//       searchBy: 'medicine name',
-//       scaffoldBody: Center(),
-//       dataListFromSnapshot: DataModel().dataListFromSnapshot,
-//       builder: (context, snapshot) {
-//         if (snapshot.hasData) {
-//           final List<DataModel> dataList = snapshot.data;
-//           if (dataList.isEmpty) {
-//             return const Center(
-//               child: Text('No Results Returned'),
-//             );
-//           }
-//           return ListView.builder(
-//               itemCount: dataList.length,
-//               itemBuilder: (context, index) {
-//                 final DataModel data = dataList[index];
-
-//                 return Column(
-//                   mainAxisSize: MainAxisSize.min,
-//                   mainAxisAlignment: MainAxisAlignment.center,
-//                   crossAxisAlignment: CrossAxisAlignment.start,
-//                   children: [
-//                     Padding(
-//                       padding: const EdgeInsets.all(8.0),
-//                       child: Image.network(
-//                         '${data.name}',
-//                       ),
-//                     ),
-//                     Padding(
-//                       padding: const EdgeInsets.only(
-//                           bottom: 8.0, left: 8.0, right: 8.0),
-//                       child: Text('${data.name}',
-//                           style: Theme.of(context).textTheme.bodyText1),
-//                     )
-//                   ],
-//                 );
-//               });
-//         }
-
-//         if (snapshot.connectionState == ConnectionState.done) {
-//           if (!snapshot.hasData) {
-//             return const Center(
-//               child: Text('No Results Returned'),
-//             );
-//           }
-//         }
-//         return const Center(
-//           child: CircularProgressIndicator(),
-//         );
-//       },
-//     );
-
-// }
-
 
 class SearchFeed extends StatefulWidget {
   const SearchFeed({Key key}) : super(key: key);
@@ -215,86 +159,6 @@ class _SearchFeedState extends State<SearchFeed> {
       scaffoldBody: Center(
         child: Text("Search for product", style: TextStyle(color: Colors.grey),),
       ),
-      // scaffoldBody: Column(
-      //   children: [
-      //     Row(
-      //       children: [
-      //         const SizedBox(
-      //           width: 40.0,
-      //         ),
-      //         Expanded(
-      //             child: FirestoreSearchBar(
-      //           tag: 'test',
-      //           showSearchIcon: true,
-      //         )),
-      //         const SizedBox(
-      //           width: 40.0,
-      //         ),
-      //       ],
-      //     ),
-      //     Expanded(
-      //       child: FirestoreSearchResults.builder(
-      //         tag: 'test',
-      //         firestoreCollectionName: 'Medicinesell',
-      //         searchBy: 'medicine name',
-      //         initialBody: const Center(child: Text('Result appears here'),),
-      //         dataListFromSnapshot: DataModel().dataListFromSnapshot,
-      //         builder: (context, snapshot) {
-      //           if (snapshot.hasData) {
-      //             final List<DataModel> dataList = snapshot.data;
-      //             if (dataList.isEmpty) {
-      //               return const Center(
-      //                 child: Text('No Results found'),
-      //               );
-      //             }
-      //             return ListView.builder(
-      //                 itemCount: dataList.length,
-      //                 itemBuilder: (context, index) {
-      //                   final DataModel data = dataList[index];
-
-      //                   return Column(
-      //                     mainAxisSize: MainAxisSize.min,
-      //                     mainAxisAlignment: MainAxisAlignment.center,
-      //                     crossAxisAlignment: CrossAxisAlignment.start,
-      //                     children: [
-      //                     Card(
-      //                     child:  ListTile(
-      //                       // padding: const EdgeInsets.all(8.0),
-      //                         leading: Image.network(
-      //                           '${data.image}',
-      //                           width: 80,
-      //                           height: 80,
-      //                           //style: Theme.of(context).textTheme.headline6,
-      //                         ),
-      //                         title: Text('${data.name}',style: Theme.of(context).textTheme.bodyText1),
-      //                         subtitle:  Text("Price:" + " " + '${data.price}',style: Theme.of(context).textTheme.bodyText1),
-      //                       ),),
-      //                       // Padding(
-      //                       //   padding: const EdgeInsets.only(
-      //                       //       bottom: 8.0, left: 8.0, right: 8.0),
-      //                       //   child: Text('${data.name}',
-      //                       //       style: Theme.of(context).textTheme.bodyText1),
-      //                       // )
-      //                     ],
-      //                   );
-      //                 });
-      //           }
-
-      //           if (snapshot.connectionState == ConnectionState.done) {
-      //             if (!snapshot.hasData) {
-      //               return const Center(
-      //                 child: Text('No Results found'),
-      //               );
-      //             }
-      //           }
-      //           return const Center(
-      //             child: CircularProgressIndicator(),
-      //           );
-      //         },
-      //       ),
-      //     )
-      //   ],
-      // ),
       dataListFromSnapshot: DataModel().dataListFromSnapshot,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
@@ -330,12 +194,6 @@ class _SearchFeedState extends State<SearchFeed> {
                       title: Text('${data.name}',style: Theme.of(context).textTheme.bodyText1),
                       subtitle:  Text("Price:" + " " + '${data.price}',style: Theme.of(context).textTheme.bodyText1),
                     ),),
-                    // Padding(
-                    //   padding: const EdgeInsets.only(
-                    //       bottom: 8.0, left: 8.0, right: 8.0),
-                    //   child: Text('${data.name}',
-                    //       style: Theme.of(context).textTheme.bodyText1),
-                    // )
                   ],
                 );
               });

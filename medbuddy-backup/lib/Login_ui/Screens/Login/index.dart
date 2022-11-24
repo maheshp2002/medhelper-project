@@ -7,7 +7,6 @@ import 'package:medbuddy/Login_ui/Components/doctor.dart';
 import 'package:medbuddy/Login_ui/Components/forgotpassword.dart';
 import 'package:medbuddy/Login_ui/Components/gap.dart';
 import 'package:medbuddy/Login_ui/Components/seller.dart';
-import 'package:medbuddy/global/myColors.dart';
 import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 import 'package:medbuddy/src/ui/tabpage/tabs.dart';
 import 'package:provider/provider.dart';

@@ -50,9 +50,9 @@ class _SettingsPageState extends State<doctorSettings>{
             //Card(
               //child: 
                 ListTile(
-                title: Text('Create public Profile',style: TextStyle(fontFamily: 'JosefinSansBI')),
-                leading: Icon(Icons.delete_sweep, color: Colors.black,),
-                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
+                title: Text('Create public Profile',style: TextStyle(fontFamily: 'JosefinSansBI', color: Colors.grey[800])),
+                leading: Icon(Icons.delete_sweep, color: Colors.grey[800],),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey[800],),
                 onTap: () async{
                     {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => publicprofile()));
 
@@ -60,9 +60,9 @@ class _SettingsPageState extends State<doctorSettings>{
   }),
   
                 ListTile(
-                title: Text('Delete Register data',style: TextStyle(fontFamily: 'JosefinSansBI')),
-                leading: Icon(Icons.delete_sweep, color: Colors.black,),
-                trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,),
+                title: Text('Delete Register data',style: TextStyle(fontFamily: 'JosefinSansBI', color: Colors.grey[800])),
+                leading: Icon(Icons.delete_sweep, color: Colors.grey[800],),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey[800],),
                 onTap: () async{
                     {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => DeleteReg()));
 

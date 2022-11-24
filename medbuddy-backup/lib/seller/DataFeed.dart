@@ -11,6 +11,7 @@ import 'package:intl/intl.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/sellerNavBar.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:medbuddy/seller/splash_screen/sellerSplash.dart';
+import 'package:medbuddy/src/ui/search/Animations.dart';
 
 
 
@@ -335,12 +336,12 @@ Future<String> uploadFile2(_image2) async {
           },
         ),),
 //page UI.....................................................................................
-      body:  !isLoadingDF? Column(
+    body:  !isLoadingDF? 
+    FadeAnimation(
+    delay: 0.8,
+    child: ListView(
     children: [
-      Flexible(
-        child: ListView(
-            children: [
-          Padding(padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+    Padding(padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
 
      child:  Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -933,10 +934,8 @@ SizedBox(height: 10,),
       ),
           ),
             ],
-        ),
-  ),
-    ],
-      ):Container(
+        ),)
+      : Container(
         child:
       Center(
       
