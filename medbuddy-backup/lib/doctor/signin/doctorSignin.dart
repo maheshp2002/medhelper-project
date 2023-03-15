@@ -7,7 +7,6 @@ import 'package:medbuddy/seller/sellerLogin/services/FirebaseService.dart';
 import 'package:medbuddy/seller/sellerLogin/utils/constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class DoctorSignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,7 @@ class DoctorSignInPage extends StatelessWidget {
         body: Center(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset("assets/splash/doctorlogin.gif", width: 300,height: 300),
+          Image.asset("assets/splash/doctorlogin.gif", width: 300, height: 300),
           RichText(
               textAlign: TextAlign.center,
               text: TextSpan(children: <TextSpan>[
@@ -38,8 +37,8 @@ class DoctorSignInPage extends StatelessWidget {
             style: TextStyle(color: Constants.kDarkGreyColor),
           ),
           GoogleSignIn(),
-       
-   /*       SizedBox(
+
+          /*       SizedBox(
           Padding(padding: EdgeInsets.only(bottom: size.height * 0.02)),
           SizedBox(
             width: size.width * 0.8,
@@ -101,7 +100,6 @@ class DoctorSignInPage extends StatelessWidget {
               ])),*/
         ])));
   }
-
 }
 
 class GoogleSignIn extends StatefulWidget {
@@ -117,49 +115,56 @@ class _GoogleSignInState extends State<GoogleSignIn> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return  !isLoading? SizedBox(
-      width: size.width * 0.8,
-      child: OutlinedButton.icon(
-        icon: FaIcon(FontAwesomeIcons.google),
-        onPressed: () async {
-          setState(() {
-            isLoading = true;
-          });
-          FirebaseService service = new FirebaseService();
-          try {
-           await service.signInwithGoogle();
-           
-           SharedPreferences prefs = await SharedPreferences.getInstance();
-           bool Validation = prefs.getBool('validation');
-           if(Validation==false){
-           Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => Doctorval()));
-           }else{
-                Navigator.push(context, 
-                MaterialPageRoute(builder: (BuildContext context) =>  doctorHomePage()));
-          }         
-           await prefs.setBool('doctor', true);  
-           bool doctor = prefs.getBool('doctor');
-           print(doctor);
-          } catch(e){
-            if(e is FirebaseAuthException){
-              showMessage(e.message);
-            }
-          }
-          setState(() {
-            isLoading = false;
-          });
-        },
-        label: Text(
-          Constants.textSignInGoogle,
-          style: TextStyle(
-              color: Constants.kBlackColor, fontWeight: FontWeight.bold),
-        ),
-        style: ButtonStyle(
-            backgroundColor:
-                MaterialStateProperty.all<Color>(Constants.kGreyColor),
-            side: MaterialStateProperty.all<BorderSide>(BorderSide.none)),
-      ),
-    ) : CircularProgressIndicator();
+    return !isLoading
+        ? SizedBox(
+            width: size.width * 0.8,
+            child: OutlinedButton.icon(
+              icon: FaIcon(FontAwesomeIcons.google),
+              onPressed: () async {
+                setState(() {
+                  isLoading = true;
+                });
+                FirebaseService service = new FirebaseService();
+                try {
+                  await service.signInwithGoogle();
+
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  bool Validation = prefs.getBool('validation') ?? false;
+                  if (Validation == false) {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (ctx) => Doctorval()));
+                  } else {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                doctorHomePage()));
+                  }
+                  await prefs.setBool('doctor', true);
+                  bool doctor = prefs.getBool('doctor');
+                  print(doctor);
+                } catch (e) {
+                  if (e is FirebaseAuthException) {
+                    showMessage(e.message);
+                  }
+                }
+                setState(() {
+                  isLoading = false;
+                });
+              },
+              label: Text(
+                Constants.textSignInGoogle,
+                style: TextStyle(
+                    color: Constants.kBlackColor, fontWeight: FontWeight.bold),
+              ),
+              style: ButtonStyle(
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Constants.kGreyColor),
+                  side: MaterialStateProperty.all<BorderSide>(BorderSide.none)),
+            ),
+          )
+        : CircularProgressIndicator();
   }
 
   void showMessage(String message) {

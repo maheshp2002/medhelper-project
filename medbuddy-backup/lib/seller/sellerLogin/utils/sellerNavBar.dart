@@ -49,11 +49,11 @@ class sellerNavBar extends StatelessWidget {
             title: const Text('Settings'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => sellerSettings()))},
           ),
-          ListTile(
-            leading: const Icon(Icons.border_color),
-            title: const Text('About'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => about()))},
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.border_color),
+          //   title: const Text('About'),
+          //   onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => about()))},
+          // ),
           ListTile(
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Logout'),

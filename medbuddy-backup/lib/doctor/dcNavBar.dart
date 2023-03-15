@@ -149,11 +149,11 @@ class dcNavBar extends StatelessWidget {
             title: Text('Settings'),
             onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => doctorSettings()))},
           ),
-          ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('About'),
-            onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => about()))},
-          ),
+          // ListTile(
+          //   leading: Icon(Icons.border_color),
+          //   title: Text('About'),
+          //   onTap: () => {Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => about()))},
+          // ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Logout'),

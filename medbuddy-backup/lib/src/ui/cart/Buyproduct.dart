@@ -423,6 +423,7 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
           'pointB': 0,
           'pointC': 0,
           'pointD': 0,
+          'ar': 0,
           'pk': 0,
         });
 
@@ -556,6 +557,7 @@ Row(mainAxisAlignment: MainAxisAlignment.center,
           'pointB': 0,
           'pointC': 0,
           'pointD': 0,
+          'ar': 0,
           'pk': 0,
         });
 

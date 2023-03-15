@@ -177,7 +177,7 @@ class medbuddycheck extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: validation(),
+    future: validation(),
     builder: (context, snapshot) {
       if (snapshot.hasData) {
         //return validate1();

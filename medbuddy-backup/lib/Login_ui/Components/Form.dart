@@ -3,8 +3,6 @@ import 'package:medbuddy/src/ui/login_page/auth_class.dart';
 import 'package:optimize_battery/optimize_battery.dart';
 import 'package:provider/provider.dart';
 
-
-
 class FormContainer extends StatelessWidget {
   TextEditingController unameController = new TextEditingController();
   TextEditingController passController = new TextEditingController();
@@ -21,7 +19,6 @@ class FormContainer extends StatelessWidget {
             children: <Widget>[
               new TextFormField(
                 controller: unameController,
-               
                 keyboardType: TextInputType.text,
                 style: TextStyle(
                   fontSize: 16,
@@ -32,36 +29,39 @@ class FormContainer extends StatelessWidget {
                   prefixIcon: Icon(Icons.email),
                   border: UnderlineInputBorder(),
                 ),
-    
               ),
-              Padding(padding: EdgeInsets.only(top: 10),
-               child:
-              new TextFormField(
-                controller: passController,
-                 obscureText: true,
-                keyboardType: TextInputType.text,
-                style: TextStyle(
-                  fontSize: 16,
+              Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: new TextFormField(
+                  controller: passController,
+                  obscureText: true,
+                  keyboardType: TextInputType.text,
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                  textCapitalization: TextCapitalization.words,
+                  decoration: InputDecoration(
+                    hintText: 'password',
+                    prefixIcon: Icon(Icons.lock),
+                    border: UnderlineInputBorder(),
+                  ),
                 ),
-                textCapitalization: TextCapitalization.words,
-                decoration: InputDecoration(
-                  hintText: 'password',
-                  prefixIcon: Icon(Icons.lock),
-                  border: UnderlineInputBorder(),
-                ),
               ),
-              ),
-              Padding(padding: EdgeInsets.only(top: 20),
-               child: RaisedButton(
-                 color: Colors.deepPurple,
-                 child: Text("Sign In", style: TextStyle(color: Colors.white),),
-        onPressed: (){
-          context.read<AuthenticationService>().signIn(
-            email: unameController.text.trim(),
-            password: passController.text.trim(),
-          );
-            OptimizeBattery.stopOptimizingBatteryUsage();
-          /*new Text(
+              Padding(
+                padding: EdgeInsets.only(top: 20),
+                child: RaisedButton(
+                    color: Colors.deepPurple,
+                    child: Text(
+                      "Sign In",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed: () {
+                      context.read<AuthenticationService>().signIn(
+                            email: unameController.text.trim(),
+                            password: passController.text.trim(),
+                          );
+                      OptimizeBattery.stopOptimizingBatteryUsage();
+                      /*new Text(
         "Sign In",
         style: new TextStyle(
           color: Colors.white,
@@ -70,8 +70,7 @@ class FormContainer extends StatelessWidget {
           letterSpacing: 0.3,
         ),
       ),*/
-        }
-               ),
+                    }),
               ),
             ],
           )),
